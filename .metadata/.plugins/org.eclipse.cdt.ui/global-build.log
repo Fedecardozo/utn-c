@@ -426,3 +426,47 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
 gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
+13:59:53 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\operaciones.o" "..\\src\\operaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:23:2: warning: implicit declaration of function 'suma_Int' [-Wimplicit-function-declaration]
+  suma_Int(&suma,num, num2);
+  ^~~~~~~~
+..\src\funcionesFedeCardozo.c:24:2: warning: implicit declaration of function 'resta_Int' [-Wimplicit-function-declaration]
+  resta_Int(&resta,num, num2);
+  ^~~~~~~~~
+..\src\funcionesFedeCardozo.c:25:2: error: called object 'division' is not a function or function pointer
+  division(&division,num, num2);
+  ^~~~~~~~
+..\src\funcionesFedeCardozo.c:13:36: note: declared here
+  float sumaF,restaF,multipliacionF,division;
+                                    ^~~~~~~~
+..\src\funcionesFedeCardozo.c:26:2: warning: implicit declaration of function 'multipliacion_Int' [-Wimplicit-function-declaration]
+  multipliacion_Int(&multipliacion,num, num2);
+  ^~~~~~~~~~~~~~~~~
+..\src\funcionesFedeCardozo.c:28:2: warning: implicit declaration of function 'suma_Float' [-Wimplicit-function-declaration]
+  suma_Float(&sumaF,num, num2);
+  ^~~~~~~~~~
+..\src\funcionesFedeCardozo.c:29:2: warning: implicit declaration of function 'resta_Float' [-Wimplicit-function-declaration]
+  resta_Float(&restaF,num, num2);
+  ^~~~~~~~~~~
+..\src\funcionesFedeCardozo.c:30:2: warning: implicit declaration of function 'multipliacion_Float' [-Wimplicit-function-declaration]
+  multipliacion_Float(&multipliacionF,num, num2);
+  ^~~~~~~~~~~~~~~~~~~
+14:00:45 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+14:02:52 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+14:03:21 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo

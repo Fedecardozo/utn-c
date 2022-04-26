@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "utn.h"
+#include "operaciones.h"
+
+int main(void) {
+
+	setbuf(stdout,NULL);
+
+	int num,num2;
+	float num3,num4;
+	int suma,resta,multipliacion;
+	float sumaF,restaF,multipliacionF,divisionF;
+
+
+	utn_getNumero(&num, "\nIngrese un numero: ", "\nError: ", 0, 220, 5);
+	utn_getNumero(&num2, "\nIngrese un numero: ", "\nError: ", 0, 220, 5);
+
+	utn_getNumeroFlotante(&num3, "\nNumero: ", "\nError: ", 1, 300, 2);
+	utn_getNumeroFlotante(&num4, "\nNumero: ", "\nError: ", 1, 300, 2);
+
+
+	suma_Int(&suma,num, num2);
+	resta_Int(&resta,num, num2);
+	division(&divisionF,num, num2);
+	multipliacion_Int(&multipliacion,num, num2);
+
+	suma_Float(&sumaF,num3, num4);
+	resta_Float(&restaF,num3, num4);
+	multipliacion_Float(&multipliacionF,num3, num4);
+
+	printf("\nSuma int: %d",suma);
+	printf("\nResta int: %d",resta);
+	printf("\nPor int: %d",multipliacion);
+	printf("\nSuma float: %f",sumaF);
+	printf("\nResta float: %f",restaF);
+	printf("\nPor float: %f",multipliacionF);
+	printf("\nDivision: %f",divisionF);
+
+
+	return 0;
+
+
+}
+
