@@ -470,3 +470,238 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
 gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
+15:25:13 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'myGets':
+..\src\utn.c:22:15: error: 'NULL' undeclared (first use in this function)
+  if(cadena != NULL && longitud > 0)
+               ^~~~
+..\src\utn.c:22:15: note: each undeclared identifier is reported only once for each function it appears in
+..\src\utn.c:24:3: warning: implicit declaration of function 'fflush' [-Wimplicit-function-declaration]
+   fflush(stdin);//Limpiamos el buffer por las dudas
+   ^~~~~~
+..\src\utn.c:24:10: error: 'stdin' undeclared (first use in this function)
+   fflush(stdin);//Limpiamos el buffer por las dudas
+          ^~~~~
+..\src\utn.c:25:6: warning: implicit declaration of function 'fgets' [-Wimplicit-function-declaration]
+   if(fgets(bufferString,sizeof(bufferString),stdin) != NULL)
+      ^~~~~
+..\src\utn.c:27:20: warning: implicit declaration of function 'strnlen' [-Wimplicit-function-declaration]
+    if(bufferString[strnlen(bufferString,sizeof(bufferString))-1] == '\n')
+                    ^~~~~~~
+..\src\utn.c:33:5: warning: implicit declaration of function 'strncpy' [-Wimplicit-function-declaration]
+     strncpy(cadena,bufferString,longitud);
+     ^~~~~~~
+..\src\utn.c:33:5: warning: incompatible implicit declaration of built-in function 'strncpy'
+..\src\utn.c:33:5: note: include '<string.h>' or provide a declaration of 'strncpy'
+..\src\utn.c: In function 'getInt':
+..\src\utn.c:51:23: error: 'NULL' undeclared (first use in this function)
+     if( pResultado != NULL &&
+                       ^~~~
+..\src\utn.c:56:17: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   *pResultado = atoi(bufferString) ;
+                 ^~~~
+..\src\utn.c: In function 'utn_getNumero':
+..\src\utn.c:104:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("%s",mensaje);
+   ^~~~~~
+..\src\utn.c:104:3: warning: incompatible implicit declaration of built-in function 'printf'
+..\src\utn.c:104:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\utn.c: In function 'getFloat':
+..\src\utn.c:138:20: error: 'NULL' undeclared (first use in this function)
+  if( pResultado != NULL &&
+                    ^~~~
+..\src\utn.c:143:17: warning: implicit declaration of function 'atof' [-Wimplicit-function-declaration]
+   *pResultado = atof(bufferString) ;
+                 ^~~~
+..\src\utn.c: In function 'utn_getNumeroFlotante':
+..\src\utn.c:206:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("%s",mensaje);
+  ^~~~~~
+..\src\utn.c:206:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+15:25:39 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+15:54:10 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getCaracter':
+..\src\utn.c:253:15: warning: passing argument 1 of 'getInt' from incompatible pointer type [-Wincompatible-pointer-types]
+    if( getInt(&bufferChar) == 0 &&
+               ^
+..\src\utn.c:49:12: note: expected 'int *' but argument is of type 'char *'
+ static int getInt(int* pResultado)
+            ^~~~~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+15:59:26 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:243:12: error: conflicting types for 'getChar'
+ static int getChar(char* pResultado){
+            ^~~~~~~
+..\src\utn.c:9:12: note: previous declaration of 'getChar' was here
+ static int getChar(int* pResultado);
+            ^~~~~~~
+..\src\utn.c: In function 'getChar':
+..\src\utn.c:248:14: warning: passing argument 1 of 'myGets' makes pointer from integer without a cast [-Wint-conversion]
+       myGets(bufferString,sizeof(bufferString)) == 0)
+              ^~~~~~~~~~~~
+..\src\utn.c:20:5: note: expected 'char *' but argument is of type 'char'
+ int myGets(char* cadena, int longitud)
+     ^~~~~~
+16:00:22 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'getChar':
+..\src\utn.c:248:14: warning: passing argument 1 of 'myGets' makes pointer from integer without a cast [-Wint-conversion]
+       myGets(bufferString,sizeof(bufferString)) == 0)
+              ^~~~~~~~~~~~
+..\src\utn.c:20:5: note: expected 'char *' but argument is of type 'char'
+ int myGets(char* cadena, int longitud)
+     ^~~~~~
+..\src\utn.c:248:7: warning: 'bufferString' may be used uninitialized in this function [-Wmaybe-uninitialized]
+       myGets(bufferString,sizeof(bufferString)) == 0)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+16:07:32 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getCaracter':
+..\src\utn.c:255:8: warning: implicit declaration of function 'getChar' [-Wimplicit-function-declaration]
+    if( getChar(&bufferChar) == 0 &&
+        ^~~~~~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+src\utn.o: In function `utn_getCaracter':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\funcionesFedeCardozo\Debug/../src/utn.c:255: undefined reference to `getChar'
+collect2.exe: error: ld returned 1 exit status
+16:08:27 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+16:19:03 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:14:31: warning: format '%f' expects a matching 'double' argument [-Wformat=]
+  printf("Error: %d - numero: %f ",utn_getNumeroFlotante(&num, "\nnumero: ", "\nErrorNUm:", 0, 200, 2));
+                               ^
+..\src\funcionesFedeCardozo.c:15:31: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  printf("Error: %d - numero: %d ",utn_getNumero(&num2, "\nnumero: ", "\nErrorNUm:", 0, 200, 2));
+                               ^
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+16:20:50 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for funcionesFedeCardozo
+16:23:19 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:02:05 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:02:40 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:05:15 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:13:6: warning: unused variable 'uno' [-Wunused-variable]
+  int uno,dos;
+      ^~~
+..\src\funcionesFedeCardozo.c:11:8: warning: unused variable 'num' [-Wunused-variable]
+  float num;
+        ^~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:05:59 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:13:6: warning: unused variable 'uno' [-Wunused-variable]
+  int uno,dos;
+      ^~~
+..\src\funcionesFedeCardozo.c:11:8: warning: unused variable 'num' [-Wunused-variable]
+  float num;
+        ^~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:06:24 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:13:6: warning: unused variable 'uno' [-Wunused-variable]
+  int uno,dos;
+      ^~~
+..\src\funcionesFedeCardozo.c:11:8: warning: unused variable 'num' [-Wunused-variable]
+  float num;
+        ^~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:06:36 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:13:6: warning: unused variable 'uno' [-Wunused-variable]
+  int uno,dos;
+      ^~~
+..\src\funcionesFedeCardozo.c:11:8: warning: unused variable 'num' [-Wunused-variable]
+  float num;
+        ^~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:07:06 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:13:6: warning: unused variable 'uno' [-Wunused-variable]
+  int uno,dos;
+      ^~~
+..\src\funcionesFedeCardozo.c:11:8: warning: unused variable 'num' [-Wunused-variable]
+  float num;
+        ^~~
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:21:01 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:28:01 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:29:41 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+17:30:43 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for funcionesFedeCardozo
+17:32:03 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo

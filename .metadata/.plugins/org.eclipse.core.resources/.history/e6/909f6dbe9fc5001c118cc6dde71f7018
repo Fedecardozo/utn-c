@@ -233,6 +233,8 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 
 
 	}
+	printf("%s",mensaje);
+
 
 
 		return retorno;

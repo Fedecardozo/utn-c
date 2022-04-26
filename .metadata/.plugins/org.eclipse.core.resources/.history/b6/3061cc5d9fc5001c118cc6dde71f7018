@@ -103,10 +103,10 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 	int bufferInt;
 
 	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
-		printf("%s",mensaje);
+
 		do{
 
-
+			printf("%s",mensaje);
 			if(	getInt(&bufferInt) == 0 &&
 				bufferInt >= minimo &&
 				bufferInt <= maximo)
@@ -215,7 +215,6 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 
 	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
 
-		printf(mensaje);
 		do{
 
 			if(	getFloat(&bufferFloat) == 0 &&
@@ -233,6 +232,8 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 
 
 	}
+	printf("%s",mensaje);
+
 
 
 		return retorno;

@@ -79,8 +79,7 @@ static int esNumerica(char* cadena, int limite)
 		if(cadena[i] > '9' || cadena[i] < '0')
 		{
 			retorno = 0;
-			break;
-		}
+			break;		}
 		//CONTINUE
 	}
 	//BREAK
@@ -102,11 +101,11 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 	int retorno = -1;
 	int bufferInt;
 
-	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
-		printf("%s",mensaje);
+	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
+
 		do{
 
-
+			printf("%s",mensaje);
 			if(	getInt(&bufferInt) == 0 &&
 				bufferInt >= minimo &&
 				bufferInt <= maximo)
@@ -143,7 +142,7 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 static int getFloat(float* pResultado)
 {
     int retorno=-1;
-    char bufferString[70];
+    char bufferString[50];
 
 	if(	pResultado != NULL &&
 		myGets(bufferString,sizeof(bufferString)) == 0 &&
@@ -213,9 +212,8 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 	int retorno = -1;
 	float bufferFloat;
 
-	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
+	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
 
-		printf(mensaje);
 		do{
 
 			if(	getFloat(&bufferFloat) == 0 &&
@@ -233,6 +231,8 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 
 
 	}
+	printf("%s",mensaje);
+
 
 
 		return retorno;
@@ -244,7 +244,7 @@ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int min
 	int retorno = -1;
 	char bufferChar;
 
-	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
+	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
 
 		printf("%s",mensaje);
 		scanf("%c",&bufferChar);
@@ -252,7 +252,9 @@ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int min
 		do{
 
 
-			if(bufferChar>=minimo && bufferChar<=maximo)
+			if(	getChar(&bufferChar) == 0 &&
+					bufferChar >= minimo &&
+					bufferChar <= maximo)
 			{
 				retorno = 0;
 				*pResultado = bufferChar;
