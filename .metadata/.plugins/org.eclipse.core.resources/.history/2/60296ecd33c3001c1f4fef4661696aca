@@ -1,0 +1,41 @@
+
+#include "inputs.h"
+
+int utn_getFloat(char*msj,float*numero,float min,float max,char*msjError,int intentos){
+
+	float aux;
+	int cont=0;
+	int retorno=-1;
+
+	if(msj != NULL && numero != NULL && min<max && msjError != NULL && intentos>0){
+
+		printf(msj);
+		scanf("%f",&aux);
+
+		do{
+			if(aux<min || aux>max){
+
+				printf(msjError);
+				scanf("%f",&aux);
+				cont++;
+				retorno =-1;
+
+			}else if(aux>=min && aux <=max){
+
+				*numero = aux;
+				cont = intentos;
+				retorno = 0;
+
+			}
+
+
+		}while(cont == intentos);
+
+
+
+	}
+
+	return retorno;
+}
+
+

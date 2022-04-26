@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "inputs.h"
+
+int main(void) {
+
+	setbuf(stdout,NULL);
+
+	float*num;
+	int error;
+
+	error = utnGetFlotante("\nNumero: ", &num, 2, 100, "\nError: ", 2);
+
+
+	printf("\nHola: %f, Error: %d",num,error);
+
+	return 0;
+
+
+}
+

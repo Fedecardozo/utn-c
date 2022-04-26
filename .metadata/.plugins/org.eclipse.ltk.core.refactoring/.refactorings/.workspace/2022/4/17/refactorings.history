@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;funcionesFedeCardozo/src/inputs.h&apos;" deleteContents="false" description="Delete resource &apos;funcionesFedeCardozo/src/inputs.h&apos;" element1="/funcionesFedeCardozo/src/inputs.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1650740530258"/>&#x0A;<refactoring comment="Delete resource &apos;funcionesFedeCardozo/src/inputs.c&apos;" deleteContents="false" description="Delete resource &apos;funcionesFedeCardozo/src/inputs.c&apos;" element1="/funcionesFedeCardozo/src/inputs.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1650740535057"/>
+</session>

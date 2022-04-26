@@ -1,0 +1,10 @@
+
+#ifndef INPUTS_H_
+#define INPUTS_H_
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int utnGetFlotante(char*msj,float*numero,float min,float max,char*msjError,int intentos);
+
+#endif /* INPUTS_H_ */
