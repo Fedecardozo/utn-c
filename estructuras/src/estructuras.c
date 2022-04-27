@@ -37,7 +37,7 @@ int main(void) {
 	indiceVacio(productos, tam, &indice);
 
 	printf("\nEl indice vacio es: %d",indice);
-	//imprimirArrayProducto(tam, productos);
+	imprimirArrayProducto(tam, productos);
 
 	return EXIT_SUCCESS;
 }

@@ -4,7 +4,6 @@
 static int imprimirProducto(Producto pr);
 static int pedirDatos();
 
-
 int imprimirArrayProducto(int tam, Producto* pr){
 
 	int retorno = 1;
@@ -53,7 +52,7 @@ int inicializar(Producto* pr,int tam){
 static int imprimirProducto(Producto pr){
 
 
-	printf("\nNombre:%s \nDescripcion: %s  \nPrecio:%f",pr.nombre,pr.descripcion,pr.precio);
+	printf("\nId:%d \nNombre:%s \nDescripcion: %s  \nPrecio:%f",pr.id,pr.nombre,pr.descripcion,pr.precio);
 
 	return 1;
 }
@@ -63,7 +62,7 @@ static int imprimirProducto(Producto pr){
 static float num;
 static char des[200];
 static char nombre[20];
-
+static int id=1000;
 static int pedirDatos(){
 
 	printf("\nIngrese el nombre: ");
@@ -72,7 +71,7 @@ static int pedirDatos(){
 	printf("\nIngrese la descripcion: ");
 	myGets(des, sizeof(des));
 	utn_getNumeroFlotante(&num,"\nIngrese el precio: " , "\nError: ", 0, 12000, 2);
-
+	id++;
 	return 0;
 
 }
@@ -84,6 +83,7 @@ int cargarDatos(Producto* pr,int indice){
 	if(pr != NULL){
 
 		pedirDatos();
+		pr[indice].id=id;
 		strcpy( pr[indice].nombre, nombre);
 		strcpy( pr[indice].descripcion, des);
 		pr[indice].precio=num;
@@ -141,5 +141,10 @@ int indiceVacio(Producto* pr, int tam,int* indice){
 	return retorno;
 
 }
+
+/*4) Agregar al tipo de dato el campo ID que represente un identificador unico.
+	Modificar el codigo anterior para que el ID se genere automaticamente.
+	Se debera cargar el ID automaticamente al cargar un producto, y se debera imprimir al imprimir la lista.
+*/
 
 

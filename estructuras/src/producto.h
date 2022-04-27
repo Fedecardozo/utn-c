@@ -17,6 +17,7 @@ typedef struct{
 	//1) Definir un tipo de dato que represente un producto.
 	//El producto tiene un nombre, una descripcion y un precio
 
+	int id;
 	char nombre[20];
 	char descripcion[200];
 	float precio;

@@ -126,3 +126,15 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.
 gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
 Info: Nothing to build for estructuras
+22:08:33 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
+gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
+Info: Nothing to build for estructuras
+22:10:23 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
+gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for estructuras
