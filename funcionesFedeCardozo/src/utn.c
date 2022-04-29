@@ -6,13 +6,15 @@ static int esNumerica(char* cadena, int limite);
 static int getInt(int* pResultado);
 static int esFlotante(char* cadena,int limite);
 static int getFloat(float* pResultado);
+static int sonLetras(char*pLetras,int longitud);
+static int getString(char* pResultado,int longitud);
 
 /**
  * \brief 	Lee de stdin hasta que encuentra un '\n' o hasta que haya copiado en cadena
- * 			un máximo de 'longitud - 1' caracteres.
+ * 			un maximo de 'longitud - 1' caracteres.
  * \param pResultado Puntero al espacio de memoria donde se copiara la cadena obtenida
- * \param longitud Define el tamaño de cadena
- * \return Retorna 0 (EXITO) si se obtiene una cadena y -1 (ERROR) si no
+ * \param longitud Define el tama�o de cadena
+ * \return Retorna 0 (EXITO) si se obtiene una cadena y -1 (ERROR) si no.
  *
  */
 int myGets(char* cadena, int longitud)
@@ -126,13 +128,6 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 
 	return retorno;
 }
-
-
-
-
-
-
-
 
 /**
  * \brief Verifica si la cadena ingresada es flotante
@@ -275,7 +270,87 @@ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int min
 
 }
 
+int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
+
+	int retorno=-1;
+
+	//printf("%d",longitud);
+	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && longitud >0 && intentos>=0){
+
+		//Creo la variable aca para primero validar de longitud sea mayor a 0
+		char bufferString[longitud];
+
+		do{
+
+			printf("%s",mensaje);
+
+			//Si esta todo bien lo copia en el puntero y sale de la iteracion retornado cero
+			if(getString(bufferString,longitud)==0){
+
+				strncpy(pResultado,bufferString,longitud);
+				retorno=0;
+				break;
+
+			}
+
+			printf("%s",mensajeError);
+			intentos--;
 
 
+		}while(intentos>=0);
 
+
+	}
+
+
+	return retorno;
+
+}
+
+static int getString(char* pResultado,int longitud){
+
+	int retorno =-1;
+	char bufferString[200];//Esto despues se va a cambiar
+
+
+	if(pResultado != NULL &&
+		myGets(bufferString,sizeof(bufferString))==0
+			&& sonLetras(bufferString,sizeof(bufferString))){
+
+		strncpy(pResultado,bufferString,longitud);
+		retorno=0;
+
+	}
+
+	return retorno;
+
+}
+
+static int sonLetras(char*pLetras,int longitud)
+{
+	int retorno= 1;
+	int i;
+
+	// No valido los datos por que ya lo hace myGets
+
+	for (i = 0; i<longitud && pLetras[i]!='\0'; i++){
+
+		if(i==0 && (pLetras[i] > 'A' && pLetras[i] < 'Z')){
+
+			continue;
+
+		}
+
+		if(pLetras[i] < 'a' || pLetras[i] > 'z'){
+
+			retorno=0;
+			break;
+
+		}
+
+	}
+
+
+	return retorno;
+}
 

@@ -1,140 +1,150 @@
-Info: Nothing to build for estructuras
-Info: Nothing to build for estructuras
-20:41:17 **** Incremental Build of configuration Debug for project estructuras ****
+09:22:04 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getString':
+..\src\utn.c:289:42: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+    strncpy(pResultado,bufferString,sizeof(pResultado));
+                                          ^
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+09:24:03 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+11:15:46 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getString':
+..\src\utn.c:282:42: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+    strncpy(pResultado,bufferString,sizeof(pResultado));
+                                          ^
+..\src\utn.c: In function 'getString':
+..\src\utn.c:302:6: error: too few arguments to function 'esNumerica'
+   && esNumerica(charAuxiliar)==0){
+      ^~~~~~~~~~
+..\src\utn.c:69:12: note: declared here
+ static int esNumerica(char* cadena, int limite)
+            ^~~~~~~~~~
+..\src\utn.c:304:46: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+   strncpy(pletrasTomadas, charAuxiliar,sizeof(pletrasTomadas));
+                                              ^
+11:16:17 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:296:1: warning: "/*" within comment [-Wcomment]
+ /*int getString(char*pletrasTomadas)
+  
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for funcionesFedeCardozo
+11:20:07 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+11:20:32 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+11:23:07 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for funcionesFedeCardozo
+11:26:45 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+..\src\funcionesFedeCardozo.c: In function 'main':
+..\src\funcionesFedeCardozo.c:13:2: error: too few arguments to function 'utn_getString'
+  utn_getString(palabra, "Escriba", "Te equivocaste");
+  ^~~~~~~~~~~~~
+In file included from ..\src\funcionesFedeCardozo.c:4:0:
+..\src\utn.h:20:5: note: declared here
+ int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longitud);
+     ^~~~~~~~~~~~~
+11:27:07 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+Info: Nothing to build for funcionesFedeCardozo
+12:10:39 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getString':
+..\src\utn.c:286:7: error: too few arguments to function 'getString'
+    if(getString(bufferString)==0){
+       ^~~~~~~~~
+..\src\utn.c:10:12: note: declared here
+ static int getString(char* pResultado,int longitud);
+            ^~~~~~~~~
+..\src\utn.c: In function 'sonLetras':
+..\src\utn.c:337:22: warning: comparison between pointer and integer
+   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
+                      ^
+..\src\utn.c:337:35: warning: comparison between pointer and integer
+   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
+                                   ^
+..\src\utn.c:343:14: warning: comparison between pointer and integer
+   if(pLetras < 'a' || pLetras>'z'){
+              ^
+..\src\utn.c:343:30: warning: comparison between pointer and integer
+   if(pLetras < 'a' || pLetras>'z'){
+                              ^
+12:11:20 **** Incremental Build of configuration Debug for project estructuras ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-..\src\producto.c: In function 'pedirDatos':
-..\src\producto.c:73:9: warning: passing argument 1 of 'myGets' makes pointer from integer without a cast [-Wint-conversion]
-  myGets(nombre, sizeof(nombre));
-         ^~~~~~
-In file included from ..\src\producto.h:14:0,
-                 from ..\src\producto.c:2:
-..\src\utn.h:18:5: note: expected 'char *' but argument is of type 'char'
- int myGets(char* cadena, int longitud);
-     ^~~~~~
-..\src\producto.c: In function 'cargarDatos':
-..\src\producto.c:91:29: warning: passing argument 2 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
-   strcpy( pr[indice].nombre,nombre);
-                             ^~~~~~
-In file included from ..\src\producto.h:13:0,
-                 from ..\src\producto.c:2:
-c:\mingw\include\string.h:79:40: note: expected 'const char *' but argument is of type 'char'
- _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
-                                        ^~~~~~
-..\src\producto.c:91:13: warning: 'indice' may be used uninitialized in this function [-Wmaybe-uninitialized]
-   strcpy( pr[indice].nombre,nombre);
-             ^
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+12:11:20 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'sonLetras':
+..\src\utn.c:336:22: warning: comparison between pointer and integer
+   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
+                      ^
+..\src\utn.c:336:35: warning: comparison between pointer and integer
+   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
+                                   ^
+..\src\utn.c:342:14: warning: comparison between pointer and integer
+   if(pLetras < 'a' || pLetras>'z'){
+              ^
+..\src\utn.c:342:30: warning: comparison between pointer and integer
+   if(pLetras < 'a' || pLetras>'z'){
+                              ^
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+12:12:42 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+12:12:42 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
-20:41:39 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-..\src\producto.c: In function 'pedirDatos':
-..\src\producto.c:73:9: warning: passing argument 1 of 'myGets' makes pointer from integer without a cast [-Wint-conversion]
-  myGets(nombre, sizeof(nombre));
-         ^~~~~~
-In file included from ..\src\producto.h:14:0,
-                 from ..\src\producto.c:2:
-..\src\utn.h:18:5: note: expected 'char *' but argument is of type 'char'
- int myGets(char* cadena, int longitud);
-     ^~~~~~
-..\src\producto.c: In function 'cargarDatos':
-..\src\producto.c:90:29: warning: passing argument 2 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
-   strcpy( pr[indice].nombre,nombre);
-                             ^~~~~~
-In file included from ..\src\producto.h:13:0,
-                 from ..\src\producto.c:2:
-c:\mingw\include\string.h:79:40: note: expected 'const char *' but argument is of type 'char'
- _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
-                                        ^~~~~~
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
-20:43:21 **** Incremental Build of configuration Debug for project estructuras ****
+12:19:04 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for estructuras
-20:55:40 **** Incremental Build of configuration Debug for project estructuras ****
+12:23:04 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-..\src\producto.c: In function 'cargarDatos':
-..\src\producto.c:86:3: error: too few arguments to function 'pedirDatos'
-   pedirDatos();
-   ^~~~~~~~~~
-..\src\producto.c:67:12: note: declared here
- static int pedirDatos(producto* pr, int indice){
-            ^~~~~~~~~~
-..\src\producto.c: In function 'imprimirIndice':
-..\src\producto.c:109:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-20:56:26 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-..\src\producto.c: In function 'cargarDatos':
-..\src\producto.c:86:3: error: too few arguments to function 'pedirDatos'
-   pedirDatos();
-   ^~~~~~~~~~
-..\src\producto.c:67:12: note: declared here
- static int pedirDatos(producto* pr, int indice){
-            ^~~~~~~~~~
-20:56:53 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
 Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for estructuras
-20:58:07 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for estructuras
-Info: Nothing to build for estructuras
-21:05:02 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-..\src\estructuras.c: In function 'main':
-..\src\estructuras.c:37:30: warning: passing argument 3 of 'indiceVacio' makes pointer from integer without a cast [-Wint-conversion]
-  indiceVacio(productos, tam, indice);
-                              ^~~~~~
-In file included from ..\src\estructuras.c:20:0:
-..\src\producto.h:36:5: note: expected 'int *' but argument is of type 'int'
- int indiceVacio(producto* pr, int tam,int* indice);
-     ^~~~~~~~~~~
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-21:05:11 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-21:05:22 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for estructuras
-21:06:02 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for estructuras
-22:08:33 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for estructuras
-22:10:23 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\producto.o" "..\\src\\producto.c" 
-gcc -o estructuras.exe "src\\estructuras.o" "src\\producto.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for estructuras
