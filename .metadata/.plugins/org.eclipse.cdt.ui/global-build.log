@@ -1,128 +1,185 @@
-09:22:04 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+11:33:31 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:19:16: error: unknown type name 'Passanger'
+ int cargaDatos(Passanger p1){
+                ^~~~~~~~~
+..\src\Passenger.c:12:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+11:37:08 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:13:2: warning: implicit declaration of function 'cargaDatos' [-Wimplicit-function-declaration]
+  cargaDatos(pasajero);
+  ^~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+11:37:10 **** Incremental Build of configuration Debug for project estructuras ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c: In function 'utn_getString':
-..\src\utn.c:289:42: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
-    strncpy(pResultado,bufferString,sizeof(pResultado));
-                                          ^
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
 Info: Nothing to build for funcionesFedeCardozo
-09:24:03 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+11:41:21 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-11:15:46 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+11:42:41 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:15:13: error: incompatible type for argument 1 of 'cargaDatos'
+  cargaDatos(pasajero);
+             ^~~~~~~~
+In file included from ..\src\Tp2.c:7:0:
+..\src\Passenger.h:20:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int cargaDatos(Passanger p1);
+     ^~~~~~~~~~
+11:43:38 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+11:43:39 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c: In function 'utn_getString':
-..\src\utn.c:282:42: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
-    strncpy(pResultado,bufferString,sizeof(pResultado));
-                                          ^
-..\src\utn.c: In function 'getString':
-..\src\utn.c:302:6: error: too few arguments to function 'esNumerica'
-   && esNumerica(charAuxiliar)==0){
-      ^~~~~~~~~~
-..\src\utn.c:69:12: note: declared here
- static int esNumerica(char* cadena, int limite)
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+11:45:34 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+11:46:26 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+11:46:28 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for Tp2
+12:02:58 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'cargaDatos':
+..\src\Passenger.c:43:23: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getString(p1[i]->name, "\nIngrese nombre:","\nError esta mal escrito" , 51, 2);
+                       ^~
+..\src\Passenger.c:44:23: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getString(p1[i]->lastName, "\nIngrese apellido:","\nError esta mal escrito" , 51, 2);
+                       ^~
+..\src\Passenger.c:45:31: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getNumeroFlotante(p1[i]->price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", 0, 300, 2);
+                               ^~
+..\src\Passenger.c:46:16: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    myGets(p1[i]->flycode, 10);
+                ^~
+..\src\Passenger.c:47:23: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getNumero(p1[i]->typePassanger, "\nIngrese tipo:", "\nError ingrese nuevamente:", 0, 3, 2);
+                       ^~
+..\src\Passenger.c:48:23: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getNumero(p1[i]->statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2);
+                       ^~
+At top level:
+..\src\Passenger.c:20:12: warning: 'pedirDatos' defined but not used [-Wunused-function]
+ static int pedirDatos(Passanger* p1){
             ^~~~~~~~~~
-..\src\utn.c:304:46: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the destination; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
-   strncpy(pletrasTomadas, charAuxiliar,sizeof(pletrasTomadas));
-                                              ^
-11:16:17 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+12:03:37 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c:296:1: warning: "/*" within comment [-Wcomment]
- /*int getString(char*pletrasTomadas)
-  
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for funcionesFedeCardozo
-11:20:07 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'cargaDatos':
+..\src\Passenger.c:43:24: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getString(&p1[i]->name, "\nIngrese nombre:","\nError esta mal escrito" , 51, 2);
+                        ^~
+..\src\Passenger.c:44:24: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getString(&p1[i]->lastName, "\nIngrese apellido:","\nError esta mal escrito" , 51, 2);
+                        ^~
+..\src\Passenger.c:45:32: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getNumeroFlotante(&p1[i]->price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", 0, 300, 2);
+                                ^~
+..\src\Passenger.c:46:17: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    myGets(&p1[i]->flycode, 10);
+                 ^~
+..\src\Passenger.c:47:24: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getNumero(&p1[i]->typePassanger, "\nIngrese tipo:", "\nError ingrese nuevamente:", 0, 3, 2);
+                        ^~
+..\src\Passenger.c:48:24: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    utn_getNumero(&p1[i]->statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2);
+                        ^~
+..\src\Passenger.c:49:9: error: invalid type argument of '->' (have 'Passanger {aka struct <anonymous>}')
+    p1[i]->isEmpty=1;
+         ^~
+At top level:
+..\src\Passenger.c:20:12: warning: 'pedirDatos' defined but not used [-Wunused-function]
+ static int pedirDatos(Passanger* p1){
+            ^~~~~~~~~~
+12:06:24 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-11:20:32 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-11:23:07 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for funcionesFedeCardozo
-11:26:45 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
-..\src\funcionesFedeCardozo.c: In function 'main':
-..\src\funcionesFedeCardozo.c:13:2: error: too few arguments to function 'utn_getString'
-  utn_getString(palabra, "Escriba", "Te equivocaste");
-  ^~~~~~~~~~~~~
-In file included from ..\src\funcionesFedeCardozo.c:4:0:
-..\src\utn.h:20:5: note: declared here
- int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longitud);
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'cargaDatos':
+..\src\Passenger.c:43:18: warning: passing argument 1 of 'utn_getString' from incompatible pointer type [-Wincompatible-pointer-types]
+    utn_getString(&p1[i].name, "\nIngrese nombre:","\nError esta mal escrito" , 51, 2);
+                  ^
+In file included from ..\src\Passenger.h:4:0,
+                 from ..\src\Passenger.c:2:
+..\src\utn.h:20:5: note: expected 'char *' but argument is of type 'char (*)[51]'
+ int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
      ^~~~~~~~~~~~~
-11:27:07 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-12:10:39 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesFedeCardozo.o" "..\\src\\funcionesFedeCardozo.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c: In function 'utn_getString':
-..\src\utn.c:286:7: error: too few arguments to function 'getString'
-    if(getString(bufferString)==0){
-       ^~~~~~~~~
-..\src\utn.c:10:12: note: declared here
- static int getString(char* pResultado,int longitud);
-            ^~~~~~~~~
-..\src\utn.c: In function 'sonLetras':
-..\src\utn.c:337:22: warning: comparison between pointer and integer
-   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
-                      ^
-..\src\utn.c:337:35: warning: comparison between pointer and integer
-   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
-                                   ^
-..\src\utn.c:343:14: warning: comparison between pointer and integer
-   if(pLetras < 'a' || pLetras>'z'){
-              ^
-..\src\utn.c:343:30: warning: comparison between pointer and integer
-   if(pLetras < 'a' || pLetras>'z'){
-                              ^
-12:11:20 **** Incremental Build of configuration Debug for project estructuras ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\estructuras.o" "..\\src\\estructuras.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
- int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
-     ^~~~~~~~~~~~~~~
-In file included from ..\src\utn.c:2:0:
-..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
- int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
-     ^~~~~~~~~~~~~~~
-12:11:20 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c: In function 'sonLetras':
-..\src\utn.c:336:22: warning: comparison between pointer and integer
-   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
-                      ^
-..\src\utn.c:336:35: warning: comparison between pointer and integer
-   if(i==0 && (pLetras>'A'&&pLetras<'Z')){
-                                   ^
-..\src\utn.c:342:14: warning: comparison between pointer and integer
-   if(pLetras < 'a' || pLetras>'z'){
-              ^
-..\src\utn.c:342:30: warning: comparison between pointer and integer
-   if(pLetras < 'a' || pLetras>'z'){
-                              ^
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-12:12:42 **** Incremental Build of configuration Debug for project estructuras ****
+..\src\Passenger.c:44:18: warning: passing argument 1 of 'utn_getString' from incompatible pointer type [-Wincompatible-pointer-types]
+    utn_getString(&p1[i].lastName, "\nIngrese apellido:","\nError esta mal escrito" , 51, 2);
+                  ^
+In file included from ..\src\Passenger.h:4:0,
+                 from ..\src\Passenger.c:2:
+..\src\utn.h:20:5: note: expected 'char *' but argument is of type 'char (*)[51]'
+ int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
+     ^~~~~~~~~~~~~
+..\src\Passenger.c:46:11: warning: passing argument 1 of 'myGets' from incompatible pointer type [-Wincompatible-pointer-types]
+    myGets(&p1[i].flycode, 10);
+           ^
+In file included from ..\src\Passenger.h:4:0,
+                 from ..\src\Passenger.c:2:
+..\src\utn.h:18:5: note: expected 'char *' but argument is of type 'char (*)[10]'
+ int myGets(char* cadena, int longitud);
+     ^~~~~~
+At top level:
+..\src\Passenger.c:20:12: warning: 'pedirDatos' defined but not used [-Wunused-function]
+ static int pedirDatos(Passanger* p1){
+            ^~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+12:06:25 **** Incremental Build of configuration Debug for project estructuras ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
 ..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
@@ -132,19 +189,36 @@ In file included from ..\src\utn.c:2:0:
 ..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
  int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
      ^~~~~~~~~~~~~~~
-12:12:42 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for Tp2
+12:25:58 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-Info: Nothing to build for funcionesFedeCardozo
-12:19:04 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'pedirDatos':
+..\src\Passenger.c:30:6: warning: unused variable 'isEmpty' [-Wunused-variable]
+  int isEmpty;
+      ^~~~~~~
+..\src\Passenger.c:23:6: warning: unused variable 'id' [-Wunused-variable]
+  int id;
+      ^~
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+12:26:21 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
-12:23:04 **** Incremental Build of configuration Debug for project funcionesFedeCardozo ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+12:27:40 **** Incremental Build of configuration Debug for project Tp2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o funcionesFedeCardozo.exe "src\\funcionesFedeCardozo.o" "src\\operaciones.o" "src\\utn.o" 
-Info: Nothing to build for funcionesFedeCardozo
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+12:38:31 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+12:38:55 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
+Info: Nothing to build for Tp2

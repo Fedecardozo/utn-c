@@ -12,7 +12,9 @@ int main(void) {
 
 	utn_getString(palabra, "\nEscriba Nombre:", "Te equivocaste",sizeof(palabra),2);
 
-	//myGets(palabra, sizeof(palabra));
+
+
+	myGets(palabra, sizeof(palabra));
 	printf("\nEscribiste: %s",palabra);
 
 	return 0;
