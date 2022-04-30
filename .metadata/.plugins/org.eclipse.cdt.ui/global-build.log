@@ -222,3 +222,471 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
 gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\utn.o" 
 Info: Nothing to build for Tp2
+13:38:27 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menuGenerico.o" "..\\src\\menuGenerico.c" 
+..\src\menuGenerico.c: In function 'menu':
+..\src\menuGenerico.c:15:13: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+   printf(" %s",msj[i]);
+             ^
+..\src\menuGenerico.c:20:9: warning: 'retorno' is used uninitialized in this function [-Wuninitialized]
+  return retorno;
+         ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:20:14: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  menu[0][50] = "\nIngrese opcion 1";
+              ^
+..\src\Tp2.c:21:14: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  menu[1][50] = "\nIngrese opcion 2";
+              ^
+..\src\Tp2.c:23:2: error: called object 'menu' is not a function or function pointer
+  menu(menu,4);
+  ^~~~
+..\src\Tp2.c:19:7: note: declared here
+  char menu [4][50];
+       ^~~~
+13:39:47 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menuGenerico.o" "..\\src\\menuGenerico.c" 
+In file included from ..\src\menuGenerico.c:2:0:
+..\src\menuGenerico.h:15:15: error: array type has incomplete element type 'char[]'
+ int menu(char msj[][], int tam);
+               ^~~
+..\src\menuGenerico.h:15:15: note: declaration of 'msj' as multidimensional array must have bounds for all dimensions except the first
+..\src\menuGenerico.c: In function 'menu':
+..\src\menuGenerico.c:15:13: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+   printf(" %s",msj[i]);
+             ^
+13:40:25 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:20:14: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  menu[0][50] = "\nIngrese opcion 1";
+              ^
+..\src\Tp2.c:21:14: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  menu[1][50] = "\nIngrese opcion 2";
+              ^
+..\src\Tp2.c:23:2: error: called object 'menu' is not a function or function pointer
+  menu(menu,4);
+  ^~~~
+..\src\Tp2.c:19:7: note: declared here
+  char menu [4][50];
+       ^~~~
+14:36:47 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:37:15: error: incompatible type for argument 1 of 'pedirDatos'
+    pedirDatos(p1, i);
+               ^~
+In file included from ..\src\arrayPassenger.h:13:0,
+                 from ..\src\arrayPassenger.c:2:
+..\src\Passenger.h:20:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int pedirDatos(Passanger p1,int indice);
+     ^~~~~~~~~~
+At top level:
+..\src\arrayPassenger.c:4:18: warning: 'pasajeros' defined but not used [-Wunused-variable]
+ static Passanger pasajeros[TAM];
+                  ^~~~~~~~~
+14:38:10 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'pedirDatos':
+..\src\Passenger.c:42:8: error: invalid operands to binary != (have 'Passanger {aka struct <anonymous>}' and 'void *')
+  if(p1 != NULL && indice >=0){
+        ^~
+14:38:49 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c:7:0: warning: "TRUE" redefined
+ #define TRUE 2
+ 
+..\src\Tp2.c:6:0: note: this is the location of the previous definition
+ #define TRUE 1
+ 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:17:2: warning: implicit declaration of function 'cargaDatos' [-Wimplicit-function-declaration]
+  cargaDatos(pasajero,TAM);
+  ^~~~~~~~~~
+..\src\Tp2.c:18:2: warning: implicit declaration of function 'imprimirArrayPasajero' [-Wimplicit-function-declaration]
+  imprimirArrayPasajero(pasajero,TAM);
+  ^~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:37:4: error: too few arguments to function 'pedirDatos'
+    pedirDatos(p1[i]);
+    ^~~~~~~~~~
+In file included from ..\src\arrayPassenger.h:13:0,
+                 from ..\src\arrayPassenger.c:2:
+..\src\Passenger.h:20:5: note: declared here
+ int pedirDatos(Passanger p1,int indice);
+     ^~~~~~~~~~
+14:39:27 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:31:5: error: conflicting types for 'pedirDatos'
+ int pedirDatos(Passanger p1){
+     ^~~~~~~~~~
+In file included from ..\src\Passenger.c:2:0:
+..\src\Passenger.h:20:5: note: previous declaration of 'pedirDatos' was here
+ int pedirDatos(Passanger p1,int indice);
+     ^~~~~~~~~~
+14:39:28 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+14:39:31 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c:31:5: error: conflicting types for 'pedirDatos'
+ int pedirDatos(Passanger p1){
+     ^~~~~~~~~~
+In file included from ..\src\Passenger.c:2:0:
+..\src\Passenger.h:20:5: note: previous declaration of 'pedirDatos' was here
+ int pedirDatos(Passanger p1,int indice);
+     ^~~~~~~~~~
+14:39:56 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c:7:0: warning: "TRUE" redefined
+ #define TRUE 2
+ 
+..\src\Tp2.c:6:0: note: this is the location of the previous definition
+ #define TRUE 1
+ 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:17:2: warning: implicit declaration of function 'cargaDatos' [-Wimplicit-function-declaration]
+  cargaDatos(pasajero,TAM);
+  ^~~~~~~~~~
+..\src\Tp2.c:18:2: warning: implicit declaration of function 'imprimirArrayPasajero' [-Wimplicit-function-declaration]
+  imprimirArrayPasajero(pasajero,TAM);
+  ^~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+14:39:58 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for Tp2
+14:42:16 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c:7:0: warning: "TRUE" redefined
+ #define TRUE 2
+ 
+..\src\Tp2.c:6:0: note: this is the location of the previous definition
+ #define TRUE 1
+ 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:18:19: error: incompatible type for argument 1 of 'imprimirPasajero'
+  imprimirPasajero(pasajero);
+                   ^~~~~~~~
+In file included from ..\src\Tp2.c:9:0:
+..\src\Passenger.h:21:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int imprimirPasajero(Passanger p1);
+     ^~~~~~~~~~~~~~~~
+14:42:27 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c:7:0: warning: "TRUE" redefined
+ #define TRUE 2
+ 
+..\src\Tp2.c:6:0: note: this is the location of the previous definition
+ #define TRUE 1
+ 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+14:42:43 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+14:42:44 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+Info: Nothing to build for Tp2
+14:43:25 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:17:13: error: incompatible type for argument 1 of 'pedirDatos'
+  pedirDatos(&pasajero[0]);
+             ^
+In file included from ..\src\Tp2.c:9:0:
+..\src\Passenger.h:20:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int pedirDatos(Passanger p1);
+     ^~~~~~~~~~
+..\src\Tp2.c:18:19: error: incompatible type for argument 1 of 'imprimirPasajero'
+  imprimirPasajero(&pasajero[0]);
+                   ^
+In file included from ..\src\Tp2.c:9:0:
+..\src\Passenger.h:21:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int imprimirPasajero(Passanger p1);
+     ^~~~~~~~~~~~~~~~
+14:43:25 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+14:45:36 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'pedirDatos':
+..\src\Passenger.c:43:13: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(*p1.name,name,sizeof(name));
+             ^
+             ->
+..\src\Passenger.c:46:13: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(*p1.lastName,lastName,sizeof(lastName));
+             ^
+             ->
+..\src\Passenger.c:49:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.price = price;
+     ^
+     ->
+..\src\Passenger.c:53:13: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(*p1.flycode,flycode,sizeof(flycode));
+             ^
+             ->
+..\src\Passenger.c:56:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.typePassanger = typePassanger;
+     ^
+     ->
+..\src\Passenger.c:59:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.statusFlight = statusFlight;
+     ^
+     ->
+..\src\Passenger.c:61:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.id = generadorId();
+     ^
+     ->
+..\src\Passenger.c:62:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.isEmpty=1;
+     ^
+     ->
+14:45:56 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'pedirDatos':
+..\src\Passenger.c:43:13: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(*p1.name,name,sizeof(name));
+             ^
+             ->
+..\src\Passenger.c:46:13: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(*p1.lastName,lastName,sizeof(lastName));
+             ^
+             ->
+..\src\Passenger.c:49:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.price = price;
+     ^
+     ->
+..\src\Passenger.c:53:13: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(*p1.flycode,flycode,sizeof(flycode));
+             ^
+             ->
+..\src\Passenger.c:56:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.typePassanger = typePassanger;
+     ^
+     ->
+..\src\Passenger.c:59:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.statusFlight = statusFlight;
+     ^
+     ->
+..\src\Passenger.c:61:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.id = generadorId();
+     ^
+     ->
+..\src\Passenger.c:62:5: error: 'p1' is a pointer; did you mean to use '->'?
+  *p1.isEmpty=1;
+     ^
+     ->
+14:45:56 **** Incremental Build of configuration Debug for project estructuras ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:242:5: error: conflicting types for 'utn_getCaracter'
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+     ^~~~~~~~~~~~~~~
+In file included from ..\src\utn.c:2:0:
+..\src\utn.h:19:5: note: previous declaration of 'utn_getCaracter' was here
+ int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError);
+     ^~~~~~~~~~~~~~~
+Info: Nothing to build for funcionesFedeCardozo
+14:47:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'pedirDatos':
+..\src\Passenger.c:43:12: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(p1.name,name,sizeof(name));
+            ^
+            ->
+..\src\Passenger.c:46:12: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(p1.lastName,lastName,sizeof(lastName));
+            ^
+            ->
+..\src\Passenger.c:49:4: error: 'p1' is a pointer; did you mean to use '->'?
+  p1.price = price;
+    ^
+    ->
+..\src\Passenger.c:53:12: error: 'p1' is a pointer; did you mean to use '->'?
+  strncpy(p1.flycode,flycode,sizeof(flycode));
+            ^
+            ->
+..\src\Passenger.c:56:4: error: 'p1' is a pointer; did you mean to use '->'?
+  p1.typePassanger = typePassanger;
+    ^
+    ->
+..\src\Passenger.c:59:4: error: 'p1' is a pointer; did you mean to use '->'?
+  p1.statusFlight = statusFlight;
+    ^
+    ->
+..\src\Passenger.c:61:4: error: 'p1' is a pointer; did you mean to use '->'?
+  p1.id = generadorId();
+    ^
+    ->
+..\src\Passenger.c:62:4: error: 'p1' is a pointer; did you mean to use '->'?
+  p1.isEmpty=1;
+    ^
+    ->
+14:48:42 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:17:13: error: incompatible type for argument 1 of 'pedirDatos'
+  pedirDatos(&pasajero);
+             ^
+In file included from ..\src\Tp2.c:9:0:
+..\src\Passenger.h:20:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int pedirDatos(Passanger p1);
+     ^~~~~~~~~~
+..\src\Tp2.c:18:19: error: incompatible type for argument 1 of 'imprimirPasajero'
+  imprimirPasajero(&pasajero);
+                   ^
+In file included from ..\src\Tp2.c:9:0:
+..\src\Passenger.h:21:5: note: expected 'Passanger {aka struct <anonymous>}' but argument is of type 'Passanger * {aka struct <anonymous> *}'
+ int imprimirPasajero(Passanger p1);
+     ^~~~~~~~~~~~~~~~
+14:49:01 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+14:55:28 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:17:13: error: incompatible type for argument 1 of 'pedirDatos'
+  pedirDatos(pasajero);
+             ^~~~~~~~
+In file included from ..\src\Tp2.c:9:0:
+..\src\Passenger.h:20:5: note: expected 'Passanger * {aka struct <anonymous> *}' but argument is of type 'Passanger {aka struct <anonymous>}'
+ int pedirDatos(Passanger* p1);
+     ^~~~~~~~~~
+14:55:39 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+14:57:22 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'pedirDatos':
+..\src\Passenger.c:29:7: warning: unused variable 'name' [-Wunused-variable]
+  char name[51];
+       ^~~~
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+14:57:33 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+14:59:57 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+15:13:36 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'validarDatos':
+..\src\Passenger.c:29:6: error: invalid operands to binary != (have 'Passanger {aka struct <anonymous>}' and 'void *')
+  if(p!=NULL && p.lastName != NULL
+      ^~
+..\src\Passenger.c:30:33: error: invalid operands to binary != (have 'float' and 'void *')
+    && p.name != NULL && p.price != NULL
+                         ~~~~~~~ ^~
+..\src\Passenger.c:31:44: warning: comparison between pointer and integer
+    && p.flycode != NULL && p.typePassanger != NULL
+                                            ^~
+..\src\Passenger.c:32:22: warning: comparison between pointer and integer
+    && p.statusFlight != NULL)
+                      ^~
+15:14:06 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+..\src\Passenger.c: In function 'validarDatos':
+..\src\Passenger.c:30:33: error: invalid operands to binary != (have 'float' and 'void *')
+    && p.name != NULL && p.price != NULL
+                         ~~~~~~~ ^~
+..\src\Passenger.c:31:44: warning: comparison between pointer and integer
+    && p.flycode != NULL && p.typePassanger != NULL
+                                            ^~
+..\src\Passenger.c:32:22: warning: comparison between pointer and integer
+    && p.statusFlight != NULL)
+                      ^~
+15:24:15 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+15:26:12 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Passenger.o" "..\\src\\Passenger.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+15:28:35 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2

@@ -3,12 +3,7 @@
 
 //Prototypo
 static int generadorId();
-static int pedirDatos(Passanger* p1,int indice);
-static void imprimirPasajero(Passanger p1);
-
-//ALTAS: Se debe permitir ingresar un pasajero calculando automáticamente el
-//número de Id. El resto de los campos se le pedirá al usuario.
-
+static int validarDatos(int* p,int tam);
 
 
 static int generadorId(){
@@ -18,24 +13,31 @@ static int generadorId(){
 
 }
 
-static void imprimirPasajero(Passanger p1){
+int imprimirPasajero(Passanger p1){
 
-	printf("\nNombre: %s \nApellido:%s \nPrecio: %f ",p1.name,p1.lastName,p1.price);
-	printf("\nCodigo: %s \nTipo: %d \nEstado: %d",p1.flycode,p1.typePassanger,p1.statusFlight);
+	int retorno =-1;
 
+	if(p1.isEmpty==1){
+
+		printf("\nNombre: %s \nApellido:%s \nPrecio: %f ",p1.name,p1.lastName,p1.price);
+		printf("\nCodigo: %s \nTipo: %d \nEstado: %d",p1.flycode,p1.typePassanger,p1.statusFlight);
+		retorno=0;
+	}
+
+	return retorno;
 }
 
-int imprimirArrayPasajero(Passanger* p1,int tam){
+static int validarDatos(int* p,int tam){
 
-	int retorno = 1;
+	int retorno=0;
 	int i;
 
-	if(p1 != NULL && tam >=0){
+	for (i = 0; i < tam; i++){
 
+		if(p[i]==-1){
 
-		for (i = 0; i < tam; i++) {
-
-			imprimirPasajero(p1[i]);
+			retorno =-1;
+			break;
 
 		}
 
@@ -46,74 +48,52 @@ int imprimirArrayPasajero(Passanger* p1,int tam){
 
 }
 
-static int pedirDatos(Passanger* p1, int indice){
+int pedirDatos(Passanger* p){
 
+	Passanger p1;
 	int retorno=-1;
-	char name[51];
-	char lastName[51];
-	float price;
-	char flycode[10];
-	int typePassanger;
-	int statusFlight;
+	int error[6];
 
+	if(p!=NULL){
 
-	if(p1 != NULL && indice >=0){
+		error[0]=utn_getString(p1.name, "\nIngrese nombre:","\nError esta mal escrito" , 51, 2);
+		//strncpy(p1.name,name,sizeof(name));
 
+		error[1]=utn_getString(p1.lastName, "\nIngrese apellido:","\nError esta mal escrito" , 51, 2);
+		//strncpy(p1.lastName,lastName,sizeof(lastName));
 
-		p1[indice].id = generadorId();
-
-		utn_getString(name, "\nIngrese nombre:","\nError esta mal escrito" , 51, 2);
-		strncpy(p1[indice].name,name,sizeof(name));
-
-		utn_getString(lastName, "\nIngrese apellido:","\nError esta mal escrito" , 51, 2);
-		strncpy(p1[indice].lastName,lastName,sizeof(lastName));
-
-		utn_getNumeroFlotante(&price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", 0, 300, 2);
-		p1[indice].price = price;
+		error[2]=utn_getNumeroFlotante(&p1.price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", 0, 300, 2);
+		//p1.price = price;
 
 		printf("\nIngrese codigo: ");
-		myGets(flycode, 10);
-		strncpy(p1[indice].flycode,flycode,sizeof(flycode));
+		error[3]=myGets(p1.flycode, 10);
+		//strncpy(p1.flycode,flycode,sizeof(flycode));
 
-		utn_getNumero(&typePassanger, "\nIngrese tipo:", "\nError ingrese nuevamente:", 0, 3, 2);
-		p1[indice].typePassanger = typePassanger;
+		error[4]=utn_getNumero(&p1.typePassanger, "\nIngrese tipo:", "\nError ingrese nuevamente:", 0, 3, 2);
+		//p1.typePassanger = typePassanger;
 
-		utn_getNumero(&statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2);
-		p1[indice].statusFlight = statusFlight;
+		error[5]=utn_getNumero(&p1.statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2);
+		//p1.statusFlight = statusFlight;
 
-		p1[indice].isEmpty=1;
+		if(validarDatos(error,sizeof(error)/4) == 0){
 
-
-	}
-
-
-	return retorno;
-
-
-}
-
-
-int cargaDatos(Passanger* p1, int tam){
-
-	int retorno=-1;
-	int i;
-
-	if(p1 != NULL && tam>0){
-
-
-		for (i = 0; i <tam ; i++) {
-
-			pedirDatos(p1, i);
-
+			p1.id = generadorId();
+			p1.isEmpty=1;
+			retorno=0;
+			*p=p1;
 
 		}
 
 
 	}
 
+
 	return retorno;
 
 
 }
+
+
+
 
 

@@ -17,7 +17,7 @@ typedef struct{
 
 }Passanger;
 
-int cargaDatos(Passanger* p1, int tam);
-int imprimirArrayPasajero(Passanger* p1,int tam);
+int pedirDatos(Passanger* p1);
+int imprimirPasajero(Passanger p1);
 
 #endif /* PASSENGER_H_ */
