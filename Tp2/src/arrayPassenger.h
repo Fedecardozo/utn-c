@@ -27,6 +27,7 @@ typedef struct{
 }Passenger;
 
 int initPassengers(Passenger *list, int len);
+int addPassenger(Passenger* list, int len);
 
 int pedirDatos(Passenger* p1);
 int imprimirPasajero(Passenger p1);

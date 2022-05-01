@@ -17,7 +17,7 @@ int main(void) {
 	printf("%d",pasajero[0].isEmpty);
 	printf("%d",pasajero[1].isEmpty);
 
-	if(cargaDatos(pasajero,TAM)==-1 || imprimirArrayPasajero(pasajero,TAM)==-1){
+	if(addPassenger(pasajero, TAM) ==-1 || imprimirArrayPasajero(pasajero,TAM)==-1){
 
 		printf("\nAlgo salio mal!");
 

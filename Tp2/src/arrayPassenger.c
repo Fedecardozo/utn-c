@@ -1,10 +1,13 @@
 
 #include "arrayPassenger.h"
 
+/*int addPassenger(Passenger* list, int len, char* name,char*
+lastName,float price,int typePassenger, char* flycode)*/
+
 //Prototypo
 static int generadorId();
 static int validarDatos(int* p,int tam);
-//static void copiarDatos(Passanger p1,Passanger* p2, int indice);
+//static void copiarDatos(Passenger p1,Passenger* p2, int indice);
 
 /// @fn int generadorId()
 /// @brief Genera un id automatico
@@ -51,7 +54,7 @@ int imprimirPasajero(Passenger p1){
 
 	int retorno =-1;
 
-	if(p1.isEmpty==1){
+	if(p1.isEmpty==0){
 
 		printf("\nNombre: %s \nApellido:%s \nPrecio: %f ",p1.name,p1.lastName,p1.price);
 		printf("\nCodigo: %s \nTipo: %d \nEstado: %d",p1.flycode,p1.typePassanger,p1.statusFlight);
@@ -117,7 +120,7 @@ int pedirDatos(Passenger* p){
 		if(validarDatos(error,sizeof(error)/4) == 0){
 
 			p1.id = generadorId();
-			p1.isEmpty=1;
+			p1.isEmpty=0;
 			retorno=0;
 			*p=p1;
 
@@ -132,7 +135,7 @@ int pedirDatos(Passenger* p){
 
 
 }
-/*static void copiarDatos(Passanger p1,Passanger* p2, int indice){
+/*static void copiarDatos(Passenger p1,Passenger* p2, int indice){
 
 	strncpy(p2[indice].name,p1.name,sizeof(p2[indice].name));
 	strncpy(p2[indice].lastName,p1.lastName,sizeof(p2[indice].lastName));
@@ -160,9 +163,11 @@ int imprimirArrayPasajero(Passenger* p1,int tam){
 
 		retorno=0;
 
-		for (i = 0; i < tam; i++) {
+		for (i = 0; i < tam ; i++) {
+
 
 			imprimirPasajero(p1[i]);
+
 
 		}
 
@@ -207,4 +212,52 @@ int cargaDatos(Passenger* p1, int tam){
 	return retorno;
 
 
+}
+
+
+///\brief agrega en una lista existente de pasajeros los valores recibidos como parámetros
+/// en la primera posición vacía
+///\param lista de pasajeros*
+///\param len int
+///\param id int
+///\param nombre[] carácter
+///\param apellido[] carácter
+///\param precio flotante
+///\param tipoPasajero int
+///\param flycode[] carácter
+///\return int Devuelve (-1) si Error [Longitud no válida o puntero NULL o sin
+///espacio libre] - (0) si está bien
+int addPassenger(Passenger* list, int len)
+{
+
+	int retorno =-1;
+	int i;
+	Passenger p;
+
+	if(list != NULL && len>0){
+
+		for(i=0 ; i<len ; i++){
+
+			if(list[i].isEmpty==TRUE)
+			{
+
+				if(pedirDatos(&p)==0){
+
+					list[i]=p;
+					retorno=0;
+
+				}
+
+				break;
+
+			}
+
+
+		}
+
+
+	}
+
+
+	return retorno;
 }
