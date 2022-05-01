@@ -2,7 +2,7 @@
 #ifndef MENU_H_
 #define MENU_H_
 
-#include "Passenger.h"
+#include "arrayPassenger.h"
 
 void menu();
 void menuIngresado(int opcion);

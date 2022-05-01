@@ -8,12 +8,32 @@
 #ifndef ARRAYPASSENGER_H_
 #define ARRAYPASSENGER_H_
 
-#define TAM 2
+#include "utn.h"
+#define TRUE 1
+#define FALSE 0
 
-#include "Passenger.h"
+typedef struct{
 
-int cargaDatos(Passanger* p1, int tam);
-int imprimirArrayPasajero(Passanger* p1,int tam);
+	int id;
+	char name[51];
+	char lastName[51];
+	float price;
+	char flycode[10];
+	int typePassanger;
+	int statusFlight;
+	int isEmpty;
+
+
+}Passenger;
+
+int initPassengers(Passenger *list, int len);
+
+int pedirDatos(Passenger* p1);
+int imprimirPasajero(Passenger p1);
+
+
+int cargaDatos(Passenger* p1, int tam);
+int imprimirArrayPasajero(Passenger* p1,int tam);
 
 
 #endif /* ARRAYPASSENGER_H_ */

@@ -690,3 +690,199 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
 gcc -o Tp2.exe "src\\Passenger.o" "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2
+21:54:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:155:15: error: incompatible type for argument 1 of 'pedirDatos'
+    pedirDatos(p1[i]);
+               ^~
+..\src\arrayPassenger.c:67:5: note: expected 'Passanger * {aka struct <anonymous> *}' but argument is of type 'Passanger {aka struct <anonymous>}'
+ int pedirDatos(Passanger* p){
+     ^~~~~~~~~~
+21:56:32 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:17:5: warning: implicit declaration of function 'cargarDatos' [-Wimplicit-function-declaration]
+  if(cargarDatos(pasajero,TAM)==-1 && imprimirArrayPasajero(pasajero,TAM)==-1){
+     ^~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+In file included from ..\src\menu.c:3:0:
+..\src\menu.h:5:23: fatal error: Passenger.h: No such file or directory
+ #include "Passenger.h"
+                       ^
+compilation terminated.
+21:57:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:00:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+22:03:02 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:04:58 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:05:44 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:163:4: error: invalid type argument of unary '*' (have 'Passanger {aka struct <anonymous>}')
+    *p1[i]=pasa;
+    ^~~~~~
+22:06:34 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:09:30 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:163:4: error: invalid type argument of unary '*' (have 'Passanger {aka struct <anonymous>}')
+    *p1[i]=pasa;
+    ^~~~~~
+22:09:52 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:163:6: error: incompatible types when assigning to type 'Passanger * {aka struct <anonymous> *}' from type 'Passanger {aka struct <anonymous>}'
+    p1=pasa;
+      ^
+22:10:13 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:163:9: error: incompatible types when assigning to type 'Passanger {aka struct <anonymous>}' from type 'Passanger * {aka struct <anonymous> *}'
+    p1[i]=&pasa;
+         ^
+22:10:33 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:20:12 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:23:30 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:168:6: error: incompatible types when assigning to type 'Passanger {aka struct <anonymous>}' from type 'Passanger * {aka struct <anonymous> *}'
+   *p1=pasa2;
+      ^
+22:23:42 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:168:6: error: incompatible types when assigning to type 'Passanger {aka struct <anonymous>}' from type 'Passanger (*)[(sizetype)(tam)]'
+   *p1=&pasa2;
+      ^
+22:23:50 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:27:32 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:164:13: error: invalid type argument of unary '*' (have 'Passanger {aka struct <anonymous>}')
+    pasa2[i]=*pasa;
+             ^~~~~
+22:27:48 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'cargaDatos':
+..\src\arrayPassenger.c:164:12: error: incompatible types when assigning to type 'Passanger {aka struct <anonymous>}' from type 'Passanger * {aka struct <anonymous> *}'
+    pasa2[i]=&pasa;
+            ^
+22:40:34 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'copiarDatos':
+..\src\arrayPassenger.c:112:12: error: subscripted value is neither array nor pointer nor vector
+  strncpy(p1[indice].flycode,p1.flycode,sizeof(p1.flycode));
+            ^
+22:41:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:47:58 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:48:43 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:51:53 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c:107:13: warning: 'copiarDatos' defined but not used [-Wunused-function]
+ static void copiarDatos(Passanger p1,Passanger* p2, int indice){
+             ^~~~~~~~~~~
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:53:32 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+22:55:07 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:58:06 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+23:00:47 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Tp2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:00:52 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+23:02:36 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+23:09:15 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+23:23:22 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2

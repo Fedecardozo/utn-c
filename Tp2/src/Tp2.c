@@ -3,20 +3,23 @@
 #include <stdlib.h>
 
 #define TAM 2
-#define TRUE 1
-#define FALSE 0
 
-#include "Passenger.h"
+
+#include "Arraypassenger.h"
 
 int main(void) {
 
 	setbuf(stdout,NULL);
 
-	Passanger pasajero;
+	Passenger pasajero[TAM];
+	initPassengers(pasajero, TAM);
 
-	if(pedirDatos(&pasajero)==-1 && imprimirPasajero(pasajero)==-1){
+	printf("%d",pasajero[0].isEmpty);
+	printf("%d",pasajero[1].isEmpty);
 
-		printf("\nAlgo salio mal puto");
+	if(cargaDatos(pasajero,TAM)==-1 || imprimirArrayPasajero(pasajero,TAM)==-1){
+
+		printf("\nAlgo salio mal!");
 
 	}
 

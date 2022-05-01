@@ -117,7 +117,15 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 				*pResultado = bufferInt;
 				break;
 			}
-			printf("%s",mensajeError);
+
+
+			else if(reintentos >0)
+			{
+
+				printf("%s",mensajeError);
+
+			}
+
 			reintentos--;
 
 		}while(reintentos>=0);
@@ -210,8 +218,9 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 
 	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
 
-		printf(mensaje);
 		do{
+
+			printf(mensaje);
 
 			if(	getFloat(&bufferFloat) == 0 &&
 				bufferFloat >= minimo &&
@@ -221,7 +230,12 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 				*pResultado = bufferFloat;
 				break;
 			}
-			printf("%s",mensajeError);
+			else if(reintentos >0)
+			{
+
+				printf("%s",mensajeError);
+
+			}
 			reintentos--;
 		}while(reintentos>=0);
 
@@ -301,9 +315,12 @@ int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longit
 				retorno=0;
 				break;
 
+			}else if(intentos>0){
+
+				printf("%s",mensajeError);
+
 			}
 
-			printf("%s",mensajeError);
 			intentos--;
 
 
