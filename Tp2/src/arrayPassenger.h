@@ -26,8 +26,11 @@ typedef struct{
 
 }Passenger;
 
+int harcodeo(Passenger* p1);
+
 int initPassengers(Passenger *list, int len);
 int addPassenger(Passenger* list, int len);
+int findPassengerById(Passenger *list, int len, int id);
 
 int pedirDatos(Passenger* p1);
 int imprimirPasajero(Passenger p1);

@@ -9,6 +9,40 @@ static int generadorId();
 static int validarDatos(int* p,int tam);
 //static void copiarDatos(Passenger p1,Passenger* p2, int indice);
 
+int harcodeo(Passenger* p1){
+
+	int retorno =-1;
+
+		if(p1!=NULL){
+
+			strncpy(p1[0].name,"Fede",sizeof(p1[0].name));
+			strncpy(p1[0].lastName,"Cardozo",sizeof(p1[0].lastName));
+			p1[0].price = 250.22;
+			strncpy(p1[0].flycode,"123",sizeof(p1[0].flycode));
+			p1[0].typePassanger = 12;
+			p1[0].statusFlight = 1;
+			p1[0].id = generadorId();
+			p1[0].isEmpty=0;
+
+			strncpy(p1[1].name,"Fedes",sizeof(p1[0].name));
+			strncpy(p1[1].lastName,"zeta",sizeof(p1[0].lastName));
+			p1[1].price = 255.22;
+			strncpy(p1[1].flycode,"123",sizeof(p1[0].flycode));
+			p1[1].typePassanger = 12;
+			p1[1].statusFlight = 1;
+			p1[1].id = generadorId();
+			p1[1].isEmpty=0;
+
+			retorno=0;
+
+		}
+
+
+	return retorno;
+
+
+}
+
 /// @fn int generadorId()
 /// @brief Genera un id automatico
 /// @return Devuelve un id entero
@@ -261,3 +295,37 @@ int addPassenger(Passenger* list, int len)
 
 	return retorno;
 }
+
+/// \brief find a Passenger by Id en devuelve la posición del índice en el arreglo.
+/// \param list Pasajero*
+/// \param len int
+/// \param id int
+///\return Posición del índice de pasajero de retorno o (-1) si [Longitud o
+///Puntero NULL recibido o pasajero no encontrado]
+
+int findPassengerById(Passenger *list, int len, int id) {
+
+	int retorno=-1;
+	int i;
+
+		if(list!= NULL && len >0){
+
+			for (i = 0; i < len; i++) {
+
+				if(list[i].id== id){
+
+					retorno=i;
+					break;
+
+				}
+
+			}
+
+
+		}
+
+
+	return retorno;
+
+}
+

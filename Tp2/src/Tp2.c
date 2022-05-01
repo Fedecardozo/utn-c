@@ -13,15 +13,27 @@ int main(void) {
 
 	Passenger pasajero[TAM];
 	initPassengers(pasajero, TAM);
+	harcodeo(pasajero);
 
-	printf("%d",pasajero[0].isEmpty);
-	printf("%d",pasajero[1].isEmpty);
+	int indice=findPassengerById(pasajero, TAM, 1);
 
-	if(addPassenger(pasajero, TAM) ==-1 || imprimirArrayPasajero(pasajero,TAM)==-1){
+	if(indice==-1){
+
+		printf("\n No joya %d",indice);
+
+	}else{
+
+		printf("\njoya %d",indice);
+
+	}
+
+
+	/*if(addPassenger(pasajero, TAM) ==-1 || imprimirArrayPasajero(pasajero,TAM)==-1){
 
 		printf("\nAlgo salio mal!");
 
-	}
+	}*/
+
 
 
 
