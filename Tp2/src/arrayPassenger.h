@@ -41,6 +41,7 @@ int imprimirPasajero(Passenger p1);
 int cargaDatos(Passenger* p1, int tam);
 int printPassengers(Passenger* p1,int tam);
 int removePassenger(Passenger* list, int len, int id);
+int editPassenger(Passenger* list, int len, int id, int or,char*c);
 
 
 #endif /* ARRAYPASSENGER_H_ */

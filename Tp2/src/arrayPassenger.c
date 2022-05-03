@@ -144,7 +144,7 @@ int pedirDatos(Passenger* p){
 		if(validarDatos(error,sizeof(error)/4) == 0){
 
 			p1.id = generadorId();
-			p1.isEmpty=0;
+			p1.isEmpty=OCUPADO;
 			retorno=0;
 			*p=p1;
 
@@ -245,7 +245,7 @@ int cargaDatos(Passenger* p1, int tam){
 /// @post
 /// @param p1 recibe un array tipo Paseenger
 /// @param tam el tamanio del del array
-/// @return el indice si esta todo bien o -1 si esta lleno mal o -2 si esta todo lleno
+/// @return el indice si esta todo bien 0 o -1 si esta mal o -2 si esta todo lleno
 int buscarLugarVacio(Passenger* p1, int tam){
 
 	int retorno=-1;
@@ -391,4 +391,67 @@ int removePassenger(Passenger* list, int len, int id)
 		}
 
 	return retorno;
+}
+
+static int queModifcar(int opc,int indice,Passenger* list,char*c){
+
+	int retorno=0;
+
+	switch (opc) {
+
+		case 1:
+
+			strncpy(list[indice].name,c,sizeof(list[indice].name));
+			break;
+		case 2:
+
+			strncpy(list[indice].lastName,c,sizeof(list[indice].lastName));
+			break;
+		case 3:
+
+			list[indice].price = atof(c);
+			break;
+		case 4:
+
+			list[indice].typePassanger = atoi(c);
+
+			break;
+		case 5:
+
+			strncpy(list[indice].flycode,c,sizeof(list[indice].flycode));
+
+			break;
+
+		default: retorno=-1; break;
+
+	}
+
+	return retorno;
+}
+
+int editPassenger(Passenger* list, int len, int id, int or,char*c){
+
+	int retorno=-1;
+	int indice;
+
+		if(list!=NULL && len>0 && id>0 && or>0 && c !=NULL){
+
+			retorno=0;
+			indice=findPassengerById(list, len, id);
+
+			if(indice<0){
+
+				retorno=-1;
+
+			}else if(indice>=0 && list[indice].isEmpty==OCUPADO){
+
+				queModifcar(or, indice, list, c);
+
+			}
+
+
+		}
+
+		return retorno;
+
 }

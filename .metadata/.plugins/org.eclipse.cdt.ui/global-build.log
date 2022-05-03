@@ -1032,3 +1032,316 @@ gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o"
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
 gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+11:56:49 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'menuIngresado':
+..\src\menu.c:26:5: warning: implicit declaration of function 'alta' [-Wimplicit-function-declaration]
+     alta();
+     ^~~~
+..\src\menu.c:32:5: warning: implicit declaration of function 'baja' [-Wimplicit-function-declaration]
+     baja();
+     ^~~~
+..\src\menu.c:38:5: warning: implicit declaration of function 'modificar' [-Wimplicit-function-declaration]
+     modificar();
+     ^~~~~~~~~
+..\src\menu.c:42:11: warning: implicit declaration of function 'informar' [-Wimplicit-function-declaration]
+   case 4: informar() ;break;
+           ^~~~~~~~
+..\src\menu.c:44:11: warning: implicit declaration of function 'cargaForzada' [-Wimplicit-function-declaration]
+   case 5: cargaForzada() ; break;
+           ^~~~~~~~~~~~
+..\src\menu.c: At top level:
+..\src\menu.c:53:3: error: expected identifier or '(' before '/' token
+ }*/
+   ^
+11:57:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:15:12: warning: unused variable 'pasajero' [-Wunused-variable]
+  Passenger pasajero[TAM];
+            ^~~~~~~~
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+12:06:03 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'menuIngresado':
+..\src\menu.c:38:5: warning: implicit declaration of function 'alta' [-Wimplicit-function-declaration]
+     alta();
+     ^~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:16:12: warning: unused variable 'pasajero' [-Wunused-variable]
+  Passenger pasajero[TAM];
+            ^~~~~~~~
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+src\menu.o: In function `menuIngresado':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2\Debug/../src/menu.c:38: undefined reference to `alta'
+collect2.exe: error: ld returned 1 exit status
+12:06:32 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+12:28:07 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:18:12: warning: unused variable 'pasajero' [-Wunused-variable]
+  Passenger pasajero[TAM];
+            ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+12:28:57 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+12:33:01 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'menu':
+..\src\menu.c:25:4: error: invalid operands to binary * (have 'int *' and 'int')
+   x*=7;
+    ^~
+12:33:24 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+13:05:45 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+13:31:28 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+13:33:18 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+13:34:22 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Tp2.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+13:34:31 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+13:58:24 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+13:59:12 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+14:06:38 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+14:09:09 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+15:51:05 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'sonLetrasYnumeros':
+..\src\utn.c:465:15: warning: comparison between pointer and integer
+   if((pLetras > '0' && pLetras < '9')){
+               ^
+..\src\utn.c:465:32: warning: comparison between pointer and integer
+   if((pLetras > '0' && pLetras < '9')){
+                                ^
+..\src\utn.c:470:15: warning: comparison between pointer and integer
+   if((pLetras < '0' )||( pLetras > '9' && pLetras <'a')||(pLetras>'z')){
+               ^
+..\src\utn.c:470:34: warning: comparison between pointer and integer
+   if((pLetras < '0' )||( pLetras > '9' && pLetras <'a')||(pLetras>'z')){
+                                  ^
+..\src\utn.c:470:51: warning: comparison between pointer and integer
+   if((pLetras < '0' )||( pLetras > '9' && pLetras <'a')||(pLetras>'z')){
+                                                   ^
+..\src\utn.c:470:66: warning: comparison between pointer and integer
+   if((pLetras < '0' )||( pLetras > '9' && pLetras <'a')||(pLetras>'z')){
+                                                                  ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:34:13: error: invalid initializer
+  char c[20]=utn_getStringLibre(c,"\nIngrese: " , "\nError no es numero", sizeof(c), 5);
+             ^~~~~~~~~~~~~~~~~~
+15:52:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'sonLetrasYnumeros':
+..\src\utn.c:465:14: warning: comparison between pointer and integer
+   if(pLetras > '0' && pLetras < '9'){
+              ^
+..\src\utn.c:465:31: warning: comparison between pointer and integer
+   if(pLetras > '0' && pLetras < '9'){
+                               ^
+..\src\utn.c:470:15: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+               ^
+..\src\utn.c:470:36: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+                                    ^
+..\src\utn.c:470:53: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+                                                     ^
+..\src\utn.c:470:70: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+                                                                      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+..\src\Tp2.c: In function 'main':
+..\src\Tp2.c:34:13: error: invalid initializer
+  char c[20]=utn_getStringLibre(c,"\nIngrese: " , "\nError no es numero", sizeof(c), 5);
+             ^~~~~~~~~~~~~~~~~~
+15:53:39 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'modificar':
+..\src\menu.c:73:32: warning: passing argument 4 of 'editPassenger' makes integer from pointer without a cast [-Wint-conversion]
+   if(editPassenger(p1, tam, id,cadena)==0){
+                                ^~~~~~
+In file included from ..\src\menu.h:5:0,
+                 from ..\src\menu.c:3:
+..\src\arrayPassenger.h:44:5: note: expected 'int' but argument is of type 'char *'
+ int editPassenger(Passenger* list, int len, int id, int or,char*c);
+     ^~~~~~~~~~~~~
+..\src\menu.c:73:6: error: too few arguments to function 'editPassenger'
+   if(editPassenger(p1, tam, id,cadena)==0){
+      ^~~~~~~~~~~~~
+In file included from ..\src\menu.h:5:0,
+                 from ..\src\menu.c:3:
+..\src\arrayPassenger.h:44:5: note: declared here
+ int editPassenger(Passenger* list, int len, int id, int or,char*c);
+     ^~~~~~~~~~~~~
+..\src\menu.c: In function 'menuIngresado':
+..\src\menu.c:136:5: error: too few arguments to function 'modificar'
+     modificar();
+     ^~~~~~~~~
+..\src\menu.c:64:12: note: declared here
+ static int modificar(Passenger* p1,int tam,int id){
+            ^~~~~~~~~
+15:54:18 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+In file included from ..\src\Tp2.c:9:0:
+..\src\menu.h:11:8: warning: "/*" within comment [-Wcomment]
+ #endif /* MENU_H_ */
+         
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c:29:2: warning: "/*" within comment [-Wcomment]
+ //***FUNCIONES DEL MENU
+   
+..\src\menu.c:42:3: warning: "/*" within comment [-Wcomment]
+   /*if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode)==0){
+    
+..\src\menu.c:54:2: error: expected identifier or '(' before '}' token
+  }else if(indice==-2){
+  ^
+..\src\menu.c:54:3: error: expected identifier or '(' before 'else'
+  }else if(indice==-2){
+   ^~~~
+..\src\menu.c:60:2: error: expected identifier or '(' before 'return'
+  return retorno;
+  ^~~~~~
+..\src\menu.c:62:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+..\src\menu.c:64:22: error: unknown type name 'Passenger'
+ static int modificar(Passenger* p1,int tam,int id){
+                      ^~~~~~~~~
+..\src\menu.c:90:17: error: unknown type name 'Passenger'
+ static int baja(Passenger* p1,int tam){
+                 ^~~~~~~~~
+..\src\menu.c:115:31: error: unknown type name 'Passenger'
+ void menuIngresado(int opcion,Passenger* pasa,int tam){
+                               ^~~~~~~~~
+15:55:33 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+In file included from ..\src\menu.c:3:0:
+..\src\menu.h:11:8: warning: "/*" within comment [-Wcomment]
+ #endif /* MENU_H_ */
+         
+..\src\menu.c:29:2: warning: "/*" within comment [-Wcomment]
+ //***FUNCIONES DEL MENU
+   
+..\src\menu.c:42:3: warning: "/*" within comment [-Wcomment]
+   /*if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode)==0){
+    
+..\src\menu.c:114:1: warning: "/*" within comment [-Wcomment]
+ /*
+  
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+15:56:15 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+In file included from ..\src\Tp2.c:9:0:
+..\src\menu.h:11:8: warning: "/*" within comment [-Wcomment]
+ #endif /* MENU_H_ */
+         
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+15:57:38 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'sonLetrasYnumeros':
+..\src\utn.c:467:14: warning: comparison between pointer and integer
+   if(pLetras > '0' && pLetras < '9'){
+              ^
+..\src\utn.c:467:31: warning: comparison between pointer and integer
+   if(pLetras > '0' && pLetras < '9'){
+                               ^
+..\src\utn.c:473:15: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+               ^
+..\src\utn.c:473:36: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+                                    ^
+..\src\utn.c:473:53: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+                                                     ^
+..\src\utn.c:473:70: warning: comparison between pointer and integer
+   if((pLetras < '0' ) || ( pLetras > '9' && pLetras <'a') || (pLetras>'z')){
+                                                                      ^
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+15:58:24 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
