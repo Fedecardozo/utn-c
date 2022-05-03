@@ -12,7 +12,7 @@ int main(void) {
 
 	setbuf(stdout,NULL);
 
-	/*int opcion;
+	int opcion;
 	Passenger pasajero[TAM];
 	initPassengers(pasajero, TAM);
 	harcodeo(pasajero);
@@ -29,11 +29,8 @@ int main(void) {
 		menuIngresado(opcion,pasajero,TAM);
 
 
-	}while(opcion>0 && opcion<6);*/
+	}while(opcion>0 && opcion<6);
 
-	char c[20];
-			utn_getStringLibre(c,"\nIngrese Letras o numeros: " , "\nError no es numero o letra", sizeof(c), 5);
-	printf("\n%s",c);
 
 	return EXIT_SUCCESS;
 }

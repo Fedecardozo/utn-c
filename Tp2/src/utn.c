@@ -453,26 +453,26 @@ static int sonLetrasYnumeros(char*pLetras,int longitud)
 
 		if(i==0 && (pLetras[i] == '+' || pLetras[i] == '-')){
 
-			printf("\na");
+			//printf("\na");
 			continue;
 
 		}
 
 		if(pLetras[i] > 'a' && pLetras[i] < 'z'){
 
-			printf("\nb");
+			//printf("\nb");
 			continue;
 
 		}
 		if(pLetras[i] > '0' && pLetras[i] < '9'){
 
-			printf("\nc");
+			//printf("\nc");
 			continue;
 
 		}
 		if((pLetras[i] < '0' ) || ( pLetras[i] > '9' && pLetras[i] <'a') || (pLetras[i]>'z')){
 
-			printf("\nd");
+			//printf("\nd");
 			retorno= 0;
 			break;
 

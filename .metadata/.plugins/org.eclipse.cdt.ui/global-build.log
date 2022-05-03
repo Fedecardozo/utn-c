@@ -1345,3 +1345,75 @@ Info: Nothing to build for Tp2
 Info: Nothing to build for Tp2
 Info: Nothing to build for Tp2
 Info: Nothing to build for Tp2
+18:58:08 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2.o" "..\\src\\Tp2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+..\src\generica.c: In function 'getStringInt':
+..\src\generica.c:19:6: warning: implicit declaration of function 'esNumerica' [-Wimplicit-function-declaration]
+      esNumerica(bufferString,sizeof(bufferString)))
+      ^~~~~~~~~~
+..\src\generica.c: In function 'input_getStringInt':
+..\src\generica.c:51:8: warning: implicit declaration of function 'getInt' [-Wimplicit-function-declaration]
+    if( getInt(&bufferInt,cadenaInt) == 0 &&
+        ^~~~~~
+..\src\generica.c: At top level:
+..\src\generica.c:4:12: warning: 'esFlotante' used but never defined
+ static int esFlotante(char* cadena,int limite);
+            ^~~~~~~~~~
+..\src\generica.c:86:12: warning: 'getFloat' defined but not used [-Wunused-function]
+ static int getFloat(float* pResultado,char* flotante)
+            ^~~~~~~~
+..\src\generica.c:13:12: warning: 'getStringInt' defined but not used [-Wunused-function]
+ static int getStringInt(int* pResultado, char*sEntero)
+            ^~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'queModifcar':
+..\src\menu.c:88:15: error: too few arguments to function 'input_getStringFloat'
+     retorno = input_getStringFloat(c, "\nIngrese precio", "\nError! de nuevo", len, 2);
+               ^~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\menu.h:6:0,
+                 from ..\src\menu.c:3:
+..\src\generica.h:9:5: note: declared here
+ int input_getStringFloat(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~~~~~~~~
+19:03:34 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+..\src\generica.c: In function 'input_getStringFloat':
+..\src\generica.c:145:8: warning: implicit declaration of function 'getInt' [-Wimplicit-function-declaration]
+    if( getInt(&bufferFloat,cadenaFloat) == 0 &&
+        ^~~~~~
+At top level:
+..\src\generica.c:114:12: warning: 'getStringFloat' defined but not used [-Wunused-function]
+ static int getStringFloat(float* pResultado,char* flotante)
+            ^~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'queModifcar':
+..\src\menu.c:88:15: error: too few arguments to function 'input_getStringFloat'
+     retorno = input_getStringFloat(c, "\nIngrese precio", "\nError! de nuevo", len, 2);
+               ^~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\menu.h:6:0,
+                 from ..\src\menu.c:3:
+..\src\generica.h:9:5: note: declared here
+ int input_getStringFloat(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~~~~~~~~
+19:04:41 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'queModifcar':
+..\src\menu.c:88:15: error: too few arguments to function 'input_getStringFloat'
+     retorno = input_getStringFloat(c, "\nIngrese precio", "\nError! de nuevo", len, 2);
+               ^~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\menu.h:6:0,
+                 from ..\src\menu.c:3:
+..\src\generica.h:9:5: note: declared here
+ int input_getStringFloat(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~~~~~~~~
+19:06:08 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
