@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAM 2
+#define TAM 5
 
 
 #include "Arraypassenger.h"
@@ -15,7 +15,10 @@ int main(void) {
 	initPassengers(pasajero, TAM);
 	harcodeo(pasajero);
 
-	int indice=findPassengerById(pasajero, TAM, 1);
+
+	int indice=removePassenger(pasajero, TAM, 1003);
+
+	printPassengers(pasajero, TAM);
 
 	if(indice==-1){
 

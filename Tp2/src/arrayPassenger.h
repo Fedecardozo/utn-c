@@ -9,8 +9,8 @@
 #define ARRAYPASSENGER_H_
 
 #include "utn.h"
-#define TRUE 1
-#define FALSE 0
+#define LIBRE 1
+#define OCUPADO 0
 
 typedef struct{
 
@@ -28,8 +28,10 @@ typedef struct{
 
 int harcodeo(Passenger* p1);
 
+int buscarLugarVacio(Passenger* p1, int tam);
+
 int initPassengers(Passenger *list, int len);
-int addPassenger(Passenger* list, int len);
+int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[]);
 int findPassengerById(Passenger *list, int len, int id);
 
 int pedirDatos(Passenger* p1);
@@ -37,7 +39,8 @@ int imprimirPasajero(Passenger p1);
 
 
 int cargaDatos(Passenger* p1, int tam);
-int imprimirArrayPasajero(Passenger* p1,int tam);
+int printPassengers(Passenger* p1,int tam);
+int removePassenger(Passenger* list, int len, int id);
 
 
 #endif /* ARRAYPASSENGER_H_ */

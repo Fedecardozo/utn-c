@@ -12,26 +12,16 @@ static int validarDatos(int* p,int tam);
 int harcodeo(Passenger* p1){
 
 	int retorno =-1;
+	int len =5;
 
 		if(p1!=NULL){
 
-			strncpy(p1[0].name,"Fede",sizeof(p1[0].name));
-			strncpy(p1[0].lastName,"Cardozo",sizeof(p1[0].lastName));
-			p1[0].price = 250.22;
-			strncpy(p1[0].flycode,"123",sizeof(p1[0].flycode));
-			p1[0].typePassanger = 12;
-			p1[0].statusFlight = 1;
-			p1[0].id = generadorId();
-			p1[0].isEmpty=0;
 
-			strncpy(p1[1].name,"Fedes",sizeof(p1[0].name));
-			strncpy(p1[1].lastName,"zeta",sizeof(p1[0].lastName));
-			p1[1].price = 255.22;
-			strncpy(p1[1].flycode,"123",sizeof(p1[0].flycode));
-			p1[1].typePassanger = 12;
-			p1[1].statusFlight = 1;
-			p1[1].id = generadorId();
-			p1[1].isEmpty=0;
+			addPassenger(p1, len, generadorId(), "Juan", "Mecanico",220.5, 1, "abs1");
+			addPassenger(p1, len, generadorId(), "Fede", "Corsa", 22.01, 2, "ascc2");
+			addPassenger(p1, len, generadorId(), "Clari", "Nete", 100, 3, "asd23");
+			addPassenger(p1, len, generadorId(), "Chano", "Pai", 150, 4, "hhhas2");
+			addPassenger(p1, len, generadorId(), "Super", "Chajam", 189, 5, "eljabali2");
 
 			retorno=0;
 
@@ -48,7 +38,7 @@ int harcodeo(Passenger* p1){
 /// @return Devuelve un id entero
 static int generadorId(){
 
-	static int id=0;
+	static int id=1000;
 	return id++;
 
 }
@@ -68,7 +58,7 @@ int initPassengers(Passenger *list, int len) {
 
 		for (i = 0; i < len; i++) {
 
-			list[i].isEmpty=TRUE;
+			list[i].isEmpty=LIBRE;
 
 		}
 
@@ -88,9 +78,9 @@ int imprimirPasajero(Passenger p1){
 
 	int retorno =-1;
 
-	if(p1.isEmpty==0){
+	if(p1.isEmpty==OCUPADO){
 
-		printf("\nNombre: %s \nApellido:%s \nPrecio: %f ",p1.name,p1.lastName,p1.price);
+		printf("\n\nNombre: %s \nApellido:%s \nPrecio: %f ",p1.name,p1.lastName,p1.price);
 		printf("\nCodigo: %s \nTipo: %d \nEstado: %d",p1.flycode,p1.typePassanger,p1.statusFlight);
 		retorno=0;
 	}
@@ -188,7 +178,7 @@ int pedirDatos(Passenger* p){
 /// @param recibi un tipo passenger
 /// @param un la longitud para recorrer el array
 /// @return un 0 si esta todo bien o -1 si esta mal
-int imprimirArrayPasajero(Passenger* p1,int tam){
+int printPassengers(Passenger* p1,int tam){
 
 	int retorno = -1;
 	int i;
@@ -248,6 +238,46 @@ int cargaDatos(Passenger* p1, int tam){
 
 }
 
+/// @fn int buscarLugarVacio(Passenger*, int)
+/// @brief
+///
+/// @pre
+/// @post
+/// @param p1 recibe un array tipo Paseenger
+/// @param tam el tamanio del del array
+/// @return el indice si esta todo bien o -1 si esta lleno mal o -2 si esta todo lleno
+int buscarLugarVacio(Passenger* p1, int tam){
+
+	int retorno=-1;
+	int i;
+
+
+		if(p1 != NULL && tam>0){
+
+
+			for (i = 0; i <tam ; i++) {
+
+
+				if(p1[i].isEmpty==LIBRE){
+
+					retorno =i;
+					break;
+
+				}else{
+
+					//Si esta todo lleno
+					retorno =-2;
+
+				}
+
+			}
+
+		}
+
+		return retorno;
+
+
+}
 
 ///\brief agrega en una lista existente de pasajeros los valores recibidos como parámetros
 /// en la primera posición vacía
@@ -261,33 +291,35 @@ int cargaDatos(Passenger* p1, int tam){
 ///\param flycode[] carácter
 ///\return int Devuelve (-1) si Error [Longitud no válida o puntero NULL o sin
 ///espacio libre] - (0) si está bien
-int addPassenger(Passenger* list, int len)
+int addPassenger(Passenger* list, int len, int id, char name[],char
+		lastName[],float price,int typePassenger, char flycode[])
 {
 
 	int retorno =-1;
 	int i;
-	Passenger p;
 
 	if(list != NULL && len>0){
 
-		for(i=0 ; i<len ; i++){
+		i=buscarLugarVacio(list, len);
 
-			if(list[i].isEmpty==TRUE)
-			{
+		if(i>=0){
 
-				if(pedirDatos(&p)==0){
+			//id = generadorId();
 
-					list[i]=p;
-					retorno=0;
+			list[i].id = id;
 
-				}
-
-				break;
-
-			}
-
+			strncpy(list[i].name,name,sizeof(list[i].name));
+			strncpy(list[i].lastName,lastName,sizeof(list[i].lastName));
+			list[i].price = price;
+			strncpy(list[i].flycode,flycode,sizeof(list[i].flycode));
+			list[i].typePassanger = typePassenger;
+			//Averiguar que hace esto
+			list[i].statusFlight = 1;
+			list[i].isEmpty=OCUPADO;
 
 		}
+
+
 
 
 	}
@@ -302,7 +334,6 @@ int addPassenger(Passenger* list, int len)
 /// \param id int
 ///\return Posición del índice de pasajero de retorno o (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado]
-
 int findPassengerById(Passenger *list, int len, int id) {
 
 	int retorno=-1;
@@ -329,3 +360,35 @@ int findPassengerById(Passenger *list, int len, int id) {
 
 }
 
+/// \brief Eliminar un Pasajero por Id (poner el indicador isEmpty en 1)
+///\lista de parámetros Pasajero*
+///\parametro len int
+///\id de parámetro int
+///\return int Retorna (-1) si Error [longitud inválida o NULL
+/// puntero o si no puede
+///encontrar un pasajero] - (0) si está bien
+int removePassenger(Passenger* list, int len, int id)
+{
+	int retorno=-1;
+	int indice;
+
+		if(list!=NULL && len>0 && id>0){
+
+			retorno=0;
+			indice=findPassengerById(list, len, id);
+
+			if(indice<0){
+
+				retorno=-1;
+
+			}else if(indice>=0){
+
+				list[indice].isEmpty=LIBRE;
+
+			}
+
+
+		}
+
+	return retorno;
+}
