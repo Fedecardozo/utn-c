@@ -205,9 +205,9 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 		case 2:
 			switch(modificar(pasa, tam)){
 
-				case 0: printf("\nCarga de datos con exito!"); break;
+				case 0: printf("\nModificacion de datos con exito!"); break;
 				case -1: printf("\nError! Datos invalidos"); break;
-				case -2: printf("\nNo hay mas lugar!"); break;
+				case -2: printf("\nError! Datos invalidos!"); break;
 
 				}
 

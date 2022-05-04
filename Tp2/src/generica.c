@@ -114,18 +114,21 @@ int input_getStringInt(char* pResultado, char* mensaje, char* mensajeError, int 
 static int getStringFloat(float* pResultado,char* flotante)
 {
     int retorno=-1;
-    char bufferString[100];
+    char bufferString[20];
 
-	if(	pResultado != NULL &&
-		myGets(bufferString,sizeof(bufferString)) == 0 &&
-		esFlotante(bufferString,sizeof(bufferString)))
+	if(	pResultado != NULL && flotante != NULL &&
+		myGets(bufferString,sizeof(bufferString)) == 0)
+
 	{
-		retorno=0;
-		*pResultado = atof(bufferString) ;
-		strncpy(flotante,bufferString,sizeof(bufferString));
+		if(esFlotante(bufferString,sizeof(bufferString))){
+
+			retorno=0;
+			strncpy(flotante,bufferString,sizeof(bufferString));
+			*pResultado = atof(bufferString);
+
+		}
 
 	}
-	    return retorno;
 
 
     return retorno;
@@ -135,7 +138,7 @@ int input_getStringFloat(char* pResultado, char* mensaje, char* mensajeError, in
 {
 	int retorno = -1;
 	float bufferFloat;
-	char cadenaFloat[100];
+	char cadenaFloat[20];
 
 	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
 		printf("%s",mensaje);
@@ -143,13 +146,16 @@ int input_getStringFloat(char* pResultado, char* mensaje, char* mensajeError, in
 
 
 			if(	getStringFloat(&bufferFloat,cadenaFloat) == 0 &&
-					bufferFloat >= minimo &&
-					bufferFloat <= maximo)
-			{
-				retorno = 0;
-				strncpy(pResultado, cadenaFloat,sizeof(cadenaFloat));
-				break;
+					bufferFloat > minimo && bufferFloat < maximo){
+
+
+					retorno = 0;
+					strncpy(pResultado, cadenaFloat,sizeof(cadenaFloat));
+
+					break;
+
 			}
+
 
 
 			else if(reintentos >0)
@@ -188,11 +194,13 @@ static int esFlotante(char* cadena,int limite)
 			//printf("%c-",cadena[i]);
 			if(i==0 && (cadena[i] == '+' || cadena[i] == '-'))
 			{
+				printf("a");
 				continue;
 			}
 			//si entra una vez esta bien. Si entra mas de una vez esta mal
 			if((i!=0 && cadena[i]=='.') ||(bandera >= 1 && cadena[i]<'0') ){
 
+				printf("b");
 				bandera++;
 
 			}
@@ -200,6 +208,7 @@ static int esFlotante(char* cadena,int limite)
 			//lo que significa que lo ingreso no es un punto y si ingreso mas de un '.' esta mal
 			if(cadena[i] > '9' || (cadena[i] < '0' && bandera !=1))
 			{
+				printf("c");
 				retorno = 0;
 				break;
 			}

@@ -1417,3 +1417,161 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c"
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
 gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2
+19:15:14 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+19:39:09 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+19:43:34 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+19:46:09 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+19:46:52 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+19:54:03 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+19:56:01 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+..\src\generica.c: In function 'getStringFloat':
+..\src\generica.c:131:20: warning: format '%f' expects argument of type 'double', but argument 3 has type 'float *' [-Wformat=]
+    printf("\n%s \n%f",bufferString,pResultado);
+                    ^
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+19:56:08 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+19:58:25 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+20:00:31 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+20:03:38 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:04:35 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:09:20 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:10:17 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:21:12 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+20:22:02 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:22:45 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:23:48 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:25:02 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:29:15 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+20:32:51 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:33:51 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:37:59 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:40:18 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:41:45 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+20:44:45 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+..\src\generica.c: In function 'input_getStringFloat':
+..\src\generica.c:151:23: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+      printf("\nFlota:%s \n%f \nRetorno: %d",*pResultado,bufferFloat,retorno);
+                       ^
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+20:45:25 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:13:47 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+22:14:57 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:19:39 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+22:24:50 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
