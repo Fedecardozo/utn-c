@@ -1,10 +1,11 @@
 LaunchTargetManager/configs/Tp2.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/configs/Tp2_Finally.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/configs/estructuras.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/configs/funcionesFedeCardozo.exe=org.eclipse.launchbar.core.launchTargetType.local\:Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:estructuras.exe,org.eclipse.launchbar.core.descriptorType.default\:funcionesFedeCardozo.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp2.exe
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:estructuras.exe,org.eclipse.launchbar.core.descriptorType.default\:funcionesFedeCardozo.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp2.exe,org.eclipse.launchbar.core.descriptorType.default\:Tp2_Finally.exe
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:estructuras.exe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:estructuras.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
