@@ -317,6 +317,8 @@ int addPassenger(Passenger* list, int len, int id, char name[],char
 			list[i].statusFlight = 1;
 			list[i].isEmpty=OCUPADO;
 
+			retorno=0;
+
 		}
 
 

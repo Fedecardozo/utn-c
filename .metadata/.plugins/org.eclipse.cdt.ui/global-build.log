@@ -1575,3 +1575,18 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c"
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\generica.o" "..\\src\\generica.c" 
 gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+11:30:36 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+11:32:23 **** Incremental Build of configuration Debug for project Tp2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2.exe "src\\Tp2.o" "src\\arrayPassenger.o" "src\\generica.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
+Info: Nothing to build for Tp2
