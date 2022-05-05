@@ -552,7 +552,7 @@ int sortPassengers(Passenger* list, int len, int order){
 					for (i = 0; i < len - 1; i++) {
 
 						//Pregunto list[i] es mayor a list[i+1]
-						if (strcmp(list[i].lastName, list[i + 1].lastName) == -1) {
+						if (strcmp(list[i].lastName, list[i + 1].lastName)<0) {
 
 							flagSwap = 1;
 							aux = list[i];
@@ -578,3 +578,40 @@ int sortPassengers(Passenger* list, int len, int order){
 
 	return retorno;
 }
+
+int promedioPassenger(Passenger* list, int len, float* promedio){
+
+	int retorno=-1;
+	float acumulador=0;
+	float contador=0;
+	int i;
+
+	if(list!=NULL && len >0 && promedio != NULL){
+
+
+		for (i = 0; i < len; i++) {
+
+			if(list[i].isEmpty == OCUPADO){
+
+				acumulador = acumulador + list[i].price;
+				contador++;
+
+
+			}
+
+		}
+		if(contador>0 && acumulador >0){
+
+			*promedio = acumulador/contador;
+			retorno=contador;
+
+		}
+
+
+	}
+
+
+	return retorno;
+}
+
+

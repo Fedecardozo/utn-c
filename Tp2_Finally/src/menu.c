@@ -126,6 +126,110 @@ static int altaForzada(Passenger* pasajero,int tam){
 
 }
 
+static int pricePromedio(Passenger* list, int len, float promedio){
+
+	int retorno=-1;
+	int cont=0;
+	int i;
+
+	if (list != NULL && len > 0 && promedio > 0) {
+
+
+		for (i = 0; i < len; i++) {
+
+			if (list[i].isEmpty == OCUPADO && list[i].price > promedio) {
+
+				cont++;
+
+			}
+
+		}
+		if(cont >=0){
+
+			retorno = cont;
+
+		}
+
+	}
+
+
+		return retorno;
+
+}
+
+static int informar(Passenger* pasajero,int tam){
+
+	//printPassengers(pasa, tam);
+
+	/*1.Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero.
+	2. Total y promedio de los precios de los pasajes, y cuántos pasajeros superan el precio
+	promedio.
+	3. Listado de los pasajeros por Código de vuelo y estados de vuelos ‘ACTIVO’*/
+
+	int retorno=-1;
+	float promedio;
+	int totalPromedio;
+	int superanPromedio;
+
+	if(pasajero != NULL && tam >0){
+
+
+		if(sortPassengers(pasajero, tam,0)==0){
+
+			printf("\n1-Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero");
+
+			if(printPassengers(pasajero, tam)==0){
+
+				totalPromedio= promedioPassenger(pasajero, tam, &promedio)==0;
+
+				if(totalPromedio>0){
+
+					superanPromedio = pricePromedio(pasajero,tam,promedio);
+
+					if(superanPromedio > 0){
+
+						printf("\n2-Total de los pasajes: %f",promedio);
+						printf("\n-Promedio de los pasajes: %d",totalPromedio);
+						printf("\n-Cantidad que superan el precio promedio: %d",superanPromedio);
+
+					}else{
+
+						//Nadie supera el promedio!
+						retorno=-5;
+
+					}
+
+				}
+				else{
+
+
+					//No se puede calcular promedio!
+					retorno=-4;
+
+				}
+
+
+			}else{
+
+				//No se puede imprimir los pasajeros!
+				retorno=-3;
+
+			}
+
+		}else{
+
+			//No se pudo ordenar alfabeticamente!
+			retorno=-2;
+
+		}
+			// retorno =-1Hubo un error!
+
+	}
+
+	return retorno;
+
+}
+
 void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 
@@ -172,14 +276,17 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 		case 4:
 
-			printPassengers(pasa, tam);
-			if(sortPassengers(pasa, tam,1)==-1){
+			switch(informar(pasa, tam)){
 
-				printf("\nALgo salio mal");
+			case -1: printf("\nHubo un error!"); break;
+			case -2: printf("\nNo se pudo ordenar alfabeticamente!"); break;
+			case -3: printf("\nNo se puede imprimir los pasajeros!"); break;
+			case -4: printf("\nNo se puede calcular promedio!"); break;
+			case -5: printf("\nNadie supera el promedio!"); break;
 
 			}
 
-			printPassengers(pasa, tam);
+
 
 			break;
 

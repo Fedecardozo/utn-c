@@ -62,7 +62,7 @@ int removePassenger(Passenger* list, int len, int id);
 int editPassenger(Passenger* list, int len, int id);
 int sortPassengers(Passenger* list, int len, int order);
 
-
+int promedioPassenger(Passenger* list, int len, float* promedio);
 
 //**** FIN CABECERAS DE FUNCION****
 

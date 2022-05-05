@@ -15,11 +15,6 @@ int main(void) {
 	Passenger pasajero[TAM];
 	initPassengers(pasajero, TAM);
 
-	//char nombre[50];
-
-	/*opcion=utn_getStringMayusculayMinuscula(nombre, "\nA:", "\nE", 50, 2);
-	printf("\n%s-----%d",nombre,opcion);*/
-
 	do{
 
 		if(menu(&opcion)==-1){
