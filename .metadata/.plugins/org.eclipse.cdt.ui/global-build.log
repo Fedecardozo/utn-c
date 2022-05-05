@@ -28,3 +28,441 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c"
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
 gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2_Finally
+17:34:20 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'sortPassengers':
+..\src\arrayPassenger.c:531:13: warning: implicit declaration of function 'strcmpy' [-Wimplicit-function-declaration]
+       compa=strcmpy(list[i].lastName,list[i+1].lastName);
+             ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'altaForzada':
+..\src\menu.c:116:6: warning: variable 'retorno' set but not used [-Wunused-but-set-variable]
+  int retorno =-1;
+      ^~~~~~~
+..\src\menu.c:126:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+src\arrayPassenger.o: In function `sortPassengers':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/arrayPassenger.c:531: undefined reference to `strcmpy'
+collect2.exe: error: ld returned 1 exit status
+17:35:34 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:47:10 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:49:47 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:51:52 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+17:52:03 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:55:22 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:56:24 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+17:57:16 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:03:15 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'pedirDatoUnSoloPassenger':
+..\src\arrayPassenger.c:136:9: warning: implicit declaration of function 'utn_getStringLibre' [-Wimplicit-function-declaration]
+      && utn_getStringLibre(p1.flycode, "\nIngrese codigo: ", "\nError solo numeros y letras", MAX_CHARFLYCODE, 2)==0
+         ^~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getStringLetrasYnumeros':
+..\src\utn.c:401:8: warning: implicit declaration of function 'LetrasYnumeros' [-Wimplicit-function-declaration]
+     if(LetrasYnumeros(bufferString,longitud)==0){
+        ^~~~~~~~~~~~~~
+..\src\utn.c: At top level:
+..\src\utn.c:11:12: warning: 'getStringLibre' declared 'static' but never defined [-Wunused-function]
+ static int getStringLibre(char* pResultado,int longitud);
+            ^~~~~~~~~~~~~~
+..\src\utn.c:427:12: warning: 'getStringLetrasYnumeros' defined but not used [-Wunused-function]
+ static int getStringLetrasYnumeros(char* pResultado,int longitud){
+            ^~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+src\arrayPassenger.o: In function `pedirDatoUnSoloPassenger':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/arrayPassenger.c:136: undefined reference to `utn_getStringLibre'
+src\arrayPassenger.o: In function `queModifcar':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/arrayPassenger.c:484: undefined reference to `utn_getStringLibre'
+src\utn.o: In function `utn_getStringLetrasYnumeros':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/utn.c:401: undefined reference to `LetrasYnumeros'
+collect2.exe: error: ld returned 1 exit status
+18:05:02 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getStringLetrasYnumeros':
+..\src\utn.c:401:8: warning: implicit declaration of function 'getStringLetrasYnumeros' [-Wimplicit-function-declaration]
+     if(getStringLetrasYnumeros(bufferString,longitud)==0){
+        ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\utn.c: At top level:
+..\src\utn.c:427:12: error: static declaration of 'getStringLetrasYnumeros' follows non-static declaration
+ static int getStringLetrasYnumeros(char* pResultado,int longitud){
+            ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\utn.c:401:8: note: previous implicit declaration of 'getStringLetrasYnumeros' was here
+     if(getStringLetrasYnumeros(bufferString,longitud)==0){
+        ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\utn.c:11:12: warning: 'getStringLibre' declared 'static' but never defined [-Wunused-function]
+ static int getStringLibre(char* pResultado,int longitud);
+            ^~~~~~~~~~~~~~
+..\src\utn.c:427:12: warning: 'getStringLetrasYnumeros' defined but not used [-Wunused-function]
+ static int getStringLetrasYnumeros(char* pResultado,int longitud){
+            ^~~~~~~~~~~~~~~~~~~~~~~
+18:05:32 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+src\arrayPassenger.o: In function `pedirDatoUnSoloPassenger':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/arrayPassenger.c:136: undefined reference to `utn_getStringLibre'
+src\arrayPassenger.o: In function `queModifcar':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/arrayPassenger.c:484: undefined reference to `utn_getStringLibre'
+collect2.exe: error: ld returned 1 exit status
+18:06:48 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'pedirDatoUnSoloPassenger':
+..\src\arrayPassenger.c:136:9: warning: implicit declaration of function 'utn_getStringLibre' [-Wimplicit-function-declaration]
+      && utn_getStringLibre(p1.flycode, "\nIngrese codigo: ", "\nError solo numeros y letras", MAX_CHARFLYCODE, 2)==0
+         ^~~~~~~~~~~~~~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+src\arrayPassenger.o: In function `pedirDatoUnSoloPassenger':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Tp2_Finally\Debug/../src/arrayPassenger.c:136: undefined reference to `utn_getStringLibre'
+collect2.exe: error: ld returned 1 exit status
+18:07:16 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+18:09:33 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:10:18 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:17:54 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getString':
+..\src\utn.c:314:7: warning: implicit declaration of function 'getString' [-Wimplicit-function-declaration]
+    if(getString(bufferString,longitud)==0){
+       ^~~~~~~~~
+..\src\utn.c: At top level:
+..\src\utn.c:339:12: error: static declaration of 'getString' follows non-static declaration
+ static int getString(char* pResultado,int longitud){
+            ^~~~~~~~~
+..\src\utn.c:314:7: note: previous implicit declaration of 'getString' was here
+    if(getString(bufferString,longitud)==0){
+       ^~~~~~~~~
+..\src\utn.c:339:12: warning: 'getString' defined but not used [-Wunused-function]
+ static int getString(char* pResultado,int longitud){
+            ^~~~~~~~~
+18:18:53 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:41:26 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:619:11: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strupr(bufferString[0]);
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+..\src\utn.c:610:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+18:41:58 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:618:11: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strupr(bufferString[0]);
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+18:42:13 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:619:11: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strupr(bufferString[0]);
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:43:44 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:45:23 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:618:11: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strupr(bufferString[0]);
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:04:24 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'utn_getStringMayusculayMinuscula':
+..\src\utn.c:583:9: error: too few arguments to function 'mayusculaMinuscula'
+      && mayusculaMinuscula(bufferString)==0){
+         ^~~~~~~~~~~~~~~~~~
+..\src\utn.c:14:12: note: declared here
+ static int mayusculaMinuscula(char*pLetras,int longitud);
+            ^~~~~~~~~~~~~~~~~~
+..\src\utn.c: At top level:
+..\src\utn.c:608:12: error: conflicting types for 'mayusculaMinuscula'
+ static int mayusculaMinuscula(char*bufferString)
+            ^~~~~~~~~~~~~~~~~~
+..\src\utn.c:14:12: note: previous declaration of 'mayusculaMinuscula' was here
+ static int mayusculaMinuscula(char*pLetras,int longitud);
+            ^~~~~~~~~~~~~~~~~~
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:618:34: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strcpy(bufferString[0],strupr(bufferString[0]));
+                                  ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+..\src\utn.c:618:11: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+    strcpy(bufferString[0],strupr(bufferString[0]));
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:79:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+                                        ^~~~~~
+..\src\utn.c:610:6: warning: variable 'retorno' set but not used [-Wunused-but-set-variable]
+  int retorno= -1;
+      ^~~~~~~
+..\src\utn.c:626:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+..\src\utn.c: At top level:
+..\src\utn.c:629:2: error: expected identifier or '(' before 'return'
+  return retorno;
+  ^~~~~~
+..\src\utn.c:630:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+..\src\utn.c:14:12: warning: 'mayusculaMinuscula' used but never defined
+ static int mayusculaMinuscula(char*pLetras,int longitud);
+            ^~~~~~~~~~~~~~~~~~
+..\src\utn.c:608:12: warning: 'mayusculaMinuscula' defined but not used [-Wunused-function]
+ static int mayusculaMinuscula(char*bufferString)
+            ^~~~~~~~~~~~~~~~~~
+19:06:19 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:617:34: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strcpy(bufferString[0],strupr(bufferString[0]));
+                                  ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+..\src\utn.c:617:11: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+    strcpy(bufferString[0],strupr(bufferString[0]));
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:79:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+                                        ^~~~~~
+..\src\utn.c:610:6: warning: variable 'retorno' set but not used [-Wunused-but-set-variable]
+  int retorno= -1;
+      ^~~~~~~
+..\src\utn.c:625:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+..\src\utn.c: At top level:
+..\src\utn.c:628:2: error: expected identifier or '(' before 'return'
+  return retorno;
+  ^~~~~~
+..\src\utn.c:629:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+19:07:02 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:610:6: warning: variable 'retorno' set but not used [-Wunused-but-set-variable]
+  int retorno= -1;
+      ^~~~~~~
+..\src\utn.c:625:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+..\src\utn.c: At top level:
+..\src\utn.c:628:2: error: expected identifier or '(' before 'return'
+  return retorno;
+  ^~~~~~
+..\src\utn.c:629:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+19:07:27 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:07:36 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'mayusculaMinuscula':
+..\src\utn.c:617:34: warning: passing argument 1 of 'strupr' makes pointer from integer without a cast [-Wint-conversion]
+    strcpy(bufferString[0],strupr(bufferString[0]));
+                                  ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:145:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strupr (char *);
+                                        ^~~~~~
+..\src\utn.c:617:11: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+    strcpy(bufferString[0],strupr(bufferString[0]));
+           ^~~~~~~~~~~~
+In file included from ..\src\utn.h:13:0,
+                 from ..\src\utn.c:2:
+c:\mingw\include\string.h:79:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+                                        ^~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:10:33 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:24:45 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:27:48 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:30:47 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:32:29 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:33:02 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:33:36 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:34:14 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:34:49 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:35:18 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally
+19:38:38 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:39:17 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:40:46 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+..\src\Tp2_Finally.c: In function 'main':
+..\src\Tp2_Finally.c:18:7: warning: unused variable 'nombre' [-Wunused-variable]
+  char nombre[50];
+       ^~~~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:40:55 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+19:43:23 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+19:45:24 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 

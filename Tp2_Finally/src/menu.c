@@ -12,7 +12,7 @@ int menu(int* x){
 	printf("\n 2. Modificar ");
 	printf("\n 3. Baja ");
 	printf("\n 4. Informar ");
-	printf("\n 5. Carga forzada de datos");
+	printf("\n 5. Alta forzada de datos");
 	printf("\n 6. Salir");
 
 	rta=utn_getNumero(&opc, "\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente:", 1, 6, 2);
@@ -108,6 +108,24 @@ static int baja(Passenger* p1,int tam){
 
 }
 
+
+
+
+static int altaForzada(Passenger* pasajero,int tam){
+
+	int retorno =-1;
+
+	if(harcodeo(pasajero,tam)==0){
+
+		printf("Carga con exito!");
+		retorno=0;
+
+	}
+
+	return retorno;
+
+}
+
 void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 
@@ -154,17 +172,18 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 		case 4:
 
-			switch(printPassengers(pasa, tam) ){
+			printPassengers(pasa, tam);
+			if(sortPassengers(pasa, tam,1)==-1){
 
-				case 0: printf("\n0"); break;
-				case -1: printf("\n-1"); break;
-				//case -2: printf("\nNo Existe tal ID!"); break;
+				printf("\nALgo salio mal");
 
 			}
 
+			printPassengers(pasa, tam);
+
 			break;
 
-		//case 5: cargaForzada() ; break;
+		case 5: altaForzada(pasa,tam) ; break;
 
 		case 6: printf("\n\nGracias por usar nuestra app. Hasta luego!") ;break;
 

@@ -18,6 +18,9 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 int myGets(char* cadena, int longitud);
 int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
 int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
-int utn_getStringLibre(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
+int utn_getStringLetras(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
+int utn_getStringLetrasYnumeros(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
+int utn_getStringMayusculayMinuscula(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
+
 
 #endif /* UTN_H_ */

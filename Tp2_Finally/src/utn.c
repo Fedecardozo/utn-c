@@ -7,9 +7,11 @@ static int getInt(int* pResultado);
 static int esFlotante(char* cadena,int limite);
 static int getFloat(float* pResultado);
 static int sonLetras(char*pLetras,int longitud);
-static int getString(char* pResultado,int longitud);
-static int getStringLibre(char* pResultado,int longitud);
+static int getStringLetras(char* pResultado,int longitud);
+static int getStringLetrasYnumeros(char* pResultado,int longitud);
 static int sonLetrasYnumeros(char*pLetras,int longitud);
+static int getString(char* pResultado,int longitud);
+static int mayusculaMinuscula(char*bufferString, int len);
 
 /**
  * \brief 	Lee de stdin hasta que encuentra un '\n' o hasta que haya copiado en cadena
@@ -343,6 +345,73 @@ static int getString(char* pResultado,int longitud){
 
 
 	if(pResultado != NULL &&
+		myGets(bufferString,sizeof(bufferString))==0){
+
+		strncpy(pResultado,bufferString,longitud);
+		retorno=0;
+
+	}
+
+	return retorno;
+
+}
+
+/// @fn int utn_getString(char*, char*, char*, int, int)
+/// @brief Solicita un numero cadena al usuario, luego de verificarlo devuelve el resultado
+///
+/// @param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// @param mensaje Es el mensaje a ser mostrado
+/// @param mensajeError Es el mensaje a ser mostrado
+/// @param longitud Es el tamaño del array
+/// @param intentos es la cantidad de oportunidades
+/// @return 0 si salio bien y -1 si salio mal
+int utn_getStringLetras(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
+
+	int retorno=-1;
+
+	//printf("%d",longitud);
+	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && longitud >0 && intentos>=0){
+
+		//Creo la variable aca para primero validar de longitud sea mayor a 0
+		char bufferString[longitud];
+
+		do{
+
+			printf("%s",mensaje);
+
+			//Si esta todo bien lo copia en el puntero y sale de la iteracion retornado cero
+			if(getStringLetras(bufferString,longitud)==0){
+
+				strncpy(pResultado,bufferString,longitud);
+				retorno=0;
+				break;
+
+			}else if(intentos>0){
+
+				printf("%s",mensajeError);
+
+			}
+
+			intentos--;
+
+
+		}while(intentos>=0);
+
+
+	}
+
+
+	return retorno;
+
+}
+
+static int getStringLetras(char* pResultado,int longitud){
+
+	int retorno =-1;
+	char bufferString[200];//Esto despues se va a cambiar
+
+
+	if(pResultado != NULL &&
 		myGets(bufferString,sizeof(bufferString))==0
 			&& sonLetras(bufferString,sizeof(bufferString))){
 
@@ -364,7 +433,7 @@ static int sonLetras(char*pLetras,int longitud)
 
 	for (i = 0; i<longitud && pLetras[i]!='\0'; i++){
 
-		if(i==0 && (pLetras[i] > 'A' && pLetras[i] < 'Z')){
+		if(pLetras[i] >= 'A' && pLetras[i] <= 'Z'){
 
 			continue;
 
@@ -383,7 +452,7 @@ static int sonLetras(char*pLetras,int longitud)
 	return retorno;
 }
 
-int utn_getStringLibre(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
+int utn_getStringLetrasYnumeros(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
 
 	int retorno=-1;
 
@@ -398,7 +467,7 @@ int utn_getStringLibre(char* pResultado, char* mensaje, char* mensajeError,int l
 				printf("%s",mensaje);
 
 				//Si esta todo bien lo copia en el puntero y sale de la iteracion retornado cero
-				if(getStringLibre(bufferString,longitud)==0){
+				if(getStringLetrasYnumeros(bufferString,longitud)==0){
 
 					strncpy(pResultado,bufferString,longitud);
 					retorno=0;
@@ -424,7 +493,7 @@ int utn_getStringLibre(char* pResultado, char* mensaje, char* mensajeError,int l
 
 }
 
-static int getStringLibre(char* pResultado,int longitud){
+static int getStringLetrasYnumeros(char* pResultado,int longitud){
 
 	int retorno =-1;
 	char bufferString[200];//Esto despues se va a cambiar
@@ -442,6 +511,7 @@ static int getStringLibre(char* pResultado,int longitud){
 	return retorno;
 
 }
+
 static int sonLetrasYnumeros(char*pLetras,int longitud)
 {
 	int retorno= 1;
@@ -483,4 +553,77 @@ static int sonLetrasYnumeros(char*pLetras,int longitud)
 
 	return retorno;
 }
+
+
+/// @fn int utn_getString(char*, char*, char*, int, int)
+/// @brief Solicita un numero cadena al usuario, luego de verificarlo devuelve el resultado
+///
+/// @param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// @param mensaje Es el mensaje a ser mostrado
+/// @param mensajeError Es el mensaje a ser mostrado
+/// @param longitud Es el tamaño del array
+/// @param intentos es la cantidad de oportunidades
+/// @return 0 si salio bien y -1 si salio mal
+int utn_getStringMayusculayMinuscula(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
+
+	int retorno=-1;
+
+	//printf("%d",longitud);
+	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && longitud >0 && intentos>=0){
+
+		//Creo la variable aca para primero validar de longitud sea mayor a 0
+		char bufferString[longitud];
+
+		do{
+
+			printf("%s",mensaje);
+
+			//Si esta todo bien lo copia en el puntero y sale de la iteracion retornado cero
+			if(getStringLetras(bufferString,longitud)==0
+					&& mayusculaMinuscula(bufferString,longitud)==0){
+
+				strncpy(pResultado,bufferString,longitud);
+				retorno=0;
+				break;
+
+			}else if(intentos>0){
+
+				printf("%s",mensajeError);
+
+			}
+
+			intentos--;
+
+
+		}while(intentos>=0);
+
+
+	}
+
+
+	return retorno;
+
+}
+
+static int mayusculaMinuscula(char*bufferString, int len)
+{
+	int retorno= -1;
+	char buffer[len];
+
+	if(bufferString != NULL && len>0){
+
+		strcpy(buffer,strlwr(bufferString));
+		buffer[0]=bufferString[0]-32;
+		strcpy(bufferString,buffer);
+
+
+		retorno=0;
+
+		}
+
+	return retorno;
+
+}
+
+
 

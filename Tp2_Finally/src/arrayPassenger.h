@@ -30,7 +30,6 @@ typedef struct{
 
 }Passenger;
 
-//Esto no va aca
 int harcodeo(Passenger* p1,int len);
 
 // ****INICIO CABECERAS DE FUNCION****
@@ -61,6 +60,7 @@ int cargaDatos(Passenger* p1, int tam);
 int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[]);
 int removePassenger(Passenger* list, int len, int id);
 int editPassenger(Passenger* list, int len, int id);
+int sortPassengers(Passenger* list, int len, int order);
 
 
 

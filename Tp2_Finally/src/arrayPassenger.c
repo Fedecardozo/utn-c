@@ -13,11 +13,11 @@ int harcodeo(Passenger* p1,int len){
 		if(p1!=NULL){
 
 
-			addPassenger(p1, len, generadorId(), "Juan", "Mecanico",1500, 1, "aaa111222");
-			addPassenger(p1, len, generadorId(), "Fede", "Corsa", 5700, 2, "bbbb11112");
-			addPassenger(p1, len, generadorId(), "Clari", "Nete", 30000, 3, "ccccc22223");
-			addPassenger(p1, len, generadorId(), "Chano", "Pai", 2550.90, 4, "asasd2222");
-			addPassenger(p1, len, generadorId(), "Super", "Chajam", 1890, 5, "eljabali2");
+			addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "aaa111222");
+			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 2, "bbbb11112");
+			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 3, "ccccc22223");
+			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 4, "asasd2222");
+			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 5, "eljabali2");
 
 			retorno=0;
 
@@ -130,10 +130,10 @@ int pedirDatoUnSoloPassenger(Passenger* p){
 
 	if(p!=NULL){
 
-		if(utn_getString(p1.name, "\nIngrese nombre:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
-		   && utn_getString(p1.lastName, "\nIngrese apellido:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
+		if(utn_getStringMayusculayMinuscula(p1.name, "\nIngrese nombre:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
+		   && utn_getStringMayusculayMinuscula(p1.lastName, "\nIngrese apellido:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
 		   && utn_getNumeroFlotante(&p1.price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", PRICE_MIN, PRICE_MAX, 2)==0
-		   && utn_getStringLibre(p1.flycode, "\nIngrese codigo: ", "\nError solo numeros y letras", MAX_CHARFLYCODE, 2)==0
+		   && utn_getStringLetrasYnumeros(p1.flycode, "\nIngrese codigo: ", "\nError solo numeros y letras", MAX_CHARFLYCODE, 2)==0
 		   && utn_getNumero(&p1.typePassanger, "\nIngrese tipo:", "\nError ingrese nuevamente:", 0, 3, 2)==0
 		   && utn_getNumero(&p1.statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2)==0)
 		{
@@ -457,13 +457,13 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 
 		case 1:
 			//char c[MAX_CARACTER];
-			retorno = utn_getString(aux.name, "\nIngrese nombre: ","\nError! de nuevo", MAX_CARACTER, 2);
+			retorno = utn_getStringMayusculayMinuscula(aux.name, "\nIngrese nombre: ","\nError! de nuevo", MAX_CARACTER, 2);
 
 			break;
 
 		case 2:
-			//char c[MAX_CARACTER];
-			retorno = utn_getString(aux.lastName, "\nIngrese apellido: ","\nError! de nuevo", MAX_CARACTER, 2);
+
+			retorno = utn_getStringMayusculayMinuscula(aux.lastName, "\nIngrese apellido: ","\nError! de nuevo", MAX_CARACTER, 2);
 
 			break;
 
@@ -481,7 +481,7 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 
 		case 5:
 			//char codigo[MAX_CHARFLYCODE];
-			retorno = utn_getStringLibre(aux.flycode, "\nIngrese codigo: ", "\nError",MAX_CHARFLYCODE, 2);
+			retorno = utn_getStringLetrasYnumeros(aux.flycode, "\nIngrese codigo: ", "\nError",MAX_CHARFLYCODE, 2);
 
 			break;
 
@@ -499,6 +499,82 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 
 
 	}
+
+	return retorno;
+}
+
+/// \brief Ordenar los elementos en el arreglo de pasajeros, el orden de los argumentos
+///indicar orden ARRIBA o ABAJO
+///\param listaPasajero*
+///\param len int
+///\param order int [1] indica ARRIBA - [0] indica ABAJO
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+int sortPassengers(Passenger* list, int len, int order){
+
+	int retorno = -1;
+	int flagSwap;
+	int i;
+	Passenger aux;
+
+		if(list != NULL && len >= 0 &&  order >=0){
+
+			switch(order){
+
+			case 0:
+
+				do{
+					//DESCENDETE APELLIDOS
+					flagSwap=0;
+					for (i = 0; i < len-1; i++) {
+
+						//Pregunto list[i] es mayor a list[i+1]
+						if(strcmp(list[i].lastName,list[i+1].lastName)==1){
+
+							flagSwap=1;
+							aux=list[i];
+							list[i] = list[i+1];
+							list[i+1] = aux;
+							retorno=0;
+						}
+
+					}
+
+				//Se ejecuta mientra sea mayor a cero
+				}while(flagSwap);
+
+				break;
+
+			case 1:
+
+				do {
+				//ASCENDETE APELLIDOS
+					flagSwap = 0;
+					for (i = 0; i < len - 1; i++) {
+
+						//Pregunto list[i] es mayor a list[i+1]
+						if (strcmp(list[i].lastName, list[i + 1].lastName) == -1) {
+
+							flagSwap = 1;
+							aux = list[i];
+							list[i] = list[i + 1];
+							list[i + 1] = aux;
+							retorno=0;
+
+						}
+
+					}
+
+				//Se ejecuta mientra sea mayor a cero
+			 }while (flagSwap);
+
+			 break;
+
+			default:retorno=-2; break;
+
+			}
+
+
+		}
 
 	return retorno;
 }
