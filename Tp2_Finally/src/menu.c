@@ -176,11 +176,11 @@ static int informar(Passenger* pasajero,int tam){
 
 		if(sortPassengers(pasajero, tam,0)==0){
 
-			printf("\n1-Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero");
+			printf("\n*** 1 ***\n-Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero");
 
 			if(printPassengers(pasajero, tam)==0){
 
-				totalPromedio= promedioPassenger(pasajero, tam, &promedio)==0;
+				totalPromedio= promedioPassenger(pasajero, tam, &promedio);
 
 				if(totalPromedio>0){
 
@@ -188,8 +188,9 @@ static int informar(Passenger* pasajero,int tam){
 
 					if(superanPromedio > 0){
 
-						printf("\n2-Total de los pasajes: %f",promedio);
-						printf("\n-Promedio de los pasajes: %d",totalPromedio);
+						retorno=0;
+						printf("\n\n*** 2 ***\n-Total de los pasajes: %d",totalPromedio);
+						printf("\n-Promedio de los pasajes: %f",promedio);
 						printf("\n-Cantidad que superan el precio promedio: %d",superanPromedio);
 
 					}else{
@@ -290,7 +291,15 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 			break;
 
-		case 5: altaForzada(pasa,tam) ; break;
+		case 5:
+
+			if(altaForzada(pasa,tam)==0){
+
+				informar(pasa,tam);
+
+			}
+
+			 break;
 
 		case 6: printf("\n\nGracias por usar nuestra app. Hasta luego!") ;break;
 
