@@ -514,18 +514,23 @@ int sortPassengers(Passenger* list, int len, int order){
 	int retorno = -1;
 	int flagSwap;
 	int i;
+	int renovacionLimite;
+	//int cont=0;
 	Passenger aux;
 
 		if(list != NULL && len >= 0 &&  order >=0){
 
 			switch(order){
 
-			case 0:
+			case 1:
+
+				renovacionLimite=len-1;
 
 				do{
-					//DESCENDETE APELLIDOS
+					//ASCENDETE APELLIDOS a,b,c,d....x,y,z.
+
 					flagSwap=0;
-					for (i = 0; i < len-1; i++) {
+					for (i = 0; i < renovacionLimite; i++) {
 
 						//Pregunto list[i] es mayor a list[i+1]
 						if(strcmp(list[i].lastName,list[i+1].lastName)==1){
@@ -536,18 +541,24 @@ int sortPassengers(Passenger* list, int len, int order){
 							list[i+1] = aux;
 							retorno=0;
 						}
+						//cont++;
+						renovacionLimite--;
 
 					}
 
 				//Se ejecuta mientra sea mayor a cero
 				}while(flagSwap);
 
+				//printf("\nVueltas: %d",cont);
+
 				break;
 
-			case 1:
+			case 0:
+
+				renovacionLimite=len-1;
 
 				do {
-				//ASCENDETE APELLIDOS
+				//DESCENDETE APELLIDOS z,y,x,w.......c,b,a.
 					flagSwap = 0;
 					for (i = 0; i < len - 1; i++) {
 
@@ -562,11 +573,13 @@ int sortPassengers(Passenger* list, int len, int order){
 
 						}
 
+						renovacionLimite--;
+						//cont++;
 					}
 
 				//Se ejecuta mientra sea mayor a cero
 			 }while (flagSwap);
-
+				//printf("\nVueltas: %d",cont);
 			 break;
 
 			default:retorno=-2; break;

@@ -509,3 +509,18 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c"
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
 gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+08:55:38 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+08:57:58 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+08:58:57 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
