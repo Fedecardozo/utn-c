@@ -810,3 +810,32 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
 gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2_Finally
+13:33:13 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'sortPassengers':
+..\src\arrayPassenger.c:532:12: warning: unused variable 'auxCambio' [-Wunused-variable]
+  Passenger auxCambio;
+            ^~~~~~~~~
+..\src\arrayPassenger.c:530:6: warning: unused variable 'renovacionLimite' [-Wunused-variable]
+  int renovacionLimite;
+      ^~~~~~~~~~~~~~~~
+..\src\arrayPassenger.c:529:6: warning: unused variable 'tipo' [-Wunused-variable]
+  int tipo=1;
+      ^~~~
+..\src\arrayPassenger.c:528:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+..\src\arrayPassenger.c:527:6: warning: unused variable 'flagSwap' [-Wunused-variable]
+  int flagSwap;
+      ^~~~~~~~
+..\src\arrayPassenger.c: In function 'ordenAlfabetico':
+..\src\arrayPassenger.c:573:6: warning: unused variable 'tipo' [-Wunused-variable]
+  int tipo=1;
+      ^~~~
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+13:34:10 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally

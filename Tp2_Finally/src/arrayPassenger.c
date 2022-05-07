@@ -5,7 +5,8 @@
 static int generadorId();
 static int queModifcar(int opc,int indice,Passenger*p );
 static int opcionesParaModifcar(int* x);
-//static int orderTypeClase(Passenger* list, int len);
+static int ordenAlfabetico(Passenger* list, int len, int order);
+static int orderTypePassenger(Passenger* list, int len);
 
 int harcodeo(Passenger* p1,int len){
 
@@ -512,35 +513,7 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 
 	return retorno;
 }
-/*
-static int soloOcupados(Passenger* list, int len,Passenger* aux){
 
-	int i;
-	int contadorIndice=0;
-	int retorno=-1;
-
-	if(list != NULL && len >= 0){
-
-		for (i = 0; i < len; i++) {
-
-			if(list[i].isEmpty==OCUPADO){
-
-				aux[contadorIndice]= list[i];
-				contadorIndice++;
-
-			}
-
-
-		}
-
-		retorno=contadorIndice;
-		printf("\nRetorno%d",retorno);
-
-	}
-
-	return retorno;
-
-}*/
 
 /// \brief Ordenar los elementos en el arreglo de pasajeros(apellido y TypePaseenger),
 ///  el orden de los argumentos. Indicar orden ARRIBA o ABAJO
@@ -551,113 +524,128 @@ static int soloOcupados(Passenger* list, int len,Passenger* aux){
 int sortPassengers(Passenger* list, int len, int order){
 
 	int retorno = -1;
-	int flagSwap;
-	int i;
-	int tipo=1;
-	int renovacionLimite;
-	//Passenger aux[len];
-	Passenger auxCambio;
 
-	//int totalOcupados;
+		if(list != NULL && len >= 0 &&  order >=0)
+		{
 
-		if(list != NULL && len >= 0 &&  order >=0){
+			if(ordenAlfabetico(list,len,order) ==0)
+			{
 
-			//totalOcupados= soloOcupados(list, len, aux);
+				if(orderTypePassenger(list,len)==0)
+				{
+					//Salio bien
+					retorno=0;
 
-			//if(totalOcupados>0 && orderTypeClase(aux, totalOcupados)==0){
+				}
+				else
+				{
+					//Error al ordenarlo por tipo de pasajero
+					retorno=-3;
+				}
 
-			switch(order){
-
-			case 1:
-
-				//Inicio el nuevo tamaño
-				renovacionLimite=len-1;
-
-				printf("\n*****CLASE %d *******",tipo);
-
-				do{
-					//ASCENDETE APELLIDOS a,b,c,d....x,y,z.
-
-					flagSwap=0;
-					for (i = 0; i < renovacionLimite; i++) {
-
-						//Pregunto list[i] es mayor a list[i+1]
-						if(//list[i].typePassanger == tipo &&
-								strcmp(list[i].lastName ,list[i+1].lastName)>0){
-
-							flagSwap=1;
-							auxCambio=list[i];
-							list[i] = list[i+1];
-							list[i+1] = auxCambio;
-							retorno=0;
-
-
-						}//else if(tipo<3 && flagSwap ==0 && i != 0){
-
-							//tipo++;
-							//printf("\n*****CLASE %d *******",tipo);
-
-							//imprimirUnPassenger(aux[i]);
-
-
-						//}
-
-					}
-
-					renovacionLimite--;
-
-				//Se ejecuta mientra sea mayor a cero
-				}while(flagSwap);
-
-				//*list=*aux;
-				//printPassengers(list, len);
-
-				//printf("\nVueltas: %d",cont);
-
-				break;
-
-			//case 0:
-
-				/*renovacionLimite=len-1;
-
-				do {
-				//DESCENDETE APELLIDOS z,y,x,w.......c,b,a.
-					flagSwap = 0;
-					for (i = 0; i < renovacionLimite; i++) {
-
-						//Pregunto list[i] es mayor a list[i+1]
-						if (list[i].typePassanger == tipo && strcmp(list[i].lastName, list[i + 1].lastName)<0) {
-
-							flagSwap = 1;
-							aux = list[i];
-							list[i] = list[i + 1];
-							list[i + 1] = aux;
-							retorno=0;
-
-						}else if(tipo<3 && flagSwap ==0 && i != 0){
-
-							tipo++;
-
-						}
-
-						//cont++;
-					}
-						renovacionLimite--;
-
-				//Se ejecuta mientra sea mayor a cero
-			 }while (flagSwap);
-				//printf("\nVueltas: %d",cont);
-			 break;*/
-
-			 default:retorno=-2; break;
+			}
+			else
+			{
+				//Error al ordenar alfabeticamente
+				retorno=-2;
 
 			}
 
-		  //}
+		}
+
+		//Retorno =-1 error en los parametros
+	return retorno;
+}
+
+
+static int ordenAlfabetico(Passenger* list, int len, int order){
+
+	int retorno = -1;
+	int flagSwap;
+	int i;
+	int renovacionLimite;
+	Passenger auxCambio;
+
+
+	if(list != NULL && len >= 0 &&  order >=0){
+
+
+		switch(order){
+
+		case 1:
+
+			//Inicio el nuevo tamaño
+			renovacionLimite=len-1;
+
+			do{
+
+				//ASCENDETE APELLIDOS a,b,c,d....x,y,z.
+				flagSwap=0;
+
+				for (i = 0; i < renovacionLimite; i++)
+				{
+
+					//Pregunto list[i].lastName es mayor a list[i+1].lastName
+					if(//list[i].typePassanger == tipo &&
+							strcmp(list[i].lastName ,list[i+1].lastName)>0)
+					{
+
+						flagSwap=1;
+						auxCambio=list[i];
+						list[i] = list[i+1];
+						list[i+1] = auxCambio;
+						retorno=0;
+
+					}
+
+				}
+
+				renovacionLimite--;
+
+			//Se ejecuta mientra sea mayor a cero
+			}while(flagSwap);
+
+			break;
+
+		case 0:
+
+			do {
+			//DESCENDETE APELLIDOS z,y,x,w.......c,b,a.
+
+			flagSwap = 0;
+			for (i = 0; i < renovacionLimite; i++) {
+
+				//Pregunto list[i].lastName es maenor a list[i+1].lastName
+				if (strcmp(list[i].lastName, list[i + 1].lastName)<0)
+				{
+
+					flagSwap=1;
+					auxCambio=list[i];
+					list[i] = list[i+1];
+					list[i+1] = auxCambio;
+					retorno=0;
+
+
+				}
+			}
+
+			renovacionLimite--;
+
+		  //Se ejecuta mientra sea mayor a cero
+		 }while (flagSwap);
+
+
+		 break;
+
+		 default: retorno=-2; break;
 
 		}
 
+	}
+
 	return retorno;
+
+
 }
 
 int promedioPassenger(Passenger* list, int len, float* promedio){
@@ -694,8 +682,8 @@ int promedioPassenger(Passenger* list, int len, float* promedio){
 
 	return retorno;
 }
-/*
-static int orderTypeClase(Passenger* list, int len){
+
+static int orderTypePassenger(Passenger* list, int len){
 
 	int retorno=-1;
 	int i;
@@ -710,10 +698,11 @@ static int orderTypeClase(Passenger* list, int len){
 		do {
 			//DESCENDETE APELLIDOS z,y,x,w.......c,b,a.
 			flagSwap = 0;
-			for (i = 0; i < renovacionLimite; i++) {
-
-				//Pregunto list[i] es mayor a list[i+1]
-				if (list[i].typePassanger > list[i+1].typePassanger) {
+			for (i = 0; i < renovacionLimite; i++)
+			{
+				//Pregunto list[i].typePassanger es mayor a list[i+1].typePassanger
+				if (list[i].typePassanger > list[i+1].typePassanger)
+				{
 
 					flagSwap = 1;
 					aux = list[i];
@@ -723,19 +712,16 @@ static int orderTypeClase(Passenger* list, int len){
 
 				}
 
-				//cont++;
 			}
 
 			//Despues de cada vuelta le descuento uno
 			renovacionLimite--;
 
-			//Se ejecuta mientra sea mayor a cero
+		//Se ejecuta mientra sea mayor a cero
 		} while (flagSwap);
 
-		printPassengers(list, len);
 
 	}
 
 	return retorno;
-}*/
-
+}
