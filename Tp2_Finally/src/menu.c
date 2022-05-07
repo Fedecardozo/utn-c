@@ -174,7 +174,7 @@ static int informar(Passenger* pasajero,int tam){
 	if(pasajero != NULL && tam >0){
 
 
-		if(sortPassengers(pasajero, tam,0)==0){
+		if(sortPassengers(pasajero, tam,1)==0){
 
 			printf("\n*** 1 ***\n-Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero");
 
@@ -244,7 +244,7 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 				switch(alta(pasa,tam)){
 
 				case 0: printf("\nCarga de datos con exito!"); break;
-				case -1: printf("\nError! Datos invalidos"); break;
+				case -1: printf("\nNo se pudo cargar los datos! Los datos ingresados son invalidos"); break;
 				case -2: printf("\nNo hay mas lugar!"); break;
 
 				}

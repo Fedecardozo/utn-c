@@ -5,6 +5,7 @@
 static int generadorId();
 static int queModifcar(int opc,int indice,Passenger*p );
 static int opcionesParaModifcar(int* x);
+//static int orderTypeClase(Passenger* list, int len);
 
 int harcodeo(Passenger* p1,int len){
 
@@ -14,10 +15,17 @@ int harcodeo(Passenger* p1,int len){
 
 
 			addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "aaa111222");
-			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 2, "bbbb11112");
-			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 3, "ccccc22223");
-			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 4, "asasd2222");
-			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 5, "eljabali2");
+			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 1, "bbbb11112");
+			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 2, "ccccc22223");
+			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 2, "asasd2222");
+			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 3, "eljabali2");
+
+			addPassenger(p1, len, generadorId(), "Dario", "Fernte",1500, 3, "aaa111222");
+			addPassenger(p1, len, generadorId(), "Esteban", "Gullit", 5700, 3, "bbbb11112");
+			addPassenger(p1, len, generadorId(), "Abel", "Robinoh", 30000, 1, "ccccc22223");
+			addPassenger(p1, len, generadorId(), "Bart", "Swtiaiger", 2550.90, 2, "asasd2222");
+			addPassenger(p1, len, generadorId(), "Carlos", "Nakamura", 1890, 1, "eljabali2");
+
 
 			retorno=0;
 
@@ -134,7 +142,8 @@ int pedirDatoUnSoloPassenger(Passenger* p){
 		   && utn_getStringMayusculayMinuscula(p1.lastName, "\nIngrese apellido:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
 		   && utn_getNumeroFlotante(&p1.price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", PRICE_MIN, PRICE_MAX, 2)==0
 		   && utn_getStringLetrasYnumeros(p1.flycode, "\nIngrese codigo: ", "\nError solo numeros y letras", MAX_CHARFLYCODE, 2)==0
-		   && utn_getNumero(&p1.typePassanger, "\nIngrese tipo:", "\nError ingrese nuevamente:", 0, 3, 2)==0
+		   && utn_getNumero(&p1.typePassanger, "\n**Tipos de pasajeros** \n1-Clase turistica \n2-Clase ejecutiva \n3-Primera Clase  \nIngrese tipo:",
+				   "\nError ingrese nuevamente:", 1, 3, 2)==0
 		   && utn_getNumero(&p1.statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2)==0)
 		{
 
@@ -475,7 +484,8 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 
 		case 4:
 			//int r;
-			retorno = utn_getNumero(&aux.typePassanger, "\nIngrese tipo de pasajero: ",	"\nError! de nuevo", 0, 20, 2);
+			retorno = utn_getNumero(&aux.typePassanger, "\n**Tipos de pasajeros** \n1-Clase turistica \n2-Clase ejecutiva \n3-Primera Clase  \nIngrese tipo:",
+					   "\nError ingrese nuevamente:", 1, 3, 2);
 
 			break;
 
@@ -502,9 +512,38 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 
 	return retorno;
 }
+/*
+static int soloOcupados(Passenger* list, int len,Passenger* aux){
 
-/// \brief Ordenar los elementos en el arreglo de pasajeros, el orden de los argumentos
-///indicar orden ARRIBA o ABAJO
+	int i;
+	int contadorIndice=0;
+	int retorno=-1;
+
+	if(list != NULL && len >= 0){
+
+		for (i = 0; i < len; i++) {
+
+			if(list[i].isEmpty==OCUPADO){
+
+				aux[contadorIndice]= list[i];
+				contadorIndice++;
+
+			}
+
+
+		}
+
+		retorno=contadorIndice;
+		printf("\nRetorno%d",retorno);
+
+	}
+
+	return retorno;
+
+}*/
+
+/// \brief Ordenar los elementos en el arreglo de pasajeros(apellido y TypePaseenger),
+///  el orden de los argumentos. Indicar orden ARRIBA o ABAJO
 ///\param listaPasajero*
 ///\param len int
 ///\param order int [1] indica ARRIBA - [0] indica ABAJO
@@ -514,17 +553,27 @@ int sortPassengers(Passenger* list, int len, int order){
 	int retorno = -1;
 	int flagSwap;
 	int i;
+	int tipo=1;
 	int renovacionLimite;
-	//int cont=0;
-	Passenger aux;
+	//Passenger aux[len];
+	Passenger auxCambio;
+
+	//int totalOcupados;
 
 		if(list != NULL && len >= 0 &&  order >=0){
+
+			//totalOcupados= soloOcupados(list, len, aux);
+
+			//if(totalOcupados>0 && orderTypeClase(aux, totalOcupados)==0){
 
 			switch(order){
 
 			case 1:
 
+				//Inicio el nuevo tamaño
 				renovacionLimite=len-1;
+
+				printf("\n*****CLASE %d *******",tipo);
 
 				do{
 					//ASCENDETE APELLIDOS a,b,c,d....x,y,z.
@@ -533,37 +582,51 @@ int sortPassengers(Passenger* list, int len, int order){
 					for (i = 0; i < renovacionLimite; i++) {
 
 						//Pregunto list[i] es mayor a list[i+1]
-						if(strcmp(list[i].lastName,list[i+1].lastName)==1){
+						if(//list[i].typePassanger == tipo &&
+								strcmp(list[i].lastName ,list[i+1].lastName)>0){
 
 							flagSwap=1;
-							aux=list[i];
+							auxCambio=list[i];
 							list[i] = list[i+1];
-							list[i+1] = aux;
+							list[i+1] = auxCambio;
 							retorno=0;
-						}
-						//cont++;
-						renovacionLimite--;
+
+
+						}//else if(tipo<3 && flagSwap ==0 && i != 0){
+
+							//tipo++;
+							//printf("\n*****CLASE %d *******",tipo);
+
+							//imprimirUnPassenger(aux[i]);
+
+
+						//}
 
 					}
 
+					renovacionLimite--;
+
 				//Se ejecuta mientra sea mayor a cero
 				}while(flagSwap);
+
+				//*list=*aux;
+				//printPassengers(list, len);
 
 				//printf("\nVueltas: %d",cont);
 
 				break;
 
-			case 0:
+			//case 0:
 
-				renovacionLimite=len-1;
+				/*renovacionLimite=len-1;
 
 				do {
 				//DESCENDETE APELLIDOS z,y,x,w.......c,b,a.
 					flagSwap = 0;
-					for (i = 0; i < len - 1; i++) {
+					for (i = 0; i < renovacionLimite; i++) {
 
 						//Pregunto list[i] es mayor a list[i+1]
-						if (strcmp(list[i].lastName, list[i + 1].lastName)<0) {
+						if (list[i].typePassanger == tipo && strcmp(list[i].lastName, list[i + 1].lastName)<0) {
 
 							flagSwap = 1;
 							aux = list[i];
@@ -571,21 +634,26 @@ int sortPassengers(Passenger* list, int len, int order){
 							list[i + 1] = aux;
 							retorno=0;
 
+						}else if(tipo<3 && flagSwap ==0 && i != 0){
+
+							tipo++;
+
 						}
 
-						renovacionLimite--;
 						//cont++;
 					}
+						renovacionLimite--;
 
 				//Se ejecuta mientra sea mayor a cero
 			 }while (flagSwap);
 				//printf("\nVueltas: %d",cont);
-			 break;
+			 break;*/
 
-			default:retorno=-2; break;
+			 default:retorno=-2; break;
 
 			}
 
+		  //}
 
 		}
 
@@ -626,5 +694,48 @@ int promedioPassenger(Passenger* list, int len, float* promedio){
 
 	return retorno;
 }
+/*
+static int orderTypeClase(Passenger* list, int len){
 
+	int retorno=-1;
+	int i;
+	int flagSwap=0;
+	Passenger aux;
+	int renovacionLimite;
+
+	if(list!=NULL && len >=0){
+
+		renovacionLimite=len-1;
+
+		do {
+			//DESCENDETE APELLIDOS z,y,x,w.......c,b,a.
+			flagSwap = 0;
+			for (i = 0; i < renovacionLimite; i++) {
+
+				//Pregunto list[i] es mayor a list[i+1]
+				if (list[i].typePassanger > list[i+1].typePassanger) {
+
+					flagSwap = 1;
+					aux = list[i];
+					list[i] = list[i + 1];
+					list[i + 1] = aux;
+					retorno = 0;
+
+				}
+
+				//cont++;
+			}
+
+			//Despues de cada vuelta le descuento uno
+			renovacionLimite--;
+
+			//Se ejecuta mientra sea mayor a cero
+		} while (flagSwap);
+
+		printPassengers(list, len);
+
+	}
+
+	return retorno;
+}*/
 
