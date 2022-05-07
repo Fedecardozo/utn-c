@@ -452,6 +452,48 @@ static int sonLetras(char*pLetras,int longitud)
 	return retorno;
 }
 
+int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos){
+
+	int retorno=-1;
+
+		//printf("%d",longitud);
+		if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && limite >0 && intentos>=0){
+
+			//Creo la variable aca para primero validar de longitud sea mayor a 0
+			char bufferString[limite];
+
+			do{
+
+				printf("%s",mensaje);
+
+				//Si esta todo bien lo copia en el puntero y sale de la iteracion retornado cero
+				if(getStringLetrasYnumeros(bufferString,limite)==0
+						&& strlen(bufferString)==limite ){
+
+					strncpy(pResultado,bufferString,limite);
+					retorno=0;
+					break;
+
+				}else if(intentos>0){
+
+					printf("%s",mensajeError);
+
+				}
+
+				intentos--;
+
+
+			}while(intentos>=0);
+
+
+		}
+
+
+		return retorno;
+
+
+}
+
 int utn_getStringLetrasYnumeros(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
 
 	int retorno=-1;
@@ -521,26 +563,28 @@ static int sonLetrasYnumeros(char*pLetras,int longitud)
 
 	for (i = 0; i<longitud && pLetras[i]!='\0'; i++){
 
-		if(i==0 && (pLetras[i] == '+' || pLetras[i] == '-')){
 
-			//printf("\na");
-			continue;
-
-		}
-
-		if(pLetras[i] > 'a' && pLetras[i] < 'z'){
+		if(pLetras[i] >= 'A' && pLetras[i] <= 'Z'){
 
 			//printf("\nb");
 			continue;
 
 		}
-		if(pLetras[i] > '0' && pLetras[i] < '9'){
+
+		if(pLetras[i] >= 'a' && pLetras[i] <= 'z'){
+
+			//printf("\nb");
+			continue;
+
+		}
+		if(pLetras[i] >= '0' && pLetras[i] <= '9'){
 
 			//printf("\nc");
 			continue;
 
 		}
-		if((pLetras[i] < '0' ) || ( pLetras[i] > '9' && pLetras[i] <'a') || (pLetras[i]>'z')){
+		if((pLetras[i] < '0' ) || ( pLetras[i] > '9' && pLetras[i] <'A')
+				|| (pLetras[i]>'Z' && pLetras[i] <'a') ||( pLetras[i] >'z')){
 
 			//printf("\nd");
 			retorno= 0;
@@ -553,7 +597,6 @@ static int sonLetrasYnumeros(char*pLetras,int longitud)
 
 	return retorno;
 }
-
 
 /// @fn int utn_getString(char*, char*, char*, int, int)
 /// @brief Solicita un numero cadena al usuario, luego de verificarlo devuelve el resultado

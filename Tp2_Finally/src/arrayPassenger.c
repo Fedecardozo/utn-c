@@ -142,10 +142,11 @@ int pedirDatoUnSoloPassenger(Passenger* p){
 		if(utn_getStringMayusculayMinuscula(p1.name, "\nIngrese nombre:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
 		   && utn_getStringMayusculayMinuscula(p1.lastName, "\nIngrese apellido:","\nError esta mal escrito" , MAX_CARACTER, 2)==0
 		   && utn_getNumeroFlotante(&p1.price, "\nIngrese precio: ", "\nError ingrese nuevamente: ", PRICE_MIN, PRICE_MAX, 2)==0
-		   && utn_getStringLetrasYnumeros(p1.flycode, "\nIngrese codigo: ", "\nError solo numeros y letras", MAX_CHARFLYCODE, 2)==0
+		   && utn_getStringLetrasYnumerosLimite(p1.flycode, "\nIngrese codigo 10 digitos: ", "\nError, 10 digitos numeros y letras", MAX_CHARFLYCODE, 2)==0
 		   && utn_getNumero(&p1.typePassanger, "\n**Tipos de pasajeros** \n1-Clase turistica \n2-Clase ejecutiva \n3-Primera Clase  \nIngrese tipo:",
 				   "\nError ingrese nuevamente:", 1, 3, 2)==0
-		   && utn_getNumero(&p1.statusFlight, "\nIngrese estado: ", "\nError ingrese nuevamente:", 0, 10, 2)==0)
+		   && utn_getNumero(&p1.statusFlight, "\n**Estado de vuelo** \n1)Activado \n0)Desactivado \nIngrese estado: ",
+				   "\nError ingrese nuevamente:", 0, 1, 2)==0)
 		{
 
 			p1.id = generadorId();
@@ -589,18 +590,24 @@ static int ordenAlfabetico(Passenger* list, int len, int order){
 
 				for (i = 0; i < renovacionLimite; i++)
 				{
-
-					//Pregunto list[i].lastName es mayor a list[i+1].lastName
-					if(strcmp(list[i].lastName ,list[i+1].lastName)>0)
+					if(list[i].isEmpty==OCUPADO)
 					{
 
-						flagSwap=1;
-						auxCambio=list[i];
-						list[i] = list[i+1];
-						list[i+1] = auxCambio;
-						retorno=0;
+						//Pregunto list[i].lastName es mayor a list[i+1].lastName
+						if(strcmp(list[i].lastName ,list[i+1].lastName)>0)
+						{
+
+							flagSwap=1;
+							auxCambio=list[i];
+							list[i] = list[i+1];
+							list[i+1] = auxCambio;
+							retorno=0;
+
+						}
+
 
 					}
+
 
 				}
 
@@ -619,17 +626,20 @@ static int ordenAlfabetico(Passenger* list, int len, int order){
 			flagSwap = 0;
 			for (i = 0; i < renovacionLimite; i++) {
 
-				//Pregunto list[i].lastName es maenor a list[i+1].lastName
-				if (strcmp(list[i].lastName, list[i + 1].lastName)<0)
+				if(list[i].isEmpty==OCUPADO)
 				{
+					//Pregunto list[i].lastName es maenor a list[i+1].lastName
+					if (strcmp(list[i].lastName, list[i + 1].lastName)<0)
+					{
 
-					flagSwap=1;
-					auxCambio=list[i];
-					list[i] = list[i+1];
-					list[i+1] = auxCambio;
-					retorno=0;
+						flagSwap=1;
+						auxCambio=list[i];
+						list[i] = list[i+1];
+						list[i+1] = auxCambio;
+						retorno=0;
 
 
+					}
 				}
 			}
 
@@ -673,15 +683,19 @@ static int orderTypePassenger(Passenger* list, int len){
 			flagSwap = 0;
 			for (i = 0; i < renovacionLimite; i++)
 			{
-				//Pregunto list[i].typePassanger es mayor a list[i+1].typePassanger
-				if (list[i].typePassanger > list[i+1].typePassanger)
+				if(list[i].isEmpty==OCUPADO)
 				{
+					//Pregunto list[i].typePassanger es mayor a list[i+1].typePassanger
+					if (list[i].typePassanger > list[i+1].typePassanger)
+					{
 
-					flagSwap = 1;
-					aux = list[i];
-					list[i] = list[i + 1];
-					list[i + 1] = aux;
-					retorno = 0;
+						flagSwap = 1;
+						aux = list[i];
+						list[i] = list[i + 1];
+						list[i + 1] = aux;
+						retorno = 0;
+
+					}
 
 				}
 

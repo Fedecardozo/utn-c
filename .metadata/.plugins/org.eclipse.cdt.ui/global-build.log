@@ -1020,3 +1020,27 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arr
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
 gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2_Finally
+17:27:53 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:44:29 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:52:29 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:00:47 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
