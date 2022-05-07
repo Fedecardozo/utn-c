@@ -2,6 +2,9 @@
 
 #include "menu.h"
 
+/// @fn  menu
+/// @param x puntero para guardar la opcion ingresada
+/// @return 1 bien 0 mal
 int menu(int* x){
 
 	int opc;
@@ -28,6 +31,7 @@ int menu(int* x){
 
 //***FUNCIONES DEL MENU
 
+//Analizar
 static int alta(Passenger* p1,int tam){
 
 	Passenger p;
@@ -61,7 +65,7 @@ static int alta(Passenger* p1,int tam){
 
 }
 
-
+//Analizar
 static int modificar(Passenger* p1,int tam){
 
 	int retorno =-1;
@@ -81,6 +85,7 @@ static int modificar(Passenger* p1,int tam){
 
 }
 
+//Analizar
 static int baja(Passenger* p1,int tam){
 
 	int retorno=-1;
@@ -109,15 +114,14 @@ static int baja(Passenger* p1,int tam){
 }
 
 
-
-
+//Analizar
 static int altaForzada(Passenger* pasajero,int tam){
 
 	int retorno =-1;
 
 	if(harcodeo(pasajero,tam)==0){
 
-		printf("Carga con exito!");
+		printf("\nCarga con exito!");
 		retorno=0;
 
 	}
@@ -126,6 +130,8 @@ static int altaForzada(Passenger* pasajero,int tam){
 
 }
 
+
+//Analizar
 static int pricePromedio(Passenger* list, int len, float promedio){
 
 	int retorno=-1;
@@ -157,6 +163,8 @@ static int pricePromedio(Passenger* list, int len, float promedio){
 
 }
 
+
+//Analizar
 static int informar(Passenger* pasajero,int tam){
 
 	//printPassengers(pasa, tam);
@@ -227,9 +235,13 @@ static int informar(Passenger* pasajero,int tam){
 
 	}
 
+	printf("\n\n*** 3 ****");
+	printf("\n\n %d ", printSortPassengersByCode(pasajero, tam, 0, 1));
+
 	return retorno;
 
 }
+
 
 void menuIngresado(int opcion,Passenger* pasa,int tam){
 

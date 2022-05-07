@@ -6,7 +6,7 @@
 
 #include "Arraypassenger.h"
 #include "menu.h"
-
+#include <string.h>
 
 
 

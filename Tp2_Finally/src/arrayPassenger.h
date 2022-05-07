@@ -61,6 +61,8 @@ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],f
 int removePassenger(Passenger* list, int len, int id);
 int editPassenger(Passenger* list, int len, int id);
 int sortPassengers(Passenger* list, int len, int order);
+int sortPassengersByCode(Passenger* list, int len, int order);
+int printSortPassengersByCode(Passenger* list, int len, int order,int estado);
 
 int promedioPassenger(Passenger* list, int len, float* promedio);
 

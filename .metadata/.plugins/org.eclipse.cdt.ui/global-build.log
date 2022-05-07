@@ -839,3 +839,184 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
 gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2_Finally
+13:37:28 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+14:15:38 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+15:41:13 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'sortPassengersByCode':
+..\src\arrayPassenger.c:753:6: warning: unused variable 'nuevoLimete' [-Wunused-variable]
+  int nuevoLimete;
+      ^~~~~~~~~~~
+..\src\arrayPassenger.c:752:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+15:41:50 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+15:43:03 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+15:44:51 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+15:46:46 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:21:21 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:23:32 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:24:16 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:26:24 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:35:02 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:35:37 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+..\src\Tp2_Finally.c: In function 'main':
+..\src\Tp2_Finally.c:20:29: error: 'cadena1' undeclared (first use in this function)
+  printf("%d",strcmp(cadena2,cadena1));
+                             ^~~~~~~
+..\src\Tp2_Finally.c:20:29: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Tp2_Finally.c:17:7: warning: unused variable 'cadena' [-Wunused-variable]
+  char cadena[10]={'H','O','L','A','N','D','A'};
+       ^~~~~~
+16:35:54 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:36:32 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:37:23 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:38:03 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Tp2_Finally.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:38:07 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+16:38:30 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+16:42:00 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+..\src\Tp2_Finally.c: In function 'main':
+..\src\Tp2_Finally.c:18:7: warning: unused variable 'cadena2' [-Wunused-variable]
+  char cadena2[10]={'H','A','L','A','N','D','A'};
+       ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+16:42:07 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:43:06 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+16:45:05 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:46:46 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:47:34 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+16:59:23 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:00:45 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:02:07 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:05:33 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally
+17:07:58 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Tp2_Finally.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:08:04 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+17:11:20 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+17:14:01 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally

@@ -7,6 +7,7 @@ static int queModifcar(int opc,int indice,Passenger*p );
 static int opcionesParaModifcar(int* x);
 static int ordenAlfabetico(Passenger* list, int len, int order);
 static int orderTypePassenger(Passenger* list, int len);
+static int ordenFlycode(Passenger* list, int len, int order);
 
 int harcodeo(Passenger* p1,int len){
 
@@ -15,18 +16,17 @@ int harcodeo(Passenger* p1,int len){
 		if(p1!=NULL){
 
 
-			addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "aaa111222");
-			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 1, "bbbb11112");
-			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 2, "ccccc22223");
-			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 2, "asasd2222");
-			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 3, "eljabali2");
+			addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "hk8vPrmpuJ");
+			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 1, "boSlxsM4Rp");
+			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 2, "cm2FgAXJ8B");
+			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 2, "fs5uRqrZRA");
+			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 3, "g4m2OCY1Mh");
 
-			addPassenger(p1, len, generadorId(), "Dario", "Fernte",1500, 3, "aaa111222");
-			addPassenger(p1, len, generadorId(), "Esteban", "Gullit", 5700, 3, "bbbb11112");
-			addPassenger(p1, len, generadorId(), "Abel", "Robinoh", 30000, 1, "ccccc22223");
-			addPassenger(p1, len, generadorId(), "Bart", "Swtiaiger", 2550.90, 2, "asasd2222");
-			addPassenger(p1, len, generadorId(), "Carlos", "Nakamura", 1890, 1, "eljabali2");
-
+			addPassenger(p1, len, generadorId(), "Dario", "Fernte",1500, 3, "dDqViLjRJc");
+			addPassenger(p1, len, generadorId(), "Esteban", "Gullit", 5700, 3, "iTkX5txObh");
+			addPassenger(p1, len, generadorId(), "Abel", "Robinoh", 30000, 1, "fbLJgXBmpi");
+			addPassenger(p1, len, generadorId(), "Bart", "Swtiaiger", 2550.90, 2, "a1KpTUsVjq");
+			addPassenger(p1, len, generadorId(), "Carlos", "Nakamura", 1890, 1, "ehBpk4leKU");
 
 			retorno=0;
 
@@ -274,7 +274,7 @@ int addPassenger(Passenger* list, int len, int id, char name[],char
 			list[i].price = price;
 			strncpy(list[i].flycode,flycode,sizeof(list[i].flycode));
 			list[i].typePassanger = typePassenger;
-			//Averiguar que hace esto
+			//1 Activado - 0 Desactivado
 			list[i].statusFlight = 1;
 			list[i].isEmpty=OCUPADO;
 
@@ -514,18 +514,18 @@ static int queModifcar(int opc,int indice,Passenger*p ){
 	return retorno;
 }
 
-
 /// \brief Ordenar los elementos en el arreglo de pasajeros(apellido y TypePaseenger),
 ///  el orden de los argumentos. Indicar orden ARRIBA o ABAJO
 ///\param listaPasajero*
 ///\param len int
 ///\param order int [1] indica ARRIBA - [0] indica ABAJO
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// (-2)Error al ordenar alfabeticamente (-3)Error al ordenarlo por tipo de pasajero
 int sortPassengers(Passenger* list, int len, int order){
 
 	int retorno = -1;
 
-		if(list != NULL && len >= 0 &&  order >=0)
+		if(list != NULL && len >= 0 &&  order>=0 && order<=1 )
 		{
 
 			if(ordenAlfabetico(list,len,order) ==0)
@@ -557,7 +557,12 @@ int sortPassengers(Passenger* list, int len, int order){
 	return retorno;
 }
 
-
+/// @fn ordena alfabeticamente una lista de pasajeros
+/// por apellido
+/// @param lista de pasajeros
+/// @param len longitud del array
+/// @param order [1]Orden ascendente [0] desendente
+/// @return 1 bien 0 mal
 static int ordenAlfabetico(Passenger* list, int len, int order){
 
 	int retorno = -1;
@@ -567,7 +572,7 @@ static int ordenAlfabetico(Passenger* list, int len, int order){
 	Passenger auxCambio;
 
 
-	if(list != NULL && len >= 0 &&  order >=0){
+	if(list != NULL && len >= 0 &&  order>=0 && order<=1 ){
 
 
 		switch(order){
@@ -586,8 +591,7 @@ static int ordenAlfabetico(Passenger* list, int len, int order){
 				{
 
 					//Pregunto list[i].lastName es mayor a list[i+1].lastName
-					if(//list[i].typePassanger == tipo &&
-							strcmp(list[i].lastName ,list[i+1].lastName)>0)
+					if(strcmp(list[i].lastName ,list[i+1].lastName)>0)
 					{
 
 						flagSwap=1;
@@ -648,41 +652,10 @@ static int ordenAlfabetico(Passenger* list, int len, int order){
 
 }
 
-int promedioPassenger(Passenger* list, int len, float* promedio){
-
-	int retorno=-1;
-	float acumulador=0;
-	float contador=0;
-	int i;
-
-	if(list!=NULL && len >0 && promedio != NULL){
-
-
-		for (i = 0; i < len; i++) {
-
-			if(list[i].isEmpty == OCUPADO){
-
-				acumulador = acumulador + list[i].price;
-				contador++;
-
-
-			}
-
-		}
-		if(contador>0 && acumulador >0){
-
-			*promedio = acumulador/contador;
-			retorno=contador;
-
-		}
-
-
-	}
-
-
-	return retorno;
-}
-
+/// @fn orderdena TypePassenger
+/// @param lista de pasajeros
+/// @param len longitud del array passenger
+/// @return 1 bien 0 mal
 static int orderTypePassenger(Passenger* list, int len){
 
 	int retorno=-1;
@@ -724,4 +697,240 @@ static int orderTypePassenger(Passenger* list, int len){
 	}
 
 	return retorno;
+}
+
+/// @fn promedio Passenger
+/// @param lista de pasajeros
+/// @param len longitud del array passenger
+/// @param promedio puntero para devolver el promedio
+/// @return 1 bien 0 mal
+int promedioPassenger(Passenger* list, int len, float* promedio){
+
+	int retorno=-1;
+	float acumulador=0;
+	float contador=0;
+	int i;
+
+	if(list!=NULL && len >0 && promedio != NULL){
+
+
+		for (i = 0; i < len; i++) {
+
+			if(list[i].isEmpty == OCUPADO){
+
+				acumulador = acumulador + list[i].price;
+				contador++;
+
+
+			}
+
+		}
+		if(contador>0 && acumulador >0){
+
+			*promedio = acumulador/contador;
+			retorno=contador;
+
+		}
+
+
+	}
+
+
+	return retorno;
+}
+
+/// \brief Ordena los elementos del array de pasajeros(codigo vuelo y estado vuelo), el
+///  orden de los argumentos indicar orden ARRIBA o ABAJO
+/// \param list*  lista de Pasajero
+/// \param len longitud
+/// \param orden int [1] indica ARRIBA - [0] indica ABAJO
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// (-2)Error al ordenar alfabeticamente
+int sortPassengersByCode(Passenger* list, int len, int order)
+{
+	int retorno = -1;
+
+		if(list != NULL && len >= 0 &&  order>=0 && order<=1 )
+		{
+
+			if(ordenFlycode(list,len,order) ==0)
+			{
+				//Salio bien
+				retorno=0;
+
+			}
+			else
+			{
+				//Error al ordenar alfabeticamente
+				retorno=-2;
+
+			}
+
+		}
+
+			//Retorno =-1 error en los parametros
+		return retorno;
+
+
+	return 0;
+
+}
+
+/// @fn ordenFlycode ordena alfabeticamente una lista de pasajeros
+/// por el codigo de vuelo
+/// @param lista de pasajeros
+/// @param len longitud del array
+/// @param order [1]Orden ascendente [0] desendente
+/// @return 1 bien 0 mal
+static int ordenFlycode(Passenger* list, int len, int order){
+
+	int retorno = -1;
+	int flagSwap;
+	int i;
+	int renovacionLimite;
+	Passenger auxCambio;
+	char auxiliarCadena [MAX_CHARFLYCODE];
+	char auxiliarCadena2 [MAX_CHARFLYCODE];
+
+
+	if(list != NULL && len > 0 &&  order>=0 && order<=1 ){
+
+
+		switch(order){
+
+		case 1:
+
+			//Inicio el nuevo tamaño
+			renovacionLimite=len-1;
+
+			do{
+
+				//ASCENDETE CODIGO VUELO a,b,c,d....x,y,z.
+				flagSwap=0;
+
+				for (i = 0; i < renovacionLimite; i++)
+				{
+
+					if(list[i].isEmpty==OCUPADO){
+
+
+						//Guardo en mayuscula antes de comparar en un cadena auxiliar
+						strncpy(auxiliarCadena,list[i].flycode ,MAX_CHARFLYCODE);
+						strncpy(auxiliarCadena2,list[i+1].flycode,MAX_CHARFLYCODE);
+
+						strupr(auxiliarCadena);
+						strupr(auxiliarCadena2);
+
+
+
+						//Pregunto list[i].flycode es mayor a list[i+1].flycode
+						if(	strcmp(auxiliarCadena, auxiliarCadena2)>0)
+						{
+
+							flagSwap=1;
+							auxCambio=list[i];
+							list[i] = list[i+1];
+							list[i+1] = auxCambio;
+							retorno=0;
+
+
+						}
+
+					}
+
+				}
+
+				renovacionLimite--;
+
+			//Se ejecuta mientra sea mayor a cero
+			}while(flagSwap);
+
+			break;
+
+		case 0:
+
+			//Inicio el nuevo tamaño
+			renovacionLimite=len-1;
+
+			do{
+
+				//DESCENDETE CODIGO VUELO x,y,z...d,c,b,a
+				flagSwap=0;
+
+				for (i = 0; i < renovacionLimite; i++)
+				{
+					//Guardo en mayuscula antes de comparar en un cadena auxiliar
+					strncpy(auxiliarCadena,list[i].flycode ,MAX_CHARFLYCODE);
+					strncpy(auxiliarCadena2,list[i+1].flycode,MAX_CHARFLYCODE);
+
+					strupr(auxiliarCadena);
+					strupr(auxiliarCadena2);
+
+					//Pregunto list[i].flycode es menor a list[i+1].flycode
+					if(	strcmp(auxiliarCadena, auxiliarCadena2)<0)
+					{
+
+						flagSwap=1;
+						auxCambio=list[i];
+						list[i] = list[i+1];
+						list[i+1] = auxCambio;
+						retorno=0;
+
+					}
+
+				}
+
+				renovacionLimite--;
+
+			//Se ejecuta mientra sea mayor a cero
+			}while(flagSwap);
+
+			break;
+
+		 default: retorno=-2; break;
+
+		}
+
+	}
+
+	return retorno;
+
+
+}
+
+/// @fn imprime ordenado por codigo de vuelo y los que tienen el vuelo activado
+/// \param list*  lista de Pasajero
+/// \param len longitud
+/// \param estado [1]vuelo Activado [0]vuelo desactivado
+/// \param orden int [1] indica ARRIBA - [0] indica ABAJO
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// (-2)Error al ordenar alfabeticamente
+int printSortPassengersByCode(Passenger* list, int len, int order,int estado){
+
+	int retorno=-1;
+	int i;
+
+	if(list!=NULL && len >=0 && order>=0 && order<=1 && estado>=0 && estado<=1)
+	{
+		retorno=0;
+
+		if(sortPassengersByCode(list, len, order)==0)
+		{
+
+			for (i = 0; i < len; i++)
+			{
+
+				if(list[i].statusFlight==estado)
+				{
+					imprimirUnPassenger(list[i]);
+
+				}
+
+			}
+
+		}
+	}
+
+	return retorno;
+
 }
