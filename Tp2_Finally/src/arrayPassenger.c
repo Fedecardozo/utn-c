@@ -16,17 +16,17 @@ int harcodeo(Passenger* p1,int len){
 		if(p1!=NULL){
 
 
-			addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "hk8vPrmpuJ");
-			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 1, "boSlxsM4Rp");
-			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 2, "cm2FgAXJ8B");
-			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 2, "fs5uRqrZRA");
-			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 3, "g4m2OCY1Mh");
+			addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "hk8vPrmpuJ",1);
+			addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 1, "boSlxsM4Rp",1);
+			addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 2, "cm2FgAXJ8B",1);
+			addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 2, "fs5uRqrZRA",1);
+			addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 3, "g4m2OCY1Mh",1);
 
-			addPassenger(p1, len, generadorId(), "Dario", "Fernte",1500, 3, "dDqViLjRJc");
-			addPassenger(p1, len, generadorId(), "Esteban", "Gullit", 5700, 3, "iTkX5txObh");
-			addPassenger(p1, len, generadorId(), "Abel", "Robinoh", 30000, 1, "fbLJgXBmpi");
-			addPassenger(p1, len, generadorId(), "Bart", "Swtiaiger", 2550.90, 2, "a1KpTUsVjq");
-			addPassenger(p1, len, generadorId(), "Carlos", "Nakamura", 1890, 1, "ehBpk4leKU");
+			addPassenger(p1, len, generadorId(), "Dario", "Fernte",1500, 3, "dDqViLjRJc",1);
+			addPassenger(p1, len, generadorId(), "Esteban", "Gullit", 5700, 3, "iTkX5txObh",1);
+			addPassenger(p1, len, generadorId(), "Abel", "Robinoh", 30000, 1, "fbLJgXBmpi",1);
+			addPassenger(p1, len, generadorId(), "Bart", "Swtiaiger", 2550.90, 2, "a1KpTUsVjq",1);
+			addPassenger(p1, len, generadorId(), "Carlos", "Nakamura", 1890, 1, "ehBpk4leKU",1);
 
 			retorno=0;
 
@@ -251,7 +251,7 @@ int ObtenerIndexLibre(Passenger* p1, int tam){
 ///\return int Devuelve (-1) si Error [Longitud no válida o puntero NULL o sin
 ///espacio libre] - (0) si está bien
 int addPassenger(Passenger* list, int len, int id, char name[],char
-		lastName[],float price,int typePassenger, char flycode[])
+		lastName[],float price,int typePassenger, char flycode[],int statusFlight)
 {
 
 	int retorno =-1;
@@ -259,7 +259,8 @@ int addPassenger(Passenger* list, int len, int id, char name[],char
 
 	if(list != NULL && len>0 && id>0 && name != NULL
 			&& lastName != NULL && price > PRICE_MIN
-			&& typePassenger > 0 && flycode != NULL)
+			&& typePassenger > 0 && flycode != NULL
+			&& statusFlight>=0)
 	{
 
 		i=ObtenerIndexLibre(list, len);
@@ -276,7 +277,7 @@ int addPassenger(Passenger* list, int len, int id, char name[],char
 			strncpy(list[i].flycode,flycode,sizeof(list[i].flycode));
 			list[i].typePassanger = typePassenger;
 			//1 Activado - 0 Desactivado
-			list[i].statusFlight = 1;
+			list[i].statusFlight = statusFlight;
 			list[i].isEmpty=OCUPADO;
 
 			retorno=0;

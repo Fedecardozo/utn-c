@@ -57,7 +57,7 @@ int eGen_Modificacion(eGen array[], int TAM);*/
 
 
 int cargaDatos(Passenger* p1, int tam);
-int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[]);
+int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
 int removePassenger(Passenger* list, int len, int id);
 int editPassenger(Passenger* list, int len, int id);
 int sortPassengers(Passenger* list, int len, int order);

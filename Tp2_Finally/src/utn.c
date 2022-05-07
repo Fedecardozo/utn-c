@@ -466,22 +466,26 @@ int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* men
 
 				printf("%s",mensaje);
 
-				//Si esta todo bien lo copia en el puntero y sale de la iteracion retornado cero
-				if(getStringLetrasYnumeros(bufferString,limite)==0
-						&& strlen(bufferString)==limite ){
+				//Si esta tod bien lo copia en el puntero y sale de la iteracion retornado cero
+				if(getStringLetrasYnumeros(bufferString,limite+1)==0)
+				{
 
-					strncpy(pResultado,bufferString,limite);
-					retorno=0;
-					break;
+					if(strlen(bufferString)==limite)
+					{
 
-				}else if(intentos>0){
+						strncpy(pResultado,bufferString,limite);
+						retorno=0;
+						break;
 
-					printf("%s",mensajeError);
+					}else if(intentos>0){
 
-				}
+						printf("%s",mensajeError);
+
+					}
 
 				intentos--;
 
+			   }
 
 			}while(intentos>=0);
 

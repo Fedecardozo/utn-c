@@ -1044,3 +1044,141 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Fi
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
 gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Tp2_Finally
+18:08:30 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'alta':
+..\src\menu.c:46:6: error: too few arguments to function 'addPassenger'
+   if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode)==0){
+      ^~~~~~~~~~~~
+In file included from ..\src\menu.h:5:0,
+                 from ..\src\menu.c:3:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+18:09:00 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tp2_Finally.o" "..\\src\\Tp2_Finally.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c: In function 'harcodeo':
+..\src\arrayPassenger.c:19:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Dario", "Diaz",1500, 1, "hk8vPrmpuJ");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:20:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Esteban", "Estevanez", 5700, 1, "boSlxsM4Rp");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:21:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Abel", "Alvarez", 30000, 2, "cm2FgAXJ8B");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:22:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Bart", "Briasco", 2550.90, 2, "fs5uRqrZRA");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:23:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Carlos", "Cardozo", 1890, 3, "g4m2OCY1Mh");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:25:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Dario", "Fernte",1500, 3, "dDqViLjRJc");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:26:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Esteban", "Gullit", 5700, 3, "iTkX5txObh");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:27:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Abel", "Robinoh", 30000, 1, "fbLJgXBmpi");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:28:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Bart", "Swtiaiger", 2550.90, 2, "a1KpTUsVjq");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c:29:4: error: too few arguments to function 'addPassenger'
+    addPassenger(p1, len, generadorId(), "Carlos", "Nakamura", 1890, 1, "ehBpk4leKU");
+    ^~~~~~~~~~~~
+In file included from ..\src\arrayPassenger.c:2:0:
+..\src\arrayPassenger.h:60:5: note: declared here
+ int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
+     ^~~~~~~~~~~~
+..\src\arrayPassenger.c: At top level:
+..\src\arrayPassenger.c:254:60: error: expected declaration specifiers or '...' before ',' token
+   lastName[],float price,int typePassenger, char flycode[],,int statusFlight)
+                                                            ^
+18:09:35 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+..\src\arrayPassenger.c:254:60: error: expected declaration specifiers or '...' before ',' token
+   lastName[],float price,int typePassenger, char flycode[],,int statusFlight)
+                                                            ^
+18:09:49 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally
+18:17:25 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayPassenger.o" "..\\src\\arrayPassenger.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:20:48 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:23:26 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:24:46 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+18:25:22 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally
+18:34:16 **** Incremental Build of configuration Debug for project Tp2_Finally ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tp2_Finally.exe "src\\Tp2_Finally.o" "src\\arrayPassenger.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally
+Info: Nothing to build for Tp2_Finally

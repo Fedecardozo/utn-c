@@ -43,7 +43,7 @@ static int alta(Passenger* p1,int tam){
 
 		//p1[indice]=p;
 		retorno=0;
-		if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode)==0){
+		if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode,p.statusFlight)==0){
 
 			retorno=0;
 
