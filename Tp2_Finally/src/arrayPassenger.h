@@ -33,12 +33,6 @@ int ObtenerIndexLibre(Passenger* p1, int tam);
 int findPassengerById(Passenger *list, int len, int id);
 int imprimirUnPassenger(Passenger p1);
 int printPassengers(Passenger* p1,int tam);
-//int eGen_MostrarDadosDeBaja(eGen array[], int TAM);
-
-//*** SORT ****
-//CRITERIO -> -1 = MENOR A MAYOR
-//CRITERIO ->  1 = MAYOR A MENOR
-//int eGen_Sort(eGen array[], int TAM, int criterio);
 
 //Funciones que interactuan con el usuario
 int pedirDatoUnSoloPassenger(Passenger* p1);
@@ -47,13 +41,6 @@ int pedirDatoUnSoloPassenger(Passenger* p1);
 int altaPassenger(Passenger* p1,int tam);
 int bajaPassenger(Passenger* p1,int tam);
 int modificionPassenger(Passenger* p1,int tam);
-/*eGen eGen_CargarDatos(void);
-//int eGen_Alta(eGen array[], int TAM);
-int eGen_Baja(eGen array[], int TAM);
-//eGen eGen_ModificarUno(eGen Gen);
-
-int eGen_Modificacion(eGen array[], int TAM);*/
-
 
 int cargaDatos(Passenger* p1, int tam);
 int addPassenger(Passenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flycode[],int statusFlight);
