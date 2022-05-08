@@ -338,6 +338,9 @@ int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longit
 
 }
 
+/// \brief Obtien una cadena
+///\param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+///\return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
 static int getString(char* pResultado,int longitud){
 
 	int retorno =-1;
@@ -405,6 +408,9 @@ int utn_getStringLetras(char* pResultado, char* mensaje, char* mensajeError,int 
 
 }
 
+/// \brief Obtien una cadena
+///\param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+///\return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
 static int getStringLetras(char* pResultado,int longitud){
 
 	int retorno =-1;
@@ -424,6 +430,9 @@ static int getStringLetras(char* pResultado,int longitud){
 
 }
 
+///\brief Verifica si la cadena ingresada son letras
+///\param pLetras Cadena de caracteres a ser analizada
+///\return Retorna 1 (vardadero) si la cadena es numerica y 0 (falso) si no lo es
 static int sonLetras(char*pLetras,int longitud)
 {
 	int retorno= 1;
@@ -452,6 +461,15 @@ static int sonLetras(char*pLetras,int longitud)
 	return retorno;
 }
 
+/// @fn int utn_getStringLetrasYnumerosLimite(char*, char*, char*, int, int)
+/// @brief Solicita unacadena al usuario, luego de verificarlo devuelve el resultado
+/// con limites de caracteres ni mas ni menos lo mismo
+/// @param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// @param mensaje Es el mensaje a ser mostrado
+/// @param mensajeError Es el mensaje a ser mostrado
+/// @param limite Es el tamaño del array
+/// @param intentos es la cantidad de oportunidades
+/// @return 0 si salio bien y -1 si salio mal
 int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos){
 
 	int retorno=-1;
@@ -498,6 +516,14 @@ int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* men
 
 }
 
+/// @fn int utn_getStringLetrasYnumeros(char*, char*, char*, int, int)
+/// @brief Solicita una cadena al usuario, luego de verificarlo devuelve el resultado
+/// @param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// @param mensaje Es el mensaje a ser mostrado
+/// @param mensajeError Es el mensaje a ser mostrado
+/// @param limite Es el tamaño del array
+/// @param intentos es la cantidad de oportunidades
+/// @return 0 si salio bien y -1 si salio mal
 int utn_getStringLetrasYnumeros(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos){
 
 	int retorno=-1;
@@ -539,6 +565,10 @@ int utn_getStringLetrasYnumeros(char* pResultado, char* mensaje, char* mensajeEr
 
 }
 
+
+/// \brief Obtien una cadena de letras y numeros
+///\param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+///\return Retorna 0 (EXITO) si se obtiene un numero entero y -1 (ERROR) si no
 static int getStringLetrasYnumeros(char* pResultado,int longitud){
 
 	int retorno =-1;
@@ -558,6 +588,10 @@ static int getStringLetrasYnumeros(char* pResultado,int longitud){
 
 }
 
+
+///\brief Verifica si la cadena ingresada son letras y numeros
+///\param pLetras Cadena de caracteres a ser analizada
+///\return Retorna 1 (vardadero) si la cadena es numerica y 0 (falso) si no lo es
 static int sonLetrasYnumeros(char*pLetras,int longitud)
 {
 	int retorno= 1;
@@ -603,8 +637,7 @@ static int sonLetrasYnumeros(char*pLetras,int longitud)
 }
 
 /// @fn int utn_getString(char*, char*, char*, int, int)
-/// @brief Solicita un numero cadena al usuario, luego de verificarlo devuelve el resultado
-///
+/// @brief Solicita una cadena al usuario, luego de verificarlo devuelve el resultado
 /// @param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
 /// @param mensaje Es el mensaje a ser mostrado
 /// @param mensajeError Es el mensaje a ser mostrado
@@ -652,6 +685,10 @@ int utn_getStringMayusculayMinuscula(char* pResultado, char* mensaje, char* mens
 
 }
 
+///\brief char*bufferString guarda cadena ingresada en mayuscula la primera letra
+/// y minusculas las siguientes
+///\param cadena Cadena de caracteres a ser analizada
+///\return Retorna 1 (vardadero) si la cadena es numerica y 0 (falso) si no lo es
 static int mayusculaMinuscula(char*bufferString, int len)
 {
 	int retorno= -1;
