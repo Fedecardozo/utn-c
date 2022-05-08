@@ -31,95 +31,17 @@ int menu(int* x){
 
 //***FUNCIONES DEL MENU
 
-//Analizar
-static int alta(Passenger* p1,int tam){
 
-	Passenger p;
-	int retorno=-1;
-
-	int indice=ObtenerIndexLibre(p1, tam);
-
-	if(indice>=0 && pedirDatoUnSoloPassenger(&p)==0){
-
-		//p1[indice]=p;
-		retorno=0;
-		if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode,p.statusFlight)==0){
-
-			retorno=0;
-
-		}
-		else{
-
-			retorno=-2;
-
-		}
-
-
-	}else if(indice==-2){
-
-		retorno =-2;
-
-	}
-
-	return retorno;
-
-}
-
-//Analizar
-static int modificar(Passenger* p1,int tam){
-
-	int retorno =-1;
-	int id;
-
-	//HASTA EL RETORNO ES -1
-	if(utn_getNumero(&id, "\nIngrese id:", "\nDato invalido. Ingrese nuevamente: ", 0, 1200, 2)==0){
-
-		//RETORNO PUEDE 0 BIEN <0 QUE ALGO SALIO MAL
-		retorno=editPassenger(p1,tam,id);
-
-	}
-
-
-
-	return retorno;
-
-}
-
-//Analizar
-static int baja(Passenger* p1,int tam){
-
-	int retorno=-1;
-	int id;
-
-	if(utn_getNumero(&id, "\nIngrese numero ID:", "\nError Ingrese nuevamente: ", 0, 1200, 2)==0)
-	{
-		if(removePassenger(p1, tam, id)==0){
-
-			//ESTA OK
-			retorno = 0;
-
-		}else{
-
-			//NO EXISTE ID
-			retorno=-2;
-
-		}
-
-
-	}
-
-
-	return retorno;
-
-}
-
-
-//Analizar
+/// @fn alta Forzada
+/// @param pasajero para harcodear
+/// @param tam longitud array Passenger
+/// @return 0 bien -1 mal
 static int altaForzada(Passenger* pasajero,int tam){
 
 	int retorno =-1;
 
-	if(harcodeo(pasajero,tam)==0){
+	if(harcodeo(pasajero,tam)==0)
+	{
 
 		printf("\nCarga con exito!");
 		retorno=0;
@@ -131,40 +53,70 @@ static int altaForzada(Passenger* pasajero,int tam){
 }
 
 
-//Analizar
-static int pricePromedio(Passenger* list, int len, float promedio){
+/// @fn imprimir Promedio
+/// @param pasajero
+/// @param tam
+/// @return 0 bien -1 mal[parametros pasados]
+/// -2 no se puede calcular promedio
+/// -3 nadie supera el promedio
+
+int static printPromedio(Passenger* pasajero,int tam){
 
 	int retorno=-1;
-	int cont=0;
-	int i;
+	float promedio;
+	int totalPromedio;
+	int superanPromedio;
 
-	if (list != NULL && len > 0 && promedio > 0) {
+	//Calculo promedio
+	totalPromedio= promedioPassenger(pasajero, tam, &promedio);
 
+	if(pasajero != NULL && tam >0)
+	{
 
-		for (i = 0; i < len; i++) {
+		if(totalPromedio>0)
+		{
+			superanPromedio = superanPricePromedio(pasajero,tam,promedio);
 
-			if (list[i].isEmpty == OCUPADO && list[i].price > promedio) {
+			if(superanPromedio > 0)
+			{
 
-				cont++;
+				retorno=0;
+				printf("\n\n*** 2 ***\n-Total de los pasajes: %d",totalPromedio);
+				printf("\n-Promedio de los pasajes: %f",promedio);
+				printf("\n-Cantidad que superan el precio promedio: %d",superanPromedio);
+
+			}
+			else
+			{
+
+				//Nadie supera el promedio!
+				retorno=-3;
 
 			}
 
-		}
-		if(cont >=0){
-
-			retorno = cont;
+	    }
+		else
+		{
+			//No se pudo calcular el promedio!
+			retorno=-2;
 
 		}
 
 	}
 
+	//-- Parametros mal
+	return retorno;
 
-		return retorno;
 
 }
 
-
-//Analizar
+/// @fn informar
+/// @param pasajero
+/// @param tamaño del array
+/// @return 0 bien -1 mal[parametros pasados]
+/// -2 No se puede imprimir los pasajeros
+/// -3 No se puede calcular promedio
+/// -4 Error al ordenar e imprimir pasajero
 static int informar(Passenger* pasajero,int tam){
 
 	//printPassengers(pasa, tam);
@@ -175,73 +127,64 @@ static int informar(Passenger* pasajero,int tam){
 	3. Listado de los pasajeros por Código de vuelo y estados de vuelos ‘ACTIVO’*/
 
 	int retorno=-1;
-	float promedio;
-	int totalPromedio;
-	int superanPromedio;
 
 	if(pasajero != NULL && tam >0){
 
-
-		if(sortPassengers(pasajero, tam,1)==0){
-
-			printf("\n*** 1 ***\n-Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero");
-
-			if(printPassengers(pasajero, tam)==0){
-
-				totalPromedio= promedioPassenger(pasajero, tam, &promedio);
-
-				if(totalPromedio>0){
-
-					superanPromedio = pricePromedio(pasajero,tam,promedio);
-
-					if(superanPromedio > 0){
-
-						retorno=0;
-						printf("\n\n*** 2 ***\n-Total de los pasajes: %d",totalPromedio);
-						printf("\n-Promedio de los pasajes: %f",promedio);
-						printf("\n-Cantidad que superan el precio promedio: %d",superanPromedio);
-
-					}else{
-
-						//Nadie supera el promedio!
-						retorno=-5;
-
-					}
-
-				}
-				else{
-
-
-					//No se puede calcular promedio!
+		printf("\n*** 1 ***\n-Listado de los pasajeros ordenados alfabéticamente por Apellido y Tipo de pasajero");
+		//Ordeno array
+		if(printSortPassengers(pasajero,tam,1)==0)
+		{
+			if(printPromedio(pasajero, tam)==0)
+			{
+				printf("\n\n*** 3 ****");
+				if(printSortPassengersByCode(pasajero, tam, 1, 1)<0)
+				{
+					//Error al ordenar e imprimir pasajero
 					retorno=-4;
 
 				}
 
+			}
+			else
+			{
 
-			}else{
-
-				//No se puede imprimir los pasajeros!
+				//No se puede calcular promedio!
 				retorno=-3;
 
 			}
 
-		}else{
 
-			//No se pudo ordenar alfabeticamente!
+		}
+		else
+		{
+
+			//No se puede imprimir los pasajeros!
 			retorno=-2;
 
 		}
-			// retorno =-1Hubo un error!
+
+
 
 	}
-
-	printf("\n\n*** 3 ****");
-	printf("\n\n %d ", printSortPassengersByCode(pasajero, tam, 0, 1));
-
+	// retorno =-1Hubo un error!
 	return retorno;
 
 }
 
+static void erroresAlInformar(int caso){
+
+	switch(caso){
+
+		case -1: printf("\nHubo un error!"); break;
+		case -2: printf("\nNo se pudo ordenar alfabeticamente por apellido!"); break;
+		case -3: printf("\nNo se puede calcular promedio!"); break;
+		case -4: printf("\nNo se puede imprimir los pasajeros ordenados por codigo de vuelo!"); break;
+		default: printf("\nHubo un error en el sistema");
+	}
+
+
+
+}
 
 void menuIngresado(int opcion,Passenger* pasa,int tam){
 
@@ -253,7 +196,7 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 		case 1:
 			//ALTAS: Se debe permitir ingresar un pasajero calculando automáticamente el
 			//número de Id. El resto de los campos se le pedirá al usuario.
-				switch(alta(pasa,tam)){
+				switch(altaPassenger(pasa, tam)){
 
 				case 0: printf("\nCarga de datos con exito!"); break;
 				case -1: printf("\nNo se pudo cargar los datos! Los datos ingresados son invalidos"); break;
@@ -263,7 +206,7 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 			break;
 
 		case 2:
-			switch(modificar(pasa, tam)){
+			switch(modificionPassenger(pasa, tam)){
 
 				case 0: printf("\nModificacion de datos con exito!"); break;
 				case -1: printf("\nError! Datos invalidos"); break;
@@ -277,7 +220,7 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 		case 3:
 
-				switch(baja(pasa, tam)){
+				switch(bajaPassenger(pasa, tam)){
 
 				case 0: printf("\nEliminado con exito!"); break;
 				case -1: printf("\nDato ingresado incorrecto"); break;
@@ -289,17 +232,7 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 		case 4:
 
-			switch(informar(pasa, tam)){
-
-			case -1: printf("\nHubo un error!"); break;
-			case -2: printf("\nNo se pudo ordenar alfabeticamente!"); break;
-			case -3: printf("\nNo se puede imprimir los pasajeros!"); break;
-			case -4: printf("\nNo se puede calcular promedio!"); break;
-			case -5: printf("\nNadie supera el promedio!"); break;
-
-			}
-
-
+			erroresAlInformar(informar(pasa, tam));
 
 			break;
 
@@ -307,7 +240,7 @@ void menuIngresado(int opcion,Passenger* pasa,int tam){
 
 			if(altaForzada(pasa,tam)==0){
 
-				informar(pasa,tam);
+				erroresAlInformar(informar(pasa,tam));
 
 			}
 

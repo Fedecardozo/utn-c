@@ -1,9 +1,4 @@
-/*
- * arrayPassenger.h
- *
- *  Created on: 30 abr. 2022
- *      Author: fedec
- */
+
 
 #ifndef ARRAYPASSENGER_H_
 #define ARRAYPASSENGER_H_
@@ -49,10 +44,14 @@ int printPassengers(Passenger* p1,int tam);
 int pedirDatoUnSoloPassenger(Passenger* p1);
 
 //ABM
+int altaPassenger(Passenger* p1,int tam);
+int bajaPassenger(Passenger* p1,int tam);
+int modificionPassenger(Passenger* p1,int tam);
 /*eGen eGen_CargarDatos(void);
 //int eGen_Alta(eGen array[], int TAM);
 int eGen_Baja(eGen array[], int TAM);
 //eGen eGen_ModificarUno(eGen Gen);
+
 int eGen_Modificacion(eGen array[], int TAM);*/
 
 
@@ -63,8 +62,10 @@ int editPassenger(Passenger* list, int len, int id);
 int sortPassengers(Passenger* list, int len, int order);
 int sortPassengersByCode(Passenger* list, int len, int order);
 int printSortPassengersByCode(Passenger* list, int len, int order,int estado);
-
+int printSortPassengers(Passenger* list, int len, int order);
+int imprimirUnPassengerColumna(Passenger p1);
 int promedioPassenger(Passenger* list, int len, float* promedio);
+int superanPricePromedio(Passenger* list, int len, float promedio);
 
 //**** FIN CABECERAS DE FUNCION****
 

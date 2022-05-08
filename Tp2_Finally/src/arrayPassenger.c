@@ -94,6 +94,24 @@ int imprimirUnPassenger(Passenger p1){
 	return retorno;
 }
 
+/// @fn int imprimirPasajero(Passanger)
+/// @param imprimi un pasajero solo
+/// @return un 0 si esta bien y un -1 si esta mal
+int imprimirUnPassengerColumna(Passenger p1){
+
+	int retorno =-1;
+
+	printf("\t\tNombre: %s \nApellido:%s \nPrecio: %f ",p1.name,p1.lastName,p1.price);
+	printf("\nCodigo: %s \nTipo: %d \nEstado: %d",p1.flycode,p1.typePassanger,p1.statusFlight);
+
+	retorno=0;
+
+
+
+
+	return retorno;
+}
+
 /// @fn int imprimirArrayPasajero(Passanger*, int)
 ///  imprimi un array de pasajero
 /// @param recibi un tipo passenger
@@ -938,6 +956,7 @@ int printSortPassengersByCode(Passenger* list, int len, int order,int estado){
 				if(list[i].statusFlight==estado)
 				{
 					imprimirUnPassenger(list[i]);
+					retorno=0;
 
 				}
 
@@ -949,3 +968,148 @@ int printSortPassengersByCode(Passenger* list, int len, int order,int estado){
 	return retorno;
 
 }
+
+
+int altaPassenger(Passenger* p1,int tam){
+
+	Passenger p;
+	int retorno=-1;
+
+	int indice=ObtenerIndexLibre(p1, tam);
+
+	if(indice>=0 && pedirDatoUnSoloPassenger(&p)==0){
+
+		//p1[indice]=p;
+		retorno=0;
+		if(addPassenger(p1, tam, p.id, p.name, p.lastName, p.price, p.typePassanger, p.flycode,p.statusFlight)==0){
+
+			retorno=0;
+
+		}
+		else{
+
+			retorno=-2;
+
+		}
+
+
+	}else if(indice==-2){
+
+		retorno =-2;
+
+	}
+
+	return retorno;
+
+}
+
+int modificionPassenger(Passenger* p1,int tam){
+
+	int retorno =-1;
+	int id;
+
+	//HASTA EL RETORNO ES -1
+	if(utn_getNumero(&id, "\nIngrese id:", "\nDato invalido. Ingrese nuevamente: ", 0, 1200, 2)==0){
+
+		//RETORNO PUEDE 0 BIEN <0 QUE ALGO SALIO MAL
+		retorno=editPassenger(p1,tam,id);
+
+	}
+
+
+
+	return retorno;
+
+}
+
+int bajaPassenger(Passenger* p1,int tam){
+
+	int retorno=-1;
+	int id;
+
+	if(utn_getNumero(&id, "\nIngrese numero ID:", "\nError Ingrese nuevamente: ", 0, 1200, 2)==0)
+	{
+		if(removePassenger(p1, tam, id)==0){
+
+			//ESTA OK
+			retorno = 0;
+
+		}else{
+
+			//NO EXISTE ID
+			retorno=-2;
+
+		}
+
+
+	}
+
+
+	return retorno;
+
+}
+
+int superanPricePromedio(Passenger* list, int len, float promedio){
+
+	int retorno=-1;
+	int cont=0;
+	int i;
+
+	if (list != NULL && len > 0 && promedio > 0) {
+
+
+		for (i = 0; i < len; i++) {
+
+			if (list[i].isEmpty == OCUPADO && list[i].price > promedio) {
+
+				cont++;
+
+			}
+
+		}
+		if(cont >=0){
+
+			retorno = cont;
+
+		}
+
+	}
+
+
+		return retorno;
+
+}
+
+/// @fn imprime ordenado por apellido y tipo de pasajero
+/// \param list*  lista de Pasajero
+/// \param len longitud
+/// \param estado [1]vuelo Activado [0]vuelo desactivado
+/// \param orden int [1] indica ARRIBA - [0] indica ABAJO
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// (-2)Error al ordenar alfabeticamente
+int printSortPassengers(Passenger* list, int len, int order){
+
+	int retorno=-1;
+
+	if(list!=NULL && len >=0 && order>=0 && order<=1)
+	{
+		retorno=0;
+
+		if(sortPassengers(list, len, order)==0)
+		{
+
+			printPassengers(list, len);
+
+		}
+		else
+		{
+			//NO se pudo ordenar
+			retorno=-2;
+
+		}
+	}
+
+	return retorno;
+
+}
+
