@@ -1,2 +1,144 @@
-Info: Nothing to build for modeloParcial
-Info: Nothing to build for modeloParcial
+14:04:22 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+Info: Nothing to build for Generico
+Info: Nothing to build for Generico
+14:08:48 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+Info: Nothing to build for Generico
+Info: Nothing to build for Generico
+14:21:20 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+14:21:42 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+14:22:38 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+14:23:25 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+14:24:40 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+17:28:52 **** Rebuild of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+17:47:40 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'printCuitSeparacion':
+..\src\utn.c:849:7: warning: unused variable 'aux' [-Wunused-variable]
+  char aux[20];
+       ^~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+17:50:13 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+17:51:12 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+17:51:43 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Generico
+Info: Nothing to build for Generico
+18:16:12 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+..\src\ABM.c: In function 'eGen_MostrarTodos':
+..\src\ABM.c:182:5: warning: implicit declaration of function 'Gen_MostrarUno' [-Wimplicit-function-declaration]
+     Gen_MostrarUno(list[i]);
+     ^~~~~~~~~~~~~~
+..\src\ABM.c: In function 'eGen_Sort':
+..\src\ABM.c:333:7: warning: implicit declaration of function 'Gen_Vacio' [-Wimplicit-function-declaration]
+    if(Gen_Vacio(list, len))
+       ^~~~~~~~~
+..\src\ABM.c: In function 'eGen_CargarDatos':
+..\src\ABM.c:382:7: warning: implicit declaration of function 'Gen_PediUnDato' [-Wimplicit-function-declaration]
+    if(Gen_PediUnDato(&aux)==-1)
+       ^~~~~~~~~~~~~~
+..\src\ABM.c: In function 'eGen_ModificarUno':
+..\src\ABM.c:421:11: warning: implicit declaration of function 'Gen_BuscarPorid' [-Wimplicit-function-declaration]
+    indice=Gen_BuscarPorid(list, len, id);
+           ^~~~~~~~~~~~~~~
+..\src\ABM.c: In function 'eGen_Alta':
+..\src\ABM.c:658:12: warning: implicit declaration of function 'ObtenerIndexLibre' [-Wimplicit-function-declaration]
+   indice = ObtenerIndexLibre(list, len);
+            ^~~~~~~~~~~~~~~~~
+..\src\ABM.c: In function 'eGen_Modificacion':
+..\src\ABM.c:760:13: warning: implicit declaration of function 'Gen_ModificarUno' [-Wimplicit-function-declaration]
+     retorno=Gen_ModificarUno(list,len,id);
+             ^~~~~~~~~~~~~~~~
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+src\ABM.o: In function `eGen_MostrarTodos':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:182: undefined reference to `Gen_MostrarUno'
+src\ABM.o: In function `eGen_MostrarDadosDeBaja':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:219: undefined reference to `Gen_MostrarUno'
+src\ABM.o: In function `eGen_Sort':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:333: undefined reference to `Gen_Vacio'
+src\ABM.o: In function `eGen_CargarDatos':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:382: undefined reference to `Gen_PediUnDato'
+src\ABM.o: In function `eGen_ModificarUno':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:421: undefined reference to `Gen_BuscarPorid'
+src\ABM.o: In function `eGen_Alta':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:658: undefined reference to `ObtenerIndexLibre'
+src\ABM.o: In function `eGen_Modificacion':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:760: undefined reference to `Gen_ModificarUno'
+collect2.exe: error: ld returned 1 exit status
+18:16:59 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+..\src\ABM.c: In function 'eGen_Sort':
+..\src\ABM.c:333:7: warning: implicit declaration of function 'Gen_Vacio' [-Wimplicit-function-declaration]
+    if(Gen_Vacio(list, len))
+       ^~~~~~~~~
+..\src\ABM.c: In function 'eGen_Modificacion':
+..\src\ABM.c:760:13: warning: implicit declaration of function 'Gen_ModificarUno' [-Wimplicit-function-declaration]
+     retorno=Gen_ModificarUno(list,len,id);
+             ^~~~~~~~~~~~~~~~
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+src\ABM.o: In function `eGen_Sort':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:333: undefined reference to `Gen_Vacio'
+src\ABM.o: In function `eGen_Modificacion':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:760: undefined reference to `Gen_ModificarUno'
+collect2.exe: error: ld returned 1 exit status
+18:17:21 **** Incremental Build of configuration Debug for project Generico ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
+gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 

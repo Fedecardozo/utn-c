@@ -9,13 +9,21 @@ int main(void) {
 
 	setbuf(stdout,NULL);
 
-	Gen uno[TAM];
+	char cuit[20];
 
-	Gen_Inicializar(uno, TAM);
+	if(utn_getCuit(cuit, "\nIngrese cuit: ", "\nError, de nuevo:", 2,1)==0)
+	{
+		printf("Entro");
+		//printf("\nCuit ingresado: %s",cuit);
+		printCuitSeparacion(cuit);
 
-	Gen_CargarDatos(uno, TAM);
+	}
+	else
+	{
 
-	Gen_MostrarTodos(uno, TAM);
+		printf("No entro");
+
+	}
 
 
 	return EXIT_SUCCESS;

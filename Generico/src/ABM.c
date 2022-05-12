@@ -1,17 +1,17 @@
 
 #include "ABM.h"
 
-static int GeneradorId();
-static int Gen_Vacio(Gen * list, int len);
-static int removeGen(Gen* list, int len, int id);
-static int opcionesParaModifcar(int opc, Gen* list);
-static int queModifcar(int indice,Gen *gen );
-static int sort_x(Gen *list, int len, int criterio);
+static int generadorId();
+static int eGen_Vacio(General * list, int len);
+static int eGen_remove(General* list, int len, int id);
+static int opcionesParaModifcar(int opc, General* list);
+static int queModifcar(int indice,General *gen );
+static int sort_x(General *list, int len, int criterio);
 
-/// @fn int GeneradorId()
-/// @brief Genera un id automatico
+/// @fn int generadorId()
+/// @brief genera un id automatico
 /// @return Devuelve un id entero
-static int GeneradorId(){
+static int generadorId(){
 
 	static int id=1000;
 	return id++;
@@ -24,7 +24,7 @@ static int GeneradorId(){
 /// \param list Gen* Puntero del array de pasajeros
 /// \param len int Longitud del arreglo
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int Gen_Inicializar(Gen *list, int len){
+int eGen_Inicializar(General *list, int len){
 
 	int retorno=-1;
 	int i;
@@ -47,11 +47,11 @@ int Gen_Inicializar(Gen *list, int len){
 }
 
 /// @fn ObtenerIndexLibre
-/// @param list recibe un array tipo Gen
+/// @param list recibe un array tipo General
 /// @param len es el lenaño del del array
 /// \return int Devuelve (-1) si Error [Longitud no válida o puntero NULL]
 /// o -2 sin espacio libre - (0) si está bien
-int ObtenerIndexLibre(Gen* list, int len){
+int eGen_ObtenerIndexLibre(General* list, int len){
 
 	int retorno=-1;
 	int i;
@@ -86,13 +86,13 @@ int ObtenerIndexLibre(Gen* list, int len){
 
 }
 
-/// \brief Gen BuscarPorid by Id en devuelve la posición del índice en el arreglo.
-/// \param list Gen *
+/// \brief General BuscarPorid by Id en devuelve la posición del índice en el arreglo.
+/// \param list General *
 /// \param len int
 /// \param id int
 ///\return Posición del índice de pasajero de retorno o (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado]
-int Gen_BuscarPorid(Gen *list, int len, int id){
+int eGen_BuscarPorid(General *list, int len, int id){
 
 	int retorno=-1;
 	int i;
@@ -122,13 +122,13 @@ int Gen_BuscarPorid(Gen *list, int len, int id){
 }
 
 /// @fn pide Un Solo Dato al usuario
-/// @pre pide datos para llenar un Gen y los valida
+/// @pre pide datos para llenar un General y los valida
 /// @post y luego los copia en passanger pasado por parametro
-/// @param recibi un tipo Gen
+/// @param recibi un tipo General
 /// @return un 0 si esta todo bien o -1 si esta mal
-int Gen_PediUnDato(Gen * list){
+int eGen_PediUnDato(General * list){
 
-	Gen gen;
+	General aux;
 	int retorno=-1;
 
 	if(list!=NULL){
@@ -136,10 +136,10 @@ int Gen_PediUnDato(Gen * list){
 		if(1)//utn_getStringMayusculayMinuscula(list.name, "\nIngrese nombre:","\nError esta mal escrito" , MAX_CARACTER, 2)==0)
 		{
 
-			gen.id = GeneradorId();
-			gen.isEmpty=OCUPADO;
+			aux.id = generadorId();
+			aux.isEmpty=OCUPADO;
 			retorno=0;
-			*list=gen;
+			*list=aux;
 
 		}
 
@@ -149,19 +149,19 @@ int Gen_PediUnDato(Gen * list){
 
 }
 
-/// @fn int imprime Gen
-/// @param imprimi un Gen solo
-void Gen_MostrarUno(Gen list){
+/// @fn int imprime General
+/// @param imprimi un General solo
+void eGen_MostrarUno(General list){
 
 	printf("|%-15d||%-15d|\n",list.id,list.id);
 
 }
 
-/// @fn imprime un array de Gen que esten cargados
-/// @param recibi un puntero tipo Gen
+/// @fn imprime un array de General que esten cargados
+/// @param recibi un puntero tipo General
 /// @param la longitud para recorrer el array
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int Gen_MostrarTodos(Gen *list, int len){
+int eGen_MostrarTodos(General *list, int len){
 
 	int retorno = -1;
 	int i;
@@ -179,7 +179,7 @@ int Gen_MostrarTodos(Gen *list, int len){
 
 			if(list[i].isEmpty==OCUPADO){
 
-				Gen_MostrarUno(list[i]);
+				eGen_MostrarUno(list[i]);
 				printf("+-----------------------------------------------------------"
 								"----------------------------------------------+\n");
 
@@ -194,11 +194,11 @@ int Gen_MostrarTodos(Gen *list, int len){
 
 }
 
-/// @fn imprime un array de Gen que esten dados de baja
-/// @param recibi un puntero tipo Gen
+/// @fn imprime un array de General que esten dados de baja
+/// @param recibi un puntero tipo General
 /// @param la longitud para recorrer el array
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int Gen_MostrarDadosDeBaja(Gen *list, int len){
+int eGen_MostrarDadosDeBaja(General *list, int len){
 
 	int retorno = -1;
 	int i;
@@ -216,7 +216,7 @@ int Gen_MostrarDadosDeBaja(Gen *list, int len){
 
 			if(list[i].isEmpty==LIBRE){
 
-				Gen_MostrarUno(list[i]);
+				eGen_MostrarUno(list[i]);
 				printf("+-----------------------------------------------------------"
 								"----------------------------------------------+\n");
 
@@ -232,11 +232,11 @@ int Gen_MostrarDadosDeBaja(Gen *list, int len){
 }
 
 /// \brief Pregunta si las posiciones en el array están vacías,
-/// \param list Gen * Puntero del array de Gen
+/// \param list General * Puntero del array de General
 /// \param len int Longitud del arreglo
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
 /// (1) Cargado
-static int Gen_Vacio(Gen * list, int len){
+static int eGen_Vacio(General * list, int len){
 
 	int retorno=-1;
 	int i;
@@ -264,15 +264,15 @@ static int Gen_Vacio(Gen * list, int len){
 //SORT
 
 /// @fn sort_x
-/// @param list puntero de Gen
-/// @param len longitud del array de  Gen
+/// @param list puntero de General
+/// @param len longitud del array de  General
 /// @param criterio orden 1 arriba - 0 abajo
 /// @return 0 bien 1 se ordeno -1[parametros nullos o menor a 0]
-static int sort_x(Gen *list, int len, int criterio){
+static int sort_x(General *list, int len, int criterio){
 
 	int i;
-	Gen aux;
-	Gen copia[len];
+	General aux;
+	General copia[len];
 	int flagSwap;
 	int newLimete=len-1;
 	int retorno=-1;
@@ -317,20 +317,20 @@ static int sort_x(Gen *list, int len, int criterio){
 }
 
 
-/// \brief Ordenar los elementos en el arreglo de Gen
+/// \brief Ordenar los elementos en el arreglo de General
 /// Indicar orden ARRIBA o ABAJO
-///\param lista Gen *
+///\param lista General *
 ///\param len int
 ///\param criterio int [1] indica ARRIBA - [0] indica ABAJO
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
 /// (-2)Esta vacio (-3)Error al ordenar
-int Gen_Sort(Gen *list, int len, int criterio){
+int eGen_Sort(General *list, int len, int criterio){
 
 	int retorno = -1;
 
 		if(list != NULL && len >= 0 &&  criterio>=0 && criterio<=1 )
 		{
-			if(Gen_Vacio(list, len))
+			if(eGen_Vacio(list, len))
 			{
 
 				if(sort_x(list,len,criterio)>=0)//sort>=0)
@@ -363,15 +363,15 @@ int Gen_Sort(Gen *list, int len, int criterio){
 //ABM
 
 
-/// @fn Gen Cargar los Datos de una list de Gen
-/// @param list puntero de Gen
-/// @param len longitud de Gen
-/// @return Gen cargado
-int Gen_CargarDatos(Gen * list,int len){
+/// @fn General Cargar los Datos de una list de General
+/// @param list puntero de General
+/// @param len longitud de General
+/// @return 1 punteros nullos len <0 [0]bien
+int eGen_CargarDatos(General * list,int len){
 
 	int i;
 	int retorno=-1;
-	Gen gen;
+	General aux;
 
 	if(list != NULL && len >0)
 	{
@@ -379,9 +379,10 @@ int Gen_CargarDatos(Gen * list,int len){
 		for (i = 0; i < len; i++)
 		{
 
-			if(Gen_PediUnDato(&gen)==-1)
+			if(eGen_PediUnDato(&aux)==-1)
 			{
-				list[i]=gen;
+				list[i]=aux;
+				retorno=0;
 			}
 
 		}
@@ -396,9 +397,9 @@ int Gen_CargarDatos(Gen * list,int len){
 }
 
 ///FUNCION PARA LA MODIFICACION
-/// @fn modifica Gen
-/// @brief modica un dato de Gen
-/// @param recibe un tipo Gen list
+/// @fn modifica General
+/// @brief modica un dato de General
+/// @param recibe un tipo General list
 /// @param len recibe el tamanio del array
 /// @param recibe el id que va a buscar
 /// @return 0 ok(-1)Datos nullos (-2) No se encontro ID
@@ -406,7 +407,7 @@ int Gen_CargarDatos(Gen * list,int len){
 /// (-4)Ingreso mal los datos a modificar
 /// (-5)mal respuesta de si esta seguro
 /// (-6)mal respuesta si desea continuar
-int Gen_ModificarUno(Gen *list,int len,int id){
+int eGen_ModificarUno(General *list,int len,int id){
 
 	int retorno=-1;
 	int indice;
@@ -417,7 +418,7 @@ int Gen_ModificarUno(Gen *list,int len,int id){
 		{
 
 			retorno=0;
-			indice=Gen_BuscarPorid(list, len, id);
+			indice=eGen_BuscarPorid(list, len, id);
 
 			if(indice<0){
 
@@ -448,10 +449,10 @@ int Gen_ModificarUno(Gen *list,int len,int id){
 /// @fn opcionesParaModifcar
 /// @brief Modifica los datos segun la opcion
 /// @return -1 mal 0 bien
-static int opcionesParaModifcar(int opc, Gen* list){
+static int opcionesParaModifcar(int opc, General* list){
 
 	int retorno=-1;
-	Gen aux=*list;
+	General aux=*list;
 
 	if(list != NULL)
 	{
@@ -514,10 +515,10 @@ static int opcionesParaModifcar(int opc, Gen* list){
 /// @return 0 bien o -1 mal -3 mal las opciones
 /// -4 mal datos a modificar -5 mal respuesta si esta seguro
 /// -6 Mal la respuesta de si desea continuar
-static int queModifcar(int indice,Gen *gen ){
+static int queModifcar(int indice,General *gen ){
 
 	int retorno=-1;
-	Gen aux;
+	General aux;
 	aux=gen[indice];
 	int respuesta;
 	int opc;
@@ -592,21 +593,21 @@ static int queModifcar(int indice,Gen *gen ){
 
 
 ///FUNCION PARA LA BAJA
-/// \brief Eliminar un Gen por Id (poner el indicador isEmpty en 1)
-///\lista de parámetros Gen *
+/// \brief Eliminar un General por Id (poner el indicador isEmpty en 1)
+///\lista de parámetros General *
 ///\parametro len int
 ///\id de parámetro int
 ///\return int Retorna (-1) si Error [longitud inválida o NULL
-/// puntero o si no puede encontrar un Gen] -
+/// puntero o si no puede encontrar un General] -
 ///  (0) si está bien (-2) No estaba seguro
-static int removeGen(Gen* list, int len, int id)
+static int eGen_remove(General* list, int len, int id)
 {
 	int retorno=-1;
 	int indice;
 
 		if(list!=NULL && len>0 && id>0){
 
-			indice=Gen_BuscarPorid(list, len, id);
+			indice=eGen_BuscarPorid(list, len, id);
 
 			if(indice<0){
 
@@ -637,14 +638,14 @@ static int removeGen(Gen* list, int len, int id)
 
 
 //ANALIZAR
-/// @fn Da de alta un Gen
-/// @param lista de Gen
+/// @fn Da de alta un General
+/// @param lista de General
 /// @param len longitud del array Gen
 /// @return Posición del índice de pasajero de retorno o (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado] -2 lista llena
-int Gen_Alta(Gen *list, int len){
+int eGen_Alta(General *list, int len){
 
-		Gen gen;
+		General aux;
 		int retorno=-1;
 		int indice;
 
@@ -654,12 +655,12 @@ int Gen_Alta(Gen *list, int len){
 
 		//Busco primero lugar vacio para que el usuario, para avisarle que no hay lugar
 		//antes de que complete los datos
-		indice = ObtenerIndexLibre(list, len);
+		indice = eGen_ObtenerIndexLibre(list, len);
 
-			if(indice>=0 && Gen_PediUnDato(&gen)==0)
+			if(indice>=0 && eGen_PediUnDato(&aux)==0)
 			{
 
-				list[indice]=gen;
+				list[indice]=aux;
 				retorno=0;
 
 
@@ -677,12 +678,12 @@ int Gen_Alta(Gen *list, int len){
 }
 
 
-/// @fn Baja para Gen
-/// @param list arreglo Gen
+/// @fn Baja para General
+/// @param list arreglo General
 /// @param len longitud del arreglo
 /// @return 0 bien -1 error parametros -2 no existe id -3 No hay datos cargados
 /// -4 no estaba seguro
-int Gen_Baja(Gen *list, int len){
+int eGen_Baja(General *list, int len){
 
 	int retorno=-1;
 	int id;
@@ -690,11 +691,11 @@ int Gen_Baja(Gen *list, int len){
 
 	if(list != NULL && len >0)
 	{
-		if(Gen_Vacio(list, len))
+		if(eGen_Vacio(list, len))
 		{
 			if(utn_getNumero(&id, "\nIngrese numero ID:", "\nError Ingrese nuevamente: ", 0, 3000, 2)==0)
 			{
-				rta=removeGen(list, len, id);
+				rta=eGen_remove(list, len, id);
 				if(rta==0)
 				{
 
@@ -733,8 +734,8 @@ int Gen_Baja(Gen *list, int len){
 }
 
 
-/// @fn Modificacion para Gen
-/// @param gen arreglo Gen
+/// @fn Modificacion para General
+/// @param gen arreglo General
 /// @param len longitud del arreglo
 /// @return 0 ok(-1)Datos nullos (-2) No se encontro ID
 /// (-3)Ingreso mal las opciones
@@ -742,21 +743,21 @@ int Gen_Baja(Gen *list, int len){
 /// (-5)mal respuesta de si esta seguro
 /// (-6)mal respuesta si desea continuar
 /// (-7)EL ARREGLO ESTA VACIO
-int Gen_Modificacion(Gen * gen,int len){
+int eGen_Modificacion(General * list,int len){
 
 	int retorno =-1;
 	int id;
 
-	if(gen != NULL)
+	if(list != NULL)
 	{
-		if(Gen_Vacio(gen, len))
+		if(eGen_Vacio(list, len))
 		{
 
 			//HASTA EL RETORNO ES -1
 			if(utn_getNumero(&id, "\nIngrese id:", "\nDato invalido. Ingrese nuevamente: ", 0, 1200, 2)==0){
 
 				//RETORNO PUEDE 0 BIEN <0 QUE ALGO SALIO MAL
-				retorno=Gen_ModificarUno(gen,len,id);
+				retorno=eGen_ModificarUno(list,len,id);
 
 			}
 

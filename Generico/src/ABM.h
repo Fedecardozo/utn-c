@@ -18,29 +18,29 @@ typedef struct{
 	int id;
 	int isEmpty;
 
-}Gen;
+}General;
 
 
 /** INICIO CABECERAS DE FUNCION*/
-int Gen_Inicializar(Gen *list, int len);
-int Gen_ObtenerIndexLibre(Gen *list, int len);
-int Gen_BuscarPorid(Gen *list, int len, int id);
-int Gen_PediUnDato(Gen * list);
-void Gen_MostrarUno(Gen list);
-int Gen_MostrarTodos(Gen *list, int len);
-int Gen_MostrarDadosDeBaja(Gen *list, int len);
+int eGen_Inicializar(General *list, int len);
+int eGen_ObtenerIndexLibre(General *list, int len);
+int eGen_BuscarPorid(General *list, int len, int id);
+int eGen_PediUnDato(General * list);
+void eGen_MostrarUno(General list);
+int eGen_MostrarTodos(General *list, int len);
+int eGen_MostrarDadosDeBaja(General *list, int len);
 
 /** SORT */
 //CRITERIO -> -1 = MENOR A MAYOR
 //CRITERIO ->  1 = MAYOR A MENOR
-int Gen_Sort(Gen *list, int len, int criterio);
+int eGen_Sort(General *list, int len, int criterio);
 
 //ABM
-int Gen_CargarDatos(Gen * list,int len);
-int Gen_ModificarUno(Gen *list,int len,int id);
-int Gen_Alta(Gen *list, int len);
-int Gen_Baja(Gen *list, int len);
-int Gen_Modificacion(Gen *list, int len);
+int eGen_CargarDatos(General * list,int len);
+int eGen_ModificarUno(General *list,int len,int id);
+int eGen_Alta(General *list, int len);
+int eGen_Baja(General *list, int len);
+int eGen_Modificacion(General *list, int len);
 /** FIN CABECERAS DE FUNCION*/
 
 #endif /* ABM_H_ */
