@@ -1,13 +1,14 @@
 
 #include "arrayProducto.h"
 
-static char categorias[4][20]={{"Tecnologia"},{"Moda"},{"Deportes"},{"Otro"}};
+static char categorias[4][20]={{"1)Deportes"},{"2)Moda"},{"3)Otro"},{"4)Tecnologia"}};
 
 static int generadorId();
 static int eProducto_Vacio(Producto * list, int len);
 static int eProducto_remove(Producto* list, int len, int id);
 static int opcionesParaModifcar(int opc, Producto* list);
 static int queModifcar(int indice,Producto *gen );
+static int sort_Categoria(Producto *list, int len, int criterio);
 
 void harcodeoProducto(Producto * list,int len){
 
@@ -32,6 +33,13 @@ void harcodeoProducto(Producto * list,int len){
 	aux.precio = 3028;
 	aux.categoria = 2;
 	aux.stock = 2;
+
+	eProducto_Alta(list, len, aux);
+
+	strncpy(aux.nombreProducto,"Lavarropa",MAX_NOMBRE);
+	aux.precio = 1828;
+	aux.categoria = 4;
+	aux.stock = 10;
 
 	eProducto_Alta(list, len, aux);
 
@@ -168,10 +176,10 @@ int eProducto_PediUnDato(Producto * list){
 			&& utn_getNumeroFlotante(&aux.precio,"\nIngrese precio producto: ",
 					"\nError precio invalido", 0, 99999999, 2)==0
 			&& utn_getNumero(&aux.categoria, "\n** Categorias **"
-					"\n1)Tecnologia"
+					"\n1)Deportes"
 					"\n2)Moda"
-					"\n3)Deportes"
-					"\n4)Otro"
+					"\n3)Otro"
+					"\n4)Tecnologia"
 					"\nIngrese categoria:", "\nOpcion incorrecta\nIngrese nuevamente: ",
 					1, 4, 2)==0
 			&& utn_getNumero(&aux.stock, "\nIngrese cantidad a vender: ",
@@ -195,7 +203,7 @@ void eProducto_MostrarUno(Producto list){
 
 	printf("|%-10d|%-10d|%-25s|%-15f|%-25s|%-10d|\n",
 			list.id,list.isEmpty,list.nombreProducto,
-			list.precio,categorias[list.categoria],list.stock);
+			list.precio,categorias[list.categoria-1],list.stock);
 
 }
 
@@ -302,6 +310,105 @@ static int eProducto_Vacio(Producto * list, int len){
 
 
 	}
+
+//SORT
+
+///\brief Ordenar los elementos en el arreglo de Producto
+/// Indicar orden ARRIBA o ABAJO
+///\param lista Producto *
+///\param len int
+///\param criterio int [1] indica ARRIBA - [0] indica ABAJO
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// (-2)Esta vacio (-3)Error al ordenar
+int eProducto_Sort(Producto *list, int len, int criterio){
+
+	int retorno = -1;
+
+		if(list != NULL && len >= 0 &&  criterio>=0 && criterio<=1 )
+		{
+			if(eProducto_Vacio(list, len))
+			{
+
+				if(sort_Categoria(list,len,criterio)>=0)//sort>=0)
+				{
+
+					retorno=0;
+
+
+				}
+				else
+				{
+					//Error al ordenar
+					retorno=-3;
+
+				}
+
+			}
+			else
+			{
+				//ARREGLO VACIO
+				retorno=-2;
+			}
+
+		}
+
+		//Retorno =-1 error en los parametros
+	return retorno;
+}
+
+/// @fn sort_x
+/// @param list puntero de Producto
+/// @param len longitud del array de  Producto
+/// @param criterio orden 1 arriba - 0 abajo
+/// @return 0 bien 1 se ordeno -1[parametros nullos o menor a 0]
+static int sort_Categoria(Producto *list, int len, int criterio){
+
+	int i;
+	Producto aux;
+	//Producto copia[len];
+	int flagSwap=0;
+	int newLimite=len-1;
+	int retorno=-1;
+
+	if(list != NULL && len>0 && criterio>=0 && criterio<=1)
+	{
+		retorno=0;
+		//*copia=*list;
+		do{
+
+			flagSwap=0;
+
+			for (i = 0; i < newLimite; i++)
+			{
+
+				if(list[i].isEmpty==OCUPADO)
+				{
+					//Segun lo que quiera ordenar
+					if(ordenEnteros(list[i].categoria , list[i+1].categoria, criterio)>0)
+					{
+						aux= list[i];
+						list[i]=list[i+1];
+						list[i+1]=aux;
+						retorno=1;
+						flagSwap=1;
+
+					}
+
+				 }
+
+
+			 }
+			newLimite--;
+
+		}while(flagSwap);
+
+		//*list=*copia;
+
+	}
+
+	return retorno;
+
+}
 
 
 //ABM

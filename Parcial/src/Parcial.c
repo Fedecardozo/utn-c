@@ -4,7 +4,7 @@
 
 #include "menu.h"
 
-#define TAM 5
+#define TAM 200
 
 int main(void) {
 
@@ -18,7 +18,8 @@ int main(void) {
 	Producto arrayProducto[TAM];
 	eProducto_Inicializar(arrayProducto, TAM);
 	harcodeoProducto(arrayProducto, TAM);
-
+	int x= eProducto_Sort(arrayProducto, TAM, 1);
+	printf("\n%d\n",x);
 	eProducto_MostrarTodos(arrayProducto, TAM);
 
 

@@ -35,6 +35,9 @@ void eProducto_MostrarUno(Producto list);
 int eProducto_MostrarTodos(Producto *list, int len);
 int eProducto_MostrarDadosDeBaja(Producto *list, int len);
 
+//SORT
+int eProducto_Sort(Producto *list, int len, int criterio);
+
 //ABM
 int eProducto_CargarDatos(Producto * list,int len);
 int eProducto_ModificarUno(Producto *list,int len,int id);
