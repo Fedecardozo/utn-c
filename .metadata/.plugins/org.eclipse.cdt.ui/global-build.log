@@ -1,144 +1,346 @@
-14:04:22 **** Incremental Build of configuration Debug for project Generico ****
+21:08:12 **** Rebuild of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-Info: Nothing to build for Generico
-Info: Nothing to build for Generico
-14:08:48 **** Incremental Build of configuration Debug for project Generico ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" 
+21:08:21 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-Info: Nothing to build for Generico
-Info: Nothing to build for Generico
-14:21:20 **** Incremental Build of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-14:21:42 **** Incremental Build of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-14:22:38 **** Incremental Build of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-14:23:25 **** Incremental Build of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-14:24:40 **** Incremental Build of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-17:28:52 **** Rebuild of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-17:47:40 **** Incremental Build of configuration Debug for project Generico ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-..\src\utn.c: In function 'printCuitSeparacion':
-..\src\utn.c:849:7: warning: unused variable 'aux' [-Wunused-variable]
-  char aux[20];
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:14:5: warning: unknown escape sequence: '\*'
+     "\n**********************");
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial.c:10:7: warning: unused variable 'rta' [-Wunused-variable]
+   int rta;
        ^~~
+..\src\Parcial.c:9:6: warning: unused variable 'opc' [-Wunused-variable]
+  int opc;
+      ^~~
+gcc -o Parcial.exe "src\\Parcial.o" 
+21:09:02 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:14:5: warning: unknown escape sequence: '\*'
+     "\n****************************");
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial.c:10:7: warning: unused variable 'rta' [-Wunused-variable]
+   int rta;
+       ^~~
+..\src\Parcial.c:9:6: warning: unused variable 'opc' [-Wunused-variable]
+  int opc;
+      ^~~
+gcc -o Parcial.exe "src\\Parcial.o" 
+21:09:12 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:13:5: warning: unknown escape sequence: '\*'
+     "\n****************************");
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" 
+Info: Nothing to build for Parcial
+21:10:08 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" 
+Info: Nothing to build for Parcial
+21:10:30 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" 
+Info: Nothing to build for Parcial
+21:10:57 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" 
+Info: Nothing to build for Parcial
+21:13:17 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:15:7: warning: implicit declaration of function 'utn_getNumero' [-Wimplicit-function-declaration]
+   rta=utn_getNumero(&opc, "\n1)INGRESAR \n2)REGISTRARSE \n\n0)SALIR"
+       ^~~~~~~~~~~~~
+..\src\Parcial.c:9:6: warning: variable 'rta' set but not used [-Wunused-but-set-variable]
+  int rta;
+      ^~~
+gcc -o Parcial.exe "src\\Parcial.o" 
+src\Parcial.o: In function `main':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/Parcial.c:15: undefined reference to `utn_getNumero'
+collect2.exe: error: ld returned 1 exit status
+21:14:02 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:11:6: warning: variable 'rta' set but not used [-Wunused-but-set-variable]
+  int rta;
+      ^~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\utn.o" 
+21:17:15 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\utn.o" 
+21:17:49 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+21:18:29 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+22:19:25 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'queModifcar':
+..\src\arrayUsuario.c:445:16: warning: implicit declaration of function 'preguntarSoN' [-Wimplicit-function-declaration]
+      respuesta=preguntarSoN("\nEstas seguro? Si-No: ", 2, "\nIngrese [si] o [no]: ");
+                ^~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\utn.o" 
+src\arrayUsuario.o: In function `queModifcar':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:445: undefined reference to `preguntarSoN'
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:473: undefined reference to `preguntarSoN'
+src\arrayUsuario.o: In function `eUsuario_remove':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:520: undefined reference to `preguntarSoN'
+collect2.exe: error: ld returned 1 exit status
+22:19:52 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-17:50:13 **** Incremental Build of configuration Debug for project Generico ****
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+22:25:40 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-17:51:12 **** Incremental Build of configuration Debug for project Generico ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:7:14: error: expected ']' before ';' token
+ #define TAM 3;
+              ^
+..\src\Parcial.c:16:19: note: in expansion of macro 'TAM'
+  Usuario usuarios[TAM];
+                   ^~~
+22:25:54 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-17:51:43 **** Incremental Build of configuration Debug for project Generico ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:16:10: warning: unused variable 'usuarios' [-Wunused-variable]
+  Usuario usuarios[TAM];
+          ^~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+22:28:07 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-Info: Nothing to build for Generico
-Info: Nothing to build for Generico
-18:16:12 **** Incremental Build of configuration Debug for project Generico ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+22:51:03 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Generico.o" "..\\src\\Generico.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-..\src\ABM.c: In function 'eGen_MostrarTodos':
-..\src\ABM.c:182:5: warning: implicit declaration of function 'Gen_MostrarUno' [-Wimplicit-function-declaration]
-     Gen_MostrarUno(list[i]);
-     ^~~~~~~~~~~~~~
-..\src\ABM.c: In function 'eGen_Sort':
-..\src\ABM.c:333:7: warning: implicit declaration of function 'Gen_Vacio' [-Wimplicit-function-declaration]
-    if(Gen_Vacio(list, len))
-       ^~~~~~~~~
-..\src\ABM.c: In function 'eGen_CargarDatos':
-..\src\ABM.c:382:7: warning: implicit declaration of function 'Gen_PediUnDato' [-Wimplicit-function-declaration]
-    if(Gen_PediUnDato(&aux)==-1)
-       ^~~~~~~~~~~~~~
-..\src\ABM.c: In function 'eGen_ModificarUno':
-..\src\ABM.c:421:11: warning: implicit declaration of function 'Gen_BuscarPorid' [-Wimplicit-function-declaration]
-    indice=Gen_BuscarPorid(list, len, id);
-           ^~~~~~~~~~~~~~~
-..\src\ABM.c: In function 'eGen_Alta':
-..\src\ABM.c:658:12: warning: implicit declaration of function 'ObtenerIndexLibre' [-Wimplicit-function-declaration]
-   indice = ObtenerIndexLibre(list, len);
-            ^~~~~~~~~~~~~~~~~
-..\src\ABM.c: In function 'eGen_Modificacion':
-..\src\ABM.c:760:13: warning: implicit declaration of function 'Gen_ModificarUno' [-Wimplicit-function-declaration]
-     retorno=Gen_ModificarUno(list,len,id);
-             ^~~~~~~~~~~~~~~~
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-src\ABM.o: In function `eGen_MostrarTodos':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:182: undefined reference to `Gen_MostrarUno'
-src\ABM.o: In function `eGen_MostrarDadosDeBaja':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:219: undefined reference to `Gen_MostrarUno'
-src\ABM.o: In function `eGen_Sort':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:333: undefined reference to `Gen_Vacio'
-src\ABM.o: In function `eGen_CargarDatos':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:382: undefined reference to `Gen_PediUnDato'
-src\ABM.o: In function `eGen_ModificarUno':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:421: undefined reference to `Gen_BuscarPorid'
-src\ABM.o: In function `eGen_Alta':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:658: undefined reference to `ObtenerIndexLibre'
-src\ABM.o: In function `eGen_Modificacion':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:760: undefined reference to `Gen_ModificarUno'
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_Registrarse':
+..\src\arrayUsuario.c:170:22: warning: passing argument 1 of 'utn_getNumero' from incompatible pointer type [-Wincompatible-pointer-types]
+     && utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
+                      ^
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:16:5: note: expected 'int *' but argument is of type 'short int *'
+ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~
+..\src\arrayUsuario.c: In function 'eUsuario_CargarDatos':
+..\src\arrayUsuario.c:318:7: warning: implicit declaration of function 'eUsuario_PediUnDato' [-Wimplicit-function-declaration]
+    if(eUsuario_PediUnDato(&aux)==-1)
+       ^~~~~~~~~~~~~~~~~~~
+..\src\arrayUsuario.c: In function 'queModifcar':
+..\src\arrayUsuario.c:480:16: warning: implicit declaration of function 'preguntarSoN' [-Wimplicit-function-declaration]
+      respuesta=preguntarSoN("\nEstas seguro? Si-No: ", 2, "\nIngrese [si] o [no]: ");
+                ^~~~~~~~~~~~
+At top level:
+..\src\arrayUsuario.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:34:32: error: incompatible type for argument 1 of 'eUsuario_InicioSesion'
+       if(eUsuario_InicioSesion(arrayUsuario[0])==0)
+                                ^~~~~~~~~~~~
+In file included from ..\src\Parcial.c:5:0:
+..\src\arrayUsuario.h:35:5: note: expected 'Usuario * {aka struct <anonymous> *}' but argument is of type 'Usuario {aka struct <anonymous>}'
+ int eUsuario_InicioSesion(Usuario * list);
+     ^~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial.c:41:31: error: incompatible type for argument 1 of 'eUsuario_Registrarse'
+       if(eUsuario_Registrarse(arrayUsuario[0])==0)
+                               ^~~~~~~~~~~~
+In file included from ..\src\Parcial.c:5:0:
+..\src\arrayUsuario.h:34:5: note: expected 'Usuario * {aka struct <anonymous> *}' but argument is of type 'Usuario {aka struct <anonymous>}'
+ int eUsuario_Registrarse(Usuario * list);
+     ^~~~~~~~~~~~~~~~~~~~
+22:52:29 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:34:32: error: incompatible type for argument 1 of 'eUsuario_InicioSesion'
+       if(eUsuario_InicioSesion(arrayUsuario[0])==0)
+                                ^~~~~~~~~~~~
+In file included from ..\src\Parcial.c:5:0:
+..\src\arrayUsuario.h:35:5: note: expected 'Usuario * {aka struct <anonymous> *}' but argument is of type 'Usuario {aka struct <anonymous>}'
+ int eUsuario_InicioSesion(Usuario * list);
+     ^~~~~~~~~~~~~~~~~~~~~
+..\src\Parcial.c:41:31: error: incompatible type for argument 1 of 'eUsuario_Registrarse'
+       if(eUsuario_Registrarse(arrayUsuario[0])==0)
+                               ^~~~~~~~~~~~
+In file included from ..\src\Parcial.c:5:0:
+..\src\arrayUsuario.h:34:5: note: expected 'Usuario * {aka struct <anonymous> *}' but argument is of type 'Usuario {aka struct <anonymous>}'
+ int eUsuario_Registrarse(Usuario * list);
+     ^~~~~~~~~~~~~~~~~~~~
+22:53:20 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_Registrarse':
+..\src\arrayUsuario.c:170:22: warning: passing argument 1 of 'utn_getNumero' from incompatible pointer type [-Wincompatible-pointer-types]
+     && utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
+                      ^
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:16:5: note: expected 'int *' but argument is of type 'short int *'
+ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~
+..\src\arrayUsuario.c: In function 'eUsuario_CargarDatos':
+..\src\arrayUsuario.c:318:7: warning: implicit declaration of function 'eUsuario_PediUnDato' [-Wimplicit-function-declaration]
+    if(eUsuario_PediUnDato(&aux)==-1)
+       ^~~~~~~~~~~~~~~~~~~
+..\src\arrayUsuario.c: In function 'queModifcar':
+..\src\arrayUsuario.c:480:16: warning: implicit declaration of function 'preguntarSoN' [-Wimplicit-function-declaration]
+      respuesta=preguntarSoN("\nEstas seguro? Si-No: ", 2, "\nIngrese [si] o [no]: ");
+                ^~~~~~~~~~~~
+At top level:
+..\src\arrayUsuario.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+src\arrayUsuario.o: In function `eUsuario_CargarDatos':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:318: undefined reference to `eUsuario_PediUnDato'
+src\arrayUsuario.o: In function `eUsuario_Alta':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:596: undefined reference to `eUsuario_PediUnDato'
 collect2.exe: error: ld returned 1 exit status
-18:16:59 **** Incremental Build of configuration Debug for project Generico ****
+22:53:24 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-..\src\ABM.c: In function 'eGen_Sort':
-..\src\ABM.c:333:7: warning: implicit declaration of function 'Gen_Vacio' [-Wimplicit-function-declaration]
-    if(Gen_Vacio(list, len))
-       ^~~~~~~~~
-..\src\ABM.c: In function 'eGen_Modificacion':
-..\src\ABM.c:760:13: warning: implicit declaration of function 'Gen_ModificarUno' [-Wimplicit-function-declaration]
-     retorno=Gen_ModificarUno(list,len,id);
-             ^~~~~~~~~~~~~~~~
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
-src\ABM.o: In function `eGen_Sort':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:333: undefined reference to `Gen_Vacio'
-src\ABM.o: In function `eGen_Modificacion':
-C:\Users\fedec\Downloads\utn\programacion1\inputs\Generico\Debug/../src/ABM.c:760: undefined reference to `Gen_ModificarUno'
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+src\arrayUsuario.o: In function `eUsuario_CargarDatos':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:318: undefined reference to `eUsuario_PediUnDato'
+src\arrayUsuario.o: In function `eUsuario_Alta':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:596: undefined reference to `eUsuario_PediUnDato'
 collect2.exe: error: ld returned 1 exit status
-18:17:21 **** Incremental Build of configuration Debug for project Generico ****
+22:54:32 **** Incremental Build of configuration Debug for project Parcial ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ABM.o" "..\\src\\ABM.c" 
-gcc -o Generico.exe "src\\ABM.o" "src\\Generico.o" "src\\funcionesPropias.o" "src\\utn.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_Registrarse':
+..\src\arrayUsuario.c:170:22: warning: passing argument 1 of 'utn_getNumero' from incompatible pointer type [-Wincompatible-pointer-types]
+     && utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
+                      ^
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:16:5: note: expected 'int *' but argument is of type 'short int *'
+ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~
+..\src\arrayUsuario.c: In function 'queModifcar':
+..\src\arrayUsuario.c:480:16: warning: implicit declaration of function 'preguntarSoN' [-Wimplicit-function-declaration]
+      respuesta=preguntarSoN("\nEstas seguro? Si-No: ", 2, "\nIngrese [si] o [no]: ");
+                ^~~~~~~~~~~~
+At top level:
+..\src\arrayUsuario.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+22:55:49 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_Registrarse':
+..\src\arrayUsuario.c:170:22: warning: passing argument 1 of 'utn_getNumero' from incompatible pointer type [-Wincompatible-pointer-types]
+     && utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
+                      ^
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:16:5: note: expected 'int *' but argument is of type 'short int *'
+ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~
+..\src\arrayUsuario.c: In function 'queModifcar':
+..\src\arrayUsuario.c:480:16: warning: implicit declaration of function 'preguntarSoN' [-Wimplicit-function-declaration]
+      respuesta=preguntarSoN("\nEstas seguro? Si-No: ", 2, "\nIngrese [si] o [no]: ");
+                ^~~~~~~~~~~~
+At top level:
+..\src\arrayUsuario.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+22:56:39 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'queModifcar':
+..\src\arrayUsuario.c:480:16: warning: implicit declaration of function 'preguntarSoN' [-Wimplicit-function-declaration]
+      respuesta=preguntarSoN("\nEstas seguro? Si-No: ", 2, "\nIngrese [si] o [no]: ");
+                ^~~~~~~~~~~~
+At top level:
+..\src\arrayUsuario.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+22:57:20 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+23:19:41 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_CargarDatos':
+..\src\arrayUsuario.c:307:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+23:20:03 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+23:21:15 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+23:40:08 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:34:10: error: too few arguments to function 'eUsuario_InicioSesion'
+       if(eUsuario_InicioSesion(arrayUsuario))
+          ^~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\Parcial.c:5:0:
+..\src\arrayUsuario.h:36:5: note: declared here
+ int eUsuario_InicioSesion(Usuario * list,int len);
+     ^~~~~~~~~~~~~~~~~~~~~
+23:40:44 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+23:42:22 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+23:46:49 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+23:48:01 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
