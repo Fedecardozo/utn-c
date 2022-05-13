@@ -17,6 +17,7 @@ int main(void) {
 	eUsuario_Inicializar(arrayUsuario, TAM);
 
 
+
 		do{
 
 			printf("\n****************************"
@@ -33,12 +34,13 @@ int main(void) {
 
 						if(eUsuario_InicioSesion(arrayUsuario,TAM))
 						{
-							printf("Entro");
+							printf("Entro %s",arrayUsuario[0].password);
 						}
 						else
 						{
 
 							printf("No Entro");
+							printf("Entro %s",arrayUsuario[0].password);
 
 						}
 
@@ -47,7 +49,12 @@ int main(void) {
 						if(eUsuario_CargarDatos(arrayUsuario, TAM)==0)
 						{
 							printf("Entro\n");
-							eUsuario_MostrarUno(arrayUsuario[0]);
+							printf("Entro %s",arrayUsuario[0].correo);
+							//eUsuario_MostrarUno(arrayUsuario[0]);
+						}
+						else
+						{
+							printf("Entro %s",arrayUsuario[0].password);
 						}
 
 						break;

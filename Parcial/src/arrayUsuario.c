@@ -136,9 +136,9 @@ int eUsuario_InicioSesion(Usuario * list, int len){
 
 	if(list!=NULL){
 
-		if(utn_getString(aux.correo, "\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
+		if(utn_getStringCorreo(aux.correo, "\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
 				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
-						"\nError password invalido", MAX_PASSWORD, 2)==0)
+						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD , 2)==0)
 		{
 
 			retorno=eUsuario_VerificacionSesion(list, len, aux);
@@ -219,9 +219,9 @@ int eUsuario_Registrarse(Usuario * list){
 
 	if(list!=NULL){
 
-		if(utn_getString(aux.correo, "\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
+		if(utn_getStringCorreo(aux.correo, "\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
 				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
-						"\nError password invalido", MAX_PASSWORD, 2)==0
+						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD, 2)==0
 				&& utn_getString(aux.direccion,"\nIngrese direccion: ", "\nError direccion invalida", MAX_DIRECCION, 2)==0
 				&& utn_getNumero(&aux.codigoPostal, "\nIngrese codigo postal: ",
 						"\nError codigo postal invalido", 1000, 9999, 2)==0

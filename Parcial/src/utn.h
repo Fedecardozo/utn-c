@@ -21,8 +21,9 @@ int utn_getString(char* pResultado, char* mensaje, char* mensajeError,int longit
 int utn_getStringLetras(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
 int utn_getStringLetrasYnumeros(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
 int utn_getStringMayusculayMinuscula(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
-int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos);
+int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int min,int max, int intentos);
 int utn_getCuit(char* pResultado, char* mensaje, char* mensajeError, int intentos,int msjAyuda);
 int printCuitSeparacion(char* cuit);
+int utn_getStringCorreo(char* pResultado, char* mensaje, char* mensajeError,int longitud, int intentos);
 
 #endif /* UTN_H_ */

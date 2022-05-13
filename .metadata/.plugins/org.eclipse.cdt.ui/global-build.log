@@ -344,3 +344,204 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c"
 gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
 Info: Nothing to build for Parcial
 Info: Nothing to build for Parcial
+09:07:08 **** Rebuild of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+09:08:30 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+09:10:02 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+09:16:29 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_InicioSesion':
+..\src\arrayUsuario.c:140:8: error: too many arguments to function 'utn_getStringLetrasYnumerosLimite'
+     && utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:24:5: note: declared here
+ int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+09:16:44 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_InicioSesion':
+..\src\arrayUsuario.c:140:8: error: too many arguments to function 'utn_getStringLetrasYnumerosLimite'
+     && utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:24:5: note: declared here
+ int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+09:19:04 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_InicioSesion':
+..\src\arrayUsuario.c:140:8: error: too many arguments to function 'utn_getStringLetrasYnumerosLimite'
+     && utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:24:5: note: declared here
+ int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+09:24:01 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_Registrarse':
+..\src\arrayUsuario.c:223:8: error: too few arguments to function 'utn_getStringLetrasYnumerosLimite'
+     && utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\arrayUsuario.h:5:0,
+                 from ..\src\arrayUsuario.c:2:
+..\src\utn.h:24:5: note: declared here
+ int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int min,int max, int intentos);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+09:24:59 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+09:28:51 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+09:29:50 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+09:52:49 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c:875:12: warning: 'esUnCorreo' defined but not used [-Wunused-function]
+ static int esUnCorreo(char*pLetras,int longitud)
+            ^~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+09:53:46 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+09:59:07 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:15:7: warning: unused variable 'pLetras' [-Wunused-variable]
+  char pLetras[20];
+       ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+09:59:19 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:00:28 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+10:12:21 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'esUnCorreo':
+..\src\utn.c:893:14: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+    if(pLetras[i] == '@' ){
+              ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+10:12:32 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'esUnCorreo':
+..\src\utn.c:891:33: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   for(j=0; j<longitud && pLetras[i]!='\0'; j++){
+                                 ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+10:13:33 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+..\src\utn.c: In function 'esUnCorreo':
+..\src\utn.c:891:34: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   for(j=0 ; j<longitud && pLetras[i]!='\0' ; j++){
+                                  ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+10:16:03 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:18:26 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:20:29 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+10:21:56 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:23:37 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+10:30:47 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:32:19 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:33:02 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:35:46 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial

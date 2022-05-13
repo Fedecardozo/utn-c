@@ -472,28 +472,28 @@ static int sonLetras(char*pLetras,int longitud)
 /// @param limite Es el tamaño del array
 /// @param intentos es la cantidad de oportunidades
 /// @return 0 si salio bien y -1 si salio mal
-int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int limite, int intentos){
+int utn_getStringLetrasYnumerosLimite(char* pResultado, char* mensaje, char* mensajeError,int min,int max, int intentos){
 
 	int retorno=-1;
 
 		//printf("%d",longitud);
-		if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && limite >0 && intentos>=0){
+		if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && min<max && intentos>=0){
 
 			//Creo la variable aca para primero validar de longitud sea mayor a 0
-			char bufferString[limite];
+			char bufferString[max];
 
 			do{
 
 				printf("%s",mensaje);
 
 				//Si esta tod bien lo copia en el puntero y sale de la iteracion retornado cero
-				if(getStringLetrasYnumeros(bufferString,limite+1)==0)
+				if(getStringLetrasYnumeros(bufferString,max)==0)
 				{
 
-					if(strlen(bufferString)==limite)
+					if(strlen(bufferString)>=min && strlen(bufferString)<=max)
 					{
 
-						strncpy(pResultado,bufferString,limite);
+						strncpy(pResultado,bufferString,max);
 						retorno=0;
 						break;
 
@@ -870,3 +870,5 @@ int printCuitSeparacion(char* cuit){
 	return retorno;
 
 }
+
+

@@ -11,6 +11,7 @@
 #define OCUPADO 0
 
 #define MAX_CORREO 25
+#define MIN_PASSWORD 4
 #define MAX_PASSWORD 10
 #define MAX_DIRECCION 50
 
