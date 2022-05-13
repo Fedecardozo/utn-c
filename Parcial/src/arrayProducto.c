@@ -1,44 +1,11 @@
 
-#include "arrayUsuario.h"
+#include "arrayProducto.h"
 
 static int generadorId();
-static int eUsuario_Vacio(Usuario * list, int len);
-static int eUsuario_remove(Usuario* list, int len, int id);
-static int opcionesParaModifcar(int opc, Usuario* list);
-static int queModifcar(int indice,Usuario *gen );
-static int eUsuario_VerificacionSesion(Usuario * list,int len,Usuario aux);
-
-void harcodeoUsuario(Usuario * list,int len){
-
-	Usuario aux;
-
-
-	strncpy(aux.correo,"fedecardozo@gmail.com",MAX_CORREO);
-	strncpy(aux.password,"anuel12",MAX_PASSWORD);
-	strncpy(aux.direccion,"pasaje calabria 1590",MAX_DIRECCION);
-	aux.codigoPostal = 1828;
-	aux.tipo = 1;
-
-	eUsuario_Alta(list, len, aux);
-
-	strncpy(aux.correo,"fede@gmail.com",MAX_CORREO);
-	strncpy(aux.password,"jostin12",MAX_PASSWORD);
-	strncpy(aux.direccion,"calle falsa 123",MAX_DIRECCION);
-	aux.codigoPostal = 1828;
-	aux.tipo = 1;
-
-	eUsuario_Alta(list, len, aux);
-
-	strncpy(aux.correo,"fcard@gmail.com",MAX_CORREO);
-	strncpy(aux.password,"bnbas1",MAX_PASSWORD);
-	strncpy(aux.direccion,"carriego 321",MAX_DIRECCION);
-	aux.codigoPostal = 1828;
-	aux.tipo = 2;
-
-	eUsuario_Alta(list, len, aux);
-
-
-}
+static int eProducto_Vacio(Producto * list, int len);
+static int eProducto_remove(Producto* list, int len, int id);
+static int opcionesParaModifcar(int opc, Producto* list);
+static int queModifcar(int indice,Producto *gen );
 
 /// @fn int generadorId()
 /// @brief genera un id automatico
@@ -56,7 +23,7 @@ static int generadorId(){
 /// \param list Gen* Puntero del array de pasajeros
 /// \param len int Longitud del arreglo
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int eUsuario_Inicializar(Usuario *list, int len){
+int eProducto_Inicializar(Producto *list, int len){
 
 	int retorno=-1;
 	int i;
@@ -79,11 +46,11 @@ int eUsuario_Inicializar(Usuario *list, int len){
 }
 
 /// @fn ObtenerIndexLibre
-/// @param list recibe un array tipo Usuario
+/// @param list recibe un array tipo Producto
 /// @param len es el lenaño del del array
 /// \return int Devuelve (-1) si Error [Longitud no válida o puntero NULL]
 /// o -2 sin espacio libre - (0) si está bien
-int eUsuario_ObtenerIndexLibre(Usuario* list, int len){
+int eProducto_ObtenerIndexLibre(Producto* list, int len){
 
 	int retorno=-1;
 	int i;
@@ -118,13 +85,13 @@ int eUsuario_ObtenerIndexLibre(Usuario* list, int len){
 
 }
 
-/// \brief Usuario BuscarPorid by Id en devuelve la posición del índice en el arreglo.
-/// \param list Usuario *
+/// \brief Producto BuscarPorid by Id en devuelve la posición del índice en el arreglo.
+/// \param list Producto *
 /// \param len int
 /// \param id int
 ///\return Posición del índice de pasajero de retorno o (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado]
-int eUsuario_BuscarPorid(Usuario *list, int len, int id){
+int eProducto_BuscarPorid(Producto *list, int len, int id){
 
 	int retorno=-1;
 	int i;
@@ -135,7 +102,7 @@ int eUsuario_BuscarPorid(Usuario *list, int len, int id){
 			for (i = 0; i < len; i++)
 			{
 
-				if(list[i].idUsuario== id)
+				if(list[i].id== id)
 				{
 
 					retorno=i;
@@ -154,113 +121,22 @@ int eUsuario_BuscarPorid(Usuario *list, int len, int id){
 }
 
 /// @fn pide Un Solo Dato al usuario
-/// @pre pide datos para llenar un Usuario y los valida
+/// @pre pide datos para llenar un Producto y los valida
 /// @post y luego los copia en passanger pasado por parametro
-/// @param recibi un tipo Usuario
-/// @return (-1)[list null, longitud menor a 0]
-/// (-2)NO hay datos cargados
-/// (0)NO hay correo o contraseña
-/// (1)Hay correo y contraseña
-int eUsuario_InicioSesion(Usuario * list, int len){
-
-	Usuario aux;
-	int retorno=-1;
-
-	if(list!=NULL){
-
-		retorno =eUsuario_Vacio(list, len);
-
-		if(retorno)
-		{
-			if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
-					&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
-							"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD , 2)==0)
-			{
-
-				retorno=eUsuario_VerificacionSesion(list, len, aux);
-
-			}
-		}
-		else if(retorno == 0)
-		{
-			retorno = -2;
-		}
-
-	}
-
-	return retorno;
-
-}
-
-/// @fn Verifica si el correo y password hay en el array
-/// @param list lista de Usuario
-/// @param len longitud de Usuario
-/// @param aux Usuario a comparar
-/// @return (-1)[list null, longitud menor a 0]
-/// (-2)NO hay datos cargados
-/// (-3)NO hay correo o contraseña
-/// (indice>=0)Hay correo y contraseña
-static int eUsuario_VerificacionSesion(Usuario * list,int len,Usuario aux){
-
-	int i;
-	int retorno=-1;
-
-	if(list != NULL && len>=0 )
-	{
-		if(eUsuario_Vacio(list, len))
-		{
-			retorno =-3;
-			for (i = 0; i < len; i++)
-			{
-				if(list[i].isEmpty==OCUPADO)
-				{
-
-					if(strcmp(list[i].correo,aux.correo)==0 && strcmp(list[i].password,aux.password)==0)
-					{
-						retorno = i;
-						break;
-
-					}
-
-
-				}
-
-			}
-
-		}else
-		{
-			retorno = -2;
-		}
-
-	}
-
-	return retorno;
-
-}
-
-/// @fn pide Un Solo Dato al usuario
-/// @pre pide datos para llenar un Usuario y los valida
-/// @post y luego los copia en passanger pasado por parametro
-/// @param recibi un tipo Usuario
+/// @param recibi un tipo Producto
 /// @return un 0 si esta todo bien o -1 si esta mal
-int eUsuario_Registrarse(Usuario * list){
+int eProducto_PediUnDato(Producto * list){
 
-	Usuario aux;
+	Producto aux;
 	int retorno=-1;
 
 	if(list!=NULL){
 
-		if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
-				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
-						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD, 2)==0
-				&& utn_getString(aux.direccion,"\nIngrese domicilio: ", "\nError direccion invalida", MAX_DIRECCION, 2)==0
-				&& utn_getNumero(&aux.codigoPostal, "\nIngrese codigo postal: ",
-						"\nError codigo postal invalido", 1000, 9999, 2)==0
-				&& utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
-						" \nIngrese tipo: ",
-						"\nError tipo invalido", 1, 2, 2)==0)
+		if(1)//utn_getStringMayusculayMinuscula(list.name, "\nIngrese nombre:","\nError esta mal escrito" , MAX_CARACTER, 2)==0)
 		{
 
+			aux.id = generadorId();
+			aux.isEmpty=OCUPADO;
 			retorno=0;
 			*list=aux;
 
@@ -272,20 +148,19 @@ int eUsuario_Registrarse(Usuario * list){
 
 }
 
-/// @fn int imprime Usuario
-/// @param imprimi un Usuario solo
-void eUsuario_MostrarUno(Usuario list){
+/// @fn int imprime Producto
+/// @param imprimi un Producto solo
+void eProducto_MostrarUno(Producto list){
 
-	printf("|%-7d|%-10d|%-10d|%-30s|%-15s|%-7d|%-30s|\n"
-			,list.idUsuario,list.isEmpty,list.codigoPostal,list.correo,list.password,list.tipo,list.direccion);
+	printf("|%-15d||%-15d|\n",list.id,list.id);
 
 }
 
-/// @fn imprime un array de Usuario que esten cargados
-/// @param recibi un puntero tipo Usuario
+/// @fn imprime un array de Producto que esten cargados
+/// @param recibi un puntero tipo Producto
 /// @param la longitud para recorrer el array
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int eUsuario_MostrarTodos(Usuario *list, int len){
+int eProducto_MostrarTodos(Producto *list, int len){
 
 	int retorno = -1;
 	int i;
@@ -294,18 +169,18 @@ int eUsuario_MostrarTodos(Usuario *list, int len){
 
 		retorno=0;
 		printf("+-----------------------------------------------------------"
-				"--------------------------------------------------------+\n");
-		printf("|%-7s|%-10s|%-10s|%-30s|%-15s|%-7s|%-30s|\n",
-				"Id"," ISEMPTY"," CP"," CORREO","PASSWORD"," TIPO"," DOMICILIO");
+				"----------------------------------------------+\n");
+		printf("|%-15s|%-15s|%-15s|%-15s|%-20s|%-20s|\n",
+				" Nombres"," Apellidos"," Precio"," Codigo"," Tipo de pasajero"," Estado Vuelo");
 		  printf("+-------------------------------------------------------------------"
-				  "------------------------------------------------+\n");
+				  "--------------------------------------+\n");
 		for (i = 0; i < len ; i++) {
 
 			if(list[i].isEmpty==OCUPADO){
 
-				eUsuario_MostrarUno(list[i]);
+				eProducto_MostrarUno(list[i]);
 				printf("+-----------------------------------------------------------"
-							"--------------------------------------------------------+\n");
+								"----------------------------------------------+\n");
 
 			}
 
@@ -318,11 +193,11 @@ int eUsuario_MostrarTodos(Usuario *list, int len){
 
 }
 
-/// @fn imprime un array de Usuario que esten dados de baja
-/// @param recibi un puntero tipo Usuario
+/// @fn imprime un array de Producto que esten dados de baja
+/// @param recibi un puntero tipo Producto
 /// @param la longitud para recorrer el array
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int eUsuario_MostrarDadosDeBaja(Usuario *list, int len){
+int eProducto_MostrarDadosDeBaja(Producto *list, int len){
 
 	int retorno = -1;
 	int i;
@@ -340,7 +215,7 @@ int eUsuario_MostrarDadosDeBaja(Usuario *list, int len){
 
 			if(list[i].isEmpty==LIBRE){
 
-				eUsuario_MostrarUno(list[i]);
+				eProducto_MostrarUno(list[i]);
 				printf("+-----------------------------------------------------------"
 								"----------------------------------------------+\n");
 
@@ -356,11 +231,11 @@ int eUsuario_MostrarDadosDeBaja(Usuario *list, int len){
 }
 
 /// \brief Pregunta si las posiciones en el array están vacías,
-/// \param list Usuario * Puntero del array de Usuario
+/// \param list Producto * Puntero del array de Producto
 /// \param len int Longitud del arreglo
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
 /// (1) Cargado
-static int eUsuario_Vacio(Usuario * list, int len){
+static int eProducto_Vacio(Producto * list, int len){
 
 	int retorno=-1;
 	int i;
@@ -388,36 +263,29 @@ static int eUsuario_Vacio(Usuario * list, int len){
 
 //ABM
 
-/// @fn Usuario Cargar los Datos de una list de Usuario
-/// @param list puntero de Usuario
-/// @param len longitud de Usuario
-/// @return 1 punteros nullos len <0 [0]bien -2 lista llena
-int eUsuario_CargarDatos(Usuario * list,int len){
 
+/// @fn Producto Cargar los Datos de una list de Producto
+/// @param list puntero de Producto
+/// @param len longitud de Producto
+/// @return 1 punteros nullos len <0 [0]bien
+int eProducto_CargarDatos(Producto * list,int len){
+
+	int i;
 	int retorno=-1;
-	int indice;
-	Usuario aux;
+	Producto aux;
 
 	if(list != NULL && len >0)
 	{
 
-		indice = eUsuario_ObtenerIndexLibre(list, len);
-
-		if(indice>=0 && eUsuario_Registrarse(&aux)==0)
+		for (i = 0; i < len; i++)
 		{
 
-			if(eUsuario_Alta(list, len, aux)==0)
+			if(eProducto_PediUnDato(&aux)==-1)
 			{
-				//ok
+				list[i]=aux;
 				retorno=0;
-
 			}
 
-		}
-		else
-		{
-			//lista llena
-			retorno = -2;
 		}
 
 
@@ -430,9 +298,9 @@ int eUsuario_CargarDatos(Usuario * list,int len){
 }
 
 ///FUNCION PARA LA MODIFICACION
-/// @fn modifica Usuario
-/// @brief modica un dato de Usuario
-/// @param recibe un tipo Usuario list
+/// @fn modifica Producto
+/// @brief modica un dato de Producto
+/// @param recibe un tipo Producto list
 /// @param len recibe el tamanio del array
 /// @param recibe el id que va a buscar
 /// @return 0 ok(-1)Datos nullos (-2) No se encontro ID
@@ -440,7 +308,7 @@ int eUsuario_CargarDatos(Usuario * list,int len){
 /// (-4)Ingreso mal los datos a modificar
 /// (-5)mal respuesta de si esta seguro
 /// (-6)mal respuesta si desea continuar
-int eUsuario_ModificarUno(Usuario *list,int len,int id){
+int eProducto_ModificarUno(Producto *list,int len,int id){
 
 	int retorno=-1;
 	int indice;
@@ -451,7 +319,7 @@ int eUsuario_ModificarUno(Usuario *list,int len,int id){
 		{
 
 			retorno=0;
-			indice=eUsuario_BuscarPorid(list, len, id);
+			indice=eProducto_BuscarPorid(list, len, id);
 
 			if(indice<0){
 
@@ -482,10 +350,10 @@ int eUsuario_ModificarUno(Usuario *list,int len,int id){
 /// @fn opcionesParaModifcar
 /// @brief Modifica los datos segun la opcion
 /// @return -1 mal 0 bien
-static int opcionesParaModifcar(int opc, Usuario* list){
+static int opcionesParaModifcar(int opc, Producto* list){
 
 	int retorno=-1;
-	Usuario aux=*list;
+	Producto aux=*list;
 
 	if(list != NULL)
 	{
@@ -548,10 +416,10 @@ static int opcionesParaModifcar(int opc, Usuario* list){
 /// @return 0 bien o -1 mal -3 mal las opciones
 /// -4 mal datos a modificar -5 mal respuesta si esta seguro
 /// -6 Mal la respuesta de si desea continuar
-static int queModifcar(int indice,Usuario *gen ){
+static int queModifcar(int indice,Producto *gen ){
 
 	int retorno=-1;
-	Usuario aux;
+	Producto aux;
 	aux=gen[indice];
 	int respuesta;
 	int opc;
@@ -626,21 +494,21 @@ static int queModifcar(int indice,Usuario *gen ){
 
 
 ///FUNCION PARA LA BAJA
-/// \brief Eliminar un Usuario por Id (poner el indicador isEmpty en 1)
-///\lista de parámetros Usuario *
+/// \brief Eliminar un Producto por Id (poner el indicador isEmpty en 1)
+///\lista de parámetros Producto *
 ///\parametro len int
 ///\id de parámetro int
 ///\return int Retorna (-1) si Error [longitud inválida o NULL
-/// puntero o si no puede encontrar un Usuario] -
+/// puntero o si no puede encontrar un Producto] -
 ///  (0) si está bien (-2) No estaba seguro
-static int eUsuario_remove(Usuario* list, int len, int id)
+static int eProducto_remove(Producto* list, int len, int id)
 {
 	int retorno=-1;
 	int indice;
 
 		if(list!=NULL && len>0 && id>0){
 
-			indice=eUsuario_BuscarPorid(list, len, id);
+			indice=eProducto_BuscarPorid(list, len, id);
 
 			if(indice<0){
 
@@ -670,28 +538,37 @@ static int eUsuario_remove(Usuario* list, int len, int id)
 }
 
 
-/// @fn Da de alta un Usuario
-/// @param lista de Usuario
+//ANALIZAR
+/// @fn Da de alta un Producto
+/// @param lista de Producto
 /// @param len longitud del array Gen
 /// @return Posición del índice de pasajero de retorno o (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado] -2 lista llena
-int eUsuario_Alta(Usuario *list, int len,Usuario usuarioDarAlta){
+int eProducto_Alta(Producto *list, int len){
 
+		Producto aux;
 		int retorno=-1;
 		int indice;
 
 
 		if(list != NULL && len >=0)
 		{
-			indice=eUsuario_ObtenerIndexLibre(list, len);
 
-			if(indice>=0)
+		//Busco primero lugar vacio para que el usuario, para avisarle que no hay lugar
+		//antes de que complete los datos
+		indice = eProducto_ObtenerIndexLibre(list, len);
+
+			if(indice>=0 && eProducto_PediUnDato(&aux)==0)
 			{
 
-				list[indice]=usuarioDarAlta;
-				list[indice].idUsuario = generadorId();
-				list[indice].isEmpty=OCUPADO;
+				list[indice]=aux;
 				retorno=0;
+
+
+			}else if(indice==-2){
+
+				//Esta lleno
+				retorno =-2;
 
 			}
 
@@ -702,12 +579,12 @@ int eUsuario_Alta(Usuario *list, int len,Usuario usuarioDarAlta){
 }
 
 
-/// @fn Baja para Usuario
-/// @param list arreglo Usuario
+/// @fn Baja para Producto
+/// @param list arreglo Producto
 /// @param len longitud del arreglo
 /// @return 0 bien -1 error parametros -2 no existe id -3 No hay datos cargados
 /// -4 no estaba seguro
-int eUsuario_Baja(Usuario *list, int len){
+int eProducto_Baja(Producto *list, int len){
 
 	int retorno=-1;
 	int id;
@@ -715,11 +592,11 @@ int eUsuario_Baja(Usuario *list, int len){
 
 	if(list != NULL && len >0)
 	{
-		if(eUsuario_Vacio(list, len))
+		if(eProducto_Vacio(list, len))
 		{
 			if(utn_getNumero(&id, "\nIngrese numero ID:", "\nError Ingrese nuevamente: ", 0, 3000, 2)==0)
 			{
-				rta=eUsuario_remove(list, len, id);
+				rta=eProducto_remove(list, len, id);
 				if(rta==0)
 				{
 
@@ -758,8 +635,8 @@ int eUsuario_Baja(Usuario *list, int len){
 }
 
 
-/// @fn Modificacion para Usuario
-/// @param gen arreglo Usuario
+/// @fn Modificacion para Producto
+/// @param gen arreglo Producto
 /// @param len longitud del arreglo
 /// @return 0 ok(-1)Datos nullos (-2) No se encontro ID
 /// (-3)Ingreso mal las opciones
@@ -767,21 +644,21 @@ int eUsuario_Baja(Usuario *list, int len){
 /// (-5)mal respuesta de si esta seguro
 /// (-6)mal respuesta si desea continuar
 /// (-7)EL ARREGLO ESTA VACIO
-int eUsuario_Modificacion(Usuario * list,int len){
+int eProducto_Modificacion(Producto * list,int len){
 
 	int retorno =-1;
 	int id;
 
 	if(list != NULL)
 	{
-		if(eUsuario_Vacio(list, len))
+		if(eProducto_Vacio(list, len))
 		{
 
 			//HASTA EL RETORNO ES -1
 			if(utn_getNumero(&id, "\nIngrese id:", "\nDato invalido. Ingrese nuevamente: ", 0, 1200, 2)==0){
 
 				//RETORNO PUEDE 0 BIEN <0 QUE ALGO SALIO MAL
-				retorno=eUsuario_ModificarUno(list,len,id);
+				retorno=eProducto_ModificarUno(list,len,id);
 
 			}
 

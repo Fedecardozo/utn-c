@@ -3,6 +3,7 @@
 #define MENU_H_
 
 #include "arrayUsuario.h"
+#include "arrayProducto.h"
 
 int menu(Usuario* list , int len);
 

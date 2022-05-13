@@ -29,6 +29,8 @@ typedef struct{
 
 }Usuario;
 
+void harcodeoUsuario(Usuario * list,int len);
+
 /** INICIO CABECERAS DE FUNCION*/
 int eUsuario_Inicializar(Usuario *list, int len);
 int eUsuario_ObtenerIndexLibre(Usuario *list, int len);

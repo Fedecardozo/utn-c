@@ -1,0 +1,39 @@
+
+#ifndef ARRAYPRODUCTO_H_
+#define ARRAYPRODUCTO_H_
+
+#include "utn.h"
+#include "funcionesPropias.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_NOMBRE 20
+
+#define LIBRE 1
+#define OCUPADO 0
+
+typedef struct{
+
+	int id;
+	int isEmpty;
+
+	//RELACION
+	char nombreProducto[MAX_NOMBRE];
+	float precio;
+	short int categoria; //Ej moda,tecnologia....
+	int stock; // cantidad de productos a vender
+
+
+}Producto;
+
+/** INICIO CABECERAS DE FUNCION*/
+int eProducto_Inicializar(Producto *list, int len);
+int eProducto_ObtenerIndexLibre(Producto *list, int len);
+int eProducto_BuscarPorid(Producto *list, int len, int id);
+int eProducto_PediUnDato(Producto * list);
+void eProducto_MostrarUno(Producto list);
+int eProducto_MostrarTodos(Producto *list, int len);
+int eProducto_MostrarDadosDeBaja(Producto *list, int len);
+
+
+#endif /* ARRAYPRODUCTO_H_ */

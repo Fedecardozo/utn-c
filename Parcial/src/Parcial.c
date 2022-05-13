@@ -4,7 +4,7 @@
 
 #include "menu.h"
 
-#define TAM 3
+#define TAM 5
 
 int main(void) {
 
@@ -13,6 +13,10 @@ int main(void) {
 
 	Usuario arrayUsuario[TAM];
 	eUsuario_Inicializar(arrayUsuario, TAM);
+	harcodeoUsuario(arrayUsuario, TAM);
+
+	Producto arrayProducto[TAM];
+	eProducto_Inicializar(arrayProducto, TAM);
 
 	if(menu(arrayUsuario, TAM) == -1)
 	{

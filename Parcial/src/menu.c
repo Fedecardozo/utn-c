@@ -1,19 +1,30 @@
 
 #include "menu.h"
 
-static int subMenuUsuario(void);
+static int subMenuUsuario(int indice);
 static void erroresInicioSesion(int inicio);
+static void printTodo(Usuario* list , int len);
 
+
+static void printTodo(Usuario* list , int len){
+
+	if(eUsuario_MostrarTodos(list, len)==-1)
+	{
+		printf("\nNo hay datos cargados!");
+	}
+
+
+}
 
 static void erroresInicioSesion(int inicio)
 {
 
 	switch(inicio)
 	{
+		case -3: printf("\nHUBO UN ERROR!\n"); break;
 		case -2: printf("\nNO HAY DATOS CARGADOS !\n"); break;
-		case 0:printf("\nCorreo o contraseña incorrectos! Intentelo mas tarde");break;
-		case 1: subMenuUsuario(); break;
-		default:printf("\nHUBO UN ERROR!\n"); break;
+		case 0: printf("\nCorreo o contraseña incorrectos! Intentelo mas tarde");break;
+		default: subMenuUsuario(inicio); break;
 	}
 
 
@@ -21,7 +32,7 @@ static void erroresInicioSesion(int inicio)
 
 }
 
-static int subMenuUsuario(void){
+static int subMenuUsuario(int indice){
 
 	int opc;
 	int retorno=0;
@@ -60,6 +71,22 @@ static int subMenuUsuario(void){
 	return retorno;
 }
 
+static void erroresAlta(int registro)
+{
+
+	switch(registro)
+	{
+		case -1: printf("\nHUBO UN ERROR!\n"); break;
+		case -2:printf("\nLISTA LLENA \n");break;
+		case 0:printf("\nSE REGISTRO CON EXITO\n");break;
+		default:printf("\nHUBO UN ERROR!\n"); break;
+	}
+
+
+
+
+}
+
 int menu(Usuario* list , int len){
 
 	int retorno =-1;
@@ -74,8 +101,8 @@ int menu(Usuario* list , int len){
 			printf("\n****************************"
 					"\n** 1er EXAMEN LAB I - 1H ***"
 					"\n****************************");
-			rta=utn_getNumero(&opc, "\n\n1)INGRESAR \n2)REGISTRARSE \n0)SALIR"
-					"\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente: ", 0, 2, 2);
+			rta=utn_getNumero(&opc, "\n\n1)INGRESAR \n2)REGISTRARSE \n3)MOSTRAR TODO \n0)SALIR"
+					"\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente: ", 0, 3, 2);
 
 		if(rta==0)
 		{
@@ -86,12 +113,26 @@ int menu(Usuario* list , int len){
 							"\n** 1er EXAMEN LAB I - 1H ***"
 							"\n********** LOGIN ***********"
 							"\n****************************\n");
+
 					erroresInicioSesion(eUsuario_InicioSesion(list,len));
 
 					break;
 				case 2:
+					printf("\n****************************"
+							"\n** 1er EXAMEN LAB I - 1H ***"
+							"\n******* REGISTRARSE ********"
+							"\n****************************\n");
 
-					eUsuario_CargarDatos(list, len);
+					erroresAlta(eUsuario_CargarDatos(list, len));
+
+					break;
+				case 3:
+					printf("\n****************************"
+							"\n** 1er EXAMEN LAB I - 1H ***"
+							"\n**** USUARIO Y PRODUCTOS ***"
+							"\n****************************\n");
+
+					printTodo(list,len);
 
 					break;
 
