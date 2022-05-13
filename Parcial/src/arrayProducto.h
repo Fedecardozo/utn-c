@@ -20,7 +20,7 @@ typedef struct{
 	//RELACION
 	char nombreProducto[MAX_NOMBRE];
 	float precio;
-	short int categoria; //Ej moda,tecnologia....
+	int categoria; //Ej moda,tecnologia....
 	int stock; // cantidad de productos a vender
 
 
@@ -35,5 +35,13 @@ void eProducto_MostrarUno(Producto list);
 int eProducto_MostrarTodos(Producto *list, int len);
 int eProducto_MostrarDadosDeBaja(Producto *list, int len);
 
+//ABM
+int eProducto_CargarDatos(Producto * list,int len);
+int eProducto_ModificarUno(Producto *list,int len,int id);
+int eProducto_Alta(Producto *list, int len,Producto productoDarAlta);
+int eProducto_Baja(Producto *list, int len);
+int eProducto_Modificacion(Producto *list, int len);
+
+void harcodeoProducto(Producto * list,int len);
 
 #endif /* ARRAYPRODUCTO_H_ */

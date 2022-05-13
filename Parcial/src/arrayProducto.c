@@ -1,11 +1,42 @@
 
 #include "arrayProducto.h"
 
+static char categorias[4][20]={{"Tecnologia"},{"Moda"},{"Deportes"},{"Otro"}};
+
 static int generadorId();
 static int eProducto_Vacio(Producto * list, int len);
 static int eProducto_remove(Producto* list, int len, int id);
 static int opcionesParaModifcar(int opc, Producto* list);
 static int queModifcar(int indice,Producto *gen );
+
+void harcodeoProducto(Producto * list,int len){
+
+	Producto aux;
+
+
+	strncpy(aux.nombreProducto,"Lavarropa",MAX_NOMBRE);
+	aux.precio = 1828;
+	aux.categoria = 1;
+	aux.stock = 10;
+
+	eProducto_Alta(list, len, aux);
+
+	strncpy(aux.nombreProducto,"Notebook",MAX_NOMBRE);
+	aux.precio = 2900;
+	aux.categoria = 3;
+	aux.stock = 5;
+
+	eProducto_Alta(list, len, aux);
+
+	strncpy(aux.nombreProducto,"Heladera",MAX_NOMBRE);
+	aux.precio = 3028;
+	aux.categoria = 2;
+	aux.stock = 2;
+
+	eProducto_Alta(list, len, aux);
+
+
+}
 
 /// @fn int generadorId()
 /// @brief genera un id automatico
@@ -132,11 +163,21 @@ int eProducto_PediUnDato(Producto * list){
 
 	if(list!=NULL){
 
-		if(1)//utn_getStringMayusculayMinuscula(list.name, "\nIngrese nombre:","\nError esta mal escrito" , MAX_CARACTER, 2)==0)
+		if(utn_getStringLetras(aux.nombreProducto, "\nIngrese nombre producto: ",
+				"\nNOMBRE INVALIDO!", MAX_NOMBRE, 2)==0
+			&& utn_getNumeroFlotante(&aux.precio,"\nIngrese precio producto: ",
+					"\nError precio invalido", 0, 99999999, 2)==0
+			&& utn_getNumero(&aux.categoria, "\n** Categorias **"
+					"\n1)Tecnologia"
+					"\n2)Moda"
+					"\n3)Deportes"
+					"\n4)Otro"
+					"\nIngrese categoria:", "\nOpcion incorrecta\nIngrese nuevamente: ",
+					1, 4, 2)==0
+			&& utn_getNumero(&aux.stock, "\nIngrese cantidad a vender: ",
+					"\nError cantidad invalida\nIngrese nuevamente:", 1, 9999, 2)==0)
 		{
 
-			aux.id = generadorId();
-			aux.isEmpty=OCUPADO;
 			retorno=0;
 			*list=aux;
 
@@ -152,7 +193,9 @@ int eProducto_PediUnDato(Producto * list){
 /// @param imprimi un Producto solo
 void eProducto_MostrarUno(Producto list){
 
-	printf("|%-15d||%-15d|\n",list.id,list.id);
+	printf("|%-10d|%-10d|%-25s|%-15f|%-25s|%-10d|\n",
+			list.id,list.isEmpty,list.nombreProducto,
+			list.precio,categorias[list.categoria],list.stock);
 
 }
 
@@ -168,19 +211,19 @@ int eProducto_MostrarTodos(Producto *list, int len){
 	if(list != NULL && len >=0){
 
 		retorno=0;
-		printf("+-----------------------------------------------------------"
-				"----------------------------------------------+\n");
-		printf("|%-15s|%-15s|%-15s|%-15s|%-20s|%-20s|\n",
-				" Nombres"," Apellidos"," Precio"," Codigo"," Tipo de pasajero"," Estado Vuelo");
-		  printf("+-------------------------------------------------------------------"
+		printf("+-----------------------------------------------------"
+				"-----------------------------------------------+\n");
+		printf("|%-10s|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+				" ID "," ISEMPTY "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+		  printf("+--------------------------------------------------------------"
 				  "--------------------------------------+\n");
 		for (i = 0; i < len ; i++) {
 
 			if(list[i].isEmpty==OCUPADO){
 
 				eProducto_MostrarUno(list[i]);
-				printf("+-----------------------------------------------------------"
-								"----------------------------------------------+\n");
+				printf("+---------------------------------------------------------"
+						"-------------------------------------------+\n");
 
 			}
 
@@ -270,30 +313,38 @@ static int eProducto_Vacio(Producto * list, int len){
 /// @return 1 punteros nullos len <0 [0]bien
 int eProducto_CargarDatos(Producto * list,int len){
 
-	int i;
 	int retorno=-1;
+	int indice;
 	Producto aux;
 
-	if(list != NULL && len >0)
-	{
-
-		for (i = 0; i < len; i++)
+		if(list != NULL && len >0)
 		{
 
-			if(eProducto_PediUnDato(&aux)==-1)
+			indice = eProducto_ObtenerIndexLibre(list, len);
+
+			if(indice>=0 && eProducto_PediUnDato(&aux)==0)
 			{
-				list[i]=aux;
-				retorno=0;
+
+				if(eProducto_Alta(list, len, aux)==0)
+				{
+					//ok
+					retorno=0;
+
+				}
+
 			}
+			else
+			{
+				//lista llena
+				retorno = -2;
+			}
+
 
 		}
 
 
-	}
 
-
-
-	return retorno;
+		return retorno;
 
 }
 
@@ -544,31 +595,23 @@ static int eProducto_remove(Producto* list, int len, int id)
 /// @param len longitud del array Gen
 /// @return Posición del índice de pasajero de retorno o (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado] -2 lista llena
-int eProducto_Alta(Producto *list, int len){
+int eProducto_Alta(Producto *list, int len,Producto productoDarAlta){
 
-		Producto aux;
-		int retorno=-1;
-		int indice;
+	int retorno=-1;
+	int indice;
 
 
 		if(list != NULL && len >=0)
 		{
+			indice=eProducto_ObtenerIndexLibre(list, len);
 
-		//Busco primero lugar vacio para que el usuario, para avisarle que no hay lugar
-		//antes de que complete los datos
-		indice = eProducto_ObtenerIndexLibre(list, len);
-
-			if(indice>=0 && eProducto_PediUnDato(&aux)==0)
+			if(indice>=0)
 			{
 
-				list[indice]=aux;
+				list[indice]=productoDarAlta;
+				list[indice].id = generadorId();
+				list[indice].isEmpty=OCUPADO;
 				retorno=0;
-
-
-			}else if(indice==-2){
-
-				//Esta lleno
-				retorno =-2;
 
 			}
 

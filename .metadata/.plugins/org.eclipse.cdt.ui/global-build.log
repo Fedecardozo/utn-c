@@ -868,3 +868,214 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
 gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Parcial
+15:51:58 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+15:55:54 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+..\src\arrayUsuario.c: In function 'eUsuario_InicioSesion':
+..\src\arrayUsuario.c:180:5: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+     print("%s",aux.correo);
+     ^~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+src\arrayUsuario.o: In function `eUsuario_InicioSesion':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/arrayUsuario.c:180: undefined reference to `print'
+collect2.exe: error: ld returned 1 exit status
+15:56:00 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+15:58:57 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:11:30 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_PediUnDato':
+..\src\arrayProducto.c:145:21: warning: passing argument 1 of 'utn_getNumero' from incompatible pointer type [-Wincompatible-pointer-types]
+    && utn_getNumero(&aux.categoria, "\nCategorias "
+                     ^
+In file included from ..\src\arrayProducto.h:5:0,
+                 from ..\src\arrayProducto.c:2:
+..\src\utn.h:16:5: note: expected 'int *' but argument is of type 'short int *'
+ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+     ^~~~~~~~~~~~~
+..\src\arrayProducto.c:138:7: warning: unused variable 'stock' [-Wunused-variable]
+   int stock; // cantidad de productos a vender
+       ^~~~~
+..\src\arrayProducto.c:137:13: warning: unused variable 'categoria' [-Wunused-variable]
+   short int categoria; //Ej moda,tecnologia....
+             ^~~~~~~~~
+..\src\arrayProducto.c:136:9: warning: unused variable 'precio' [-Wunused-variable]
+   float precio;
+         ^~~~~~
+..\src\arrayProducto.c:135:8: warning: unused variable 'nombreProducto' [-Wunused-variable]
+   char nombreProducto[MAX_NOMBRE];
+        ^~~~~~~~~~~~~~
+At top level:
+..\src\arrayProducto.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:11:54 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:12:31 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:13:14 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:16:23 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:19:36 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c:13:12: warning: 'generadorId' defined but not used [-Wunused-function]
+ static int generadorId(){
+            ^~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:27:04 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_CargarDatos':
+..\src\arrayProducto.c:290:13: warning: implicit declaration of function 'eUsuario_ObtenerIndexLibre' [-Wimplicit-function-declaration]
+    indice = eUsuario_ObtenerIndexLibre(list, len);
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\arrayProducto.c:292:20: warning: implicit declaration of function 'eUsuario_Registrarse' [-Wimplicit-function-declaration]
+    if(indice>=0 && eUsuario_Registrarse(&aux)==0)
+                    ^~~~~~~~~~~~~~~~~~~~
+..\src\arrayProducto.c:295:8: warning: implicit declaration of function 'eUsuario_Alta' [-Wimplicit-function-declaration]
+     if(eUsuario_Alta(list, len, aux)==0)
+        ^~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:28:24 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_CargarDatos':
+..\src\arrayProducto.c:295:8: warning: implicit declaration of function 'eProducto_Alta' [-Wimplicit-function-declaration]
+     if(eProducto_Alta(list, len, aux)==0)
+        ^~~~~~~~~~~~~~
+..\src\arrayProducto.c: In function 'eProducto_Alta':
+..\src\arrayProducto.c:573:11: warning: implicit declaration of function 'eUsuario_ObtenerIndexLibre' [-Wimplicit-function-declaration]
+    indice=eUsuario_ObtenerIndexLibre(list, len);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:28:39 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_CargarDatos':
+..\src\arrayProducto.c:295:8: warning: implicit declaration of function 'eProducto_Alta' [-Wimplicit-function-declaration]
+     if(eProducto_Alta(list, len, aux)==0)
+        ^~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:30:47 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_CargarDatos':
+..\src\arrayProducto.c:295:8: warning: implicit declaration of function 'eProducto_Alta' [-Wimplicit-function-declaration]
+     if(eProducto_Alta(list, len, aux)==0)
+        ^~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:31:38 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:33:37 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:37:20 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_MostrarUno':
+..\src\arrayProducto.c:165:29: warning: format '%d' expects argument of type 'int', but argument 4 has type 'char *' [-Wformat=]
+  printf("|%-10d||%-10d||%-25d||%-15d||%-25d||%-10d|\n",
+                             ^
+..\src\arrayProducto.c:165:36: warning: format '%d' expects argument of type 'int', but argument 5 has type 'double' [-Wformat=]
+  printf("|%-10d||%-10d||%-25d||%-15d||%-25d||%-10d|\n",
+                                    ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:38:02 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_MostrarUno':
+..\src\arrayProducto.c:165:43: warning: format '%s' expects argument of type 'char *', but argument 6 has type 'int' [-Wformat=]
+  printf("|%-10d||%-10d||%-25s||%-15f||%-25s||%-10d|\n",
+                                           ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:38:25 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:44:45 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:45:37 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:47:54 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:51:49 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:52:08 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:53:03 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+16:53:22 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+16:53:47 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayProducto.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 

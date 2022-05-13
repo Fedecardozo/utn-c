@@ -17,6 +17,10 @@ int main(void) {
 
 	Producto arrayProducto[TAM];
 	eProducto_Inicializar(arrayProducto, TAM);
+	harcodeoProducto(arrayProducto, TAM);
+
+	eProducto_MostrarTodos(arrayProducto, TAM);
+
 
 	if(menu(arrayUsuario, TAM) == -1)
 	{
