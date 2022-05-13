@@ -598,3 +598,36 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
 gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
 Info: Nothing to build for Parcial
+13:04:16 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'erroresInicioSesion':
+..\src\menu.c:12:11: warning: implicit declaration of function 'subMenuUsuario' [-Wimplicit-function-declaration]
+   case 1: subMenuUsuario(); break;
+           ^~~~~~~~~~~~~~
+..\src\menu.c: At top level:
+..\src\menu.c:21:12: error: static declaration of 'subMenuUsuario' follows non-static declaration
+ static int subMenuUsuario(void){
+            ^~~~~~~~~~~~~~
+..\src\menu.c:12:11: note: previous implicit declaration of 'subMenuUsuario' was here
+   case 1: subMenuUsuario(); break;
+           ^~~~~~~~~~~~~~
+..\src\menu.c:21:12: warning: 'subMenuUsuario' defined but not used [-Wunused-function]
+ static int subMenuUsuario(void){
+            ^~~~~~~~~~~~~~
+13:05:10 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+13:07:11 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+13:08:28 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
