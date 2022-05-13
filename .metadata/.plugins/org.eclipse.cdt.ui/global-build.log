@@ -545,3 +545,56 @@ Info: Nothing to build for Parcial
 Info: Nothing to build for Parcial
 Info: Nothing to build for Parcial
 Info: Nothing to build for Parcial
+10:39:34 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:40:12 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+10:44:10 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:45:48 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:47:46 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:50:43 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+10:51:40 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:18:19 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayUsuario.o" "..\\src\\arrayUsuario.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:19:48 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:20:58 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\utn.o" 
+Info: Nothing to build for Parcial

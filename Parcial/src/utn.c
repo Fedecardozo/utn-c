@@ -888,6 +888,12 @@ static int esUnCorreo(char*pLetras,int longitud)
 
 		for(j=0 ; j<longitud && pLetras[j]!='\0' ; j++){
 
+			if(pLetras[j] == '@' && (pLetras[j+1]<'A' || pLetras[j+1]>'Z'))
+			{
+				retorno=0;
+				break;
+
+			}
 			if(pLetras[j] == '@' ){
 
 				flag++;

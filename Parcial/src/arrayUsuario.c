@@ -136,13 +136,22 @@ int eUsuario_InicioSesion(Usuario * list, int len){
 
 	if(list!=NULL){
 
-		if(utn_getStringCorreo(aux.correo, "\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
-				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
-						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD , 2)==0)
+		retorno =eUsuario_Vacio(list, len);
+
+		if(retorno)
 		{
+			if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
+					&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+							"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD , 2)==0)
+			{
 
-			retorno=eUsuario_VerificacionSesion(list, len, aux);
+				retorno=eUsuario_VerificacionSesion(list, len, aux);
 
+			}
+		}
+		else if(retorno == 0)
+		{
+			retorno = -2;
 		}
 
 	}
@@ -219,10 +228,10 @@ int eUsuario_Registrarse(Usuario * list){
 
 	if(list!=NULL){
 
-		if(utn_getStringCorreo(aux.correo, "\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
+		if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
 				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
 						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD, 2)==0
-				&& utn_getString(aux.direccion,"\nIngrese direccion: ", "\nError direccion invalida", MAX_DIRECCION, 2)==0
+				&& utn_getString(aux.direccion,"\nIngrese domicilio: ", "\nError direccion invalida", MAX_DIRECCION, 2)==0
 				&& utn_getNumero(&aux.codigoPostal, "\nIngrese codigo postal: ",
 						"\nError codigo postal invalido", 1000, 9999, 2)==0
 				&& utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
