@@ -490,12 +490,12 @@ static int sort_Categoria(Producto *list, int len, int criterio){
 /// @return -1 datos nullos -2 lista vacia
 /// -3 error al ordenar -4 id inexistente
 /// -5 cantidad invalida -6 Si o no incorrecto 0 ok
-int eProducto_compra(Producto* arrayProducto, int lenProducto){
+int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad){
 
 	int retorno = -1;
 	int idProducto;
 	int indice;
-	int cantidad;
+	int cantidadAux;
 
 	if(arrayProducto != NULL  && lenProducto >0)
 	{
@@ -509,16 +509,18 @@ int eProducto_compra(Producto* arrayProducto, int lenProducto){
 				indice = eProducto_BuscarPorid(arrayProducto, lenProducto, idProducto);
 				if(indice >= 0)
 				{
-					if(utn_getNumero(&cantidad, "\nIngrese cantidad a comprar:",
+					if(utn_getNumero(&cantidadAux, "\nIngrese cantidad a comprar:",
 							"\nError cantidad invalida.\nIngrese nuevamente: ",
 							1, arrayProducto[indice].stock, 2)==0)
 					{
 
-						if(eProducto_PrintCompra(arrayProducto, lenProducto, indice, cantidad)==0
+						if(eProducto_PrintCompra(arrayProducto, lenProducto, indice, cantidadAux)==0
 								&& preguntarSoN("\n¿Estas seguro?Si o No: ", 2, "\nRespuesta incorrecta"))
 						{
-							arrayProducto[indice].stock=arrayProducto[indice].stock-cantidad;
-							retorno =0;
+							arrayProducto[indice].stock=arrayProducto[indice].stock-cantidadAux;
+							*cantidad = cantidadAux;
+							retorno =indice;
+
 
 						}
 
@@ -559,7 +561,6 @@ int eProducto_compra(Producto* arrayProducto, int lenProducto){
 
 
 }
-
 
 
 /// @fn Producto Cargar los Datos de una list de Producto
@@ -844,7 +845,6 @@ static int eProducto_remove(Producto* list, int len, int id)
 }
 
 
-//ANALIZAR
 /// @fn Da de alta un Producto
 /// @param lista de Producto
 /// @param len longitud del array Gen
@@ -868,6 +868,10 @@ int eProducto_Alta(Producto *list, int len,Producto productoDarAlta){
 				list[indice].isEmpty=OCUPADO;
 				retorno=0;
 
+			}
+			else
+			{
+				retorno = indice;
 			}
 
 
@@ -945,20 +949,13 @@ int eProducto_Baja(Producto *list, int len){
 int eProducto_Modificacion(Producto * list,int len){
 
 	int retorno =-1;
-	int id;
 
 	if(list != NULL)
 	{
 		if(eProducto_Vacio(list, len))
 		{
 
-			//HASTA EL RETORNO ES -1
-			if(utn_getNumero(&id, "\nIngrese id:", "\nDato invalido. Ingrese nuevamente: ", 0, 1200, 2)==0){
-
-				//RETORNO PUEDE 0 BIEN <0 QUE ALGO SALIO MAL
-				retorno=eProducto_ModificarUno(list,len,id);
-
-			}
+			retorno=0;
 
 		}
 		else

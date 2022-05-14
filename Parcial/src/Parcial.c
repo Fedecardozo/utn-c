@@ -6,6 +6,7 @@
 
 #define TAM_USUARIO 200
 #define TAM_PRODUCTO 200
+#define TAM_TRACKING 200
 
 int main(void) {
 
@@ -18,10 +19,14 @@ int main(void) {
 	Producto arrayProducto[TAM_PRODUCTO];
 	eProducto_Inicializar(arrayProducto, TAM_PRODUCTO);
 
+	Tracking arrayTracking[TAM_TRACKING];
+	eTracking_Inicializar(arrayTracking, TAM_TRACKING);
+
+
 	harcodeo(arrayProducto, TAM_PRODUCTO, arrayUsuario, TAM_USUARIO);
 
 
-	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO) == -1)
+	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO,arrayTracking,TAM_TRACKING) == -1)
 	{
 
 		printf("\nHubo un error. Intentelo mas tarde...");

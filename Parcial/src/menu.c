@@ -1,8 +1,8 @@
 
 #include "menu.h"
 
-static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usuario *listUsuario);
-static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProducto,Usuario *listUsuario);
+static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
+static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto);
 
 
@@ -22,7 +22,7 @@ static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProduc
 
 }
 
-static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProducto,Usuario *listUsuario)
+static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking)
 {
 
 	switch(inicio)
@@ -30,7 +30,7 @@ static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProduc
 		case -3: printf("\nIntentelo mas tarde\n"); break;
 		case -2: printf("\nNO HAY DATOS CARGADOS !\n"); break;
 		case -1: printf("\nHUBO UN ERROR !\n"); break;
-		default: subMenuUsuario(listProducto,lenProducto,inicio,listUsuario); break;
+		default: subMenuUsuario(inicio,listUsuario,lenUsuario,listProducto,lenProducto,listTracking,lenTracking); break;
 	}
 
 
@@ -38,10 +38,12 @@ static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProduc
 
 }
 
-static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usuario *listUsuario){
+static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking){
 
 	int opc;
 	int retorno=0;
+	int indiceProducto;
+	int cantidad;
 
 	do{
 
@@ -65,9 +67,19 @@ static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usua
 			{
 				case 1: //funcion comprar
 
-					if(eProducto_compra(listProducto, lenProducto)<0)
+					indiceProducto = eProducto_compra(listProducto, lenProducto,&cantidad);
+					if(indiceProducto<0)
 					{
 						printf("\nNO HAY PRODUCTOS PARA MOSTRAR!\n");
+
+					}
+					else
+					{
+
+						if(eTracking_CargarDatos(listTracking, lenTracking, listProducto, indiceProducto, listUsuario, indice, cantidad)<0)
+						{
+							printf("\nError");
+						}
 
 					}
 
@@ -93,7 +105,7 @@ static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usua
 					}
 					break;
 				case 3:
-
+						eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indice);
 					break;
 				case 4: //funcion estados de ventas
 
@@ -128,11 +140,12 @@ static void erroresAlta(int registro)
 
 }
 
-int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto){
+int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking){
 
 	int retorno =-1;
 	int rta;
 	int opc;
+	int indice;
 
 	if(listUsuario != NULL && lenUsuario >=0)
 	{
@@ -154,8 +167,8 @@ int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenPr
 							"\n** 1er EXAMEN LAB I - 1H ***"
 							"\n********** LOGIN ***********"
 							"\n****************************\n");
-
-					erroresInicioSesion(eUsuario_InicioSesion(listUsuario,lenUsuario),listProducto,lenProducto,listUsuario);
+					indice=eUsuario_InicioSesion(listUsuario,lenUsuario);
+					erroresInicioSesion(indice, listUsuario, lenUsuario, listProducto, lenProducto, listTracking, lenTracking);
 
 					break;
 				case 2:

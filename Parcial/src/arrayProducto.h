@@ -39,7 +39,7 @@ int eProducto_MostrarDadosDeBaja(Producto *list, int len);
 
 int eProducto_MostrarFk(Producto *list, int len,int fk);
 int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProducto);
-int eProducto_compra(Producto* arrayProducto, int lenProducto);
+int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad);
 //SORT
 int eProducto_Sort(Producto *list, int len, int criterio);
 
