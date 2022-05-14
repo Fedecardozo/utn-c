@@ -27,9 +27,9 @@ static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProduc
 
 	switch(inicio)
 	{
-		case -3: printf("\nHUBO UN ERROR!\n"); break;
+		case -3: printf("\nIntentelo mas tarde\n"); break;
 		case -2: printf("\nNO HAY DATOS CARGADOS !\n"); break;
-		case 0: printf("\nCorreo o contraseña incorrectos! Intentelo mas tarde");break;
+		case -1: printf("\nHUBO UN ERROR !\n"); break;
 		default: subMenuUsuario(listProducto,lenProducto,inicio,listUsuario); break;
 	}
 
@@ -64,19 +64,31 @@ static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usua
 			switch(opc)
 			{
 				case 1: //funcion comprar
+
+					if(eProducto_print_listProductosOrdenados(listProducto, lenProducto)==-2)
+					{
+						printf("\nNO HAY PRODUCTOS PARA MOSTRAR!\n");
+
+					}
+
 					break;
 				case 2:
 
 					if(alta_Producto(listProducto, lenProducto,listUsuario, indice)==0)
 					{
 
-						printf("\nCarga exitosa");
+						printf("\nCarga exitosa\n");
+
+						if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indice)==-1)
+						{
+							printf("\nNo tiene productos para vender! ");
+						}
 
 					}
 					else
 					{
 
-						printf("\nLista llena");
+						printf("\nNo se puede cagar producto!");
 
 					}
 					break;
@@ -84,6 +96,9 @@ static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usua
 
 					break;
 				case 4: //funcion estados de ventas
+
+
+
 					break;
 
 			}

@@ -6,7 +6,8 @@
 #include "arrayProducto.h"
 #include "arrayUsuario.h"
 
-int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indice);
+int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indiceUsuario);
+int print_ProductosdelUsuario(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indiceUsuario);
 
 void harcodeo(Producto * listP,int lenP,Usuario * listU,int lenU);
 

@@ -79,14 +79,14 @@ void harcodeo(Producto * listP,int lenP,Usuario * listU,int lenU){
 /// @param lenUsuario
 /// @param indice
 /// @return -1 datos nullos -2 lista llena 0 bien
-int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indice)
+int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indiceUsuario)
 {
 
 	int retorno =-1;
 	Producto aux;
 	int indexProducto;
 
-	if(arrayProducto != NULL  && lenProducto >0 && arrayUsuario != NULL && indice >=0 )
+	if(arrayProducto != NULL  && lenProducto >0 && arrayUsuario != NULL && indiceUsuario >=0 )
 	{
 		indexProducto = eProducto_ObtenerIndexLibre(arrayProducto, lenProducto);
 
@@ -96,7 +96,7 @@ int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuari
 			if(eProducto_PediUnDato(&aux)==0)
 			{
 			//Guardar id usuario en fk producto
-				aux.Fk_idUsuario = arrayUsuario[indice].idUsuario;
+				aux.Fk_idUsuario = arrayUsuario[indiceUsuario].idUsuario;
 				if(eProducto_Alta(arrayProducto, lenProducto, aux)==0)
 				{
 					retorno=0;
@@ -119,6 +119,30 @@ int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuari
 
 	}
 
+
+
+	return retorno;
+
+}
+
+/// @fn int print_ProductosdelUsuario(Producto*, int, Usuario*, int)
+/// @param arrayProducto
+/// @param lenProducto
+/// @param arrayUsuario
+/// @param indiceUsuario
+/// @return -1 datos nullos 0 bien
+int print_ProductosdelUsuario(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indiceUsuario){
+
+	int retorno = -1;
+	int idUsu;
+
+	if(arrayProducto != NULL  && lenProducto >0 && arrayUsuario != NULL && indiceUsuario >=0 )
+	{
+		idUsu = arrayUsuario[indiceUsuario].idUsuario;
+
+		retorno =eProducto_MostrarFk(arrayProducto, lenProducto, idUsu);
+
+	}
 
 
 	return retorno;

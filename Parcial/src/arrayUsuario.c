@@ -134,6 +134,7 @@ int eUsuario_InicioSesion(Usuario * list, int len){
 
 	Usuario aux;
 	int retorno=-1;
+	int intentos =2;
 
 	if(list!=NULL){
 
@@ -141,14 +142,28 @@ int eUsuario_InicioSesion(Usuario * list, int len){
 
 		if(retorno)
 		{
-			if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
-					&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
-							"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD , 2)==0)
-			{
+			do{
 
-				retorno=eUsuario_VerificacionSesion(list, len, aux);
+				if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
+						&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+								"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD , 2)==0)
+				{
 
-			}
+					retorno=eUsuario_VerificacionSesion(list, len, aux);
+
+				}
+				else
+				{
+					retorno=-1;
+				}
+				if(retorno == -3 && intentos>0)
+				{
+					printf("\nCorreo o contraseña incorrecto");
+					intentos--;
+				}
+
+
+			}while(retorno==-3 && intentos>0);
 		}
 		else if(retorno == 0)
 		{

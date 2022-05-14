@@ -210,6 +210,50 @@ int eProducto_MostrarTodos(Producto *list, int len){
 
 }
 
+/// @fn imprime un array de Producto que esten cargados
+/// @param recibi un puntero tipo Producto
+/// @param la longitud para recorrer el array
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+int eProducto_MostrarFk(Producto *list, int len,int fk){
+
+	int retorno = -1;
+	int i;
+
+	if(list != NULL && len >=0){
+
+		if(eProducto_Sort(list, len, 1)==0)
+		{
+			retorno=0;
+			printf("+---------------------------------------------------------"
+					"------------------------------------------------------+\n");
+			printf("|%-10s|%-10s|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+					" ID "," ISEMPTY ","FK"," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+			  printf("+-----------------------------------------------------------------"
+					  "----------------------------------------------+\n");
+			for (i = 0; i < len ; i++)
+			{
+
+				if(list[i].isEmpty==OCUPADO && list[i].Fk_idUsuario==fk){
+
+					eProducto_MostrarUno(list[i]);
+					printf("+------------------------------------------------------------"
+							"---------------------------------------------------+\n");
+
+				}
+
+			}
+
+		}
+
+
+
+	}
+
+
+	return retorno;
+
+}
+
 /// @fn imprime un array de Producto que esten dados de baja
 /// @param recibi un puntero tipo Producto
 /// @param la longitud para recorrer el array
@@ -244,6 +288,39 @@ int eProducto_MostrarDadosDeBaja(Producto *list, int len){
 
 
 	return retorno;
+
+}
+
+
+int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProducto){
+
+	int retorno = -1;
+
+	if(arrayProducto != NULL  && lenProducto >0)
+	{
+		if(eProducto_Vacio(arrayProducto, lenProducto))
+		{
+			retorno =eProducto_Sort(arrayProducto, lenProducto, 1);
+
+			if(retorno == 0 )
+			{
+
+				retorno = eProducto_MostrarTodos(arrayProducto, lenProducto);
+
+			}
+		}
+		else
+		{
+
+			retorno = -2;
+
+		}
+
+
+	}
+
+	return retorno;
+
 
 }
 

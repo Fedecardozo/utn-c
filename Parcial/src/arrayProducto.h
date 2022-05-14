@@ -15,7 +15,7 @@
 typedef struct{
 
 	int id;
-	int isEmpty;
+	short int isEmpty;
 
 	//RELACION
 	int Fk_idUsuario;
@@ -36,6 +36,9 @@ int eProducto_PediUnDato(Producto * list);
 void eProducto_MostrarUno(Producto list);
 int eProducto_MostrarTodos(Producto *list, int len);
 int eProducto_MostrarDadosDeBaja(Producto *list, int len);
+
+int eProducto_MostrarFk(Producto *list, int len,int fk);
+int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProducto);
 
 //SORT
 int eProducto_Sort(Producto *list, int len, int criterio);
