@@ -149,4 +149,3 @@ int print_ProductosdelUsuario(Producto* arrayProducto, int lenProducto,Usuario *
 
 }
 
-

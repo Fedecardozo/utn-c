@@ -9,6 +9,7 @@ static int eProducto_remove(Producto* list, int len, int id);
 static int opcionesParaModifcar(int opc, Producto* list);
 static int queModifcar(int indice,Producto *gen );
 static int sort_Categoria(Producto *list, int len, int criterio);
+static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad);
 
 
 
@@ -167,8 +168,8 @@ int eProducto_PediUnDato(Producto * list){
 /// @param imprimi un Producto solo
 void eProducto_MostrarUno(Producto list){
 
-	printf("|%-10d|%-10d|%-10d|%-25s|%-15f|%-25s|%-10d|\n",
-			list.id,list.isEmpty,list.Fk_idUsuario,list.nombreProducto,
+	printf("|%-10d|%-25s|%-15f|%-25s|%-10d|\n",
+			list.id,list.nombreProducto,
 			list.precio,categorias[list.categoria-1],list.stock);
 
 }
@@ -185,19 +186,19 @@ int eProducto_MostrarTodos(Producto *list, int len){
 	if(list != NULL && len >=0){
 
 		retorno=0;
-		printf("+---------------------------------------------------------"
-				"------------------------------------------------------+\n");
-		printf("|%-10s|%-10s|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
-				" ID "," ISEMPTY ","FK"," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
-		  printf("+-----------------------------------------------------------------"
-				  "----------------------------------------------+\n");
+		printf("+----------------------------------------------"
+				"-------------------------------------------+\n");
+		printf("|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+				" ID "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+		printf("+----------------------------------------------"
+						"-------------------------------------------+\n");
 		for (i = 0; i < len ; i++) {
 
 			if(list[i].isEmpty==OCUPADO){
 
 				eProducto_MostrarUno(list[i]);
-				printf("+------------------------------------------------------------"
-						"---------------------------------------------------+\n");
+				printf("+----------------------------------------------"
+								"-------------------------------------------+\n");
 
 			}
 
@@ -224,20 +225,20 @@ int eProducto_MostrarFk(Producto *list, int len,int fk){
 		if(eProducto_Sort(list, len, 1)==0)
 		{
 			retorno=0;
-			printf("+---------------------------------------------------------"
-					"------------------------------------------------------+\n");
-			printf("|%-10s|%-10s|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
-					" ID "," ISEMPTY ","FK"," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
-			  printf("+-----------------------------------------------------------------"
-					  "----------------------------------------------+\n");
+			printf("+----------------------------------------------"
+							"-------------------------------------------+\n");
+			printf("|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+					" ID "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+			printf("+----------------------------------------------"
+							"-------------------------------------------+\n");
 			for (i = 0; i < len ; i++)
 			{
 
 				if(list[i].isEmpty==OCUPADO && list[i].Fk_idUsuario==fk){
 
 					eProducto_MostrarUno(list[i]);
-					printf("+------------------------------------------------------------"
-							"---------------------------------------------------+\n");
+					printf("+----------------------------------------------"
+								"-------------------------------------------+\n");;
 
 				}
 
@@ -291,7 +292,10 @@ int eProducto_MostrarDadosDeBaja(Producto *list, int len){
 
 }
 
-
+/// @fn int eProducto_print_listProductosOrdenados(Producto*, int)
+/// @param arrayProducto
+/// @param lenProducto
+/// @return -2 lista vacia -3 error al ordenar 0 ok
 int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProducto){
 
 	int retorno = -1;
@@ -353,6 +357,30 @@ static int eProducto_Vacio(Producto * list, int len){
 
 
 	}
+
+static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad)
+{
+	int retorno = -1;
+	float total;
+
+	if(arrayProducto != NULL && len >=0 && indice >= 0 && cantidad >=1)
+	{
+		retorno=0;
+		total = arrayProducto[indice].precio * cantidad;
+
+		printf("\n+---------------------------------------------------------------+\n");
+		printf("|%-20s|%-10s|%-15s|%-15s|","PRODUCTO","CANTIDAD","PRECIO","TOTAL");
+		printf("\n+---------------------------------------------------------------+\n");
+		printf("|%-20s|%-10d|%-15f|%-15f|",arrayProducto[indice].nombreProducto,cantidad,
+				arrayProducto[indice].precio,total);
+		printf("\n+---------------------------------------------------------------+\n");
+
+	}
+
+
+	return retorno;
+
+}
 
 //SORT
 
@@ -455,6 +483,83 @@ static int sort_Categoria(Producto *list, int len, int criterio){
 
 
 //ABM
+
+/// @fn int eProducto_compra(Producto*, int)
+/// @param arrayProducto
+/// @param lenProducto
+/// @return -1 datos nullos -2 lista vacia
+/// -3 error al ordenar -4 id inexistente
+/// -5 cantidad invalida -6 Si o no incorrecto 0 ok
+int eProducto_compra(Producto* arrayProducto, int lenProducto){
+
+	int retorno = -1;
+	int idProducto;
+	int indice;
+	int cantidad;
+
+	if(arrayProducto != NULL  && lenProducto >0)
+	{
+
+		retorno = eProducto_print_listProductosOrdenados(arrayProducto, lenProducto);
+		if(retorno == 0)
+		{
+			if(utn_getNumero(&idProducto, "\nIngrese ID a comprar: ", "\nError ID incorrecto.\nIngrese nuevamente: "
+					, 1000, 9999, 2)==0)
+			{
+				indice = eProducto_BuscarPorid(arrayProducto, lenProducto, idProducto);
+				if(indice >= 0)
+				{
+					if(utn_getNumero(&cantidad, "\nIngrese cantidad a comprar:",
+							"\nError cantidad invalida.\nIngrese nuevamente: ",
+							1, arrayProducto[indice].stock, 2)==0)
+					{
+
+						if(eProducto_PrintCompra(arrayProducto, lenProducto, indice, cantidad)==0
+								&& preguntarSoN("\n¿Estas seguro?Si o No: ", 2, "\nRespuesta incorrecta"))
+						{
+							arrayProducto[indice].stock=arrayProducto[indice].stock-cantidad;
+							retorno =0;
+
+						}
+
+						else
+						{
+							//Si o no incorrecto
+							retorno = -6;
+
+						}
+					}
+					else
+					{
+						//Cantidad invalida
+						retorno =-5;
+					}
+				}
+				else
+				{
+					//ID inexistente
+					retorno = -4;
+
+				}
+
+			}
+			else
+			{
+				//printf("ID invalido")
+				retorno = -4;
+
+			}
+
+		}
+
+
+	}
+
+	return retorno;
+
+
+}
+
 
 
 /// @fn Producto Cargar los Datos de una list de Producto

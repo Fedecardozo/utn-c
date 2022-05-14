@@ -65,7 +65,7 @@ static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usua
 			{
 				case 1: //funcion comprar
 
-					if(eProducto_print_listProductosOrdenados(listProducto, lenProducto)==-2)
+					if(eProducto_compra(listProducto, lenProducto)<0)
 					{
 						printf("\nNO HAY PRODUCTOS PARA MOSTRAR!\n");
 
