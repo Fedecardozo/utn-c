@@ -2,9 +2,8 @@
 #ifndef MENU_H_
 #define MENU_H_
 
-#include "arrayUsuario.h"
-#include "arrayProducto.h"
+#include "RelacionProductosUsuarios.h"
 
-int menu(Usuario* list , int len);
+int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto);
 
 #endif /* MENU_H_ */

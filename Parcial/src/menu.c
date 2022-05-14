@@ -1,22 +1,28 @@
 
 #include "menu.h"
 
-static int subMenuUsuario(int indice);
-static void erroresInicioSesion(int inicio);
-static void printTodo(Usuario* list , int len);
+static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usuario *listUsuario);
+static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProducto,Usuario *listUsuario);
+static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto);
 
 
-static void printTodo(Usuario* list , int len){
+static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto){
 
-	if(eUsuario_MostrarTodos(list, len)==-1)
+	if(eUsuario_MostrarTodos(listUsuario, lenUsuario)==-1)
 	{
 		printf("\nNo hay datos cargados!");
+	}
+	if(eProducto_MostrarTodos(listProducto,lenProducto)==-1)
+	{
+
+		printf("No hay datos cargados de productos");
+
 	}
 
 
 }
 
-static void erroresInicioSesion(int inicio)
+static void erroresInicioSesion(int inicio, Producto* listProducto,int lenProducto,Usuario *listUsuario)
 {
 
 	switch(inicio)
@@ -24,7 +30,7 @@ static void erroresInicioSesion(int inicio)
 		case -3: printf("\nHUBO UN ERROR!\n"); break;
 		case -2: printf("\nNO HAY DATOS CARGADOS !\n"); break;
 		case 0: printf("\nCorreo o contraseña incorrectos! Intentelo mas tarde");break;
-		default: subMenuUsuario(inicio); break;
+		default: subMenuUsuario(listProducto,lenProducto,inicio,listUsuario); break;
 	}
 
 
@@ -32,41 +38,61 @@ static void erroresInicioSesion(int inicio)
 
 }
 
-static int subMenuUsuario(int indice){
+static int subMenuUsuario(Producto* listProducto,int lenProducto,int indice,Usuario *listUsuario){
 
 	int opc;
 	int retorno=0;
 
-	printf("\n****************************"
-			"\n** 1er EXAMEN LAB I - 1H ***"
-			"\n********* USUARIO **********"
-			"\n****************************");
+	do{
 
-	retorno=utn_getNumero(&opc, "\n\n1)COMPRAR "
-			"\n2)VENDER "
-			"\n3)ESTADO DE COMPRAS"
-			"\n4)ESTADO DE VENTAS"
-			"INGRESE OPCION: "
-			, "\nOPCION INCORRECTA\nIngrese nuevamente: "
-			, 1, 4, 2);
+		printf("\n****************************"
+				"\n** 1er EXAMEN LAB I - 1H ***"
+				"\n********* USUARIO **********"
+				"\n****************************");
 
-	if(retorno == 0)
-	{
-		switch(opc)
+		retorno=utn_getNumero(&opc, "\n\n1)COMPRAR "
+				"\n2)VENDER "
+				"\n3)ESTADO DE COMPRAS"
+				"\n4)ESTADO DE VENTAS"
+				"\n0)SALIR"
+				"\nINGRESE OPCION: "
+				, "\nOPCION INCORRECTA\nIngrese nuevamente: "
+				, 0, 4, 2);
+
+		if(retorno == 0)
 		{
-			case 1: //funcion comprar
-				break;
-			case 2: //funcion vender
-				break;
-			case 3: //funcion estados de compras
-				break;
-			case 4: //funcion estados de ventas
-				break;
+			switch(opc)
+			{
+				case 1: //funcion comprar
+					break;
+				case 2:
+
+					if(alta_Producto(listProducto, lenProducto,listUsuario, indice)==0)
+					{
+
+						printf("\nCarga exitosa");
+
+					}
+					else
+					{
+
+						printf("\nLista llena");
+
+					}
+					break;
+				case 3:
+
+					break;
+				case 4: //funcion estados de ventas
+					break;
+
+			}
+		}else
+		{
+			printf("\nOpcion inexistente. Intentelo mas tarde...");
 		}
-	}else
-	{
-		printf("\nOpcion inexistente. Intentelo mas tarde...");
-	}
+
+	}while(opc != 0);
 
 	return retorno;
 }
@@ -87,13 +113,13 @@ static void erroresAlta(int registro)
 
 }
 
-int menu(Usuario* list , int len){
+int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto){
 
 	int retorno =-1;
 	int rta;
 	int opc;
 
-	if(list != NULL && len >=0)
+	if(listUsuario != NULL && lenUsuario >=0)
 	{
 		retorno =0;
 		do{
@@ -114,7 +140,7 @@ int menu(Usuario* list , int len){
 							"\n********** LOGIN ***********"
 							"\n****************************\n");
 
-					erroresInicioSesion(eUsuario_InicioSesion(list,len));
+					erroresInicioSesion(eUsuario_InicioSesion(listUsuario,lenUsuario),listProducto,lenProducto,listUsuario);
 
 					break;
 				case 2:
@@ -123,7 +149,7 @@ int menu(Usuario* list , int len){
 							"\n******* REGISTRARSE ********"
 							"\n****************************\n");
 
-					erroresAlta(eUsuario_CargarDatos(list, len));
+					erroresAlta(eUsuario_CargarDatos(listUsuario, lenUsuario));
 
 					break;
 				case 3:
@@ -132,7 +158,7 @@ int menu(Usuario* list , int len){
 							"\n**** USUARIO Y PRODUCTOS ***"
 							"\n****************************\n");
 
-					printTodo(list,len);
+					printTodo(listUsuario,lenUsuario,listProducto,lenProducto);
 
 					break;
 

@@ -4,26 +4,24 @@
 
 #include "menu.h"
 
-#define TAM 200
+#define TAM_USUARIO 200
+#define TAM_PRODUCTO 200
 
 int main(void) {
 
 	setbuf(stdout, NULL);
 
 
-	Usuario arrayUsuario[TAM];
-	eUsuario_Inicializar(arrayUsuario, TAM);
-	harcodeoUsuario(arrayUsuario, TAM);
+	Usuario arrayUsuario[TAM_USUARIO];
+	eUsuario_Inicializar(arrayUsuario, TAM_USUARIO);
 
-	Producto arrayProducto[TAM];
-	eProducto_Inicializar(arrayProducto, TAM);
-	harcodeoProducto(arrayProducto, TAM);
-	int x= eProducto_Sort(arrayProducto, TAM, 1);
-	printf("\n%d\n",x);
-	eProducto_MostrarTodos(arrayProducto, TAM);
+	Producto arrayProducto[TAM_PRODUCTO];
+	eProducto_Inicializar(arrayProducto, TAM_PRODUCTO);
+
+	harcodeo(arrayProducto, TAM_PRODUCTO, arrayUsuario, TAM_USUARIO);
 
 
-	if(menu(arrayUsuario, TAM) == -1)
+	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO) == -1)
 	{
 
 		printf("\nHubo un error. Intentelo mas tarde...");

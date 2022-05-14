@@ -10,41 +10,7 @@ static int opcionesParaModifcar(int opc, Producto* list);
 static int queModifcar(int indice,Producto *gen );
 static int sort_Categoria(Producto *list, int len, int criterio);
 
-void harcodeoProducto(Producto * list,int len){
 
-	Producto aux;
-
-
-	strncpy(aux.nombreProducto,"Lavarropa",MAX_NOMBRE);
-	aux.precio = 1828;
-	aux.categoria = 1;
-	aux.stock = 10;
-
-	eProducto_Alta(list, len, aux);
-
-	strncpy(aux.nombreProducto,"Notebook",MAX_NOMBRE);
-	aux.precio = 2900;
-	aux.categoria = 3;
-	aux.stock = 5;
-
-	eProducto_Alta(list, len, aux);
-
-	strncpy(aux.nombreProducto,"Heladera",MAX_NOMBRE);
-	aux.precio = 3028;
-	aux.categoria = 2;
-	aux.stock = 2;
-
-	eProducto_Alta(list, len, aux);
-
-	strncpy(aux.nombreProducto,"Lavarropa",MAX_NOMBRE);
-	aux.precio = 1828;
-	aux.categoria = 4;
-	aux.stock = 10;
-
-	eProducto_Alta(list, len, aux);
-
-
-}
 
 /// @fn int generadorId()
 /// @brief genera un id automatico
@@ -201,8 +167,8 @@ int eProducto_PediUnDato(Producto * list){
 /// @param imprimi un Producto solo
 void eProducto_MostrarUno(Producto list){
 
-	printf("|%-10d|%-10d|%-25s|%-15f|%-25s|%-10d|\n",
-			list.id,list.isEmpty,list.nombreProducto,
+	printf("|%-10d|%-10d|%-10d|%-25s|%-15f|%-25s|%-10d|\n",
+			list.id,list.isEmpty,list.Fk_idUsuario,list.nombreProducto,
 			list.precio,categorias[list.categoria-1],list.stock);
 
 }
@@ -219,19 +185,19 @@ int eProducto_MostrarTodos(Producto *list, int len){
 	if(list != NULL && len >=0){
 
 		retorno=0;
-		printf("+-----------------------------------------------------"
-				"-----------------------------------------------+\n");
-		printf("|%-10s|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
-				" ID "," ISEMPTY "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
-		  printf("+--------------------------------------------------------------"
-				  "--------------------------------------+\n");
+		printf("+---------------------------------------------------------"
+				"------------------------------------------------------+\n");
+		printf("|%-10s|%-10s|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+				" ID "," ISEMPTY ","FK"," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+		  printf("+-----------------------------------------------------------------"
+				  "----------------------------------------------+\n");
 		for (i = 0; i < len ; i++) {
 
 			if(list[i].isEmpty==OCUPADO){
 
 				eProducto_MostrarUno(list[i]);
-				printf("+---------------------------------------------------------"
-						"-------------------------------------------+\n");
+				printf("+------------------------------------------------------------"
+						"---------------------------------------------------+\n");
 
 			}
 
@@ -417,7 +383,7 @@ static int sort_Categoria(Producto *list, int len, int criterio){
 /// @fn Producto Cargar los Datos de una list de Producto
 /// @param list puntero de Producto
 /// @param len longitud de Producto
-/// @return 1 punteros nullos len <0 [0]bien
+/// @return -1 punteros nullos len <0 [0]bien
 int eProducto_CargarDatos(Producto * list,int len){
 
 	int retorno=-1;
@@ -700,7 +666,7 @@ static int eProducto_remove(Producto* list, int len, int id)
 /// @fn Da de alta un Producto
 /// @param lista de Producto
 /// @param len longitud del array Gen
-/// @return Posición del índice de pasajero de retorno o (-1) si [Longitud o
+/// @return 0 alta Producto (-1) si [Longitud o
 ///Puntero NULL recibido o pasajero no encontrado] -2 lista llena
 int eProducto_Alta(Producto *list, int len,Producto productoDarAlta){
 

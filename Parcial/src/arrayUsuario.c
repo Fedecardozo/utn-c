@@ -8,37 +8,6 @@ static int opcionesParaModifcar(int opc, Usuario* list);
 static int queModifcar(int indice,Usuario *gen );
 static int eUsuario_VerificacionSesion(Usuario * list,int len,Usuario aux);
 
-void harcodeoUsuario(Usuario * list,int len){
-
-	Usuario aux;
-
-
-	strncpy(aux.correo,"FEDECARDOZO@GMAIL.COM",MAX_CORREO);
-	strncpy(aux.password,"anuel12",MAX_PASSWORD);
-	strncpy(aux.direccion,"pasaje calabria 1590",MAX_DIRECCION);
-	aux.codigoPostal = 1828;
-	aux.tipo = 1;
-
-	eUsuario_Alta(list, len, aux);
-
-	strncpy(aux.correo,"FEDE@G.COM",MAX_CORREO);
-	strncpy(aux.password,"1234",MAX_PASSWORD);
-	strncpy(aux.direccion,"calle falsa 123",MAX_DIRECCION);
-	aux.codigoPostal = 1152;
-	aux.tipo = 1;
-
-	eUsuario_Alta(list, len, aux);
-
-	strncpy(aux.correo,"CARS@G.COM",MAX_CORREO);
-	strncpy(aux.password,"1235",MAX_PASSWORD);
-	strncpy(aux.direccion,"carriego 321",MAX_DIRECCION);
-	aux.codigoPostal = 1125;
-	aux.tipo = 2;
-
-	eUsuario_Alta(list, len, aux);
-
-
-}
 
 /// @fn int generadorId()
 /// @brief genera un id automatico

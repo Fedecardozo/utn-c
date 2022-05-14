@@ -18,6 +18,8 @@ typedef struct{
 	int isEmpty;
 
 	//RELACION
+	int Fk_idUsuario;
+
 	char nombreProducto[MAX_NOMBRE];
 	float precio;
 	int categoria; //Ej moda,tecnologia....
@@ -45,6 +47,5 @@ int eProducto_Alta(Producto *list, int len,Producto productoDarAlta);
 int eProducto_Baja(Producto *list, int len);
 int eProducto_Modificacion(Producto *list, int len);
 
-void harcodeoProducto(Producto * list,int len);
 
 #endif /* ARRAYPRODUCTO_H_ */
