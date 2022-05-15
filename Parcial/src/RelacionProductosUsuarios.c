@@ -130,7 +130,7 @@ int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuari
 /// @param lenProducto
 /// @param arrayUsuario
 /// @param indiceUsuario
-/// @return -1 datos nullos 0 bien
+/// @return -1 datos nullos 0 hay producto 1 se ordeno
 int print_ProductosdelUsuario(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuario,int indiceUsuario){
 
 	int retorno = -1;

@@ -10,6 +10,7 @@ static int opcionesParaModifcar(int opc, Producto* list);
 static int queModifcar(int indice,Producto *gen );
 static int sort_Categoria(Producto *list, int len, int criterio);
 static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad);
+static int eProducto_VacioFk(Producto * list, int len,int fkUsuario);
 
 
 
@@ -214,7 +215,8 @@ int eProducto_MostrarTodos(Producto *list, int len){
 /// @fn imprime un array de Producto que esten cargados
 /// @param recibi un puntero tipo Producto
 /// @param la longitud para recorrer el array
-///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si hay productos
+/// 1 se ordeno
 int eProducto_MostrarFk(Producto *list, int len,int fk){
 
 	int retorno = -1;
@@ -222,23 +224,28 @@ int eProducto_MostrarFk(Producto *list, int len,int fk){
 
 	if(list != NULL && len >=0){
 
-		if(eProducto_Sort(list, len, 1)==0)
+		if(eProducto_VacioFk(list, len, fk))
 		{
 			retorno=0;
-			printf("+----------------------------------------------"
-							"-------------------------------------------+\n");
-			printf("|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
-					" ID "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
-			printf("+----------------------------------------------"
-							"-------------------------------------------+\n");
-			for (i = 0; i < len ; i++)
+			if(eProducto_Sort(list, len, 1)==0)
 			{
+				retorno=1;
+				printf("+----------------------------------------------"
+								"-------------------------------------------+\n");
+				printf("|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+						" ID "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+				printf("+----------------------------------------------"
+								"-------------------------------------------+\n");
+				for (i = 0; i < len ; i++)
+				{
 
-				if(list[i].isEmpty==OCUPADO && list[i].Fk_idUsuario==fk){
+					if(list[i].isEmpty==OCUPADO && list[i].Fk_idUsuario==fk){
 
-					eProducto_MostrarUno(list[i]);
-					printf("+----------------------------------------------"
-								"-------------------------------------------+\n");;
+						eProducto_MostrarUno(list[i]);
+						printf("+----------------------------------------------"
+									"-------------------------------------------+\n");;
+
+					}
 
 				}
 
@@ -357,6 +364,37 @@ static int eProducto_Vacio(Producto * list, int len){
 
 
 	}
+
+/// \brief Pregunta si las posiciones en el array están vacías,
+/// \param list Producto * Puntero del array de Producto
+/// \param len int Longitud del arreglo
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
+/// (1) Cargado
+static int eProducto_VacioFk(Producto * list, int len,int fkUsuario){
+
+	int retorno=-1;
+	int i;
+
+		if(list != NULL && len >=0){
+			retorno=0;
+			for (i = 0; i < len; i++)
+			{
+
+				if(list[i].isEmpty==OCUPADO && list[i].Fk_idUsuario==fkUsuario)
+				{
+					retorno=1;
+					break;
+				}
+
+			}
+
+		}
+
+		return retorno;
+
+
+	}
+
 
 static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad)
 {

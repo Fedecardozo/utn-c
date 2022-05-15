@@ -9,6 +9,11 @@ long int time_Current(void){
 long int time_Add(double secondsAdd){
 	return time_Current() + secondsAdd;
 }
+long int time_Llegada(double secondsAdd){
+	return secondsAdd-time_Current();
+}
+
+//t1add-time_Current()
 
 static int generadorId();
 static int eTracking_VacioUsuarioVentas(Tracking * list,int fkUsuario, int len ,int estado);
@@ -247,9 +252,10 @@ void eTracking_Estado(Tracking list){
 	char estado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADO"},{"CANCELADO"}};
 
 	printf("|%-15d|%-15d|%-15d|%-3ld%-12s|%-14s|",list.idProducto,list.cantidad,
-			list.distanciaKM,list.horaLlegada,"Segundos",estado[list.isEmpty]);
+			list.distanciaKM,list.horaLlegada-time_Current(),"Segundos",estado[list.isEmpty]);
 
 }
+
 
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
@@ -291,6 +297,7 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 	return retorno;
 
 }
+
 
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
@@ -353,6 +360,7 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 
 }
 
+
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
 /// @param la longitud para recorrer el array
@@ -397,6 +405,8 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 
 }
 
+
+
 static int eTracking_calculoDistancia(int codigoPostal){
 
 	int retorno=-1;;
@@ -434,6 +444,7 @@ static int eTracking_calculoDistancia(int codigoPostal){
 
 }
 
+
 /// \brief Pregunta si las posiciones en el array están vacías,
 /// \param list Tracking * Puntero del array de Tracking
 /// \param len int Longitud del arreglo
@@ -463,6 +474,7 @@ static int eTracking_VacioUsuarioVentas(Tracking * list,int fkUsuario, int len ,
 
 
 	}
+
 
 /// \brief Pregunta si las posiciones en el array están vacías,
 /// \param list Tracking * Puntero del array de Tracking
@@ -494,6 +506,7 @@ static int eTracking_VacioUsuarioCompras(Tracking * list,int fkUsuario, int len)
 
 	}
 
+
 /// @fn Tracking Cargar los Datos de una list de Tracking
 /// @param list puntero de Tracking
 /// @param len longitud de Tracking
@@ -515,7 +528,7 @@ int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arra
 		aux.Fk_UsuarioVendedor = arrayProducto[indiceProducto].Fk_idUsuario;
 		aux.cantidad = cantidad;
 		aux.distanciaKM = distancia;
-		aux.horaLlegada = time_Add(distancia)-time_Current();
+		aux.horaLlegada = time_Add(distancia);
 
 		retorno=eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -545,7 +558,7 @@ int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * l
 		if(listTracking != NULL && lenTracking >= 0)
 		{
 			//tener el id del producto
-			if(utn_getNumero(&idProducto, "\nIngrese id a modificar",
+			if(utn_getNumero(&idProducto, "\nIngrese id a modificar: ",
 					"Error!\nIngrese nuevamente: ", 1000, 9999, 2)==0)
 			{
 				for (i = 0; i < lenTracking; ++i)
@@ -593,6 +606,7 @@ int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * l
 	return retorno;
 
 }
+
 
 /// @fn int eTracking_Alta(Tracking*, int, Tracking)
 /// @param listTracking
