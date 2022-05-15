@@ -341,7 +341,7 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 			printf("+----------------------------------------"
 									"--------------------------------------+\n");
 			printf("|%-15s|%-15s|%-15s|%-15s|%-14s|\n",
-							" ID TRACKING"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
+								" ID TRACKING"," PRODUCTO"," CANTIDAD"," HORA LLEGADA","ESTADO");
 			printf("+--------------------------------------------"
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
@@ -422,7 +422,6 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 	return retorno;
 
 }
-
 
 
 static int eTracking_calculoDistancia(int codigoPostal){
