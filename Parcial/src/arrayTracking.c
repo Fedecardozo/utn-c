@@ -251,8 +251,16 @@ void eTracking_Estado(Tracking list){
 	//char* horaLlegada = ctime(&list.horaLlegada);
 	char estado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADO"},{"CANCELADO"}};
 
+	long int horallegada =list.horaLlegada-time_Current();
+
+	if(horallegada <= 0)
+	{
+		horallegada =0;
+
+	}
+
 	printf("|%-15d|%-15d|%-15d|%-3ld%-12s|%-14s|",list.idProducto,list.cantidad,
-			list.distanciaKM,list.horaLlegada-time_Current(),"Segundos",estado[list.isEmpty]);
+			list.distanciaKM,horallegada,"Segundos",estado[list.isEmpty]);
 
 }
 
@@ -370,6 +378,7 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 
 	int retorno = -1;
 	int i;
+	long int horallegada;
 
 	if(list != NULL && len >=0 && indiceUsuario >= 0)
 	{
@@ -386,13 +395,20 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
 			{
+				horallegada=list[i].horaLlegada-time_Current();
+				if(list[i].isEmpty==EN_VIAJE && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario
+					&&	horallegada <= 0 && eTracking_ModificarEstado(list, i, ENTREGADO)==0)
+				{
+					retorno = 1;
+				}
 
 				if(list[i].isEmpty>=EN_VIAJE && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario)
 				{
 
-					eTracking_Estado(list[i]);
-					printf("\n+-------------------------------------------"
-										"-----------------------------------+\n");
+						eTracking_Estado(list[i]);
+						printf("\n+-------------------------------------------"
+											"-----------------------------------+\n");
+
 
 				}
 
