@@ -907,3 +907,114 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
 gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Parcial
+01:46:11 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+..\src\menu.c: In function 'printTodo':
+..\src\menu.c:21:5: error: too few arguments to function 'eTracking_MostrarTodos'
+  if(eTracking_MostrarTodos(listTracking,lenTracking)==-1)
+     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\menu.h:5:0,
+                 from ..\src\menu.c:2:
+..\src\arrayTracking.h:40:5: note: declared here
+ int eTracking_MostrarTodos(Tracking *list, int len,int estado);
+     ^~~~~~~~~~~~~~~~~~~~~~
+01:47:09 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+01:59:50 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_MostrarProductosUsuarioEstado':
+..\src\arrayTracking.c:315:16: warning: conversion lacks type at end of format [-Wformat=]
+    printf("|%-30%-44s% %s|\n",
+                ^
+..\src\arrayTracking.c:315:23: warning: conversion lacks type at end of format [-Wformat=]
+    printf("|%-30%-44s% %s|\n",
+                       ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+02:00:27 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_MostrarProductosUsuarioEstado':
+..\src\arrayTracking.c:315:16: warning: conversion lacks type at end of format [-Wformat=]
+    printf("|%-30% -44s% s%|\n",
+                ^
+..\src\arrayTracking.c:315:22: warning: ' ' flag used with '%s' ms_printf format [-Wformat=]
+    printf("|%-30% -44s% s%|\n",
+                      ^
+..\src\arrayTracking.c:315:25: warning: ' ' flag used with '%s' ms_printf format [-Wformat=]
+    printf("|%-30% -44s% s%|\n",
+                         ^
+..\src\arrayTracking.c:315:27: warning: unknown conversion type character '|' in format [-Wformat=]
+    printf("|%-30% -44s% s%|\n",
+                           ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+02:00:38 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_MostrarProductosUsuarioEstado':
+..\src\arrayTracking.c:315:21: warning: ' ' flag used with '%s' ms_printf format [-Wformat=]
+    printf("|-30% -44s% s%|\n",
+                     ^
+..\src\arrayTracking.c:315:24: warning: ' ' flag used with '%s' ms_printf format [-Wformat=]
+    printf("|-30% -44s% s%|\n",
+                        ^
+..\src\arrayTracking.c:315:26: warning: unknown conversion type character '|' in format [-Wformat=]
+    printf("|-30% -44s% s%|\n",
+                          ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+02:01:23 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_MostrarProductosUsuarioEstado':
+..\src\arrayTracking.c:315:17: warning: unknown conversion type character 0x20 in format [-Wformat=]
+    printf("|%-30 %-43s %s|\n",
+                 ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+02:02:06 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_MostrarProductosUsuarioEstado':
+..\src\arrayTracking.c:315:27: warning: unknown conversion type character 0x20 in format [-Wformat=]
+    printf("|          %-67 %s|\n",
+                           ^
+..\src\arrayTracking.c:315:11: warning: too many arguments for format [-Wformat-extra-args]
+    printf("|          %-67 %s|\n",
+           ^~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+02:02:22 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+02:03:39 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+02:11:00 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_MostrarProductosUsuario':
+..\src\arrayTracking.c:370:6: warning: the address of 'eTracking_VacioUsuarioCompras' will always evaluate as 'true' [-Waddress]
+   if(eTracking_VacioUsuarioCompras)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+02:14:32 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+02:36:10 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial

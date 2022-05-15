@@ -110,15 +110,15 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 
 					}
 					break;
-				case 3:
-						if(eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indice)==0)
+				case 3://estado de compras
+						if(eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indice))
 						{
 
 							if(utn_getNumero(&opc, "\n1)Cambiar estado \n2)Salir \nIngrese opcion: ",
 									"\nOpcion incorrecta.\nIngrese nuevamente: ", 1, 2, 2)==0)
 							{
 
-								if(opc)
+								if(opc == 1)
 								{
 									//Despues llamar funcion para contener errores
 									eTracking_ConsultaEstado(listTracking, lenTracking, listUsuario, indice);
@@ -132,10 +132,27 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 							}
 
 						}
+						else
+						{
+							puts("\nNO TIENE PRODUCTOS COMPRADOS");
+						}
 					break;
-				case 4: //funcion estados de ventas
+				case 4: // estados de ventas
 
-					print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indice);
+					// HACER QUE INGRESE UNA OPCION 1)LISTADO DE VENTAS FINALIZADO| 2)VER PRODUCTOS EN STOCK
+					if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indice,2)==0)
+					{
+						puts("\nNo hay productos ventas entregados");
+
+					}
+					if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indice,3)==0)
+					{
+						puts("\nNo hay productos ventas cancelados");
+					}
+					if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indice)==0)
+					{
+						puts("\nNo hay productos en Ventas");
+					}
 
 
 					break;

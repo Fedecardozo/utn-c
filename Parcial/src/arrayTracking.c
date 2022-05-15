@@ -11,7 +11,8 @@ long int time_Add(double secondsAdd){
 }
 
 static int generadorId();
-//static int eTracking_Vacio(Tracking * list, int len);
+static int eTracking_VacioUsuarioVentas(Tracking * list,int fkUsuario, int len ,int estado);
+static int eTracking_VacioUsuarioCompras(Tracking * list,int fkUsuario, int len);
 
 void harcodeoTracking(Tracking * listTracking,int lenTracking){
 
@@ -253,6 +254,7 @@ void eTracking_Estado(Tracking list){
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
 /// @param la longitud para recorrer el array
+/// @param estado EN_VIAJE 1 ENTREGADO 2 CANCELADO 3
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
 int eTracking_MostrarTodos(Tracking *list, int len){
 
@@ -293,33 +295,101 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
 /// @param la longitud para recorrer el array
-///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// @param estado EN_VIAJE 1 ENTREGADO 2 CANCELADO 3
+///return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) esta vacio
+/// 1 ok
+int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arrayUsuario,int indiceUsuario,int estado){
+
+	int retorno = -1;
+	int i;
+	char sEstado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADO"},{"CANCELADO"}};
+
+	if(list != NULL && len >=0 && indiceUsuario >= 0 && estado>=1 && estado<=3)
+	{
+		if(eTracking_VacioUsuarioVentas(list, arrayUsuario[indiceUsuario].idUsuario, len, estado))
+		{
+
+			retorno=1;
+
+			printf("+----------------------------------------"
+											"--------------------------------------+\n");
+			printf("|          %-67s %s|\n",
+							"         ESTADOS DE PRODUCTOS ",sEstado[estado]);
+			printf("+--------------------------------------------"
+									"----------------------------------+\n");
+
+			printf("+----------------------------------------"
+									"--------------------------------------+\n");
+			printf("|%-15s|%-15s|%-15s|%-15s|%-14s|\n",
+							" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
+			printf("+--------------------------------------------"
+									"----------------------------------+\n");
+			for (i = 0; i < len ; i++)
+			{
+
+				if(list[i].isEmpty==estado && list[i].Fk_UsuarioVendedor== arrayUsuario[indiceUsuario].idUsuario)
+				{
+
+					eTracking_Estado(list[i]);
+					printf("\n+-------------------------------------------"
+										"-----------------------------------+\n");
+
+				}
+
+			}
+
+	   }
+	   else
+	   {
+
+		   retorno = 0;
+
+	   }
+
+	}
+
+
+	return retorno;
+
+}
+
+/// @fn imprime un array de Tracking que esten cargados
+/// @param recibi un puntero tipo Tracking
+/// @param la longitud para recorrer el array
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) vacio
+/// 1 cargado
 int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsuario,int indiceUsuario){
 
 	int retorno = -1;
 	int i;
 
-	if(list != NULL && len >=0 && indiceUsuario >= 0){
-
+	if(list != NULL && len >=0 && indiceUsuario >= 0)
+	{
 		retorno=0;
-		printf("+----------------------------------------"
-								"--------------------------------------+\n");
-		printf("|%-15s|%-15s|%-15s|%-15s|%-15s|\n",
-						" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
-		printf("+--------------------------------------------"
-								"----------------------------------+\n");
-		for (i = 0; i < len ; i++) {
 
-			if(list[i].isEmpty>=EN_VIAJE && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario){
+		if(eTracking_VacioUsuarioCompras(list, arrayUsuario[indiceUsuario].idUsuario, len))
+		{
+			retorno = 1;
+			printf("+----------------------------------------"
+									"--------------------------------------+\n");
+			printf("|%-15s|%-15s|%-15s|%-15s|%-14s|\n",
+							" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
+			printf("+--------------------------------------------"
+									"----------------------------------+\n");
+			for (i = 0; i < len ; i++)
+			{
 
-				eTracking_Estado(list[i]);
-				printf("\n+-------------------------------------------"
-									"-----------------------------------+\n");
+				if(list[i].isEmpty>=EN_VIAJE && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario)
+				{
+
+					eTracking_Estado(list[i]);
+					printf("\n+-------------------------------------------"
+										"-----------------------------------+\n");
+
+				}
 
 			}
-
-		}
-
+	    }
 	}
 
 
@@ -364,13 +434,12 @@ static int eTracking_calculoDistancia(int codigoPostal){
 
 }
 
-/*
 /// \brief Pregunta si las posiciones en el array están vacías,
 /// \param list Tracking * Puntero del array de Tracking
 /// \param len int Longitud del arreglo
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
 /// (1) Cargado
-static int eTracking_Vacio(Tracking * list, int len){
+static int eTracking_VacioUsuarioVentas(Tracking * list,int fkUsuario, int len ,int estado){
 
 	int retorno=-1;
 	int i;
@@ -380,7 +449,7 @@ static int eTracking_Vacio(Tracking * list, int len){
 			for (i = 0; i < len; i++)
 			{
 
-				if(list[i].isEmpty==OCUPADO)
+				if(list[i].Fk_UsuarioVendedor==fkUsuario && list[i].isEmpty==estado)
 				{
 					retorno=1;
 					break;
@@ -394,7 +463,37 @@ static int eTracking_Vacio(Tracking * list, int len){
 
 
 	}
-*/
+
+/// \brief Pregunta si las posiciones en el array están vacías,
+/// \param list Tracking * Puntero del array de Tracking
+/// \param len int Longitud del arreglo
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
+/// (1) Cargado
+static int eTracking_VacioUsuarioCompras(Tracking * list,int fkUsuario, int len){
+
+	int retorno=-1;
+	int i;
+
+		if(list != NULL && len >=0){
+			retorno=0;
+			for (i = 0; i < len; i++)
+			{
+
+				if(list[i].Fk_UsuarioComprador==fkUsuario)
+				{
+					retorno=1;
+					break;
+				}
+
+			}
+
+		}
+
+		return retorno;
+
+
+	}
+
 /// @fn Tracking Cargar los Datos de una list de Tracking
 /// @param list puntero de Tracking
 /// @param len longitud de Tracking
@@ -452,7 +551,7 @@ int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * l
 				for (i = 0; i < lenTracking; ++i)
 				{
 					if(listTracking[i].Fk_UsuarioComprador == listUsuario[indiceUsuario].idUsuario
-							&& listTracking[i].idProducto == idProducto)
+							&& listTracking[i].idProducto == idProducto && listTracking[i].isEmpty == EN_VIAJE)
 					{
 						indexTracking=i;
 						//preguntar si quiere cancelar el producto
