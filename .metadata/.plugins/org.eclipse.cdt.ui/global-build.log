@@ -1341,3 +1341,9 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arra
 gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Parcial
 Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+17:12:25 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial

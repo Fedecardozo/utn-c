@@ -260,8 +260,8 @@ void eTracking_Estado(Tracking list){
 
 	}
 
-	printf("|%-15d|%-15d|%-15d|%-3ld%-12s|%-14s|",list.idTracking,list.cantidad,
-			list.distanciaKM,horallegada,"Segundos",estado[list.isEmpty]);
+	printf("|%-15d|%-15d|%-15d|%-3ld%-12s|%-14s|",list.idTracking,list.idProducto,list.cantidad,
+			horallegada,"Segundos",estado[list.isEmpty]);
 
 }
 
@@ -398,7 +398,7 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 			printf("+----------------------------------------"
 									"--------------------------------------+\n");
 			printf("|%-15s|%-15s|%-15s|%-15s|%-14s|\n",
-							" ID TRACKING"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
+							" ID TRACKING"," PRODUCTO"," CANTIDAD"," HORA LLEGADA","ESTADO");
 			printf("+--------------------------------------------"
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
