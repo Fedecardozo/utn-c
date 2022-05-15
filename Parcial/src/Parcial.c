@@ -22,8 +22,9 @@ int main(void) {
 	Tracking arrayTracking[TAM_TRACKING];
 	eTracking_Inicializar(arrayTracking, TAM_TRACKING);
 
-
 	harcodeo(arrayProducto, TAM_PRODUCTO, arrayUsuario, TAM_USUARIO);
+
+	harcodeoTracking(arrayTracking, TAM_TRACKING);
 
 
 	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO,arrayTracking,TAM_TRACKING) == -1)

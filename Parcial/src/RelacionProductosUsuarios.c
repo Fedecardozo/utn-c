@@ -60,7 +60,7 @@ void harcodeo(Producto * listP,int lenP,Usuario * listU,int lenU){
 
 	eProducto_Alta(listP, lenP, aux);
 
-	strncpy(aux.nombreProducto,"Lavarropa",MAX_NOMBRE);
+	strncpy(aux.nombreProducto,"Plancha",MAX_NOMBRE);
 	aux.precio = 1828;
 	aux.categoria = 4;
 	aux.stock = 10;

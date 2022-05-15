@@ -2,8 +2,75 @@
 #include "arrayTracking.h"
 
 static int generadorId();
-static int eTracking_Vacio(Tracking * list, int len);
+//static int eTracking_Vacio(Tracking * list, int len);
 
+void harcodeoTracking(Tracking * listTracking,int lenTracking){
+
+	Tracking aux;
+
+	//Usuario 1000
+	aux.Fk_UsuarioComprador = 1000;
+	aux.idProducto= 1001;
+	aux.Fk_UsuarioVendedor = 1002;
+	aux.cantidad = 2;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+	aux.Fk_UsuarioComprador = 1000;
+	aux.idProducto = 1002;
+	aux.Fk_UsuarioVendedor = 1001;
+	aux.cantidad = 1;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+	aux.Fk_UsuarioComprador = 1000;
+	aux.idProducto = 1003;
+	aux.Fk_UsuarioVendedor = 1001;
+	aux.cantidad = 5;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+	//Usuario 1001
+
+	aux.Fk_UsuarioComprador = 1001;
+	aux.idProducto = 1000;
+	aux.Fk_UsuarioVendedor = 1000;
+	aux.cantidad = 5;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+	aux.Fk_UsuarioComprador = 1001;
+	aux.idProducto = 1001;
+	aux.Fk_UsuarioVendedor = 1002;
+	aux.cantidad = 2;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+	aux.Fk_UsuarioComprador = 1001;
+	aux.idProducto = 1003;
+	aux.Fk_UsuarioVendedor = 1001;
+	aux.cantidad = 2;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+
+	//Usuario 1002
+
+	aux.Fk_UsuarioComprador = 1002;
+	aux.idProducto = 1003;
+	aux.Fk_UsuarioVendedor = 1001;
+	aux.cantidad = 2;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+	aux.Fk_UsuarioComprador = 1002;
+	aux.idProducto = 1000;
+	aux.Fk_UsuarioVendedor = 1000;
+	aux.cantidad = 2;
+
+	eTracking_Alta(listTracking, lenTracking, aux);
+
+}
 
 /// @fn int generadorId()
 /// @brief genera un id automatico
@@ -150,7 +217,7 @@ int eTracking_PediUnDato(Tracking * list){
 /// @param imprimi un Tracking solo
 void eTracking_Estado(Tracking list){
 
-	printf("\n|%-15d|%-15d|%-15d|%-15d|%-15d|",list.idTracking,list.idProducto,
+	printf("|%-15d|%-15d|%-15d|%-15d|%-15d|",list.idTracking,list.idProducto,
 			list.Fk_UsuarioComprador,list.Fk_UsuarioVendedor,list.cantidad);
 
 }
@@ -167,19 +234,22 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 	if(list != NULL && len >=0){
 
 		retorno=0;
-		printf("+----------------------------------------------"
-				"----------------------------------------------+\n");
+		printf("+----------------------------------------"
+						"---------------------------------------+\n");
 		printf("|%-15s|%-15s|%-15s|%-15s|%-15s|\n",
 				" ID TRACKING"," ID PRODUCTO"," FK COMPRADOR"," FK VENDEDOR","CANTIDAD");
-		printf("+----------------------------------------------"
-						"----------------------------------------------+\n");
-		for (i = 0; i < len ; i++) {
+		printf("+----------------------------------------"
+						"---------------------------------------+\n");
+		for (i = 0; i < len ; i++)
+		{
 
-			if(list[i].isEmpty==OCUPADO){
+			if(list[i].isEmpty == OCUPADO)
+			{
 
 				eTracking_Estado(list[i]);
-				printf("+----------------------------------------------"
-								"----------------------------------------------+\n");
+				printf("\n+---------------------------------------"
+							"----------------------------------------+\n");
+
 
 			}
 
@@ -204,19 +274,19 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 	if(list != NULL && len >=0 && indiceUsuario >= 0){
 
 		retorno=0;
-		printf("+----------------------------------------------"
-				"----------------------------------------------+\n");
+		printf("+----------------------------------------"
+				"---------------------------------------+\n");
 		printf("|%-15s|%-15s|%-15s|%-15s|%-15s|\n",
 				" ID TRACKING"," ID PRODUCTO"," FK COMPRADOR"," FK VENDEDOR","CANTIDAD");
-		printf("+----------------------------------------------"
-						"----------------------------------------------+\n");
+		printf("+------------------------------------------"
+						"-------------------------------------+\n");
 		for (i = 0; i < len ; i++) {
 
 			if(list[i].isEmpty==OCUPADO && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario){
 
 				eTracking_Estado(list[i]);
-				printf("+----------------------------------------------"
-								"----------------------------------------------+\n");
+				printf("\n+---------------------------------------"
+								"----------------------------------------+\n");
 
 			}
 
@@ -229,6 +299,7 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 
 }
 
+/*
 /// \brief Pregunta si las posiciones en el array están vacías,
 /// \param list Tracking * Puntero del array de Tracking
 /// \param len int Longitud del arreglo
@@ -258,7 +329,7 @@ static int eTracking_Vacio(Tracking * list, int len){
 
 
 	}
-
+*/
 /// @fn Tracking Cargar los Datos de una list de Tracking
 /// @param list puntero de Tracking
 /// @param len longitud de Tracking
@@ -297,12 +368,12 @@ int eTracking_Alta(Tracking* listTracking,int lenTracking,Tracking aDarseAlta){
 
 		index = eTracking_ObtenerIndexLibre(listTracking, lenTracking);
 
-		if(index == 0)
+		if(index >= 0)
 		{
 			retorno=0;
 			listTracking[index] = aDarseAlta;
-			listTracking[index].isEmpty = OCUPADO;
 			listTracking[index].idTracking = generadorId();
+			listTracking[index].isEmpty = OCUPADO;
 
 		}
 		else

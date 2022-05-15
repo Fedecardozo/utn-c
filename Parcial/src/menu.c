@@ -3,10 +3,10 @@
 
 static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
-static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto);
+static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 
 
-static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto){
+static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking){
 
 	if(eUsuario_MostrarTodos(listUsuario, lenUsuario)==-1)
 	{
@@ -16,6 +16,12 @@ static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProduc
 	{
 
 		printf("No hay datos cargados de productos");
+
+	}
+	if(eTracking_MostrarTodos(listTracking,lenTracking)==-1)
+	{
+
+		printf("No hay datos cargados de Tracking");
 
 	}
 
@@ -109,6 +115,7 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 					break;
 				case 4: //funcion estados de ventas
 
+					print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indice);
 
 
 					break;
@@ -186,7 +193,7 @@ int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenPr
 							"\n**** USUARIO Y PRODUCTOS ***"
 							"\n****************************\n");
 
-					printTodo(listUsuario,lenUsuario,listProducto,lenProducto);
+					printTodo(listUsuario,lenUsuario,listProducto,lenProducto,listTracking,lenTracking);
 
 					break;
 

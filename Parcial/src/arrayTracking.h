@@ -33,6 +33,8 @@ int eTracking_PediUnDato(Tracking * list);
 void eTracking_Estado(Tracking list);
 int eTracking_MostrarTodos(Tracking *list, int len);
 
+void harcodeoTracking(Tracking * listTracking,int lenTracking);
+
 int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsuario,int indiceUsuario);
 
 int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arrayProducto,
