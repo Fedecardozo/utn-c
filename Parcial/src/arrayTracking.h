@@ -6,8 +6,10 @@
 #include <time.h>
 
 
-#define LIBRE 1
-#define OCUPADO 0
+#define VACIO 0
+#define EN_VIAJE 1
+#define ENTREGADO 2
+#define CANCELADO 3
 
 typedef struct{
 
@@ -44,6 +46,7 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arrayProducto,
 		int indiceProducto,Usuario *listUsuario, int indiceUsuario,int cantidad);
 int eTracking_Alta(Tracking* listTracking,int lenTracking,Tracking aDarseAlta);
-
+int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * listUsuario, int indiceUsuario);
+int eTracking_ModificarEstado(Tracking* listTracking,int indice,int estado);
 
 #endif /* ARRAYTRACKING_H_ */

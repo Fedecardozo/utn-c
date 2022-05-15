@@ -830,3 +830,80 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
 gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
 Info: Nothing to build for Parcial
+00:34:23 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+In file included from ..\src\menu.h:5:0,
+                 from ..\src\menu.c:2:
+..\src\arrayTracking.h:9:0: warning: "LIBRE" redefined
+ #define LIBRE 0
+ 
+In file included from ..\src\RelacionProductosUsuarios.h:7:0,
+                 from ..\src\arrayTracking.h:5,
+                 from ..\src\menu.h:5,
+                 from ..\src\menu.c:2:
+..\src\arrayUsuario.h:10:0: note: this is the location of the previous definition
+ #define LIBRE 1
+ 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+In file included from ..\src\menu.h:5:0,
+                 from ..\src\Parcial.c:5:
+..\src\arrayTracking.h:9:0: warning: "LIBRE" redefined
+ #define LIBRE 0
+ 
+In file included from ..\src\RelacionProductosUsuarios.h:7:0,
+                 from ..\src\arrayTracking.h:5,
+                 from ..\src\menu.h:5,
+                 from ..\src\Parcial.c:5:
+..\src\arrayUsuario.h:10:0: note: this is the location of the previous definition
+ #define LIBRE 1
+ 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+In file included from ..\src\arrayTracking.c:2:0:
+..\src\arrayTracking.h:9:0: warning: "LIBRE" redefined
+ #define LIBRE 0
+ 
+In file included from ..\src\RelacionProductosUsuarios.h:7:0,
+                 from ..\src\arrayTracking.h:5,
+                 from ..\src\arrayTracking.c:2:
+..\src\arrayUsuario.h:10:0: note: this is the location of the previous definition
+ #define LIBRE 1
+ 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+00:35:47 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+00:39:45 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+00:42:43 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+01:19:19 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+..\src\arrayTracking.c: In function 'eTracking_ConsultaEstado':
+..\src\arrayTracking.c:446:19: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+   if(listTracking != NULL & lenTracking >= 0)
+                   ^
+..\src\arrayTracking.c: In function 'eTracking_ModificarEstado':
+..\src\arrayTracking.c:547:18: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+  if(listTracking != NULL & indice >= 0)
+                  ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+01:19:47 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial

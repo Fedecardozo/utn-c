@@ -111,7 +111,27 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 					}
 					break;
 				case 3:
-						eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indice);
+						if(eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indice)==0)
+						{
+
+							if(utn_getNumero(&opc, "\n1)Cambiar estado \n2)Salir \nIngrese opcion: ",
+									"\nOpcion incorrecta.\nIngrese nuevamente: ", 1, 2, 2)==0)
+							{
+
+								if(opc)
+								{
+									//Despues llamar funcion para contener errores
+									eTracking_ConsultaEstado(listTracking, lenTracking, listUsuario, indice);
+
+								}
+
+							}
+							else
+							{
+								puts("Opcion incorrecta!");
+							}
+
+						}
 					break;
 				case 4: //funcion estados de ventas
 
