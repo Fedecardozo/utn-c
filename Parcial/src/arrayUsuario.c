@@ -239,7 +239,7 @@ int eUsuario_Registrarse(Usuario * list){
 						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD, 2)==0
 				&& utn_getString(aux.direccion,"\nIngrese domicilio: ", "\nError direccion invalida", MAX_DIRECCION, 2)==0
 				&& utn_getNumero(&aux.codigoPostal, "\nIngrese codigo postal: ",
-						"\nError codigo postal invalido", 1000, 9999, 2)==0
+						"\nError codigo postal invalido", 1, 9999, 2)==0
 				&& utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
 						" \nIngrese tipo: ",
 						"\nError tipo invalido", 1, 2, 2)==0)

@@ -3,6 +3,7 @@
 #define ARRAYTRACKING_H_
 
 #include "RelacionProductosUsuarios.h"
+#include <time.h>
 
 
 #define LIBRE 1
@@ -25,6 +26,9 @@ typedef struct{
 
 
 }Tracking;
+
+long int time_Current(void);
+long int time_Add(double secondsAdd);
 
 int eTracking_Inicializar(Tracking *list, int len);
 int eTracking_ObtenerIndexLibre(Tracking* list, int len);

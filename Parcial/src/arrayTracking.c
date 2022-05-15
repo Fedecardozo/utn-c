@@ -1,6 +1,15 @@
 
 #include "arrayTracking.h"
 
+
+long int time_Current(void){
+	return time(NULL);
+}
+
+long int time_Add(double secondsAdd){
+	return time_Current() + secondsAdd;
+}
+
 static int generadorId();
 //static int eTracking_Vacio(Tracking * list, int len);
 
@@ -13,6 +22,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto= 1001;
 	aux.Fk_UsuarioVendedor = 1002;
 	aux.cantidad = 2;
+	aux.distanciaKM = 20;
+	aux.horaLlegada = time_Add(20);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -20,6 +31,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1002;
 	aux.Fk_UsuarioVendedor = 1001;
 	aux.cantidad = 1;
+	aux.distanciaKM = 40;
+	aux.horaLlegada = time_Add(40);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -27,6 +40,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1003;
 	aux.Fk_UsuarioVendedor = 1001;
 	aux.cantidad = 5;
+	aux.distanciaKM = 30;
+	aux.horaLlegada = time_Add(30);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -36,6 +51,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1000;
 	aux.Fk_UsuarioVendedor = 1000;
 	aux.cantidad = 5;
+	aux.distanciaKM = 50;
+	aux.horaLlegada = time_Add(50);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -43,6 +60,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1001;
 	aux.Fk_UsuarioVendedor = 1002;
 	aux.cantidad = 2;
+	aux.distanciaKM = 80;
+	aux.horaLlegada = time_Add(80);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -50,6 +69,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1003;
 	aux.Fk_UsuarioVendedor = 1001;
 	aux.cantidad = 2;
+	aux.distanciaKM = 150;
+	aux.horaLlegada = time_Add(150);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -60,6 +81,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1003;
 	aux.Fk_UsuarioVendedor = 1001;
 	aux.cantidad = 2;
+	aux.distanciaKM = 80;
+	aux.horaLlegada = time_Add(80);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -67,6 +90,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking){
 	aux.idProducto = 1000;
 	aux.Fk_UsuarioVendedor = 1000;
 	aux.cantidad = 2;
+	aux.distanciaKM = 30;
+	aux.horaLlegada = time_Add(30);
 
 	eTracking_Alta(listTracking, lenTracking, aux);
 
@@ -217,8 +242,9 @@ int eTracking_PediUnDato(Tracking * list){
 /// @param imprimi un Tracking solo
 void eTracking_Estado(Tracking list){
 
-	printf("|%-15d|%-15d|%-15d|%-15d|%-15d|",list.idTracking,list.idProducto,
-			list.Fk_UsuarioComprador,list.Fk_UsuarioVendedor,list.cantidad);
+	//char* horaLlegada = ctime(&list.horaLlegada);
+
+	printf("|%-15d|%-15d|%-15d|%-5ld%-15s",list.idProducto,list.cantidad,list.distanciaKM,list.horaLlegada,"Segundos");
 
 }
 
@@ -235,11 +261,11 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 
 		retorno=0;
 		printf("+----------------------------------------"
-						"---------------------------------------+\n");
-		printf("|%-15s|%-15s|%-15s|%-15s|%-15s|\n",
-				" ID TRACKING"," ID PRODUCTO"," FK COMPRADOR"," FK VENDEDOR","CANTIDAD");
-		printf("+----------------------------------------"
-						"---------------------------------------+\n");
+						"--------------------------------------+\n");
+		printf("|%-15s|%-15s|%-15s|%-30s|\n",
+				" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA");
+		printf("+--------------------------------------------"
+						"----------------------------------+\n");
 		for (i = 0; i < len ; i++)
 		{
 
@@ -247,8 +273,8 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 			{
 
 				eTracking_Estado(list[i]);
-				printf("\n+---------------------------------------"
-							"----------------------------------------+\n");
+				printf("\n+-------------------------------------------"
+							"-----------------------------------+\n");
 
 
 			}
@@ -275,18 +301,18 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 
 		retorno=0;
 		printf("+----------------------------------------"
-				"---------------------------------------+\n");
-		printf("|%-15s|%-15s|%-15s|%-15s|%-15s|\n",
-				" ID TRACKING"," ID PRODUCTO"," FK COMPRADOR"," FK VENDEDOR","CANTIDAD");
-		printf("+------------------------------------------"
-						"-------------------------------------+\n");
+								"--------------------------------------+\n");
+		printf("|%-15s|%-15s|%-15s|%-30s|\n",
+						" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA");
+		printf("+--------------------------------------------"
+								"----------------------------------+\n");
 		for (i = 0; i < len ; i++) {
 
 			if(list[i].isEmpty==OCUPADO && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario){
 
 				eTracking_Estado(list[i]);
-				printf("\n+---------------------------------------"
-								"----------------------------------------+\n");
+				printf("\n+-------------------------------------------"
+									"-----------------------------------+\n");
 
 			}
 
@@ -294,6 +320,43 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 
 	}
 
+
+	return retorno;
+
+}
+
+static int eTracking_calculoDistancia(int codigoPostal){
+
+	int retorno=-1;;
+	int distancia;
+
+	if(codigoPostal > 0)
+	{
+		retorno=0;
+
+		if(codigoPostal>=1 && codigoPostal <=1000)
+		{
+			distancia = 20;
+		}
+		if (codigoPostal >= 1001 && codigoPostal <= 3000)
+		{
+			distancia = 30;
+		}
+		if (codigoPostal >= 3001 && codigoPostal <= 5000)
+		{
+			distancia = 50;
+		}
+		if (codigoPostal >= 5001 && codigoPostal <= 8000)
+		{
+			distancia = 80;
+		}
+		if (codigoPostal >= 8001 && codigoPostal <= 9999)
+		{
+			distancia = 150;
+		}
+		retorno= distancia;
+
+	}
 
 	return retorno;
 
@@ -337,16 +400,21 @@ static int eTracking_Vacio(Tracking * list, int len){
 int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arrayProducto, int indiceProducto,Usuario *listUsuario, int indiceUsuario,int cantidad){
 
 	int retorno = -1;
+	int distancia;
 	Tracking aux;
 
 	if(arrayProducto != NULL  && listTracking != NULL && listUsuario != NULL
 			&& lenTracking >0 && indiceProducto>=0 && indiceUsuario >=0)
 	{
 
+		distancia = eTracking_calculoDistancia(listUsuario[indiceUsuario].codigoPostal);
+
 		aux.idProducto = arrayProducto[indiceProducto].id;
 		aux.Fk_UsuarioComprador = listUsuario[indiceUsuario].idUsuario;
 		aux.Fk_UsuarioVendedor = arrayProducto[indiceProducto].Fk_idUsuario;
 		aux.cantidad = cantidad;
+		aux.distanciaKM = distancia;
+		aux.horaLlegada = time_Add(distancia)-time_Current();
 
 		retorno=eTracking_Alta(listTracking, lenTracking, aux);
 
