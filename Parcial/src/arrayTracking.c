@@ -18,6 +18,7 @@ long int time_Llegada(double secondsAdd){
 static int generadorId();
 static int eTracking_VacioUsuarioVentas(Tracking * list,int fkUsuario, int len ,int estado);
 static int eTracking_VacioUsuarioCompras(Tracking * list,int fkUsuario, int len);
+static void eTracking_ActualizarList(Tracking * list,int len);
 
 void harcodeoTracking(Tracking * listTracking,int lenTracking){
 
@@ -250,11 +251,11 @@ void eTracking_Estado(Tracking list){
 
 	//char* horaLlegada = ctime(&list.horaLlegada);
 	char estado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADO"},{"CANCELADO"}};
-
-	long int horallegada =list.horaLlegada-time_Current();
+	int long horallegada = list.horaLlegada - time_Current();
 
 	if(horallegada <= 0)
 	{
+
 		horallegada =0;
 
 	}
@@ -307,6 +308,7 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 }
 
 
+//VENTAS
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
 /// @param la longitud para recorrer el array
@@ -317,10 +319,13 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 
 	int retorno = -1;
 	int i;
-	char sEstado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADO"},{"CANCELADO"}};
+	char sEstado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADOS"},{"CANCELADO"}};
 
 	if(list != NULL && len >=0 && indiceUsuario >= 0 && estado>=1 && estado<=3)
 	{
+
+		eTracking_ActualizarList( list,len);
+
 		if(eTracking_VacioUsuarioVentas(list, arrayUsuario[indiceUsuario].idUsuario, len, estado))
 		{
 
@@ -328,8 +333,8 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 
 			printf("+----------------------------------------"
 											"--------------------------------------+\n");
-			printf("|          %-67s %s|\n",
-							"         ESTADOS DE PRODUCTOS ",sEstado[estado]);
+			printf("| %47s %s                   |\n",
+							" ESTADOS DE PRODUCTOS ",sEstado[estado]);
 			printf("+--------------------------------------------"
 									"----------------------------------+\n");
 
@@ -341,6 +346,7 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
 			{
+
 
 				if(list[i].isEmpty==estado && list[i].Fk_UsuarioVendedor== arrayUsuario[indiceUsuario].idUsuario)
 				{
@@ -369,6 +375,7 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 }
 
 
+//COMPRAS
 /// @fn imprime un array de Tracking que esten cargados
 /// @param recibi un puntero tipo Tracking
 /// @param la longitud para recorrer el array
@@ -378,14 +385,15 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 
 	int retorno = -1;
 	int i;
-	long int horallegada;
 
 	if(list != NULL && len >=0 && indiceUsuario >= 0)
 	{
+		eTracking_ActualizarList( list,len);
 		retorno=0;
 
 		if(eTracking_VacioUsuarioCompras(list, arrayUsuario[indiceUsuario].idUsuario, len))
 		{
+
 			retorno = 1;
 			printf("+----------------------------------------"
 									"--------------------------------------+\n");
@@ -395,12 +403,6 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
 			{
-				horallegada=list[i].horaLlegada-time_Current();
-				if(list[i].isEmpty==EN_VIAJE && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario
-					&&	horallegada <= 0 && eTracking_ModificarEstado(list, i, ENTREGADO)==0)
-				{
-					retorno = 1;
-				}
 
 				if(list[i].isEmpty>=EN_VIAJE && list[i].Fk_UsuarioComprador== arrayUsuario[indiceUsuario].idUsuario)
 				{
@@ -460,6 +462,35 @@ static int eTracking_calculoDistancia(int codigoPostal){
 
 }
 
+
+static void eTracking_ActualizarList(Tracking * list,int len)
+{
+	long int horallegada;
+	int i;
+
+	for(i=0; i<len; i++)
+	{
+
+
+		if(list[i].isEmpty==EN_VIAJE)
+		{
+			horallegada=list[i].horaLlegada-time_Current();
+
+			if(horallegada <= 0)
+			{
+				list[i].horaLlegada = 0;
+				eTracking_ModificarEstado(list, i, ENTREGADO);
+
+			}
+
+
+		}
+
+
+	}
+
+
+}
 
 /// \brief Pregunta si las posiciones en el array están vacías,
 /// \param list Tracking * Puntero del array de Tracking

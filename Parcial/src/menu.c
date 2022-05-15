@@ -184,7 +184,7 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 		{
 			switch(opc)
 			{
-				case 1: //funcion comprar
+				case 1: //COMPRAR
 
 					indiceProducto = eProducto_compra(listProducto, lenProducto,&cantidad);
 					if(indiceProducto<0)
@@ -203,7 +203,7 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 					}
 
 					break;
-				case 2:
+				case 2://VENDER
 
 					if(alta_Producto(listProducto, lenProducto,listUsuario, indice)==0)
 					{
@@ -223,12 +223,12 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 
 					}
 					break;
-				case 3://estado de compras
+				case 3://ESTADO COMPRAS
 
 					estadoCompras(listTracking, lenTracking, listUsuario, indice);
 
 					break;
-				case 4: // estados de ventas
+				case 4: //ESTADO VENTAS
 
 					// HACER QUE INGRESE UNA OPCION 1)LISTADO DE VENTAS FINALIZADO| 2)VER PRODUCTOS EN STOCK
 					estadosVentas(listTracking, lenTracking, listProducto, lenProducto, listUsuario, indice);

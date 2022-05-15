@@ -95,7 +95,7 @@ int alta_Producto(Producto* arrayProducto, int lenProducto,Usuario * arrayUsuari
 
 			if(eProducto_PediUnDato(&aux)==0)
 			{
-			//Guardar id usuario en fk producto
+			//Guardar id usuario en fk producto del que vende
 				aux.Fk_idUsuario = arrayUsuario[indiceUsuario].idUsuario;
 				if(eProducto_Alta(arrayProducto, lenProducto, aux)==0)
 				{
