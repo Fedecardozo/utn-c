@@ -995,12 +995,20 @@ int eProducto_ModificacionStock(Producto * list,int len,int id,int stock,int sum
 			if(sumaOresta==0)
 			{
 				list[indice].stock = list[indice].stock -stock;
+
+				if(list[indice].stock == 0)
+				{
+
+					list[indice].isEmpty = LIBRE;
+
+				}
 				retorno=0;
 
 			}
 			if(sumaOresta==1)
 			{
 				list[indice].stock = list[indice].stock +stock;
+				retorno=0;
 
 			}
 
