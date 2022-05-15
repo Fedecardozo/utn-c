@@ -4,7 +4,65 @@
 static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
+static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listProducto,int lenProducto,Usuario* listUsuario,int indiceUsuario);
 
+static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listProducto,int lenProducto,Usuario* listUsuario,int indiceUsuario){
+
+	// HACER QUE INGRESE UNA OPCION 1)LISTADO DE VENTAS FINALIZADO| 2)VER PRODUCTOS EN STOCK
+	int opc;
+
+	printf("\n****************************"
+			"\n** 1er EXAMEN LAB I - 1H ***"
+			"\n***** ESTADO DE VENTAS *****"
+			"\n****************************");
+
+	if(utn_getNumero(&opc, "\n1)LISTADO DE VENTAS FINALIZADO \n2)VER PRODUCTOS EN STOCK"
+			"\n0)SALIR\nIngrese opcion: ", "\nError! Ingrese nuevamente: ", 0, 2, 2)==0
+			&& opc >=1)
+	{
+
+
+		switch(opc)
+		{
+			case 1:
+
+				if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indiceUsuario,2)==0)
+					{
+						puts("\nNo hay productos ventas entregados");
+
+					}
+				if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indiceUsuario,3)==0)
+					{
+						puts("\nNo hay productos ventas cancelados");
+					}
+				break;
+
+			case 2:
+
+				if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indiceUsuario)==0)
+					{
+						puts("\nNo hay productos en Ventas");
+					}
+
+				break;
+
+
+		}
+
+	}
+	else
+	{
+
+		puts("\nOPCION INVALIDA INTENTELO MAS TARDE");
+
+	}
+
+
+
+
+
+
+}
 
 static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking){
 
@@ -140,20 +198,7 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 				case 4: // estados de ventas
 
 					// HACER QUE INGRESE UNA OPCION 1)LISTADO DE VENTAS FINALIZADO| 2)VER PRODUCTOS EN STOCK
-					if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indice,2)==0)
-					{
-						puts("\nNo hay productos ventas entregados");
-
-					}
-					if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indice,3)==0)
-					{
-						puts("\nNo hay productos ventas cancelados");
-					}
-					if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indice)==0)
-					{
-						puts("\nNo hay productos en Ventas");
-					}
-
+					estadosVentas(listTracking, lenTracking, listProducto, lenProducto, listUsuario, indice);
 
 					break;
 
