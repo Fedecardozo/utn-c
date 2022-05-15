@@ -260,7 +260,7 @@ void eTracking_Estado(Tracking list){
 
 	}
 
-	printf("|%-15d|%-15d|%-15d|%-3ld%-12s|%-14s|",list.idProducto,list.cantidad,
+	printf("|%-15d|%-15d|%-15d|%-3ld%-12s|%-14s|",list.idTracking,list.cantidad,
 			list.distanciaKM,horallegada,"Segundos",estado[list.isEmpty]);
 
 }
@@ -282,7 +282,7 @@ int eTracking_MostrarTodos(Tracking *list, int len){
 		printf("+----------------------------------------"
 						"--------------------------------------+\n");
 		printf("|%-15s|%-15s|%-15s|%-15s|%-14s\n",
-				" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","   ESTADO");
+				" ID TRACKING"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","   ESTADO");
 		printf("+--------------------------------------------"
 						"----------------------------------+\n");
 		for (i = 0; i < len ; i++)
@@ -341,7 +341,7 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 			printf("+----------------------------------------"
 									"--------------------------------------+\n");
 			printf("|%-15s|%-15s|%-15s|%-15s|%-14s|\n",
-							" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
+							" ID TRACKING"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
 			printf("+--------------------------------------------"
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
@@ -398,7 +398,7 @@ int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsua
 			printf("+----------------------------------------"
 									"--------------------------------------+\n");
 			printf("|%-15s|%-15s|%-15s|%-15s|%-14s|\n",
-							" ID PRODUCTO"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
+							" ID TRACKING"," CANTIDAD"," DISTANCIA"," HORA LLEGADA","ESTADO");
 			printf("+--------------------------------------------"
 									"----------------------------------+\n");
 			for (i = 0; i < len ; i++)
@@ -471,7 +471,6 @@ static void eTracking_ActualizarList(Tracking * list,int len)
 	for(i=0; i<len; i++)
 	{
 
-
 		if(list[i].isEmpty==EN_VIAJE)
 		{
 			horallegada=list[i].horaLlegada-time_Current();
@@ -483,6 +482,12 @@ static void eTracking_ActualizarList(Tracking * list,int len)
 
 			}
 
+
+		}
+		if(list[i].isEmpty==CANCELADO)
+		{
+
+			list[i].horaLlegada = 0;
 
 		}
 
@@ -587,57 +592,71 @@ int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arra
 
 }
 
-
+//COMPRAS
 /// @fn int eTracking_ConsultaEstado(Tracking*, int, Usuario*, int)
 /// @param listTracking
 /// @param lenTracking
 /// @param listUsuario
 /// @param indiceUsuario
 /// @return -1 nullos -2 id incorrecto
-/// -3 no existe tal producto -4 contesto S-N negativamente
-int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * listUsuario, int indiceUsuario){
+/// -3 no existe tal Tracking -4 contesto S-N negativamente
+int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * listUsuario, int indiceUsuario, Producto*listProducto, int lenProducto){
 
 	int retorno = -1;
-	int i;
-	int idProducto;
+	int idTracking;
 	int indexTracking;
 
-		if(listTracking != NULL && lenTracking >= 0)
+		if(listTracking != NULL && lenTracking >= 0 && listUsuario != NULL && indiceUsuario >=0
+				&& listProducto != NULL && lenProducto>0 )
 		{
-			//tener el id del producto
-			if(utn_getNumero(&idProducto, "\nIngrese id a modificar: ",
+			//tener el id del tracking
+			if(utn_getNumero(&idTracking, "\nIngrese id a modificar: ",
 					"Error!\nIngrese nuevamente: ", 1000, 9999, 2)==0)
 			{
-				for (i = 0; i < lenTracking; ++i)
+				indexTracking = eTracking_BuscarPorid(listTracking, lenTracking, idTracking);
+
+				if(indexTracking>=0)
 				{
-					if(listTracking[i].Fk_UsuarioComprador == listUsuario[indiceUsuario].idUsuario
-							&& listTracking[i].idProducto == idProducto && listTracking[i].isEmpty == EN_VIAJE)
+					if(listTracking[indexTracking].Fk_UsuarioComprador == listUsuario[indiceUsuario].idUsuario
+						&&  listTracking[indexTracking].isEmpty == EN_VIAJE)
 					{
-						indexTracking=i;
-						//preguntar si quiere cancelar el producto
+
 						if(preguntarSoN("Estas seguro de cancelar el envio? Si - No: ", 2, "\nRespuesta incorrecta"))
 						{
+
+							eProducto_ModificacionStock(listProducto, lenProducto, listTracking[indexTracking].idProducto,
+									listTracking[indexTracking].cantidad,1);
 
 							retorno = eTracking_ModificarEstado(listTracking, indexTracking, CANCELADO);
 
 						}
 						else
 						{
-
-							//NO se decidio
+							//No estaba seguro
 							retorno = -4;
 
 						}
 
+
 					}
 					else
 					{
-						//NO existe tal producto
-						retorno = -3;
+
+						//NO tiene productos
+						retorno = -5;
 
 					}
 
 				}
+				else
+				{
+
+					//no existe tal Tracking
+					retorno = -3;
+
+				}
+
+
 			}
 			else
 			{

@@ -6,8 +6,9 @@ static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario
 static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listProducto,int lenProducto,Usuario* listUsuario,int indiceUsuario);
 static void errorEstadosCompras(int error);
+static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listUsuario,int indiceUsuario,Producto* listProducto,int lenProducto);
 
-static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listUsuario,int indiceUsuario)
+static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listUsuario,int indiceUsuario,Producto* listProducto,int lenProducto)
 {
 	int opc;
 
@@ -21,7 +22,7 @@ static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listU
 			if(opc == 1)
 			{
 				//Despues llamar funcion para contener errores
-				errorEstadosCompras(eTracking_ConsultaEstado(listTracking, lenTracking, listUsuario, indiceUsuario));
+				errorEstadosCompras(eTracking_ConsultaEstado(listTracking, lenTracking, listUsuario, indiceUsuario,listProducto,lenProducto));
 
 			}
 			if(opc == 2)
@@ -225,7 +226,7 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 					break;
 				case 3://ESTADO COMPRAS
 
-					estadoCompras(listTracking, lenTracking, listUsuario, indice);
+					estadoCompras(listTracking, lenTracking, listUsuario, indice,listProducto,lenProducto);
 
 					break;
 				case 4: //ESTADO VENTAS

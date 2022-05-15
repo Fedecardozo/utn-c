@@ -555,8 +555,8 @@ int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad){
 						if(eProducto_PrintCompra(arrayProducto, lenProducto, indice, cantidadAux)==0
 								&& preguntarSoN("\n¿Estas seguro?Si o No: ", 2, "\nRespuesta incorrecta"))
 						{
-							arrayProducto[indice].stock=arrayProducto[indice].stock-cantidadAux;
 							*cantidad = cantidadAux;
+							eProducto_ModificacionStock(arrayProducto,lenProducto, idProducto, cantidadAux,0);
 							retorno =indice;
 
 
@@ -693,6 +693,7 @@ int eProducto_ModificarUno(Producto *list,int len,int id){
 
 ///FUNCION PARA LA MODIFICACION
 /// @fn opcionesParaModifcar
+/// 1-estado 2-nombre 3-precio 4-categoria 5-stock
 /// @brief Modifica los datos segun la opcion
 /// @return -1 mal 0 bien
 static int opcionesParaModifcar(int opc, Producto* list){
@@ -707,27 +708,27 @@ static int opcionesParaModifcar(int opc, Producto* list){
 		{
 
 			case 1:
-				//retorno = //segun lo que se quiera modificar
+				//1-estado
 
 				break;
 
 			case 2:
 
-				//retorno = //segun lo que se quiera modificar
+				//2-nombre
 				break;
 
 			case 3:
-				//retorno = //segun lo que se quiera modificar
+				//3-precio
 				break;
 
 			case 4:
 
-				//retorno = //segun lo que se quiera modificar
+				//4-categoria
 
 				break;
 
 			case 5:
-				//retorno = //segun lo que se quiera modificar
+				//5-stock
 
 				break;
 
@@ -978,33 +979,35 @@ int eProducto_Baja(Producto *list, int len){
 /// @fn Modificacion para Producto
 /// @param gen arreglo Producto
 /// @param len longitud del arreglo
-/// @return 0 ok(-1)Datos nullos (-2) No se encontro ID
-/// (-3)Ingreso mal las opciones
-/// (-4)Ingreso mal los datos a modificar
-/// (-5)mal respuesta de si esta seguro
-/// (-6)mal respuesta si desea continuar
-/// (-7)EL ARREGLO ESTA VACIO
-int eProducto_Modificacion(Producto * list,int len){
+/// @param 1 suma 0 resta
+/// @return 0 ok(-1)Datos nullos
+int eProducto_ModificacionStock(Producto * list,int len,int id,int stock,int sumaOresta){
 
 	int retorno =-1;
+	int indice;
 
-	if(list != NULL)
+	if(list != NULL && id>=0 && stock >=0 && len>=0 && sumaOresta>=0 && sumaOresta<=1)
 	{
-		if(eProducto_Vacio(list, len))
-		{
+		indice =eProducto_BuscarPorid(list, len, id);
 
-			retorno=0;
-
-		}
-		else
+		if(indice>=0)
 		{
-			//EL ARREGLO ESTA VACIO
-			retorno =-7;
+			if(sumaOresta==0)
+			{
+				list[indice].stock = list[indice].stock -stock;
+				retorno=0;
+
+			}
+			if(sumaOresta==1)
+			{
+				list[indice].stock = list[indice].stock +stock;
+
+			}
+
+
 		}
 
 	}
-
-
 
 
 	return retorno;

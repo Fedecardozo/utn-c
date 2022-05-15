@@ -48,8 +48,12 @@ int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arr
 
 int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arrayProducto,
 		int indiceProducto,Usuario *listUsuario, int indiceUsuario,int cantidad);
+
 int eTracking_Alta(Tracking* listTracking,int lenTracking,Tracking aDarseAlta);
-int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * listUsuario, int indiceUsuario);
+
+int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * listUsuario,
+		int indiceUsuario, Producto*listProducto, int lenProducto);
+
 int eTracking_ModificarEstado(Tracking* listTracking,int indice,int estado);
 
 #endif /* ARRAYTRACKING_H_ */
