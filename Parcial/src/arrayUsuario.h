@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BAJA 2
 #define LIBRE 1
 #define OCUPADO 0
 

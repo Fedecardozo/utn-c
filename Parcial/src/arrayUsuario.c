@@ -274,8 +274,10 @@ int eUsuario_Registrarse(Usuario * list){
 /// @param imprimi un Usuario solo
 void eUsuario_MostrarUno(Usuario list){
 
-	printf("|%-7d|%-10d|%-10d|%-30s|%-15s|%-7d|%-30s|\n"
-			,list.idUsuario,list.isEmpty,list.codigoPostal,list.correo,list.password,list.tipo,list.direccion);
+	char estado[3][10]={{"  ACTIVO"},{"  LIBRE "},{"   BAJA "}};
+
+	printf("|%-11d|%-10s|%-30s|\n"
+			,list.idUsuario,estado[list.isEmpty],list.correo);
 
 }
 
@@ -291,19 +293,17 @@ int eUsuario_MostrarTodos(Usuario *list, int len){
 	if(list != NULL && len >=0){
 
 		retorno=0;
-		printf("+-----------------------------------------------------------"
-				"--------------------------------------------------------+\n");
-		printf("|%-7s|%-10s|%-10s|%-30s|%-15s|%-7s|%-30s|\n",
-				"Id"," ISEMPTY"," CP"," CORREO","PASSWORD"," TIPO"," DOMICILIO");
-		  printf("+-------------------------------------------------------------------"
-				  "------------------------------------------------+\n");
+		printf("+-----------------------------------------------------+\n");
+		printf("|%-11s|%-10s|%-30s|\n",
+				"ID USUARIO","  ESTADO"," CORREO ELECTRONICOS");
+		printf("+-----------------------------------------------------+\n");
+
 		for (i = 0; i < len ; i++) {
 
-			if(list[i].isEmpty==OCUPADO){
+			if(list[i].isEmpty!=LIBRE){
 
 				eUsuario_MostrarUno(list[i]);
-				printf("+-----------------------------------------------------------"
-							"--------------------------------------------------------+\n");
+				printf("+-----------------------------------------------------+\n");
 
 			}
 

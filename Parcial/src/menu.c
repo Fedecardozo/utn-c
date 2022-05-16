@@ -264,16 +264,28 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 				switch(opc)
 				{
 					case 'A':
+					case 'a':
+
+							if(eUsuario_MostrarTodos(listUsuario, lenUsuario)<0)
+							{
+								puts("\nERROR AL LISTAR USUARIOS!");
+							}
+
 						break;
 					case 'B':
+					case 'b':
+
 						break;
 					case 'C':
+					case 'c':
 
 						break;
 					case 'D':
+					case 'd':
 
 						break;
 					case 'E':
+					case 'e':
 
 						break;
 
