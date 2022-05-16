@@ -29,6 +29,8 @@ int main(void) {
 
 	adminHar(arrayUsuario, TAM_USUARIO);
 
+	//eTracking_MostrarTodos(arrayTracking, TAM_TRACKING);
+
 	/*eUsuario_MostrarTodos(arrayUsuario, TAM_USUARIO);
 	eUsuario_remove(arrayUsuario, TAM_USUARIO);
 	eUsuario_MostrarTodos(arrayUsuario, TAM_USUARIO);*/

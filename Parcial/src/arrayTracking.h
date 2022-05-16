@@ -32,10 +32,12 @@ typedef struct{
 long int time_Current(void);
 long int time_Add(double secondsAdd);
 
-//GENERICAS
+//GENERLES
 int eTracking_Inicializar(Tracking *list, int len);
 int eTracking_ObtenerIndexLibre(Tracking* list, int len);
 int eTracking_BuscarPorid(Tracking *list, int len, int id);
+void eTracking_MostrarUno(Tracking list);
+int eTracking_MostrarTodos(Tracking * list,int len);
 
 //IMPRIMIR POR PANTALLA
 void eTracking_Estado(Tracking list,Producto listProducto);

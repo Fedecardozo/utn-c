@@ -14,6 +14,7 @@ long int time_Llegada(double secondsAdd){
 }
 
 static int generadorId();
+static int eTracking_Vacio(Tracking * list, int len);
 static int eTracking_VacioUsuarioVentas(Tracking * list,int fkUsuario, int len ,int estado);
 static int eTracking_VacioUsuarioCompras(Tracking * list,int fkUsuario, int len);
 static void eTracking_ActualizarList(Tracking * list,int len);
@@ -109,6 +110,8 @@ void harcodeoTracking(Tracking * listTracking,int lenTracking , Producto* listPr
 	eTracking_Alta(listTracking, lenTracking, aux);
 
 }
+
+//GENERALES
 
 /// @fn int generadorId()
 /// @brief genera un id automatico
@@ -222,6 +225,101 @@ int eTracking_BuscarPorid(Tracking *list, int len, int id){
 	return retorno;
 
 }
+
+/// \brief Pregunta si las posiciones en el array están vacías,
+/// \param list Tracking * Puntero del array de Tracking
+/// \param len int Longitud del arreglo
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
+/// (1) Cargado
+static int eTracking_Vacio(Tracking * list, int len){
+
+	int retorno=-1;
+	int i;
+
+		if(list != NULL && len >=0){
+			retorno=0;
+			for (i = 0; i < len; i++)
+			{
+
+				if(list[i].isEmpty != VACIO)
+				{
+					retorno=1;
+					break;
+				}
+
+			}
+
+		}
+
+		return retorno;
+
+
+	}
+
+/// @fn int imprime Tracking
+/// @param imprimi un Tracking solo
+void eTracking_MostrarUno(Tracking list){
+
+	char estado [4][20]={{"LIBRE"},{"EN VIAJE"},{"ENTREGADO"},{"CANCELADO"}};
+
+	printf("|%-15d|%-19s|%-15d|%-15d|",
+			list.idTracking,estado[list.isEmpty],list.Fk_UsuarioComprador,list.Fk_UsuarioVendedor);
+
+}
+
+/// @fn int eTracking_MostrarTodos(Tracking*, int)
+/// @param list
+/// @param len
+/// @return -1 nullos 0 ok 1 imprime uno aunque sea
+/// -2 lista vacia
+int eTracking_MostrarTodos(Tracking * list,int len){
+
+	int i;
+	int retorno=-1;
+
+	if(list != NULL && len>0)
+	{
+		retorno=0;
+		if(eTracking_Vacio(list, len)>0)
+		{
+			eTracking_ActualizarList(list, len);
+			printf("+-------------------------------------------------------------------+\n");
+			printf("|%38s %29s","TRACKING GLOBAL","|");
+			printf("\n+-------------------------------------------------------------------+\n");
+			printf("|%-15s|%-19s|%-15s|%-15s|\n",
+							" ID TRACKING","   ESTADO"," ID COMPRADOR","  ID VENDEDOR");
+			printf("+-------------------------------------------------------------------+\n");
+
+			for (i = 0; i < len ; i++)
+			{
+
+				if(list[i].isEmpty!=VACIO)
+				{
+					retorno = 1;
+					eTracking_MostrarUno(list[i]);
+
+					printf("\n+-------------------------------------------------------------------+\n");
+
+
+				}
+
+			}
+
+		}
+		else
+		{
+			//LISTA VACIA
+			retorno = -2;
+		}
+
+
+	}
+
+	return retorno;
+
+}
+
+//TRACKING PRODUCTO USUARIO
 
 /// @fn int imprime Tracking
 /// @param imprimi un Tracking solo

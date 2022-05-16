@@ -347,12 +347,15 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 
 					case 'E':
 					case 'e':
-
+							if(eTracking_MostrarTodos(listTracking, lenTracking)<1)
+							{
+								puts("\nNO HAY TRACKINGS REALIZADOS!");
+							}
 						break;
 
 				}
 			}
-			else if(opc != 'F')
+			else if(opc != 'F' || opc != 'f')
 			{
 				printf("\nOpcion inexistente. Intentelo mas tarde...");
 			}
