@@ -112,7 +112,7 @@ int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo
 	int retorno = -1;
 	int bufferInt;
 
-	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
+	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
 		printf("%s",mensaje);
 		do{
 

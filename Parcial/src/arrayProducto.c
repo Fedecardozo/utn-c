@@ -12,7 +12,7 @@ static int sort_Categoria(Producto *list, int len, int criterio);
 static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad);
 static int eProducto_VacioFk(Producto * list, int len,int fkUsuario);
 
-
+// GENERALES
 
 /// @fn int generadorId()
 /// @brief genera un id automatico
@@ -212,6 +212,39 @@ int eProducto_MostrarTodos(Producto *list, int len){
 
 }
 
+/// \brief Pregunta si las posiciones en el array están vacías,
+/// \param list Producto * Puntero del array de Producto
+/// \param len int Longitud del arreglo
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
+/// (1) Cargado
+static int eProducto_Vacio(Producto * list, int len){
+
+	int retorno=-1;
+	int i;
+
+		if(list != NULL && len >=0){
+			retorno=0;
+			for (i = 0; i < len; i++)
+			{
+
+				if(list[i].isEmpty==OCUPADO)
+				{
+					retorno=1;
+					break;
+				}
+
+			}
+
+		}
+
+		return retorno;
+
+
+	}
+
+
+//FK USUARIO
+
 /// @fn imprime un array de Producto que esten cargados
 /// @param recibi un puntero tipo Producto
 /// @param la longitud para recorrer el array
@@ -262,43 +295,6 @@ int eProducto_MostrarFk(Producto *list, int len,int fk){
 
 }
 
-/// @fn imprime un array de Producto que esten dados de baja
-/// @param recibi un puntero tipo Producto
-/// @param la longitud para recorrer el array
-///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
-int eProducto_MostrarDadosDeBaja(Producto *list, int len){
-
-	int retorno = -1;
-	int i;
-
-	if(list != NULL && len >=0){
-
-		retorno=0;
-		printf("+-----------------------------------------------------------"
-				"----------------------------------------------+\n");
-		printf("|%-15s|%-15s|%-15s|%-15s|%-20s|%-20s|\n",
-				" Nombres"," Apellidos"," Precio"," Codigo"," Tipo de pasajero"," Estado Vuelo");
-		  printf("+-------------------------------------------------------------------"
-				  "--------------------------------------+\n");
-		for (i = 0; i < len ; i++) {
-
-			if(list[i].isEmpty==LIBRE){
-
-				eProducto_MostrarUno(list[i]);
-				printf("+-----------------------------------------------------------"
-								"----------------------------------------------+\n");
-
-			}
-
-		}
-
-	}
-
-
-	return retorno;
-
-}
-
 /// @fn int eProducto_print_listProductosOrdenados(Producto*, int)
 /// @param arrayProducto
 /// @param lenProducto
@@ -340,36 +336,6 @@ int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProdu
 /// \param len int Longitud del arreglo
 ///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
 /// (1) Cargado
-static int eProducto_Vacio(Producto * list, int len){
-
-	int retorno=-1;
-	int i;
-
-		if(list != NULL && len >=0){
-			retorno=0;
-			for (i = 0; i < len; i++)
-			{
-
-				if(list[i].isEmpty==OCUPADO)
-				{
-					retorno=1;
-					break;
-				}
-
-			}
-
-		}
-
-		return retorno;
-
-
-	}
-
-/// \brief Pregunta si las posiciones en el array están vacías,
-/// \param list Producto * Puntero del array de Producto
-/// \param len int Longitud del arreglo
-///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
-/// (1) Cargado
 static int eProducto_VacioFk(Producto * list, int len,int fkUsuario){
 
 	int retorno=-1;
@@ -395,7 +361,6 @@ static int eProducto_VacioFk(Producto * list, int len,int fkUsuario){
 
 	}
 
-
 static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad)
 {
 	int retorno = -1;
@@ -419,6 +384,7 @@ static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int 
 	return retorno;
 
 }
+
 
 //SORT
 
@@ -537,28 +503,32 @@ int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad){
 
 	if(arrayProducto != NULL  && lenProducto >0)
 	{
-
+		//MUESTRO ORDENADO
 		retorno = eProducto_print_listProductosOrdenados(arrayProducto, lenProducto);
 		if(retorno == 0)
 		{
+			//GUARDO ID
 			if(utn_getNumero(&idProducto, "\nIngrese ID a comprar: ", "\nError ID incorrecto.\nIngrese nuevamente: "
 					, 1000, 9999, 2)==0)
 			{
+
+				//BUSCO EL ID
 				indice = eProducto_BuscarPorid(arrayProducto, lenProducto, idProducto);
 				if(indice >= 0)
 				{
+
 					if(utn_getNumero(&cantidadAux, "\nIngrese cantidad a comprar:",
 							"\nError cantidad invalida.\nIngrese nuevamente: ",
 							1, arrayProducto[indice].stock, 2)==0)
 					{
 
 						if(eProducto_PrintCompra(arrayProducto, lenProducto, indice, cantidadAux)==0
-								&& preguntarSoN("\n¿Estas seguro?Si o No: ", 2, "\nRespuesta incorrecta"))
+								&& preguntarSoN("\n¿Estas seguro?Si o No: ", 2, "\nRespuesta incorrecta")>0)
 						{
+
 							*cantidad = cantidadAux;
 							eProducto_ModificacionStock(arrayProducto,lenProducto, idProducto, cantidadAux,0);
 							retorno =indice;
-
 
 						}
 
@@ -585,7 +555,7 @@ int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad){
 			}
 			else
 			{
-				//printf("ID invalido")
+				//ERROR AL OBTENER ID
 				retorno = -4;
 
 			}

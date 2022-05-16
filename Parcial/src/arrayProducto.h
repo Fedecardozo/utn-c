@@ -28,18 +28,19 @@ typedef struct{
 
 }Producto;
 
-/** INICIO CABECERAS DE FUNCION*/
+/** INICIO CABECERAS DE FUNCION GENERALES*/
 int eProducto_Inicializar(Producto *list, int len);
 int eProducto_ObtenerIndexLibre(Producto *list, int len);
 int eProducto_BuscarPorid(Producto *list, int len, int id);
 int eProducto_PediUnDato(Producto * list);
 void eProducto_MostrarUno(Producto list);
 int eProducto_MostrarTodos(Producto *list, int len);
-int eProducto_MostrarDadosDeBaja(Producto *list, int len);
 
+//FK USUARIO
 int eProducto_MostrarFk(Producto *list, int len,int fk);
 int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProducto);
 int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad);
+
 //SORT
 int eProducto_Sort(Producto *list, int len, int criterio);
 

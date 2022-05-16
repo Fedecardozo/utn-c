@@ -32,28 +32,32 @@ typedef struct{
 long int time_Current(void);
 long int time_Add(double secondsAdd);
 
+//GENERICAS
 int eTracking_Inicializar(Tracking *list, int len);
 int eTracking_ObtenerIndexLibre(Tracking* list, int len);
 int eTracking_BuscarPorid(Tracking *list, int len, int id);
-int eTracking_PediUnDato(Tracking * list);
-void eTracking_Estado(Tracking list);
-int eTracking_MostrarTodos(Tracking *list, int len);
 
+//IMPRIMIR POR PANTALLA
+void eTracking_Estado(Tracking list,Producto listProducto);
 
-void harcodeoTracking(Tracking * listTracking,int lenTracking);
+//HARCODEO
+void harcodeoTracking(Tracking * listTracking,int lenTracking , Producto* listProducto, int lenProducto);
 
+//VENTAS
+int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arrayUsuario,
+		int indiceUsuario,int estado,Producto * listProducto, int lenProducto);
 
-int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsuario,int indiceUsuario);
-int eTracking_MostrarProductosUsuarioEstado(Tracking *list, int len,Usuario* arrayUsuario,int indiceUsuario,int estado);
-
-int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arrayProducto,
-		int indiceProducto,Usuario *listUsuario, int indiceUsuario,int cantidad);
-
-int eTracking_Alta(Tracking* listTracking,int lenTracking,Tracking aDarseAlta);
-
+//COMPRAS
+int eTracking_MostrarProductosUsuario(Tracking *list, int len,Usuario* arrayUsuario,
+		int indiceUsuario,Producto * listProducto, int lenProducto);
 int eTracking_ConsultaEstado(Tracking* listTracking,int lenTracking, Usuario * listUsuario,
 		int indiceUsuario, Producto*listProducto, int lenProducto);
 
+
+//ABM
+int eTracking_CargarDatos(Tracking * listTracking,int lenTracking,Producto* arrayProducto,
+		int indiceProducto,Usuario *listUsuario, int indiceUsuario,int cantidad);
+int eTracking_Alta(Tracking* listTracking,int lenTracking,Tracking aDarseAlta);
 int eTracking_ModificarEstado(Tracking* listTracking,int indice,int estado);
 
 #endif /* ARRAYTRACKING_H_ */

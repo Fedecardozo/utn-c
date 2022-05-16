@@ -235,11 +235,11 @@ int eUsuario_Registrarse(Usuario * list){
 	if(list!=NULL){
 
 		if(utn_getStringCorreo(aux.correo, "\nexample@gmail.com\nIngrese correo: ", "\nError correo invalido", MAX_CORREO, 2)==0
-				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nIngrese password: ",
+				&& utn_getStringLetrasYnumerosLimite(aux.password,"\nPassword de 4 a 8 caracteres\nIngrese password: ",
 						"\nError password invalido",MIN_PASSWORD, MAX_PASSWORD, 2)==0
 				&& utn_getString(aux.direccion,"\nIngrese domicilio: ", "\nError direccion invalida", MAX_DIRECCION, 2)==0
 				&& utn_getNumero(&aux.codigoPostal, "\nIngrese codigo postal: ",
-						"\nError codigo postal invalido", 1, 9999, 2)==0
+						"\nError codigo postal invalido \nIngrese nuevamente: ", 1, 9999, 2)==0
 				&& utn_getNumero(&aux.tipo, "\n**TIPOS** \n 1)Usuario \n 2) Administrador"
 						" \nIngrese tipo: ",
 						"\nError tipo invalido", 1, 2, 2)==0)

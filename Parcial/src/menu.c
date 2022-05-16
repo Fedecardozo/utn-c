@@ -1,18 +1,20 @@
 
 #include "menu.h"
 
+//USUARIO
 static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
-static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking);
 static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listProducto,int lenProducto,Usuario* listUsuario,int indiceUsuario);
 static void errorEstadosCompras(int error);
 static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listUsuario,int indiceUsuario,Producto* listProducto,int lenProducto);
 
+//USUARIO PUNTO 3
 static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listUsuario,int indiceUsuario,Producto* listProducto,int lenProducto)
 {
 	int opc;
 
-	if(eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indiceUsuario))
+	if(eTracking_MostrarProductosUsuario(listTracking, lenTracking,
+			listUsuario, indiceUsuario,listProducto,lenProducto))
 	{
 
 		if(utn_getNumero(&opc, "\n1)Cambiar estado \n2)Actualizar estado \n0)Salir \nIngrese opcion: ",
@@ -21,13 +23,15 @@ static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listU
 
 			if(opc == 1)
 			{
-				//Despues llamar funcion para contener errores
-				errorEstadosCompras(eTracking_ConsultaEstado(listTracking, lenTracking, listUsuario, indiceUsuario,listProducto,lenProducto));
+
+				errorEstadosCompras(eTracking_ConsultaEstado(listTracking, lenTracking, listUsuario,
+						indiceUsuario,listProducto,lenProducto));
 
 			}
 			if(opc == 2)
 			{
-				eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario, indiceUsuario);
+				eTracking_MostrarProductosUsuario(listTracking, lenTracking, listUsuario,
+						indiceUsuario,listProducto,lenProducto);
 			}
 
 		}
@@ -44,16 +48,18 @@ static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listU
 
 }
 
-
 static void errorEstadosCompras(int error){
+
+
 
 	switch(error)
 	{
-
+		case 0: puts("\nSE CANCELO CON EXITO!"); break;
 		case -1: puts("\nHUBO UN ERROR!"); break;
 		case -2: puts("\nID INEXISTENTE!"); break;
 		case -3: puts("\nNO EXISTE TAL PRODUCTO!"); break;
 		case -4: puts("\nNO HUBO UN MODIFICACION DE ESTADO!"); break;
+		case -5: puts("\nNO HAY PRODUCTOS!"); break;
 
 
 
@@ -61,7 +67,7 @@ static void errorEstadosCompras(int error){
 
 }
 
-
+//USUARIO PUNTO 4
 static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listProducto,int lenProducto,Usuario* listUsuario,int indiceUsuario){
 
 	// HACER QUE INGRESE UNA OPCION 1)LISTADO DE VENTAS FINALIZADO| 2)VER PRODUCTOS EN STOCK
@@ -72,8 +78,8 @@ static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listP
 			"\n***** ESTADO DE VENTAS *****"
 			"\n****************************");
 
-	if(utn_getNumero(&opc, "\n1)LISTADO DE VENTAS FINALIZADO \n2)VER PRODUCTOS EN STOCK"
-			"\n0)SALIR\nIngrese opcion: ", "\nError! Ingrese nuevamente: ", 0, 2, 2)==0
+	if(utn_getNumero(&opc, "\n\n1)LISTADO DE VENTAS FINALIZADO \n2)VER PRODUCTOS EN STOCK"
+			"\n0)SALIR\nIngrese opcion: \n", "\nError! Ingrese nuevamente: ", 0, 2, 2)==0
 			&& opc >=1)
 	{
 
@@ -82,12 +88,14 @@ static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listP
 		{
 			case 1:
 
-				if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indiceUsuario,2)==0)
+				if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario,
+						indiceUsuario,2,listProducto,lenProducto)==0)
 					{
 						puts("\nNo hay productos ventas entregados");
 
 					}
-				if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario, indiceUsuario,3)==0)
+				if(eTracking_MostrarProductosUsuarioEstado(listTracking, lenTracking, listUsuario,
+						indiceUsuario,3,listProducto,lenProducto)==0)
 					{
 						puts("\nNo hay productos ventas cancelados");
 					}
@@ -106,7 +114,7 @@ static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listP
 		}
 
 	}
-	else
+	else if(opc<0)
 	{
 
 		puts("\nOPCION INVALIDA INTENTELO MAS TARDE");
@@ -120,28 +128,7 @@ static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listP
 
 }
 
-static void printTodo(Usuario* listUsuario , int lenUsuario,Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking){
-
-	if(eUsuario_MostrarTodos(listUsuario, lenUsuario)==-1)
-	{
-		printf("\nNo hay datos cargados!");
-	}
-	if(eProducto_MostrarTodos(listProducto,lenProducto)==-1)
-	{
-
-		printf("No hay datos cargados de productos");
-
-	}
-	if(eTracking_MostrarTodos(listTracking,lenTracking)==-1)
-	{
-
-		printf("No hay datos cargados de Tracking");
-
-	}
-
-
-}
-
+//USUARIO PUNTO 1 Y 2
 static void erroresInicioSesion(int inicio,Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenProducto,Tracking* listTracking,int lenTracking)
 {
 
@@ -200,6 +187,10 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 						{
 							printf("\nError");
 						}
+						else
+						{
+							printf("\nCOMPRA EXITOSA!\n");
+						}
 
 					}
 
@@ -253,7 +244,7 @@ static void erroresAlta(int registro)
 	switch(registro)
 	{
 		case -1: printf("\nHUBO UN ERROR!\n"); break;
-		case -2:printf("\nLISTA LLENA \n");break;
+		case -2:printf("\nHUBO UN ERROR AL REGISTRARSE! \n");break;
 		case 0:printf("\nSE REGISTRO CON EXITO\n");break;
 		default:printf("\nHUBO UN ERROR!\n"); break;
 	}
@@ -279,7 +270,7 @@ int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenPr
 					"\n** 1er EXAMEN LAB I - 1H ***"
 					"\n****************************");
 			rta=utn_getNumero(&opc, "\n\n1)INGRESAR \n2)REGISTRARSE \n3)MOSTRAR TODO \n0)SALIR"
-					"\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente: ", 0, 3, 2);
+					"\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente: ", 0, 2, 2);
 
 		if(rta==0)
 		{
@@ -301,15 +292,6 @@ int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenPr
 							"\n****************************\n");
 
 					erroresAlta(eUsuario_CargarDatos(listUsuario, lenUsuario));
-
-					break;
-				case 3:
-					printf("\n****************************"
-							"\n** 1er EXAMEN LAB I - 1H ***"
-							"\n**** USUARIO Y PRODUCTOS ***"
-							"\n****************************\n");
-
-					printTodo(listUsuario,lenUsuario,listProducto,lenProducto,listTracking,lenTracking);
 
 					break;
 
