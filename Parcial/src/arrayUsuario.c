@@ -3,7 +3,6 @@
 
 static int generadorId();
 static int eUsuario_Vacio(Usuario * list, int len);
-static int eUsuario_remove(Usuario* list, int len, int id);
 static int opcionesParaModifcar(int opc, Usuario* list);
 static int queModifcar(int indice,Usuario *gen );
 static int eUsuario_VerificacionSesion(Usuario * list,int len,Usuario aux);
@@ -118,7 +117,7 @@ int eUsuario_BuscarPorid(Usuario *list, int len, int id){
 			for (i = 0; i < len; i++)
 			{
 
-				if(list[i].idUsuario== id)
+				if(list[i].isEmpty==OCUPADO && list[i].idUsuario== id)
 				{
 
 					retorno=i;
@@ -623,42 +622,69 @@ static int queModifcar(int indice,Usuario *gen ){
 }
 
 
-///FUNCION PARA LA BAJA
 /// \brief Eliminar un Usuario por Id (poner el indicador isEmpty en 1)
 ///\lista de parámetros Usuario *
 ///\parametro len int
 ///\id de parámetro int
 ///\return int Retorna (-1) si Error [longitud inválida o NULL
-/// puntero o si no puede encontrar un Usuario] -
-///  (0) si está bien (-2) No estaba seguro
-static int eUsuario_remove(Usuario* list, int len, int id)
+/// puntero o si no puede encontrar un Producto] -
+///  (0) si está bien (-2) ERROR AL PEDIR ID
+/// (-3) ERROR AL OBTENER INDICE (-4) //NO SE MODIFICO NADA
+int eUsuario_remove(Usuario* list, int len)
 {
 	int retorno=-1;
+	int id;
 	int indice;
 
-		if(list!=NULL && len>0 && id>0){
+		if(list!=NULL && len>0)
+		{
+			if(utn_getNumero(&id, "\nINGRESE ID A DAR DE BAJA: ", "\nERROR! INGRESE NUEVAMENTE: ",
+					0, 9999, 2)==0)
+			{
+				indice = eUsuario_BuscarPorid(list, len, id);
 
-			indice=eUsuario_BuscarPorid(list, len, id);
-
-			if(indice<0){
-
-				retorno=-1;
-
-			}else if(indice>=0){
-
-				//Preguntar si esta seguro
-				if(preguntarSoN("\nEsta seguro? Si o No: ", 2, "\nRespuesta invalida"))
+				if(indice >= 0)
 				{
-					list[indice].isEmpty=LIBRE;
-					retorno=0;
+					printf("\n %30s \n","**** USUARIO A DAR DE BAJA ****");
+					printf("+-----------------------------------------------------+\n");
+					printf("|%-11s|%-10s|%-30s|\n",
+									"ID USUARIO","  ESTADO"," CORREO ELECTRONICOS");
+					printf("+-----------------------------------------------------+\n");
+					eUsuario_MostrarUno(list[indice]);
+					printf("+-----------------------------------------------------+\n");
+
+					//Preguntar si esta seguro
+					if(preguntarSoN("\nEsta seguro? Si o No: ", 2, "\nRespuesta invalida")>0)
+					{
+						list[indice].isEmpty=BAJA;
+						retorno=0;
+
+					}
+					else
+					{
+
+						//NO SE MODIFICO NADA
+						retorno = -4;
+
+					}
+
 
 				}
 				else
 				{
 
-					retorno=-2;
+					//ERROR AL OBTENER INDICE
+					retorno=-3;
+
 				}
 
+			}
+
+
+			else
+			{
+				//ERROR AL PEDIR ID
+				retorno=-2;
 			}
 
 
@@ -708,39 +734,12 @@ int eUsuario_Alta(Usuario *list, int len,Usuario usuarioDarAlta){
 int eUsuario_Baja(Usuario *list, int len){
 
 	int retorno=-1;
-	int id;
-	int rta;
 
 	if(list != NULL && len >0)
 	{
 		if(eUsuario_Vacio(list, len))
 		{
-			if(utn_getNumero(&id, "\nIngrese numero ID:", "\nError Ingrese nuevamente: ", 0, 3000, 2)==0)
-			{
-				rta=eUsuario_remove(list, len, id);
-				if(rta==0)
-				{
-
-					//ESTA OK
-					retorno = 0;
-
-				}
-				else if(rta==-1)
-				{
-
-					//NO EXISTE ID
-					retorno=-2;
-
-				}
-				else if(rta==-2)
-				{
-					//No se borro
-					retorno=-4;
-				}
-
-
-			}
-
+			retorno=0;
 		}
 		else
 		{

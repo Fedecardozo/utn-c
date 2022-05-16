@@ -52,6 +52,6 @@ int eUsuario_ModificarUno(Usuario *list,int len,int id);
 int eUsuario_Alta(Usuario *list, int len,Usuario usuarioDarAlta);
 int eUsuario_Baja(Usuario *list, int len);
 int eUsuario_Modificacion(Usuario *list, int len);
-
+int eUsuario_remove(Usuario* list, int len);
 
 #endif /* ARRAYUSUARIO_H_ */

@@ -111,7 +111,7 @@ int eProducto_BuscarPorid(Producto *list, int len, int id){
 			for (i = 0; i < len; i++)
 			{
 
-				if(list[i].id== id)
+				if(list[i].isEmpty==OCUPADO && list[i].id== id)
 				{
 
 					retorno=i;

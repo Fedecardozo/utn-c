@@ -285,22 +285,25 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 
 							if(eProducto_MostrarTodos(listProducto, lenProducto)==0)
 							{
-								errorBaja = eProducto_remove(listProducto, lenProducto);
-								if(errorBaja==0)
+								if(preguntarSoN("\n¿DESEA CONTINUAR? Si - No:", 2, "\nRESPUESTA INCORRECTA!")>0)
 								{
-									puts("\nBAJA EXITOSA!");
-								}
-								else if(errorBaja == -3)
-								{
-									puts("\nNO SE EXISTE TAL ID!");
-								}
-								else if(errorBaja == -2)
-								{
-									puts("\nHUBO UN ERROR AL OBTENER ID. INTENTELO MAS TARDE!");
-								}
-								else
-								{
-									puts("\nNO SE MODIFICARON LOS PRODUCTOS!");
+									errorBaja = eProducto_remove(listProducto, lenProducto);
+									if(errorBaja==0)
+									{
+										puts("\nBAJA EXITOSA!");
+									}
+									else if(errorBaja == -3)
+									{
+										puts("\nNO SE EXISTE TAL ID!");
+									}
+									else if(errorBaja == -2)
+									{
+										puts("\nHUBO UN ERROR AL OBTENER ID. INTENTELO MAS TARDE!");
+									}
+									else
+									{
+										puts("\nNO SE MODIFICARON LOS PRODUCTOS!");
+									}
 								}
 							}
 							else
@@ -312,7 +315,36 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 					case 'D':
 					case 'd':
 
+							if(eUsuario_MostrarTodos(listUsuario, lenUsuario)==0)
+							{
+								if(preguntarSoN("\n¿DESEA CONTINUAR? Si - No:", 2, "\nRESPUESTA INCORRECTA!")>0)
+								{
+									errorBaja = eUsuario_remove(listUsuario, lenUsuario);
+									if(errorBaja==0)
+									{
+										puts("\nBAJA EXITOSA!");
+									}
+									else if(errorBaja == -3)
+									{
+										puts("\nNO SE EXISTE TAL ID!");
+									}
+									else if(errorBaja == -2)
+									{
+										puts("\nHUBO UN ERROR AL OBTENER ID. INTENTELO MAS TARDE!");
+									}
+									else
+									{
+										puts("\nNO SE MODIFICARON LOS USUARIOS!");
+									}
+								}
+							}
+							else
+							{
+								puts("\nNO HAY USUARIOS CARGADOS!");
+							}
+
 						break;
+
 					case 'E':
 					case 'e':
 
