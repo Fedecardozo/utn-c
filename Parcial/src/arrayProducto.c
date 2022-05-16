@@ -1,7 +1,7 @@
 
 #include "arrayProducto.h"
 
-static char categorias[4][20]={{"1)Deportes"},{"2)Moda"},{"3)Otro"},{"4)Tecnologia"}};
+static char categorias[TAM_CATEGORIA][20]={{"1)Deportes"},{"2)Moda"},{"3)Otro"},{"4)Tecnologia"}};
 
 static int generadorId();
 static int eProducto_Vacio(Producto * list, int len);
@@ -11,6 +11,9 @@ static int queModifcar(int indice,Producto *gen );
 static int sort_Categoria(Producto *list, int len, int criterio);
 static int eProducto_PrintCompra(Producto* arrayProducto,int len,int indice,int cantidad);
 static int eProducto_VacioFk(Producto * list, int len,int fkUsuario);
+static int eProducto_VacioCategoria(Producto * list, int len,int categoria);
+static int eProducto_MostrarUnoCategoria(Producto * list, int len,int categoria);
+static int sort_Nombre(Producto *list, int len, int criterio ,int categoria);
 
 // GENERALES
 
@@ -242,6 +245,173 @@ static int eProducto_Vacio(Producto * list, int len){
 
 	}
 
+//PRINT POR CATEGORIA Y NOMBRE
+
+static int eProducto_MostrarUnoCategoria(Producto * list, int len,int categoria){
+
+	int retorno = -1;
+		int i;
+
+		if(list != NULL && len >=0){
+
+			retorno=0;
+			printf("+----------------------------------------------"
+					"-------------------------------------------+\n");
+			printf("|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+					" ID "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+			printf("+----------------------------------------------"
+							"-------------------------------------------+\n");
+			for (i = 0; i < len ; i++) {
+
+				if(list[i].isEmpty==OCUPADO && list[i].categoria== categoria){
+
+					eProducto_MostrarUno(list[i]);
+					printf("+----------------------------------------------"
+									"-------------------------------------------+\n");
+
+				}
+
+			}
+
+		}
+
+
+		return retorno;
+
+}
+
+/// \brief Pregunta si las posiciones en el array están vacías,
+/// \param list Producto * Puntero del array de Producto
+/// \param len int Longitud del arreglo
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0)vacio
+/// (1) Cargado
+static int eProducto_VacioCategoria(Producto * list, int len,int categoria){
+
+	int retorno=-1;
+	int i;
+
+		if(list != NULL && len >=0){
+			retorno=0;
+			for (i = 0; i < len; i++)
+			{
+
+				if(list[i].isEmpty==OCUPADO && list[i].categoria==categoria)
+				{
+					retorno=1;
+					break;
+				}
+
+			}
+
+		}
+
+		return retorno;
+
+
+	}
+
+///@fn imprime un array de Producto que esten cargados
+/// @param recibi un puntero tipo Producto
+/// @param la longitud para recorrer el array
+///\return int Devuelve (-1) si hay error [longitud no válida o puntero NULL] - (0) si está bien
+/// -2 lista vacia -3 error al ordenar
+int eProducto_PrintOrdenCategoria_Nombre(Producto *list, int len,int orden){
+
+	int retorno = -1;
+	int i;
+
+	if(list != NULL && len >=0 && orden>=0 && orden<=1){
+
+		retorno=0;
+
+		if(eProducto_Vacio(list, len))
+		{
+
+			retorno =eProducto_Sort(list, len, orden);
+
+			for(i=1; i<TAM_CATEGORIA+1 ; i++)
+			{
+				//Verifica si hay de la categoria que quiero imprimir
+				if(eProducto_VacioCategoria(list, len, i)>0)
+				{
+					printf("\n+----------------------------------------------"
+								"-------------------------------------------+\n");
+					printf("|%58s %-30s|\n",
+									" ORDENAMIENTO POR NOMBRES Y CATEGORIAS :",categorias[i-1] );
+
+					sort_Nombre(list, len, orden, i);
+					eProducto_MostrarUnoCategoria(list,len,i);
+
+					retorno =0;
+				}
+
+
+			}
+
+		}
+		else
+		{
+			//lista vacias
+			retorno = -2;
+
+		}
+
+
+
+	}
+
+
+	return retorno;
+
+}
+
+static int sort_Nombre(Producto *list, int len, int criterio ,int categoria){
+
+	int i;
+	Producto aux;
+	int flagSwap=0;
+	int newLimite=len-1;
+	int retorno=-1;
+
+	if(list != NULL && len>0 && criterio>=0 && criterio<=1)
+	{
+		retorno=0;
+		//*copia=*list;
+		do{
+
+			flagSwap=0;
+
+			for (i = 0; i < newLimite; i++)
+			{
+
+				if(list[i].isEmpty==OCUPADO && list[i].categoria==categoria)
+				{
+					//Se ordena por categoria
+					if(swapCadenas(list[i].nombreProducto , list[i+1].nombreProducto,MAX_NOMBRE, criterio)>0)
+					{
+						aux= list[i];
+						list[i]=list[i+1];
+						list[i+1]=aux;
+						retorno=1;
+						flagSwap=1;
+
+					}
+
+				 }
+
+
+			 }
+			newLimite--;
+
+		}while(flagSwap);
+
+		//*list=*copia;
+
+	}
+
+	return retorno;
+
+}
 
 //FK USUARIO
 
@@ -440,7 +610,6 @@ static int sort_Categoria(Producto *list, int len, int criterio){
 
 	int i;
 	Producto aux;
-	//Producto copia[len];
 	int flagSwap=0;
 	int newLimite=len-1;
 	int retorno=-1;
@@ -458,7 +627,7 @@ static int sort_Categoria(Producto *list, int len, int criterio){
 
 				if(list[i].isEmpty==OCUPADO)
 				{
-					//Segun lo que quiera ordenar
+					//Se ordena por categoria
 					if(ordenEnteros(list[i].categoria , list[i+1].categoria, criterio)>0)
 					{
 						aux= list[i];
@@ -484,6 +653,7 @@ static int sort_Categoria(Producto *list, int len, int criterio){
 	return retorno;
 
 }
+
 
 
 //ABM
@@ -969,7 +1139,7 @@ int eProducto_ModificacionStock(Producto * list,int len,int id,int stock,int sum
 				if(list[indice].stock == 0)
 				{
 
-					list[indice].isEmpty = LIBRE;
+					list[indice].isEmpty = SIN_STOCK;
 
 				}
 				retorno=0;

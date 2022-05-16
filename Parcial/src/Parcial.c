@@ -12,6 +12,8 @@ int main(void) {
 
 	setbuf(stdout, NULL);
 
+
+
 	Usuario arrayUsuario[TAM_USUARIO];
 	eUsuario_Inicializar(arrayUsuario, TAM_USUARIO);
 
@@ -23,10 +25,12 @@ int main(void) {
 
 	harcodeo(arrayProducto, TAM_PRODUCTO, arrayUsuario, TAM_USUARIO);
 
-	harcodeoTracking(arrayTracking, TAM_TRACKING,arrayProducto, TAM_PRODUCTO);
+	//harcodeoTracking(arrayTracking, TAM_TRACKING,arrayProducto, TAM_PRODUCTO);
 
 	adminHar(arrayUsuario, TAM_USUARIO);
 
+	//eProducto_MostrarTodos(arrayProducto, TAM_PRODUCTO);
+	//eProducto_PrintOrdenCategoria_Nombre(arrayProducto, TAM_PRODUCTO, 1);
 
 	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO,arrayTracking,TAM_TRACKING) == -1)
 	{

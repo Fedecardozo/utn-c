@@ -265,16 +265,19 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 				{
 					case 'A':
 					case 'a':
-
 							if(eUsuario_MostrarTodos(listUsuario, lenUsuario)<0)
 							{
 								puts("\nERROR AL LISTAR USUARIOS!");
 							}
 
 						break;
+
 					case 'B':
 					case 'b':
-
+							if(eProducto_PrintOrdenCategoria_Nombre(listProducto, lenProducto,1)<0)
+							{
+								puts("\nERROR AL ORDENAR LISTA DE PRODUCTOS!");
+							}
 						break;
 					case 'C':
 					case 'c':

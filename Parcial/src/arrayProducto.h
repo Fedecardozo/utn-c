@@ -8,9 +8,12 @@
 #include <stdlib.h>
 
 #define MAX_NOMBRE 20
+#define TAM_CATEGORIA 4
 
 #define LIBRE 1
 #define OCUPADO 0
+#define BAJA 2
+#define SIN_STOCK 3
 
 typedef struct{
 
@@ -40,6 +43,8 @@ int eProducto_MostrarTodos(Producto *list, int len);
 int eProducto_MostrarFk(Producto *list, int len,int fk);
 int eProducto_print_listProductosOrdenados(Producto* arrayProducto, int lenProducto);
 int eProducto_compra(Producto* arrayProducto, int lenProducto,int* cantidad);
+
+int eProducto_PrintOrdenCategoria_Nombre(Producto *list, int len,int orden);
 
 //SORT
 int eProducto_Sort(Producto *list, int len, int criterio);

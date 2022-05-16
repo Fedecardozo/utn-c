@@ -70,6 +70,132 @@ void harcodeo(Producto * listP,int lenP,Usuario * listU,int lenU){
 	eProducto_Alta(listP, lenP, aux);
 
 
+	strncpy(auxUsuario.correo,"FEDECARDOZO@GMAIL.COM",MAX_CORREO);
+		strncpy(auxUsuario.password,"anuel12",MAX_PASSWORD);
+		strncpy(auxUsuario.direccion,"pasaje calabria 1590",MAX_DIRECCION);
+		auxUsuario.codigoPostal = 1828;
+		auxUsuario.tipo = 1;
+
+		eUsuario_Alta(listU, lenU, auxUsuario);
+
+		strncpy(auxUsuario.correo,"FEDE@G.COM",MAX_CORREO);
+		strncpy(auxUsuario.password,"1234",MAX_PASSWORD);
+		strncpy(auxUsuario.direccion,"calle falsa 123",MAX_DIRECCION);
+		auxUsuario.codigoPostal = 1152;
+		auxUsuario.tipo = 1;
+
+		eUsuario_Alta(listU, lenU, auxUsuario);
+
+		strncpy(auxUsuario.correo,"CARS@G.COM",MAX_CORREO);
+		strncpy(auxUsuario.password,"1235",MAX_PASSWORD);
+		strncpy(auxUsuario.direccion,"carriego 321",MAX_DIRECCION);
+		auxUsuario.codigoPostal = 1125;
+		auxUsuario.tipo = 1;
+
+		eUsuario_Alta(listU, lenU, auxUsuario);
+
+		//PRODUCTOS
+
+		strncpy(aux.nombreProducto,"Lavarropa",MAX_NOMBRE);
+		aux.precio = 1828;
+		aux.categoria = 1;
+		aux.stock = 10;
+		aux.Fk_idUsuario = 1000;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto,"Notebook",MAX_NOMBRE);
+		aux.precio = 2900;
+		aux.categoria = 3;
+		aux.stock = 5;
+		aux.Fk_idUsuario = 1002;
+
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto,"Heladera",MAX_NOMBRE);
+		aux.precio = 3028;
+		aux.categoria = 2;
+		aux.stock = 2;
+		aux.Fk_idUsuario = 1001;
+
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto,"Plancha",MAX_NOMBRE);
+		aux.precio = 1828;
+		aux.categoria = 4;
+		aux.stock = 10;
+		aux.Fk_idUsuario = 1001;
+
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Cocina", MAX_NOMBRE);
+		aux.precio = 1828;
+		aux.categoria = 1;
+		aux.stock = 10;
+		aux.Fk_idUsuario = 1000;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Vaso", MAX_NOMBRE);
+		aux.precio = 2900;
+		aux.categoria = 3;
+		aux.stock = 5;
+		aux.Fk_idUsuario = 1002;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Gaseosa", MAX_NOMBRE);
+		aux.precio = 3028;
+		aux.categoria = 2;
+		aux.stock = 2;
+		aux.Fk_idUsuario = 1001;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Maquina", MAX_NOMBRE);
+		aux.precio = 1828;
+		aux.categoria = 4;
+		aux.stock = 10;
+		aux.Fk_idUsuario = 1001;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Licuadora", MAX_NOMBRE);
+		aux.precio = 1828;
+		aux.categoria = 1;
+		aux.stock = 10;
+		aux.Fk_idUsuario = 1000;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Parlante", MAX_NOMBRE);
+		aux.precio = 2900;
+		aux.categoria = 3;
+		aux.stock = 5;
+		aux.Fk_idUsuario = 1002;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Impresora", MAX_NOMBRE);
+		aux.precio = 3028;
+		aux.categoria = 2;
+		aux.stock = 2;
+		aux.Fk_idUsuario = 1001;
+
+		eProducto_Alta(listP, lenP, aux);
+
+		strncpy(aux.nombreProducto, "Elefante", MAX_NOMBRE);
+		aux.precio = 1828;
+		aux.categoria = 4;
+		aux.stock = 10;
+		aux.Fk_idUsuario = 1001;
+
+		eProducto_Alta(listP, lenP, aux);
+
+
 }
 
 /// @fn int alta_Producto(Producto*, int, Usuario*, int, int)
