@@ -25,6 +25,8 @@ int main(void) {
 
 	harcodeoTracking(arrayTracking, TAM_TRACKING,arrayProducto, TAM_PRODUCTO);
 
+	adminHar(arrayUsuario, TAM_USUARIO);
+
 
 	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO,arrayTracking,TAM_TRACKING) == -1)
 	{

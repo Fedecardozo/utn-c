@@ -16,6 +16,8 @@ static int esCuit(char* cadena, int limite);
 static int getStringCuit(char* pResultado,int longitud);
 static int esUnCorreo(char*pLetras,int longitud);
 static int getCorreo(char* pResultado,int longitud);
+static int esChar(char* cadena, int limite);
+static int getChar(char* pResultado);
 
 /**
  * \brief 	Lee de stdin hasta que encuentra un '\n' o hasta que haya copiado en cadena
@@ -255,40 +257,101 @@ int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, 
 		return retorno;
 }
 
+/**
+* \brief Obtien una letra char
+ * \param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+ * \return Retorna 0 (EXITO) si se obtiene un char y -1 (ERROR) si no
+ *
+ */
+static int getChar(char* pResultado)
+{
+    int retorno=-1;
+    char bufferString;
+    if(	pResultado != NULL &&
+    	myGets(&bufferString,sizeof(bufferString)) == 0 &&
+    	esChar(&bufferString,sizeof(bufferString)))
+	{
+		retorno=0;
+		*pResultado = bufferString;
 
-int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos){
+	}
+    return retorno;
+}
+
+/**
+* \brief Verifica si la cadena ingresada es un char
+ * \param cadena Cadena de caracteres a ser analizada
+ * \return Retorna 1 (vardadero) si la cadena es char y 0 (falso) si no lo es
+ *
+ */
+static int esChar(char* cadena, int limite)
+{
+	int retorno = 1; // VERDADERO
+	int i;
+	for(i=0;i<limite && cadena[i] != '\0';i++)
+	{
+
+		if(cadena[i] >= 'a' || cadena[i] <= 'z')
+		{
+			continue;
+		}
+		if(cadena[i] > 'Z' || cadena[i] < 'A')
+		{
+			retorno = 0;
+			break;
+		}
+		//CONTINUE
+	}
+	//BREAK
+	return retorno;
+}
+
+/// @fn int utn_getCaracter(char*, char*, char*, char, char, int)
+/// @param pResultado
+/// @param mensaje
+/// @param mensajeError
+/// @param minimo
+/// @param maximo
+/// @param reintentos
+/// @return 0 ok -1 error nullos
+int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos){
 
 	int retorno = -1;
-	char bufferChar;
+	char bufferInt;
 
-	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo < maximo && reintentos >=0){
+	if(pResultado != NULL && mensaje !=NULL && mensajeError != NULL && minimo <= maximo && reintentos >=0){
 
 		printf("%s",mensaje);
-		scanf("%c",&bufferChar);
 
 		do{
 
 
-			if(bufferChar>=minimo && bufferChar<=maximo)
+			if(getChar(&bufferInt) == 0 &&
+				((bufferInt >= minimo && bufferInt <= maximo)
+					|| (bufferInt >= minimo-32 && bufferInt <= maximo-32)))
 			{
 				retorno = 0;
-				*pResultado = bufferChar;
+				*pResultado = bufferInt;
 				break;
 			}
 
-			printf("%s",mensajeError);
-			scanf("%c",&bufferChar);
+
+			else if(reintentos >0)
+			{
+
+				printf("%s",mensajeError);
+
+			}
+
 			reintentos--;
 
 		}while(reintentos>=0);
 
 
-
 	}
 
 
-		return retorno;
-
+	return retorno;
 
 }
 

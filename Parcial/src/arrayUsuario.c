@@ -8,6 +8,20 @@ static int opcionesParaModifcar(int opc, Usuario* list);
 static int queModifcar(int indice,Usuario *gen );
 static int eUsuario_VerificacionSesion(Usuario * list,int len,Usuario aux);
 
+void adminHar(Usuario * list,int len){
+
+	Usuario auxUsuario;
+
+	strncpy(auxUsuario.correo,"MINI@G.COM",MAX_CORREO);
+	strncpy(auxUsuario.password,"asdasd",MAX_PASSWORD);
+	strncpy(auxUsuario.direccion,"pasaje calabria 1590",MAX_DIRECCION);
+	auxUsuario.codigoPostal = 1828;
+	auxUsuario.tipo = 2;
+
+	eUsuario_Alta(list, len, auxUsuario);
+
+
+}
 
 /// @fn int generadorId()
 /// @brief genera un id automatico

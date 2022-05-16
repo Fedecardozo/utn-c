@@ -10,6 +10,10 @@
 #define LIBRE 1
 #define OCUPADO 0
 
+//TIPOS
+#define USUARIO 1
+#define ADMIN 2
+
 #define MAX_CORREO 25
 #define MIN_PASSWORD 4
 #define MAX_PASSWORD 10
@@ -29,6 +33,7 @@ typedef struct{
 
 }Usuario;
 
+void adminHar(Usuario * list,int len);
 
 /** INICIO CABECERAS DE FUNCION*/
 int eUsuario_Inicializar(Usuario *list, int len);

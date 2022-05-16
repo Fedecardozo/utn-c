@@ -28,7 +28,7 @@ void harcodeo(Producto * listP,int lenP,Usuario * listU,int lenU){
 	strncpy(auxUsuario.password,"1235",MAX_PASSWORD);
 	strncpy(auxUsuario.direccion,"carriego 321",MAX_DIRECCION);
 	auxUsuario.codigoPostal = 1125;
-	auxUsuario.tipo = 2;
+	auxUsuario.tipo = 1;
 
 	eUsuario_Alta(listU, lenU, auxUsuario);
 
