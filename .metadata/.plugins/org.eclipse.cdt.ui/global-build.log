@@ -1989,3 +1989,113 @@ Info: Nothing to build for Parcial
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
 gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+10:42:11 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:01:47 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c:1086:5: error: conflicting types for 'eProducto_Baja'
+ int eProducto_Baja(Producto *list, int len,int id){
+     ^~~~~~~~~~~~~~
+In file included from ..\src\arrayProducto.c:2:0:
+..\src\arrayProducto.h:56:5: note: previous declaration of 'eProducto_Baja' was here
+ int eProducto_Baja(Producto *list, int len);
+     ^~~~~~~~~~~~~~
+11:02:26 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\RelacionProductosUsuarios.o" "..\\src\\RelacionProductosUsuarios.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayTracking.o" "..\\src\\arrayTracking.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+11:17:52 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:22:48 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:30:25 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:33:48 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:35:37 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:37:15 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+11:38:30 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+..\src\Parcial.c: In function 'main':
+..\src\Parcial.c:32:2: warning: implicit declaration of function 'Producto_MostrarTodos' [-Wimplicit-function-declaration]
+  Producto_MostrarTodos(arrayProducto, TAM_PRODUCTO);
+  ^~~~~~~~~~~~~~~~~~~~~
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+src\Parcial.o: In function `main':
+C:\Users\fedec\Downloads\utn\programacion1\inputs\Parcial\Debug/../src/Parcial.c:32: undefined reference to `Producto_MostrarTodos'
+collect2.exe: error: ld returned 1 exit status
+11:38:44 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Parcial.o" "..\\src\\Parcial.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+11:39:45 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:40:27 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+..\src\arrayProducto.c: In function 'eProducto_remove':
+..\src\arrayProducto.c:1003:20: warning: unknown conversion type character 0x20 in format [-Wformat=]
+      printf("\n %45 PRODUCTO A DAR DE BAJA\n");
+                    ^
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+11:40:46 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+11:41:18 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+11:41:41 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\arrayProducto.o" "..\\src\\arrayProducto.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial
+11:45:20 **** Incremental Build of configuration Debug for project Parcial ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesPropias.o" "..\\src\\funcionesPropias.c" 
+gcc -o Parcial.exe "src\\Parcial.o" "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\utn.o" 
+Info: Nothing to build for Parcial
+Info: Nothing to build for Parcial

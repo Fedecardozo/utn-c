@@ -5,7 +5,6 @@ static char categorias[TAM_CATEGORIA][20]={{"1)Deportes"},{"2)Moda"},{"3)Otro"},
 
 static int generadorId();
 static int eProducto_Vacio(Producto * list, int len);
-static int eProducto_remove(Producto* list, int len, int id);
 static int opcionesParaModifcar(int opc, Producto* list);
 static int queModifcar(int indice,Producto *gen );
 static int sort_Categoria(Producto *list, int len, int criterio);
@@ -979,42 +978,71 @@ static int queModifcar(int indice,Producto *gen ){
 }
 
 
-///FUNCION PARA LA BAJA
 /// \brief Eliminar un Producto por Id (poner el indicador isEmpty en 1)
 ///\lista de parámetros Producto *
 ///\parametro len int
-///\id de parámetro int
 ///\return int Retorna (-1) si Error [longitud inválida o NULL
 /// puntero o si no puede encontrar un Producto] -
-///  (0) si está bien (-2) No estaba seguro
-static int eProducto_remove(Producto* list, int len, int id)
+///  (0) si está bien (-2) ERROR AL PEDIR ID
+/// (-3) ERROR AL OBTENER INDICE (-4) //NO SE MODIFICO NADA
+int eProducto_remove(Producto* list, int len)
 {
 	int retorno=-1;
+	int id;
 	int indice;
 
-		if(list!=NULL && len>0 && id>0){
+		if(list!=NULL && len>0)
+		{
+			if(utn_getNumero(&id, "\nINGRESE ID A DAR DE BAJA: ", "\nERROR! INGRESE NUEVAMENTE: ",
+					0, 9999, 2)==0)
+			{
+				indice = eProducto_BuscarPorid(list, len, id);
 
-			indice=eProducto_BuscarPorid(list, len, id);
-
-			if(indice<0){
-
-				retorno=-1;
-
-			}else if(indice>=0){
-
-				//Preguntar si esta seguro
-				if(preguntarSoN("\nEsta seguro? Si o No: ", 2, "\nRespuesta invalida"))
+				if(indice >= 0)
 				{
-					list[indice].isEmpty=LIBRE;
-					retorno=0;
+					printf("\n %60s \n","**** PRODUCTO A DAR DE BAJA ****");
+					printf("+----------------------------------------------"
+									"-------------------------------------------+\n");
+					printf("|%-10s|%-25s|%-15s|%-25s|%-10s|\n",
+							" ID "," NOMBRE PRODUCTO "," PRECIO "," CATEGORIA "," STOCK ");
+					printf("+----------------------------------------------"
+									"-------------------------------------------+\n");
+					eProducto_MostrarUno(list[indice]);
+					printf("+----------------------------------------------"
+														"-------------------------------------------+\n");
+
+					//Preguntar si esta seguro
+					if(preguntarSoN("\nEsta seguro? Si o No: ", 2, "\nRespuesta invalida")>0)
+					{
+						list[indice].isEmpty=BAJA;
+						retorno=0;
+
+					}
+					else
+					{
+
+						//NO SE MODIFICO NADA
+						retorno = -4;
+
+					}
+
 
 				}
 				else
 				{
 
-					retorno=-2;
+					//ERROR AL OBTENER INDICE
+					retorno=-3;
+
 				}
 
+			}
+
+
+			else
+			{
+				//ERROR AL PEDIR ID
+				retorno=-2;
 			}
 
 
@@ -1063,49 +1091,35 @@ int eProducto_Alta(Producto *list, int len,Producto productoDarAlta){
 /// @fn Baja para Producto
 /// @param list arreglo Producto
 /// @param len longitud del arreglo
-/// @return 0 bien -1 error parametros -2 no existe id -3 No hay datos cargados
-/// -4 no estaba seguro
-int eProducto_Baja(Producto *list, int len){
+/// @param id del arreglo
+/// @return 0 bien -1 error parametros -2 Vacio
+int eProducto_Baja(Producto *list, int len,int id){
 
 	int retorno=-1;
-	int id;
-	int rta;
+	int index;
 
-	if(list != NULL && len >0)
+	if(list != NULL && len >0 && id>=0)
 	{
 		if(eProducto_Vacio(list, len))
 		{
-			if(utn_getNumero(&id, "\nIngrese numero ID:", "\nError Ingrese nuevamente: ", 0, 3000, 2)==0)
+			index = eProducto_BuscarPorid(list, len, id);
+
+			if(index >= 0)
 			{
-				rta=eProducto_remove(list, len, id);
-				if(rta==0)
-				{
-
-					//ESTA OK
-					retorno = 0;
-
-				}
-				else if(rta==-1)
-				{
-
-					//NO EXISTE ID
-					retorno=-2;
-
-				}
-				else if(rta==-2)
-				{
-					//No se borro
-					retorno=-4;
-				}
-
-
+				list[index].isEmpty = BAJA;
+				retorno=0;
 			}
+			else
+			{
+				retorno = index;
+			}
+
 
 		}
 		else
 		{
 			//Array vacio
-			retorno = -3;
+			retorno = -2;
 		}
 
 	}

@@ -9,7 +9,7 @@
 int preguntarSoN(char*msj,int intentos, char*msjError){
 
 	int retorno=-1;
-	char respuesta[2];
+	char respuesta[3];
 
 	if(msj != NULL && msjError != NULL && intentos >=0)
 	{

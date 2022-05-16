@@ -239,6 +239,7 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 {
 	char opc;
 	int retorno=0;
+	int errorBaja;
 	//int indiceProducto;
 	//int cantidad;
 
@@ -281,6 +282,31 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 						break;
 					case 'C':
 					case 'c':
+
+							if(eProducto_MostrarTodos(listProducto, lenProducto)==0)
+							{
+								errorBaja = eProducto_remove(listProducto, lenProducto);
+								if(errorBaja==0)
+								{
+									puts("\nBAJA EXITOSA!");
+								}
+								else if(errorBaja == -3)
+								{
+									puts("\nNO SE EXISTE TAL ID!");
+								}
+								else if(errorBaja == -2)
+								{
+									puts("\nHUBO UN ERROR AL OBTENER ID. INTENTELO MAS TARDE!");
+								}
+								else
+								{
+									puts("\nNO SE MODIFICARON LOS PRODUCTOS!");
+								}
+							}
+							else
+							{
+								puts("\nNO HAY PRODUCTOS CARGADOS!");
+							}
 
 						break;
 					case 'D':

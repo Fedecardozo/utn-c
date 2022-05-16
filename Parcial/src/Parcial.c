@@ -29,7 +29,10 @@ int main(void) {
 
 	adminHar(arrayUsuario, TAM_USUARIO);
 
-	//eProducto_MostrarTodos(arrayProducto, TAM_PRODUCTO);
+	eProducto_MostrarTodos(arrayProducto, TAM_PRODUCTO);
+	eProducto_remove(arrayProducto, TAM_PRODUCTO);
+	eProducto_MostrarTodos(arrayProducto, TAM_PRODUCTO);
+
 	//eProducto_PrintOrdenCategoria_Nombre(arrayProducto, TAM_PRODUCTO, 1);
 
 	if(menu(arrayUsuario, TAM_USUARIO,arrayProducto,TAM_PRODUCTO,arrayTracking,TAM_TRACKING) == -1)

@@ -53,8 +53,8 @@ int eProducto_Sort(Producto *list, int len, int criterio);
 int eProducto_CargarDatos(Producto * list,int len);
 int eProducto_ModificarUno(Producto *list,int len,int id);
 int eProducto_Alta(Producto *list, int len,Producto productoDarAlta);
-int eProducto_Baja(Producto *list, int len);
+int eProducto_Baja(Producto *list, int len,int id);
 int eProducto_ModificacionStock(Producto * list,int len,int id,int stock,int sumaOresta);
-
+int eProducto_remove(Producto* list, int len);
 
 #endif /* ARRAYPRODUCTO_H_ */
