@@ -609,9 +609,9 @@ int eProducto_MostrarFk(Producto *list, int len,int fk){
 
 	if(list != NULL && len >=0){
 
+			retorno=0;
 		if(eProducto_VacioFk(list, len, fk))
 		{
-			retorno=0;
 			if(eProducto_Sort(list, len, 1)==0)
 			{
 				retorno=1;
