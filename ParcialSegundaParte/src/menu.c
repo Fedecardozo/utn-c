@@ -276,7 +276,7 @@ static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listP
 
 			case 2:
 
-				if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indiceUsuario)<0)
+				if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indiceUsuario)<=0)
 					{
 						puts("\nNo hay productos con stock");
 					}
