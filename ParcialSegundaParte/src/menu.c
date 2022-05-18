@@ -10,6 +10,9 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listProducto,int lenProducto,Usuario* listUsuario,int indiceUsuario);
 static void errorEstadosCompras(int error);
 static void  estadoCompras(Tracking* listTracking,int lenTracking,Usuario* listUsuario,int indiceUsuario,Producto* listProducto,int lenProducto);
+static void erroresAlComprar(int error);
+static void vender(Producto* listProducto,int lenProducto,Usuario* listUsuario, int indiceUsuario );
+static void erroresAlReponer(int error);
 
 /** PROTOTYPO ADMIN **/
 static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Producto* listProducto,
@@ -49,8 +52,7 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 					indiceProducto = eProducto_compra(listProducto, lenProducto,&cantidad);
 					if(indiceProducto<0)
 					{
-						printf("\nNO SE COMPRARON PRODUCTOS!\n");
-
+						erroresAlComprar(indiceProducto);
 					}
 					else
 					{
@@ -69,23 +71,8 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 					break;
 				case 2://VENDER
 
-					if(alta_Producto(listProducto, lenProducto,listUsuario, indice)==0)
-					{
+					vender(listProducto, lenProducto, listUsuario, indice);
 
-						printf("\nCarga exitosa\n");
-
-						if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indice)==-1)
-						{
-							printf("\nNo tiene productos para vender! ");
-						}
-
-					}
-					else
-					{
-
-						printf("\nNo se puede cagar producto!");
-
-					}
 					break;
 				case 3://ESTADO COMPRAS
 
@@ -108,6 +95,89 @@ static int subMenuUsuario(int indice,Usuario* listUsuario , int lenUsuario, Prod
 	}while(opc != 0);
 
 	return retorno;
+}
+
+//PUNTO 1
+static void erroresAlComprar(int error){
+
+	switch(error)
+	{
+		case 0: puts("\nSE CANCELO CON EXITO!"); break;
+		case -2: puts("\nNO HAY PRODUCTOS A LA VENTA!"); break;
+		case -3: puts("\nERROR AL ORDENAR PRODUCTOS!"); break;
+		case -4: puts("\nNO EXISTE TAL ID!"); break;
+		case -5: puts("\nERROR AL PROCESAR LA CANTIDAD!"); break;
+		case -6: puts("\nRESPUESTA INVALIDA! INTENTELO MAS TARDE"); break;
+		default: puts("\nHUBO UN ERROR! INTENTELO MAS TARDE"); break;
+
+	}
+
+}
+
+//PUNTO 2 VENDER
+static void vender(Producto* listProducto,int lenProducto,Usuario* listUsuario, int indiceUsuario )
+{
+	int opc;
+
+
+	if(utn_getNumero(&opc, "\n1)Dar de alta un producto \n2) Reponer stock \nIngrese opcion: ",
+			"\nError! Ingrese nuevamente: ", 1, 2, 2)==0)
+	{
+
+		switch(opc){
+
+			case 1://ALTA
+
+				if(alta_Producto(listProducto, lenProducto,listUsuario, indiceUsuario)==0)
+				{
+
+					printf("\nCarga exitosa!");
+
+					if(print_ProductosdelUsuario(listProducto, lenProducto, listUsuario, indiceUsuario)==-1)
+					{
+						printf("\nNo tiene productos para vender! ");
+					}
+
+				}
+				else
+				{
+
+					printf("\nNo se puede cagar producto!");
+
+				}
+
+				break;
+
+			case 2: //REponer
+
+					erroresAlReponer(reponerStock(listProducto, lenProducto,listUsuario, indiceUsuario));
+
+				break;
+
+		}
+
+	}
+
+
+
+}
+
+static void erroresAlReponer(int error)
+{
+	switch(error)
+	{
+		case 0: puts("\nSE CARGO CON EXITO!"); break;
+		case -1: puts("\nHUBO UN ERROR!"); break;
+		case -2: puts("\nNO TIENE PRODUCTOS PARA REPONER!"); break;
+		case -3: puts("\nERROR AL OBTENER ID!"); break;
+		case -4: puts("\nID INEXISTENTE!"); break;
+		case -5: puts("\nCANTIDAD INVALIDA!"); break;
+		case -6: puts("\nHUBO UN ERROR AL CARGAR EL PRODUCTO!"); break;
+
+
+
+	}
+
 }
 
 //USUARIO PUNTO 3 COMPRAS
@@ -182,7 +252,7 @@ static void estadosVentas(Tracking* listTracking,int lenTracking,Producto* listP
 			"\n****************************");
 
 	if(utn_getNumero(&opc, "\n\n1)LISTADO DE VENTAS FINALIZADO \n2)VER PRODUCTOS EN STOCK"
-			"\n0)SALIR\nIngrese opcion: \n", "\nError! Ingrese nuevamente: ", 0, 2, 2)==0
+			"\n0)SALIR\nIngrese opcion: ", "\nError! Ingrese nuevamente: ", 0, 2, 2)==0
 			&& opc >=1)
 	{
 
@@ -255,10 +325,11 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 					"\nC)BAJA DE UN PRODUCTO"
 					"\nD)BAJA DE UN USUARIO"
 					"\nE)VER TRACKING GLOBAL"
-					"\nF)SALIR"
+					"\nF)FILTRAR POR NOMBRE"
+					"\nG)SALIR"
 					"\nINGRESE OPCION: "
 					, "\nOPCION INCORRECTA\nINGRESE NUEVAMENTE: "
-					,'a', 'f', 2);
+					,'a', 'g', 2);
 
 			if(retorno == 0)
 			{
@@ -352,10 +423,33 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 								puts("\nNO HAY TRACKINGS REALIZADOS!");
 							}
 						break;
+
 					case 'F':
 					case 'f':
+							if(eProducto_SortStock(listProducto, lenProducto, 0)==0)
+							{
+								if(eProductoFiltroNombre(listProducto, lenProducto)<0)
+								{
+									puts("\nNO HAY PRODUCTOS PARA MOSTRAR !");
+								}
+
+							}
+							else
+							{
+
+								puts("\nESTA VACIO !");
+
+							}
+
 
 						break;
+
+					case 'G':
+					case 'g':
+
+							opc = 'G';
+						break;
+
 
 				}
 			}
@@ -364,7 +458,7 @@ static int subMenuAdmin(int indice,Usuario* listUsuario , int lenUsuario, Produc
 				printf("\nOpcion inexistente. Intentelo mas tarde...");
 			}
 
-		}while(opc != 0);
+		}while(opc != 'G');
 
 		return retorno;
 
@@ -415,6 +509,7 @@ static void erroresAlta(int registro)
 	{
 		case -1: printf("\nHUBO UN ERROR!\n"); break;
 		case -2:printf("\nHUBO UN ERROR AL REGISTRARSE! \n");break;
+		case -3:printf("\nCORREO YA EXISTENTE! \n");break;
 		case 0:printf("\nSE REGISTRO CON EXITO\n");break;
 		default:printf("\nHUBO UN ERROR!\n"); break;
 	}
@@ -440,38 +535,44 @@ int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenPr
 			printf("\n****************************"
 					"\n** 1er EXAMEN LAB I - 1H ***"
 					"\n****************************");
-			rta=utn_getNumero(&opc, "\n\n1)INGRESAR \n2)REGISTRARSE \n3)MOSTRAR TODO \n0)SALIR"
-					"\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente: ", 0, 2, 2);
+			rta=utn_getNumero(&opc, "\n\n1)INGRESAR \n2)REGISTRARSE \n3)CARGA FORZADA\n0)SALIR"
+					"\nIngrese opcion:", "\nOpcion incorrecta! \nIngrese nuevamente: ", 0, 3, 2);
 
-		if(rta==0)
-		{
-			switch(opc)
+			if(rta==0)
 			{
-				case 1:
-					printf("\n****************************"
-							"\n** 1er EXAMEN LAB I - 1H ***"
-							"\n********** LOGIN ***********"
-							"\n****************************\n");
-					indice=eUsuario_InicioSesion(listUsuario,lenUsuario);
-					erroresInicioSesion(indice, listUsuario, lenUsuario, listProducto, lenProducto, listTracking, lenTracking);
+				switch(opc)
+				{
+					case 1:
+						printf("\n****************************"
+								"\n** 1er EXAMEN LAB I - 1H ***"
+								"\n********** LOGIN ***********"
+								"\n****************************\n");
+						indice=eUsuario_InicioSesion(listUsuario,lenUsuario);
+						erroresInicioSesion(indice, listUsuario, lenUsuario, listProducto, lenProducto, listTracking, lenTracking);
 
-					break;
-				case 2:
-					printf("\n****************************"
-							"\n** 1er EXAMEN LAB I - 1H ***"
-							"\n******* REGISTRARSE ********"
-							"\n****************************\n");
+						break;
+					case 2:
+						printf("\n****************************"
+								"\n** 1er EXAMEN LAB I - 1H ***"
+								"\n******* REGISTRARSE ********"
+								"\n****************************\n");
 
-					erroresAlta(eUsuario_CargarDatos(listUsuario, lenUsuario));
+						erroresAlta(eUsuario_CargarDatos(listUsuario, lenUsuario));
 
-					break;
+						break;
 
-				default: printf("\nGracias. Vuelva prontos!"); break;
+					case 3:
 
-			}
+						harcodeo(listProducto, lenProducto, listUsuario, lenUsuario);
+						harcodeoTracking(listTracking, lenTracking,listProducto, lenProducto);
 
+						break;
 
-			}
+					default: printf("\nGracias. Vuelva prontos!"); break;
+
+				}
+
+				}
 			else
 			{
 				printf("\nOpcion inexistente intentelo mas tarde");
@@ -486,7 +587,6 @@ int menu(Usuario* listUsuario , int lenUsuario, Producto* listProducto,int lenPr
 	return retorno;
 
 }
-
 
 
 
