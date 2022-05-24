@@ -1,8 +1,240 @@
-16:22:55 **** Rebuild of configuration Debug for project memoriaDinamica ****
+11:02:24 **** Incremental Build of configuration Debug for project memoriaDinamica ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
 gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
-16:23:07 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Nothing to build for memoriaDinamica
+11:04:19 **** Incremental Build of configuration Debug for project memoriaDinamica ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
 gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:04:44 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:07:00 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:07:19 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:07:37 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:07:59 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:51:06 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:61:2: error: variable-sized object may not be initialized
+  int arrayNum[tam]={5, 4, 3, 2, 1};
+  ^~~
+..\src\memoriaDinamica.c:61:21: warning: excess elements in array initializer
+  int arrayNum[tam]={5, 4, 3, 2, 1};
+                     ^
+..\src\memoriaDinamica.c:61:21: note: (near initialization for 'arrayNum')
+..\src\memoriaDinamica.c:61:24: warning: excess elements in array initializer
+  int arrayNum[tam]={5, 4, 3, 2, 1};
+                        ^
+..\src\memoriaDinamica.c:61:24: note: (near initialization for 'arrayNum')
+..\src\memoriaDinamica.c:61:27: warning: excess elements in array initializer
+  int arrayNum[tam]={5, 4, 3, 2, 1};
+                           ^
+..\src\memoriaDinamica.c:61:27: note: (near initialization for 'arrayNum')
+..\src\memoriaDinamica.c:61:30: warning: excess elements in array initializer
+  int arrayNum[tam]={5, 4, 3, 2, 1};
+                              ^
+..\src\memoriaDinamica.c:61:30: note: (near initialization for 'arrayNum')
+..\src\memoriaDinamica.c:61:33: warning: excess elements in array initializer
+  int arrayNum[tam]={5, 4, 3, 2, 1};
+                                 ^
+..\src\memoriaDinamica.c:61:33: note: (near initialization for 'arrayNum')
+11:51:46 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+11:52:41 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:40:48 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:41:36 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:41:55 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:42:27 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:43:06 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:43:24 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:44:41 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:83:7: warning: unused variable 'pVector' [-Wunused-variable]
+  int* pVector = (int*)malloc(sizeof(int)*10);
+       ^~~~~~~
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+14:44:47 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:84:17: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int pVector2 = (int*)malloc(sizeof(int)*10);
+                 ^
+..\src\memoriaDinamica.c:83:7: warning: unused variable 'pVector' [-Wunused-variable]
+  int* pVector = (int*)malloc(sizeof(int)*10);
+       ^~~~~~~
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+14:45:32 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:83:7: warning: unused variable 'pVector' [-Wunused-variable]
+  int* pVector = (int*)malloc(sizeof(int)*10);
+       ^~~~~~~
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+14:57:50 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+15:01:45 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+15:03:32 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+15:04:23 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:83:15: error: lvalue required as left operand of assignment
+  *(pVector)+1 = 4;
+               ^
+15:04:33 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+15:05:06 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+15:05:27 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+15:08:14 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+16:28:32 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+16:28:57 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:104:24: error: too few arguments to function 'calloc'
+  int* pVector2 = (int*)calloc(sizeof(int)*TAM);
+                        ^~~~~~
+In file included from ..\src\memoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:484:40: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *calloc (size_t, size_t) __MINGW_ATTRIB_MALLOC;
+                                        ^~~~~~
+16:29:18 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+16:30:07 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+16:30:32 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
+16:48:30 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:5:13: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+ #define TAM 5
+             ^
+..\src\memoriaDinamica.c:120:32: note: in expansion of macro 'TAM'
+  int* auxiliar = (int*)realloc(TAM+10,pVector2);
+                                ^~~
+In file included from ..\src\memoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\memoriaDinamica.c:120:39: warning: passing argument 2 of 'realloc' makes integer from pointer without a cast [-Wint-conversion]
+  int* auxiliar = (int*)realloc(TAM+10,pVector2);
+                                       ^~~~~~~~
+In file included from ..\src\memoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'size_t {aka unsigned int}' but argument is of type 'int *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\memoriaDinamica.c:120:7: warning: unused variable 'auxiliar' [-Wunused-variable]
+  int* auxiliar = (int*)realloc(TAM+10,pVector2);
+       ^~~~~~~~
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+16:48:58 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+..\src\memoriaDinamica.c: In function 'main':
+..\src\memoriaDinamica.c:120:7: warning: unused variable 'auxiliar' [-Wunused-variable]
+  int* auxiliar = (int*)realloc(pVector2,TAM+10);
+       ^~~~~~~~
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+16:49:50 **** Incremental Build of configuration Debug for project memoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\memoriaDinamica.o" "..\\src\\memoriaDinamica.c" 
+gcc -o memoriaDinamica.exe "src\\memoriaDinamica.o" 
+Info: Nothing to build for memoriaDinamica
