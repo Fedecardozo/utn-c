@@ -3,3 +3,437 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
 gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
 Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
+12:19:48 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+12:23:34 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+12:26:42 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:15:17: warning: comparison between pointer and integer
+   for (i = 0; i < len; ++i)
+                 ^
+..\src\ejercicioMemoriaDinamica.c:18:25: warning: comparison between pointer and integer
+    if(*(arrayEnteros+i) == num)
+                         ^~
+..\src\ejercicioMemoriaDinamica.c:21:37: error: invalid operands to binary + (have 'int **' and 'int *')
+     *(arrayEnteros+i)=*(arrayEnteros+len-1);
+                                     ^
+..\src\ejercicioMemoriaDinamica.c:23:44: warning: passing argument 2 of 'realloc' makes integer from pointer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(arrayEnteros,len-1);
+                                            ^~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'size_t {aka unsigned int}' but argument is of type 'int *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:27:20: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+      *arrayEnteros = *aux;
+                    ^
+..\src\ejercicioMemoriaDinamica.c: In function 'main':
+..\src\ejercicioMemoriaDinamica.c:102:15: warning: passing argument 1 of 'buscarEntero' makes pointer from integer without a cast [-Wint-conversion]
+  buscarEntero(*pVector, &TAM, num);
+               ^
+..\src\ejercicioMemoriaDinamica.c:7:5: note: expected 'int **' but argument is of type 'int'
+ int buscarEntero(int** arrayEnteros,int* len, int num){
+     ^~~~~~~~~~~~
+12:28:33 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:39: error: invalid operands to binary + (have 'int **' and 'int *')
+     **(arrayEnteros+i)=**(arrayEnteros+len-1);
+                                       ^
+..\src\ejercicioMemoriaDinamica.c:23:44: warning: passing argument 2 of 'realloc' makes integer from pointer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(arrayEnteros,len-1);
+                                            ^~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'size_t {aka unsigned int}' but argument is of type 'int *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c: In function 'main':
+..\src\ejercicioMemoriaDinamica.c:102:15: warning: passing argument 1 of 'buscarEntero' makes pointer from integer without a cast [-Wint-conversion]
+  buscarEntero(*pVector, &TAM, num);
+               ^
+..\src\ejercicioMemoriaDinamica.c:7:5: note: expected 'int **' but argument is of type 'int'
+ int buscarEntero(int** arrayEnteros,int* len, int num){
+     ^~~~~~~~~~~~
+12:29:02 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:37: error: invalid operands to binary + (have 'int **' and 'int *')
+     *(arrayEnteros+i)=*(arrayEnteros+len-1);
+                                     ^
+..\src\ejercicioMemoriaDinamica.c:23:45: warning: passing argument 2 of 'realloc' makes integer from pointer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*arrayEnteros,len-1);
+                                             ^~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'size_t {aka unsigned int}' but argument is of type 'int *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:29:43 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:39: error: invalid operands to binary + (have 'int **' and 'int *')
+     **(arrayEnteros+i)=**(arrayEnteros+len-1);
+                                       ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(**arrayEnteros,len-1);
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:23:46: warning: passing argument 2 of 'realloc' makes integer from pointer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(**arrayEnteros,len-1);
+                                              ^~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'size_t {aka unsigned int}' but argument is of type 'int *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:32:05 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:42: error: invalid operands to binary + (have 'int **' and 'int *')
+     *(*(arrayEnteros+i))=*(*(arrayEnteros+len-1));
+                                          ^
+..\src\ejercicioMemoriaDinamica.c:23:46: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+     int* aux = (int*) realloc(*(*arrayEnteros,len-1));
+                                              ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*(*arrayEnteros,len-1));
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:23:23: error: too few arguments to function 'realloc'
+     int* aux = (int*) realloc(*(*arrayEnteros,len-1));
+                       ^~~~~~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:32:41 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:7: error: lvalue required as unary '&' operand
+     *(&(arrayEnteros+i))=*(&(arrayEnteros+len-1));
+       ^
+..\src\ejercicioMemoriaDinamica.c:21:42: error: invalid operands to binary + (have 'int **' and 'int *')
+     *(&(arrayEnteros+i))=*(&(arrayEnteros+len-1));
+                                          ^
+..\src\ejercicioMemoriaDinamica.c:23:46: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+     int* aux = (int*) realloc(*(&arrayEnteros,len-1));
+                                              ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*(&arrayEnteros,len-1));
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:23:23: error: too few arguments to function 'realloc'
+     int* aux = (int*) realloc(*(&arrayEnteros,len-1));
+                       ^~~~~~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:33:00 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:40: error: invalid operands to binary + (have 'int **' and 'int *')
+     *((arrayEnteros+i))=*((arrayEnteros+len-1));
+                                        ^
+..\src\ejercicioMemoriaDinamica.c:23:45: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+     int* aux = (int*) realloc(*(arrayEnteros,len-1));
+                                             ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*(arrayEnteros,len-1));
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:23:23: error: too few arguments to function 'realloc'
+     int* aux = (int*) realloc(*(arrayEnteros,len-1));
+                       ^~~~~~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:34:09 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:37: error: invalid operands to binary + (have 'int *' and 'int *')
+     *(arrayEnteros+i)=*(arrayEnteros+len-1);
+                                     ^
+..\src\ejercicioMemoriaDinamica.c:23:45: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+     int* aux = (int*) realloc(*(arrayEnteros,len-1));
+                                             ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*(arrayEnteros,len-1));
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:23:23: error: too few arguments to function 'realloc'
+     int* aux = (int*) realloc(*(arrayEnteros,len-1));
+                       ^~~~~~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: declared here
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:34:18 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:37: error: invalid operands to binary + (have 'int *' and 'int *')
+     *(arrayEnteros+i)=*(arrayEnteros+len-1);
+                                     ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*arrayEnteros,len-1);
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:23:45: warning: passing argument 2 of 'realloc' makes integer from pointer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*arrayEnteros,len-1);
+                                             ^~~
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'size_t {aka unsigned int}' but argument is of type 'int *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:34:43 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:37: error: invalid operands to binary + (have 'int *' and 'int *')
+     *(arrayEnteros+i)=*(arrayEnteros+len-1);
+                                     ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*arrayEnteros,*len-1);
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+12:35:41 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:21:37: error: invalid operands to binary + (have 'int *' and 'int *')
+     *(arrayEnteros+i)=*(arrayEnteros+len-1);
+                                     ^
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*arrayEnteros,*len-1);
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:26:6: warning: value computed is not used [-Wunused-value]
+      *len--;
+      ^~~~~~
+13:29:53 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:23:31: warning: passing argument 1 of 'realloc' makes pointer from integer without a cast [-Wint-conversion]
+     int* aux = (int*) realloc(*arrayEnteros,*len-1);
+                               ^
+In file included from ..\src\ejercicioMemoriaDinamica.c:3:0:
+c:\mingw\include\stdlib.h:486:40: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP __cdecl __MINGW_NOTHROW  void *realloc (void *, size_t);
+                                        ^~~~~~~
+..\src\ejercicioMemoriaDinamica.c:26:6: warning: value computed is not used [-Wunused-value]
+      *len--;
+      ^~~~~~
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+13:30:06 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'buscarEntero':
+..\src\ejercicioMemoriaDinamica.c:26:6: warning: value computed is not used [-Wunused-value]
+      *len--;
+      ^~~~~~
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+13:30:21 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+13:31:14 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
+13:33:20 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'modificarTamanio':
+..\src\ejercicioMemoriaDinamica.c:83:17: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   *arrayEnteros = *aux;
+                 ^
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+13:33:30 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:06:12 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:07:14 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:10:31 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:11:04 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:13:22 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:13:57 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:14:18 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'modificarTamanio':
+..\src\ejercicioMemoriaDinamica.c:83:24: warning: format '%p' expects argument of type 'void *', but argument 2 has type 'int' [-Wformat=]
+  printf("\nDIreccion: %p",**arrayEnteros);
+                        ^
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+14:14:51 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:17:04 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'main':
+..\src\ejercicioMemoriaDinamica.c:109:26: warning: format '%p' expects argument of type 'void *', but argument 2 has type 'int' [-Wformat=]
+  printf("\nDIreccion 1: %p", *pVector);
+                          ^
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+14:17:09 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:17:32 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:18:26 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:19:27 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:21:07 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:22:31 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:23:38 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:24:17 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:33:50 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:34:41 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:49:28 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+..\src\ejercicioMemoriaDinamica.c: In function 'modificarTamanio':
+..\src\ejercicioMemoriaDinamica.c:80:52: error: invalid operands to binary * (have 'unsigned int' and 'int *')
+  int* aux = (int*) realloc(arrayEnteros,sizeof(int)*len-1);
+                                                    ^
+14:49:49 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:51:24 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:51:57 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:52:43 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:57:37 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+14:59:33 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
