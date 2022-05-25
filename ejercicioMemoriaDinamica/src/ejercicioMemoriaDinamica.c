@@ -6,7 +6,7 @@
 
 int buscarEntero(int* arrayEnteros,int len, int num){
 
-	int retorno = 0;
+	int retorno = -1;
 	int i;
 
 	if(arrayEnteros != NULL && len >= 0)
@@ -129,6 +129,7 @@ int main(void) {
 	}
 	else
 	{
+		indice=-1;
 		puts("MALA SUERTE");
 	}
 

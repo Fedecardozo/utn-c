@@ -437,3 +437,17 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
 gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
 Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
+15:01:28 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
+15:03:08 **** Incremental Build of configuration Debug for project ejercicioMemoriaDinamica ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicioMemoriaDinamica.o" "..\\src\\ejercicioMemoriaDinamica.c" 
+gcc -o ejercicioMemoriaDinamica.exe "src\\ejercicioMemoriaDinamica.o" "src\\utn.o" 
+Info: Nothing to build for ejercicioMemoriaDinamica
+Info: Nothing to build for ejercicioMemoriaDinamica
