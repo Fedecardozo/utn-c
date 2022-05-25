@@ -4,36 +4,6 @@
 
 #define TAM 5
 
-int buscarEntero(int* arrayEnteros,int len, int num){
-
-	int retorno = 0;
-	int i;
-
-	if(arrayEnteros != NULL && len > 0)
-	{
-
-		for (i = 0; i < len; ++i)
-		{
-
-			if(*(arrayEnteros+i) == num)
-			{
-
-				*(arrayEnteros+i)=0;
-
-			}
-
-		}
-
-
-	}
-
-
-
-
-	return retorno;
-
-}
-
 void printNum(int* arrayEnteros,int len)
 {
 
