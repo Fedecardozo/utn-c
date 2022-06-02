@@ -88,7 +88,7 @@ int modificarTamanio(int** arrayEnteros,int* len, int sizeNew){
 		if(aux != NULL)
 		{
 			*len=sizeNew/sizeof(int);
-			//*arrayEnteros = aux;
+			*arrayEnteros = aux;
 			retorno =0;
 
 		}
@@ -141,7 +141,6 @@ void removeArray(){
 
 
 }
-
 
 int agregarEntero(int* arrayEnteros,int len, int indice,int num){
 
