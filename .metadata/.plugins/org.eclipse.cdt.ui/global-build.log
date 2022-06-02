@@ -1,8 +1,135 @@
-13:14:20 **** Rebuild of configuration Debug for project archivos ****
+Info: Nothing to build for parcialLaboratorio
+Info: Nothing to build for parcialLaboratorio
+17:50:58 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\archivos.o" "..\\src\\archivos.c" 
-gcc -o archivos.exe "src\\archivos.o" 
-13:14:27 **** Incremental Build of configuration Debug for project archivos ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+17:55:17 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\archivos.o" "..\\src\\archivos.c" 
-gcc -o archivos.exe "src\\archivos.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+17:58:00 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:01:23 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:20:51 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+..\src\parcialLaboratorio.c: In function 'main':
+..\src\parcialLaboratorio.c:26:23: warning: passing argument 1 of 'fscanf' from incompatible pointer type [-Wincompatible-pointer-types]
+     contador = fscanf("%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",var[0],var[1],var[2],var[3],var[4],var[5],var[6]);
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\parcialLaboratorio.c:2:0:
+c:\mingw\include\stdio.h:666:41: note: expected 'FILE * {aka struct _iobuf *}' but argument is of type 'char *'
+ _CRTIMP __cdecl __MINGW_NOTHROW  int    fscanf (FILE *, const char *, ...);
+                                         ^~~~~~
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+18:21:38 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:23:09 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:25:29 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:27:09 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:28:42 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+..\src\parcialLaboratorio.c: In function 'main':
+..\src\parcialLaboratorio.c:17:14: error: 'o' undeclared (first use in this function)
+  int total = o;
+              ^
+..\src\parcialLaboratorio.c:17:14: note: each undeclared identifier is reported only once for each function it appears in
+18:28:57 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:29:19 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+Info: Nothing to build for parcialLaboratorio
+18:35:48 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+18:40:51 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+18:41:19 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+19:32:22 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesArchivos.o" "..\\src\\funcionesArchivos.c" 
+In file included from ..\src\funcionesArchivos.c:2:0:
+..\src\funcionesArchivos.h:7:33: error: array type has incomplete element type 'char[]'
+ Producto guardarUnProducto(char var[][]);
+                                 ^~~
+..\src\funcionesArchivos.h:7:33: note: declaration of 'var' as multidimensional array must have bounds for all dimensions except the first
+..\src\funcionesArchivos.c:4:33: error: array type has incomplete element type 'char[]'
+ Producto guardarUnProducto(char var[][]){
+                                 ^~~
+..\src\funcionesArchivos.c:4:33: note: declaration of 'var' as multidimensional array must have bounds for all dimensions except the first
+..\src\funcionesArchivos.c: In function 'llenarArray':
+..\src\funcionesArchivos.c:37:33: error: type of formal parameter 1 is incomplete
+       list[i]=guardarUnProducto(var[0],var[1],var[2],var[3],var[4],var[5],var[6]);
+                                 ^~~
+..\src\funcionesArchivos.c:37:15: error: too many arguments to function 'guardarUnProducto'
+       list[i]=guardarUnProducto(var[0],var[1],var[2],var[3],var[4],var[5],var[6]);
+               ^~~~~~~~~~~~~~~~~
+..\src\funcionesArchivos.c:4:10: note: declared here
+ Producto guardarUnProducto(char var[][]){
+          ^~~~~~~~~~~~~~~~~
+19:35:46 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesArchivos.o" "..\\src\\funcionesArchivos.c" 
+..\src\funcionesArchivos.c: In function 'guardarUnProducto':
+..\src\funcionesArchivos.c:14:50: warning: argument to 'sizeof' in 'strncpy' call is the same expression as the source; did you mean to provide an explicit length? [-Wsizeof-pointer-memaccess]
+    strncpy(auxProducto.nombreProducto,var3,sizeof(var3));
+                                                  ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parcialLaboratorio.o" "..\\src\\parcialLaboratorio.c" 
+..\src\parcialLaboratorio.c: In function 'main':
+..\src\parcialLaboratorio.c:25:8: warning: implicit declaration of function 'llenarArray' [-Wimplicit-function-declaration]
+     if(llenarArray(pArchivoProducto, arrayProducto)==0)
+        ^~~~~~~~~~~
+..\src\parcialLaboratorio.c:30:8: warning: implicit declaration of function 'printArrayProducto' [-Wimplicit-function-declaration]
+     if(printArrayProducto(arrayProducto, TAM_PRODUCTO)<0)
+        ^~~~~~~~~~~~~~~~~~
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesArchivos.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+19:36:26 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesArchivos.o" "..\\src\\funcionesArchivos.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesArchivos.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio
+19:38:37 **** Incremental Build of configuration Debug for project parcialLaboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcionesArchivos.o" "..\\src\\funcionesArchivos.c" 
+gcc -o parcialLaboratorio.exe "src\\RelacionProductosUsuarios.o" "src\\arrayProducto.o" "src\\arrayTracking.o" "src\\arrayUsuario.o" "src\\funcionesArchivos.o" "src\\funcionesPropias.o" "src\\menu.o" "src\\parcialLaboratorio.o" "src\\utn.o" 
+Info: Nothing to build for parcialLaboratorio

@@ -29,8 +29,8 @@ int main(void) {
 	//Escribe en modo binario copiamos tal cual esta la variable en memoria al archivo
 	fwrite(&num,sizeof(int),1,fileArchivo);
 
-	//leer de un archivo
-	fread();
+	//leer de un archivo en binario
+	//fread();
 
 	return EXIT_SUCCESS;
 }
